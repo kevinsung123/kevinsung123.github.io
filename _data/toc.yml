@@ -25,5 +25,5 @@
       url   : "docs/bigdataplatform"
       children : 
         - title : "RDMBS"
-          url   : "docs/RDMBS"
+          url   : "docs/bigdataplatform/RDMBS"
         
