@@ -28,7 +28,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 
 # This is mostly for testing
 url: "https://kevinsung123.github.io/" # the base hostname & protocol for your site
-remote_theme : mmistakes/minimal-mistakes
+remote_theme : vsoch/docsy-jekyll
 
 # Social (First three Required)
 repo: "https://github.com/vsoch/docsy-jekyll"
