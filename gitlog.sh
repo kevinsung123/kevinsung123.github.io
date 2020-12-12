@@ -1,3 +1,2 @@
 #!/bin/bash
-
-git log --pretty=format:"%h %s" --graph
+git log --pretty=format:"%h -%an,  %cd (%ar) : %s" --graph

@@ -14,9 +14,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Docsy Jekyll
-email: your-email@domain.com
-author: Dinosaur Avocado
+title: SKHDOCS
+email: kevinsugn123@naver.com
+author: Kyung Hwan Sung
 description: > # this means to ignore newlines until "base
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
@@ -30,9 +30,9 @@ url: "https://kevinsung123.github.io/" # the base hostname & protocol for your s
 remote_theme : vsoch/docsy-jekyll
 
 # Social (First three Required)
-repo: "https://github.com/vsoch/docsy-jekyll"
-github_user: "vsoch"
-github_repo: "docsy-jekyll"
+repo: "https://github.com/kevinsung123"
+github_user: "kyung hwan sung"
+github_repo: "kevinsung123.github.io"
 
 # Optional
 # twitter: vsoch

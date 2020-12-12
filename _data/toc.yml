@@ -1,9 +1,8 @@
 - title: Documentation
   url: docs
   links:
-    - title : "BigData"
-      url   : "docs/bigdataplatform"
-      children : 
-        - title : "RDMBS"
-          url   : "docs/bigdataplatform/RDMBS"
-        
+    - title: "BigData"
+      url: "docs/bigdataplatform"
+      children:
+        - title: "RDMBS"
+          url: "docs/bigdataplatform/RDMBS"
