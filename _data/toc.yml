@@ -1,15 +1,15 @@
 - title: Documentation
-  url: docs
+  url: docs/getting-started
   links:
     - title: "OS"
       url: "docs/os"
     - title: "CLI"
       url: "docs/cli"
     - title: "BigData"
-      url: "docs/bigdataplatform"
+      url: "docs/bigdata"
     - title: "GCP"
-      url : "docs/kubernetes"
+      url : "docs/gcp"
     - title: "K8s"
       url : "docs/kubernetes"
     - title: "Docker"
-      url : "docs/kubernetes"
+      url : "docs/docker"
