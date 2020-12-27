@@ -1,6 +1,10 @@
 - title: Documentation
   url: docs
   links:
+    - title: "OS"
+      url: "docs/os"
+    - title: "Commnad Line Tool"
+      url: "docs/cli"
     - title: "BigData"
       url: "docs/bigdataplatform"
     - title: "GCP"
