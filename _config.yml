@@ -14,25 +14,24 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: SKh Blog
-email: kevinsugn123@naver.com
+title: SKH Blog
+email: kevinsung123@naver.com
 author: Kyung Hwan Sung
-description: > # this means to ignore newlines until "base
+description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 
 # DO NOT CHANGE THE LINE OF THIS FILE without editing .circleci/circle_urls.sh
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/docsy-jekyll" # the subpath of your site, e.g. /blog
 
 # This is mostly for testing
-url: "https://kevinsung123.github.io/" # the base hostname & protocol for your site
-remote_theme : vsoch/docsy-jekyll
+url: "https://kevinsung123.github.io" # the base hostname & protocol for your site
 
 # Social (First three Required)
-repo: "https://github.com/kevinsung123"
-github_user: "kyung hwan sung"
-github_repo: "kevinsung123.github.io"
+repo: "https://github.com/kevinsung123/kevinsung123.github.io"
+github_user: "skh"
+github_repo: "kevinsung123"
 
 # Optional
 # twitter: vsoch
@@ -82,12 +81,14 @@ defaults:
       type: "docs"
     values:
       layout: page
-  - scope:
+  -
+    scope:
       path: ""
       type: "pages"
     values:
       layout: "page"
-  - scope:
+  -
+    scope:
       path: "posts"
       type: "posts"
     values:

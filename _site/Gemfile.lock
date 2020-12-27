@@ -249,7 +249,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  github-pages (~> 203)
+  github-pages
 
 RUBY VERSION
    ruby 2.6.6p146
