@@ -3,7 +3,7 @@
   links:
     - title: "OS"
       url: "docs/os"
-    - title: "Commnad Line Tool"
+    - title: "CLI"
       url: "docs/cli"
     - title: "BigData"
       url: "docs/bigdataplatform"
