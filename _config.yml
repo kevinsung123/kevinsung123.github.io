@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: DOCS of Data Engineering
+title: SKh Blog
 email: kevinsugn123@naver.com
 author: Kyung Hwan Sung
 description: > # this means to ignore newlines until "base
