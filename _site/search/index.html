@@ -1,616 +1,594 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-  <head>
+<html lang="en"><!--
+ __  __                __                                     __
+/\ \/\ \              /\ \             __                    /\ \
+\ \ \_\ \   __  __    \_\ \      __   /\_\      __       ___ \ \ \/'\
+ \ \  _  \ /\ \/\ \   /'_` \   /'__`\ \/\ \   /'__`\    /'___\\ \ , <
+  \ \ \ \ \\ \ \_\ \ /\ \L\ \ /\  __/  \ \ \ /\ \L\.\_ /\ \__/ \ \ \\`\
+   \ \_\ \_\\/`____ \\ \___,_\\ \____\ _\ \ \\ \__/.\_\\ \____\ \ \_\ \_\
+    \/_/\/_/ `/___/> \\/__,_ / \/____//\ \_\ \\/__/\/_/ \/____/  \/_/\/_/
+                /\___/                \ \____/
+                \/__/                  \/___/
+
+Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
+-->
+
+
+
+
+
+
+
+
+
+<head>
+  <!-- =============== -->
+<!-- META            -->
+<!-- =============== -->
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.55.6" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="naver-site-verification" content="22c5b4ef3bfda7fc6100671413989219de7a4ac8"/>
+<meta property="og:title" content="Search">
+<meta property="og:type" content="article">
 
-<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="/docs/index.xml">
 
-<link rel="shortcut icon" href="/assets/favicons/favicon.ico" >
-<link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon-180x180.png" sizes="180x180">
-<link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
-<link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/assets/favicons/android-36x36.png" sizes="36x36">
-<link rel="icon" type="image/png" href="/assets/favicons/android-48x48.png" sizes="48x48">
-<link rel="icon" type="image/png" href="/assets/favicons/android-72x72.png" sizes="72x72">
-<link rel="icon" type="image/png" href="/assets/favicons/android-96x196.png" sizes="96x196">
-<link rel="icon" type="image/png" href="/assets/favicons/android-144x144.png" sizes="144x144">
-<link rel="icon" type="image/png" href="/assets/favicons/android-192x192.png"sizes="192x192">
 
-<title>Search</title>
-<meta property="og:title" content="Search" />
-<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:4000" />
-<meta property="og:site_name" content="http://localhost:4000" />
 
-<meta itemprop="name" content="Search">
-<meta itemprop="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+  <meta property="og:image" content="http://localhost:4000/assets/img/bg-post.png">
+
+
+<meta property="og:image:width" content="640" />
+<meta property="og:image:height" content="360" />
+
+
+
+  <title>Search &middot; Data Enginner of SKH</title>
+
+
+
+<meta name="description" content="Search this site
+">
+<meta property="og:description" content="Search this site
 ">
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Search"/>
-<meta name="twitter:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-"/>
 
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="stylesheet" href="/assets/css/palette.css">
-<script
-  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-</head>
 
+<!-- tipuesearch -->
+<link rel="stylesheet" href="/assets/tipuesearch/css/tipuesearch.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>   
+<script src="/assets/tipuesearch/tipuesearch_content.js"></script>
+<script src="/assets/tipuesearch/tipuesearch_set.js"></script>
+<script src="/assets/tipuesearch/tipuesearch.min.js"></script>
+
+
+<!-- =============== -->
+<!-- LINKS           -->
+<!-- =============== -->
+<link rel="canonical" href="http://localhost:4000/search/">
+<meta property="og:url" content="http://localhost:4000/search/">
+
+<link rel="alternate" type="application/atom+xml" title="Data Enginner of SKH Feed" href="http://localhost:4000/feed.xml">
+
+
+
+
+
+<link rel="apple-touch-icon" href="http://localhost:4000/apple-touch-icon.png">
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+<!-- Place favicon.ico in the root directory -->
+
+<!-- =============== -->
+<!-- SCRIPTS         -->
+<!-- =============== -->
+<script>
+  !function(n,e){function t(n,e){n.onload=function(){this.onerror=this.onload=null,e(null,n)},n.onerror=function(){this.onerror=this.onload=null,e(new Error("Failed to load "+this.src),n)}}function o(n,e){n.onreadystatechange=function(){"complete"!=this.readyState&&"loaded"!=this.readyState||(this.onreadystatechange=null,e(null,n))}}n._loaded=!1,n.loadJSDeferred=function(a,d){function r(){n._loaded=!0;var r=e.createElement("script");r.src=a,d&&(("onload"in r?t:o)(r,d),r.onload||t(r,d));var l=e.getElementsByTagName("script")[0];l.parentNode.insertBefore(r,l)}n._loaded?r():n.addEventListener?n.addEventListener("load",r,!1):n.attachEvent?n.attachEvent("onload",r):n.onload=r}}(window,document);
+
+  !function(e){"use strict";var n=function(n,t,o){function i(e){if(a.body)return e();setTimeout(function(){i(e)})}function r(){l.addEventListener&&l.removeEventListener("load",r),l.media=o||"all"}var d,a=e.document,l=a.createElement("link");if(t)d=t;else{var f=(a.body||a.getElementsByTagName("head")[0]).childNodes;d=f[f.length-1]}var s=a.styleSheets;l.rel="stylesheet",l.href=n,l.media="only x",i(function(){d.parentNode.insertBefore(l,t?d:d.nextSibling)});var u=function(e){for(var n=l.href,t=s.length;t--;)if(s[t].href===n)return e();setTimeout(function(){u(e)})};return l.addEventListener&&l.addEventListener("load",r),l.onloadcssdefined=u,u(r),l};"undefined"!=typeof exports?exports.loadCSS=n:e.loadCSS=n}("undefined"!=typeof global?global:this);
+
+  !function(t){if(t.loadCSS){var e=loadCSS.relpreload={};if(e.support=function(){try{return t.document.createElement("link").relList.supports("preload")}catch(t){return!1}},e.poly=function(){for(var e=t.document.getElementsByTagName("link"),r=0;r<e.length;r++){var n=e[r];"preload"===n.rel&&"style"===n.getAttribute("as")&&(t.loadCSS(n.href,n,n.getAttribute("media")),n.rel=null)}},!e.support()){e.poly();var r=t.setInterval(e.poly,300);t.addEventListener&&t.addEventListener("load",function(){e.poly(),t.clearInterval(r)}),t.attachEvent&&t.attachEvent("onload",function(){t.clearInterval(r)})}}}(this);
+
+  window.disablePushState = false;
+  window.disableDrawer = false;
+</script>
+
+<!--[if lt IE 9]>
+<script src="https://unpkg.com/html5shiv/dist/html5shiv.min.js"></script>
+<![endif]-->
+
+<!-- =============== -->
+<!-- STYLES          -->
+<!-- =============== -->
+<!--[if gt IE 8]><!---->
+<style>
+  
+  article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}*{box-sizing:border-box}html,body{margin:0;padding:0}html{font-size:16px;line-height:1.75}body{color:#333;background-color:#fff;overflow-y:scroll}a{text-decoration:none}.lead{margin-left:-1rem;margin-right:-1rem}img,.img{display:block;max-width:100%;margin-bottom:1rem;border:none}img.lead,.img.lead{max-width:calc(100% + 2rem);width:calc(100% + 2rem)}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,.heading{font-weight:bold;text-rendering:optimizeLegibility}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{margin:1.6rem 0 1rem;line-height:1.6}h1,.h1{font-size:2rem;line-height:1.25}h2,.h2{font-size:1.5rem}h3,.h3{font-size:1.17em}p{margin-top:0;margin-bottom:1rem}p.lead{font-size:1.25rem;font-weight:300;padding:0 1rem}ul,ol,dl{margin-top:0;margin-bottom:1rem}ul,ol{padding-left:1.25rem}hr{position:relative;margin:1.5rem 0;border:0;border-top:1px solid #eee}.hr{padding-bottom:.5rem;border-bottom:1px solid #eee;margin-bottom:1.5rem}h4,h5,h6,.h4,.h5,.h6{margin-bottom:0.5rem;font-size:1rem}table{margin-bottom:1rem;width:100%;width:calc(100% + 2rem);margin-left:-1rem;border:1px solid #e5e5e5;border-collapse:collapse;border-spacing:0}td,th{padding:.25rem .5rem;border:1px solid #e5e5e5}td:first-child,th:first-child{padding-left:1rem}td:last-child,th:last-child{padding-right:1rem}thead+tbody,tbody+tbody,tfoot{border-top:3px double #e5e5e5}tbody tr:nth-child(odd) td,tbody tr:nth-child(odd) th{background-color:#f9f9f9}footer{margin-bottom:2rem}.page,.post{margin-bottom:3em}.page li+li,.post li+li{margin-top:.25rem}.page>header,.post>header{margin-bottom:2rem}.page-title,.post-title{margin-top:0}.post-date{display:block;margin-top:-0.5rem;margin-bottom:1rem;color:#9a9a9a}.related-posts{padding-left:0;list-style:none}.related-posts>li,.related-posts>li+li{margin-top:1rem}.related-posts>li>small,.related-posts>li+li>small{font-size:75%;color:#9a9a9a}.message{margin-bottom:1rem;padding:1rem;color:#787878;background-color:#f9f9f9;margin-left:-1rem;margin-right:-1rem}body,main{position:relative;overflow-x:hidden}@media screen{body::before{content:'';background:#e5e5e5;position:absolute;left:0;top:0;bottom:0}}@media screen and (min-width: 40em){html{font-size:17px}}@media screen and (min-width: 54em){html{font-size:16px}}@media screen and (min-width: 88em){html{font-size:17px}}@media screen and (min-width: 125em){html{font-size:18px}}.sr-only{display:none}.clearfix,.sidebar-social::after,.clearafter::after{content:"";display:table;clear:both}a,.a{position:relative;padding-bottom:.15rem;border-style:hidden}.img{overflow:hidden;background-color:#f9f9f9}.img>img{margin:0;width:100%;height:100%}.sixteen-nine{position:relative}.sixteen-nine::before{display:block;content:"";width:100%;padding-top:56.25%}.sixteen-nine>*{position:absolute;top:0;left:0;right:0;bottom:0}h1+hr,h2+hr,h3+hr,h4+hr,h5+hr,h6+hr{margin-top:0}.fade-in{animation-duration:500ms;animation-name:fade-in;animation-fill-mode:forwards}@keyframes fade-in{from{transform:translateY(-2rem);opacity:0}50%{transform:translateY(-2rem);opacity:0}to{transform:translateY(0);opacity:1}}.mb6{margin-bottom:10rem}.sidebar{color:rgba(255,255,255,0.75);text-align:left}.sidebar::before{content:"";position:absolute;z-index:2;top:0;left:0;bottom:0;right:0;background:linear-gradient(to bottom, rgba(32,32,32,0) 0%, rgba(32,32,32,0.5) 100%)}.sidebar a{color:#fff;border-bottom-color:rgba(255,255,255,0.2)}.right-side{width:100%;margin-left:auto;margin-right:auto}.right-side .ad-first{text-align:center}@media screen{.right-side{max-width:38rem;min-height:100vh}.right-side .ad-second{display:none}}@media screen and (min-width: 54em){.right-side{margin-left:20rem;margin-right:1rem;padding:4rem 1rem 12rem}.right-side .ad-second{text-align:center;display:block}}@media screen and (min-width: 72em){.right-side{margin-left:22rem;max-width:42rem}}@media screen and (min-width: 88em){.right-side{width:162px;margin-left:0rem;margin-right:0rem;padding:0rem;margin-top:10rem;display:block;float:left}}@media screen and (min-width: 96em){.right-side{width:300px;margin-right:0rem}}#_yDrawer{position:relative}@media screen{#_yDrawer{min-height:640px;min-height:100vh}}@media screen and (min-width: 54em){#_yDrawer{width:18rem;margin-left:0}}.sidebar-bg{position:absolute;height:100%;overflow:hidden;top:0;right:0;bottom:0;left:0;background:#202020 center / cover}.sidebar-box{display:flex;justify-content:center}.sidebar-sticky{position:relative;z-index:3}@media screen{.sidebar-sticky{-ms-overflow-style:none;overflow:-moz-scrollbars-none;height:100%;overflow:auto;position:absolute;padding:3rem 0rem;right:2.5rem;left:2.5rem}}.sidebar-sticky::-webkit-scrollbar{display:none}.sidebar-about>h1{color:#fff;font-size:2rem}.sidebar-nav>ul{list-style:none;padding-left:0;margin-bottom:.5rem}a.sidebar-nav-item{width:100%;font-weight:normal;display:block;line-height:1.75;padding:.25rem 0;border-bottom:1px solid rgba(255,255,255,0.2)}a.sidebar-nav-subitem{font-weight:normal;display:block;line-height:1.75;padding:.25rem 0;border-bottom:1px solid rgba(255,255,255,0.2)}@media screen{.y-drawer-scrim{z-index:2}.y-drawer-content{width:18rem;left:-18rem;z-index:3}}.sidebar-social{margin-bottom:.5rem}.sidebar-social>ul{list-style:none;padding-left:0;margin:0 -.25rem}.sidebar-social>ul>li{float:left}.sidebar-social>ul>li>a{display:inline-block;text-align:center;font-size:1.6rem;line-height:3rem;width:3.1249rem;height:4rem;padding:.5rem 0}.sidebar-social>ul li+li{margin-top:0}.fixed-top{position:fixed;top:0;left:0;width:100%;z-index:1}.navbar>.content{padding-top:0;padding-bottom:0;min-height:0;height:0}.menu{display:inline-block;padding:1.75rem 1.5rem;border-bottom:none;margin-left:-1.5rem;color:#9a9a9a !important}.menu::after{content:"\2630"}@media screen and (min-width: 54em){.menu{padding:1.25rem 1.5rem;position:absolute;left:-9999px}.menu:focus{position:static}}.animation-main{pointer-events:none}.loading{display:none}@media print{.menu{display:none}}.animation-main{opacity:0;will-change:opacity}.loading{position:absolute;top:0;right:0;padding:5.25rem 4.5rem;transform-origin:top right;transform:scale(0.33)}.content{position:relative;margin-left:auto;margin-right:auto;padding:5rem 1rem 12rem}@media screen{.content{min-height:100vh}}@media screen and (min-width: 54em){.content{padding:4rem 1rem 12rem;margin-left:19rem;margin-right:3rem}}@media screen and (min-width: 72em){.content{max-width:42rem;margin-left:21rem}}@media screen and (min-width: 88em){.content{float:left;width:100%;margin-left:22rem;margin-right:5rem}}@media screen and (min-width: 96em){.content{max-width:44rem}}@media screen and (min-width: 102em){.content{margin-left:25rem;margin-right:8rem}}.me{width:6.5rem;height:6.5rem;align-self:center;margin-right:20px;border-radius:100%;position:relative}@media screen and (min-width: 40em){.me{width:7rem;height:7rem}}@media screen and (min-width: 54em){.me{width:6.5rem;height:6.5rem}}@media screen and (min-width: 72em){.me{width:7rem;height:7rem}}main>footer{width:100%;position:absolute;bottom:0;left:0;right:0;padding:0 1rem;color:#9a9a9a;font-size:smaller;text-align:center}main>footer>p{margin-bottom:0}html{font-family:'Lato','-apple-system','Verdana','PingFang SC','Helvetica Neue','Arial','Hiragino Sans GB','Microsoft YaHei','WenQuanYi Micro Hei','sans-serif'}h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,.heading{font-family:'Lato','-apple-system','Verdana','PingFang SC','Helvetica Neue','Arial','Hiragino Sans GB','Microsoft YaHei','WenQuanYi Micro Hei','sans-serif'}
+
+</style>
+
+
+<link rel="preload" href="http://localhost:4000/assets/css/hydejack.css?v=6.4.0" as="style" onload="this.rel='stylesheet'">
+
+<style id="_pageStyle">
+
+.content a{color:#4f86aa;border-color:rgba(79,134,170,0.2)}.content a:hover{border-color:#4f86aa}:focus{outline-color:#4f86aa}::selection{color:#fff;background:#4f86aa}::-moz-selection{color:#fff;background:#4f86aa}
+
+</style>
+
+
+<noscript>
+  <link rel="stylesheet" href="http://localhost:4000/assets/css/hydejack.css?v=6.4.0">
+  
+  
   
 
-  <body class="td-section">
-    <header>
-        <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
-        <a class="navbar-brand" href="/">
-            <span class="navbar-logo"></span><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500"><g><path style="fill:#fff" d="M116.8525 421.9722c-5.7041.0-10.3442-4.3127-10.3442-9.6129V88.183c0-5.3002 4.6401-9.6117 10.3442-9.6117H320.858c3.0347.0 9.3959.5498 11.7506 2.6302l.3545.3442 58.905 63.2912c2.3101 2.491 2.9202 8.4928 2.9202 11.3184v256.2039c0 5.3002-4.6407 9.6129-10.3436 9.6129H116.8525z"/><g><g><g><path style="fill:#767676" d="M384.4445 423.2066H116.852c-6.3839.0-11.5786-4.8658-11.5786-10.8474V88.1831c0-5.9804 5.1947-10.8461 11.5786-10.8461h204.0062c.377.0 9.2786.0329 12.568 2.9389l.3947.3833 58.9508 63.337c3.2135 3.4652 3.2514 11.7924 3.2514 12.1593v256.2036C396.0231 418.3408 390.8284 423.2066 384.4445 423.2066zM116.5079 411.9189c.0848.0278.1999.0531.3441.0531h267.5925c.1442.0.2581-.0253.3441-.0531V156.1556c-.0076-.9033-.3593-3.7347-.7034-5.0037l-57.6527-61.9416c-1.4651-.3176-4.4533-.6389-5.5742-.6389H116.852c-.143.0-.2594.024-.3441.0531V411.9189zm267.4533-261.149v0 0zM327.0321 89.371v.0013V89.371z"/></g></g></g><g><g><path style="fill:#5b7fc0" d="M189.0874 210.1754l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.328-2.2733-15.458-6.4032s-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4473C177.5953 212.627 183.0601 210.1742 189.0874 210.1754zM197.0804 232.033c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 234.1722 197.0804 232.033z"/><path style="opacity:.3;fill:#fff" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zM197.0839 232.0372c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/><g><defs><path id="SVGID_1_" d="M194.7376 237.6875c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 234.2399 196.1861 236.239 194.7376 237.6875z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#fff" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/><path style="opacity:.13;clip-path:url(#SVGID_2_);fill:#020202" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/></g><g><defs><path id="SVGID_3_" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zM197.0839 232.0372c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_4_);fill:#5b7fc0" d="M172.6595 215.6045c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8475-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 209.1953 176.6171 211.647 172.6595 215.6045z"/></g></g><path style="fill:#5b7fc0" d="M198.8952 225.1043h122.6266v13.8671H198.8952z"/></g><g><path style="fill:#d95140" d="M189.0874 155.7611l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.328-2.2733-15.458-6.4032s-6.4032-9.6186-6.4056-15.4628c.0012-6.0249 2.454-11.4897 6.4116-15.4473C177.5953 158.2128 183.0601 155.7599 189.0874 155.7611zM197.0804 177.6188c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.2508 181.7667 197.0816 179.758 197.0804 177.6188z"/><path style="opacity:.3;fill:#fff" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zM197.0839 177.623c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/><g><defs><path id="SVGID_5_" d="M194.7376 183.2733c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 179.8256 196.1861 181.8248 194.7376 183.2733z"/></defs><clipPath id="SVGID_6_"><use xlink:href="#SVGID_5_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_6_);fill:#fff" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/><path style="opacity:.13;clip-path:url(#SVGID_6_);fill:#020202" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/></g><g><defs><path id="SVGID_7_" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zM197.0839 177.623c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/></defs><clipPath id="SVGID_8_"><use xlink:href="#SVGID_7_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_8_);fill:#d95140" d="M172.6595 161.1903c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 154.7811 176.6171 157.2327 172.6595 161.1903z"/></g><path style="fill:#d95140" d="M198.8952 170.69h122.6266v13.8671H198.8952z"/></g><g><g><path style="fill:#56a55c" d="M189.5379 264.6147l.0012-.0012c7.7751.0012 15.0294 4.1862 18.932 10.9235 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.3281-2.2733-15.458-6.4032-4.13-4.13-6.4032-9.6186-6.4056-15.4628.0012-6.0249 2.454-11.4897 6.4116-15.4472C178.0458 267.0663 183.5105 264.6135 189.5379 264.6147zM197.5309 286.4723c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6538 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.7013 290.6202 197.5321 288.6115 197.5309 286.4723z"/><path style="opacity:.3;fill:#fff" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zM197.5344 286.4765c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/><g><defs><path id="SVGID_9_" d="M195.1881 292.1268c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9941 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.5344 288.6792 196.6366 290.6783 195.1881 292.1268z"/></defs><clipPath id="SVGID_10_"><use xlink:href="#SVGID_9_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_10_);fill:#fff" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/><path style="opacity:.13;clip-path:url(#SVGID_10_);fill:#020202" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/></g><g><defs><path id="SVGID_11_" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zM197.5344 286.4765c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/></defs><clipPath id="SVGID_12_"><use xlink:href="#SVGID_11_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_12_);fill:#56a55c" d="M173.11 270.0439c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7325-11.1497-10.9151-18.926-10.9151C182.5311 263.6346 177.0676 266.0863 173.11 270.0439z"/></g></g><path style="fill:#56a55c" d="M199.3456 279.5436h122.6266v13.8671H199.3456z"/></g><g><g><path style="fill:#f1bc42" d="M189.0874 318.7208l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3305-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.328-2.2733-15.458-6.4032-4.13-4.1299-6.4032-9.6186-6.4056-15.4628.0012-6.025 2.454-11.4897 6.4116-15.4472C177.5953 321.1724 183.0601 318.7196 189.0874 318.7208zM197.0804 340.5784c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 342.7176 197.0804 340.5784z"/><path style="opacity:.3;fill:#fff" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zM197.0839 340.5826c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/><g><defs><path id="SVGID_13_" d="M194.7376 346.2329c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 342.7853 196.1861 344.7844 194.7376 346.2329z"/></defs><clipPath id="SVGID_14_"><use xlink:href="#SVGID_13_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_14_);fill:#fff" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/><path style="opacity:.13;clip-path:url(#SVGID_14_);fill:#020202" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/></g><g><defs><path id="SVGID_15_" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zM197.0839 340.5826c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/></defs><clipPath id="SVGID_16_"><use xlink:href="#SVGID_15_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_16_);fill:#f1bc42" d="M172.6595 324.15c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8474-1.0151-7.6327-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 317.7407 176.6171 320.1924 172.6595 324.15z"/></g></g><path style="fill:#f1bc42" d="M198.8952 333.6497h122.6266v13.8671H198.8952z"/></g></g></svg>
-<span class="text-uppercase font-weight-bold">SKH Blog</span>
-	</a>
-	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
-		<ul class="navbar-nav mt-2 mt-lg-0">
-			<li class="nav-item mr-4 mb-2 mb-lg-0">
-                            <a class="nav-link" href="https://github.com/kevinsung123/kevinsung123.github.io" target="_blank"><span>GitHub</span></a>
-			</li>
-			<li class="nav-item mr-4 mb-2 mb-lg-0">
-                            <a class="nav-link" href="/about" ><span>About</span></a>
-			</li>
-			<li class="nav-item mr-4 mb-2 mb-lg-0">
-                            <a class="nav-link" href="/docs" ><span>Documentation</span></a>
-			</li>
-		</ul>
-	</div>
-	<div class="navbar-nav d-none d-lg-block">
- <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
-        </div>
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <style>
+      html { font-family: 'Merriweather-Light','Lato','-apple-system','Verdana','PingFang SC','Helvetica Neue','Arial','Hiragino Sans GB','Microsoft YaHei','WenQuanYi Micro Hei','sans-serif' }
+      h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .heading { font-family: 'Merriweather-Light','Lato','-apple-system','Verdana','PingFang SC','Helvetica Neue','Arial','Hiragino Sans GB','Microsoft YaHei','WenQuanYi Micro Hei','sans-serif' }
+    </style>
+  
 
-	<div class="navbar-nav d-none d-lg-block">
-          <a class="gh-source" data-gh-source="github" href="https://github.com/kevinsung123/kevinsung123.github.io" title="Go to repository" data-md-state="done">
-          <div class="gh-source__repository">
-            <i class="fab fa fa-github fa-2x" style='padding-right:20px; float:left; margin-top:5px'></i>
-            skh/kevinsung123
-          <ul class="gh-source__facts"><li class="gh-source__fact" id='stars'></li><li id="forks" class="gh-source__fact"></li></ul></div></a>
-        </div>
-      </div>
+  
+  <link rel="stylesheet" href="http://localhost:4000/assets/icomoon/style.css">
+</noscript>
+<!--<![endif]-->
+
+</head>
+
+<body>
+  <!-- =============== -->
+<!-- MENU            -->
+<!-- =============== -->
+<div class="navbar fixed-top">
+  <div class="content">
+    <span class="sr-only">Jump to:</span>
+    <a id="_menu" class="menu no-hover" href="#_title">
+      <span class="sr-only">Menu</span>
+    </a>
+  </div>
+</div>
+
+<!-- =============== -->
+<!-- CONTENT         -->
+<!-- =============== -->
+<div id="_yPushState">
+  <div class="fade-in">
+    <main id="_main" class="content" role="main" data-color="#4f86aa" data-image="/assets/img/bg-post.jpg">
+      <article class="page" role="article">
+  <header style="margin-bottom:2rem">
+    <h1 class="page-title">Search</h1>
+    
+  
+  
+<p class="message">Search this site</p>
 
 
-</nav>
-</header>
+
+
+  </header>
+
+  <div id="tipue_search_content"></div>
 
 <script>
 $(document).ready(function() {
-  var url = "https://api.github.com/search/repositories?q=skh/kevinsung123";
-  fetch(url, { 
-      headers: {"Accept":"application/vnd.github.preview"}
-  }).then(function(e) {
-    return e.json()
-  }).then(function(r) {
-     console.log(r.items[0])
-     stars = r.items[0]['stargazers_count']
-     forks = r.items[0]['forks_count']
-     $('#stars').text(stars + " Stars")
-     $('#forks').text(forks + " Forks")
+  $('#tipue_search_input').tipuesearch({
+    'wholeWords' : false,
+    'showTime' : false,
+    'minimumLength' : 1
   });
 });
 </script>
 
-    <div class="container-fluid td-outer">
-      <div class="td-main">
-        <div class="row flex-xl-nowrap">
-          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
-          <div id="td-sidebar-menu" class="td-sidebar__inner">  
-  <form class="td-sidebar__search d-flex align-items-center">
- <input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
-    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    </button>
-  </form>  
-  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
-<ul class="td-sidebar-nav__section pr-md-3">
+
+
+</article>
+
+
+
+      
+
+      <footer>
+  <hr/>
   
+    <p>© 2020.12. by skh</p>
+
   
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Documentation</a>
-  </li><ul>
-    <li class="collapse show" id="documentation">
-        <ul class="td-sidebar-nav__section pr-md-3">
-          <li class="td-sidebar-nav__section-title">
-            <a href="/docs/getting-started" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Getting Started</a>
-          </li>
-          
-          <li class="td-sidebar-nav__section-title">
-            <a href="/docs/extras" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Extras</a>
-          </li>
-          
-          <li class="td-sidebar-nav__section-title">
-            <a href="/about" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">About</a>
-          </li>
-          
-          <li class="td-sidebar-nav__section-title">
-            <a href="/news" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">News</a>
-          </li>
-          
-          <li class="td-sidebar-nav__section-title">
-            <a href="/docker" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Docker</a>
-          </li>
-          
-          <li class="td-sidebar-nav__section-title">
-            <a href="/docs" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">DevOps</a>
-          </li>
-          
-          <li class="td-sidebar-nav__section-title">
-            <a href="/gcp" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">GCP</a>
-          </li>
-          
-    </ul>
-  </nav>
-</div>
-
-          </div>
-          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
-              <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-                  <a href="https://github.com/kevinsung123/kevinsung123.github.io/edit/master/pages/search.html" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/kevinsung123/kevinsung123.github.io/issues/new?labels=question&title=Question:&body=Question on: https://github.com/kevinsung123/kevinsung123.github.io/tree/master/pages/search.html" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
-<a href="https://github.com/kevinsung123/kevinsung123.github.io/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
-<!-- this will parse through the header fields and add a button to open
-     an issue / ask a question on Github. The editable field should be in
-     the post frontend matter, and refer to the label to open the issue for -->
-
-              </div>
-              <nav id="TableOfContents"><ul>
-              <li><ul id="TOC">
-                <!-- Links will be appended here-->
-              </ul></li>
-              </ul></nav>
-          </div>
-          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
-            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
-	      <ol class="breadcrumb spb-1">
-              
-              
-                <li class="breadcrumb-item active" aria-current="page">
-	          <a href="http://localhost:4000/search/">Search</a>
-                </li>
-                
-	      </ol>
-           </nav>
-           <div class="td-content">
-	      <input class="form-control td-search-input" type="search" name="q" id="search-input" placeholder="&#xf002 Search this site…"  style="margin-top:5px" autofocus>
-<i style="color:white; margin-right:8px; margin-left:5px" class="fa fa-search"></i>
-
-<p><span id="search-process">Loading</span> results <span id="search-query-container" style="display: none;">for "<strong id="search-query"></strong>"</span></p>
-
-<ul id="search-results"></ul>
-
-<script>
-	window.data = {
-		
-				
-					
-					
-					"docs-example-page": {
-						"id": "docs-example-page",
-						"title": "A Nested Page",
-						"categories": "",
-						"url": " /docs/example-page",
-						"content": "A Nested Page\n\nThis is an example of a page that doesn’t have a permalink defined, and\nis not included in the table of contents (_data/toc.yml). This means\nthat it will render based on it’s path. Since it’s in docs/example-page.md,\nthe url will be docs/example-page/.\n\nLink to a subfolder\n\nNow let’s say we want to link to a subfolder, specifically with this\nsetup:\n\ndocs/\n  example-page.md  (-- we are here\n  subfolder/\n     example-page.md  (-- we want to link here\n\n\nYou can provide the relative path to the file, like subfolder/example-page.md\nand Jekyll will handle parsing it. For example:\n\n\n  here is that link\n\n\nAnd here\n is the same link, \nbut generated with the include statement:\n\n{% include doc.html name=\"here\" path=\"subfolder/example-page\" %}"
-					}
-					
-				
-		
-				
-					,
-					
-					"docs-extras-example-quiz": {
-						"id": "docs-extras-example-quiz",
-						"title": "Quiz",
-						"categories": "",
-						"url": " /docs/extras/example-quiz",
-						"content": "Quizzes\n\nAs of version 0.0.12, mkdocs-jekyll has support for basic quizzes! These are\nintended to help educate your users about the content of your documentation.\nFor a quiz, you can add a new file to the folder _data/quizzes, and write a \nquestions file based on the format shown in _data/quizzes/example-quiz.yml.\nHere is a simple example of a multiple choice question (which can also serve as \nTrue/False):\n\ntitle: This is the Quiz Title\nrandomized: false\nquestions:\n\n - type: \"multiple-choice\"\n   question: \"True or False, Pittsburgh is West of Philadelphia\"\n   items:\n    - choice: True\n      correct: true\n    - choice: False\n      correct: false\n   followup: | \n      The answer is True! Pittsburgh is 304.9 miles West of \n      Philadelphia, or approximately a car ride of \n      4 hours and 52 minutes. Buckle up!\n\n\nThe quiz is rendered with a “Show Answer” button below each question, and when\nthe user clicks it, any questions that are flagged with correct: true will be \nbolded, and if a followup section is included, it will be displayed.\nSee the live example at the end of this page.\n\nOptions\n\nTitle\n\nIf you include a title, it will be rendered at the top of the quiz. This is\noptional - you can leave it out and add it before the include on the page.\n\nRandom\n\nIf you want your questions to be presented randomly, just add randomized: true\nto the data.\n\nExample Quiz\n\nIf I want to include the quiz located at _data/quizzes/example-quiz.yml, I \ncan do so like this:\n\n{% include quiz.html file='example-quiz' %}\n\n\nThe rendered quiz is shown here:\n\nThis is the Quiz Title\n\nWhat is your favorite color?\n1. Red2. Blue3. Green\n\nShow Answer\nThere is no correct answer to asking your favorite color! All choices would be good.\n\n\nTrue or False, Pittsburgh is West of Philadelphia\n1. true2. false\n\nShow Answer\nThe answer is True! Pittsburgh is 304.9 miles West of Philadelphia, or approximately \na car ride of 4 hours and 52 minutes. Buckle up!"
-					}
-					
-				
-		
-				
-					,
-					
-					"docs-extras-index": {
-						"id": "docs-extras-index",
-						"title": "Extras",
-						"categories": "",
-						"url": " /docs/extras/index",
-						"content": "Extras\n\nExtras include other integrations that aren’t relevant to style or customization,\nbut can further enhance your documentation pages. Currently, we have support\nfor adding interactive quizzes.\n\n\n  Quizzes\n\n\nWould you like to see another question type, or another kind of extra? Please\n[open an issue])(https://github.com/kevinsung123/kevinsung123.github.io/issues/new)."
-					}
-					
-				
-		
-				
-					,
-					
-					"docs-getting-started": {
-						"id": "docs-getting-started",
-						"title": "Getting Started",
-						"categories": "",
-						"url": " /docs/getting-started",
-						"content": "Getting Started\n\nFeatures\n\nUser Interaction\n\nOn the right side of any page, you’ll notice links to edit the page, or\nopen an issue. This ensures that any time you have a question or want to \nsuggest or request a change, you can do so immediately and link directly\nto the section of interest. The sections on the page also have permalinks so\nyou can link directly to them.\n\nSearch\n\nThe entire site, including posts and documentation, is indexed and then available\nfor search at the top or side of the page. Give it a try! The content is rendered\ninto window data that is used by lunr.js to generate the search results.\nIf you want to exclude any file from search, add this to its front end matter:\n\n---\nlayout: null\nexcluded_in_search: true\n---\n\n\nThe example above is for a javascript file in the assets folder that is used as a template,\nbut should not be included in search.\n\nExternal Search\n\nIf you have an external site with a search GET endpoint (meaning one that ends\nin ?q=&lt;term&gt;, then you can automatically link page tags to search this endpoint.\nFor example, on an HPC site I’d want a tag like “mpi” to do a search on \nhttp://ask.cyberinfrastructure.org for mpi.\nSee the tags section below for how to configure this.\n\nDocumentation\n\nDocumentation pages should be written in the docs folder of the repository,\nand you are allowed to use whatever level of nesting (subfolders) that \nworks for you! It’s a Jekyll collection, which means that you\ncan add other content (images, scripts) and it will be included for linking to.\n\nOrganization\n\nThe url that will render is based on the path. For example, if we had the following structure:\n\ndocs/\n  getting-started.md\n  clusters/\n     sherlock/\n         getting-started.md\n\n\nThe first page (akin to the one you are reading) would render at it’s path,\n/docs/getting-started/.\n\nLinking\n\nFrom that page, we could provide the\ndirect path in markdown to any subfolder to link to it, such as the second\ngetting started page for sherlock:\n\n[example](clusters/sherlock/getting-started.md)\n\n\nHere is an example link to a relative path of a file (example-page.md)\nin the same directory, and from that page you can test linking to a subfoldr.\nIn the case of not having a subfolder, we could write the link out directly:\n\n[example]({{ site.baseurl }}/docs/clusters/sherlock/getting-started.md)\n\n\nor just put the relative path:\n\n[Here](example-page)\n\n\nor better, there is a shortand trick! We can use the provided “includes” \ntemplate to do the same based on the path to create a link:\n\n{% include doc.html name=\"Sherlock Cluster\" path=\"clusters/sherlock/getting-started\" %}\n\nThe path should be relative to the docs folder.\n\nPages\n\nThe pages folder uses the same page layout, but is not part of the docs collection.\nThe two are provided to create a distinction between website pages (e.g., about,\nfeed.xml) and documentation pages.\n\nNavigation\n\nWhether you place your page under “pages” or “docs,” for those pages that you want added to the navigation, \nyou should add them to _data/toc.yml. If you’ve defined a permalink in the\nfront end matter, you can use that (e.g., “About” below). If you haven’t and\nwant to link to docs, the url is the path starting with the docs folder.\nHere is an example (currently the active example):\n\n- title: Documentation\n  url: docs\n  links:\n    - title: \"Getting Started\"\n      url: \"docs/getting-started\"\n      children:\n        - title: Features\n          url: \"docs/getting-started#getting-started\"\n        - title: Development\n          url: \"docs/getting-started#development\"\n        - title: Customization\n          url: \"docs/getting-started#customization\"\n    - title: \"Extras\"\n      url: \"docs/extras\"\n      children:\n        - title: Quizzes\n          url: \"docs/extras/example-quiz\"\n    - title: \"About\"\n      url: \"about\"\n    - title: \"News\"\n      url: \"news\n\n\nIf you want to add an external url for a parent or child, do this:\n\n  - title: GitHub Repository\n    external_url: https://www.github.com/vsoch/mkdocs-jekyll\n\n\nNews Posts\n\nIt might be the case that your site or group has news items that would\nwarrent sharing with the community, and should be available as a feed.\nFor this reason, you can write traditional posts in the _posts\nfolder that will parse into the site feed\nThe bottom of the page links the user to a post archive, where posts are organized\naccording to the year.\n\nButtons\n\nButtons come in a nice array of colors. Here is the code for a basic example,\nand you’d want to vary the .btn-&lt;tag&gt; to get different classes.\n\n&lt;button class=\"btn btn-success\"&gt;.btn-success&lt;/button&gt;\n\n\n.btn-success\n.btn-info\n.btn-secondary\n.btn-primary\n.btn-danger\n.btn-warning\n\nBadges\n\nFor news post items, it’s nice to be able to tag it with something that indicates\na status, such as “warning” or “alert.” For this reason, you can add badges to\nthe front end matter of any post page, and they will render colored by a type,\nwith the tag of your choice. For example, here is an example header for\na post:\n\n---\ntitle:  \"Two Thousand Nineteen\"\ndate:   2019-06-28 18:52:21\ncategories: jekyll update\nbadges:\n - type: warning\n   tag: warning-badge\n - type: danger\n   tag: danger-badge\n---\n\n\nAnd here is the post preview with the rendered badges that it produces:\n\nwarning-badge\ndanger-badge\n\nAnd the other badges that you can define include success, info, secondary,\nand primary.\n\nsuccess-badge\ninfo-badge\nsecondary-badge\nprimary-badge\n\nAlerts\n\n\nWhat is an alert?\nAn alert is a box that can stand out to indicate important information. You can choose from levels success, warning, danger, info, and primary. This example is an info box, and the code for another might look like this:\n\n\n{% include alert.html type=\"info\" title=\"Here is another!\" %}\n\n\nJust for fun, here are all the types:\n\n\nwarning\nThis is a warning\n\n\n\ndanger\nThis alerts danger!\n\n\n\nsuccess\nThis alerts success\n\n\n\ninfo\nThis is useful information.\n\n\n\nprimary\nThis is a primary alert\n\n\n\nsecondary\nThis is a secondary alert\n\n\nQuotes\n\nYou can include block quotes to emphasize text.\n\n\n  Here is an example. Isn’t this much more prominent to the user?\n\n\nDevelopment\n\nInitially (on OS X), you will need to setup Brew which is a package manager for OS X and Git. To install Brew and Git, run the following commands:\n\n/usr/bin/ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\"\nbrew install git\n\n\nIf you are on Debian/Ubuntu, then you can easily install git with apt-get\n\napt-get update &amp;&amp; apt-get install -y git\n\n\nInstall Jekyll\n\nYou can also install Jekyll with brew.\n\n$ brew install ruby\n$ gem install jekyll\n$ gem install bundler\n$ bundle install\n\n\nOn Ubuntu I do a different method:\n\ngit clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build\necho 'export PATH=\"$HOME/.rbenv/plugins/ruby-build/bin:$PATH\"' &gt;&gt; ~/.bashrc\nexec $SHELL\nrbenv install 2.3.1\nrbenv global 2.3.1\ngem install bundler\nrbenv rehash\nruby -v\n\n# Rails\ncurl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -\nsudo apt-get install -y nodejs\ngem install rails -v 4.2.6\nrbenv rehash\n\n# Jekyll\ngem install jekyll\ngem install github-pages\ngem install jekyll-sass-converter\n\nrbenv rehash\n\n\nGet the code\n\nYou should first fork the repository to your GitHub organization or username,\nand then clone it.\n\n$ git clone https://github.com/&lt;username&gt;/mkdocs-jekyll.git docs\n$ cd docs\n\n\nYou can clone the repository right to where you want to host the docs:\n\n$ git clone https://github.com/&lt;username&gt;/mkdocs-jekyll.git docs\n$ cd docs\n\n\nServe\n\nDepending on how you installed jekyll:\n\njekyll serve\n# or\nbundle exec jekyll serve\n\n\nPreview\n\nWe provide a CircleCI configuration recipe that you\ncan use to preview your site on CircleCI before merging into master. You\nshould follow the instructions to set up a project,\nand then in the project settings be sure to enable building forked build requests,\nand to cancel redundant builds. The preview will be built on CircleCI, and saved\nto static files for you to browse. The only change you will need is to edit\nthe static files location to be the name of your respository, which is at te\nbottom of the .circleci/config.yml file:\n\n      - store_artifacts:\n          path: ~/repo/_site\n          destination: mkdocs-jekyll\n\n\nIn the above, the destination should coincide with your repository name.\nRemember that for most links, CircleCI won’t honor an index.html file in a subfolder\n(e.g., subfolder/index.html will not be served as subfolder/, so for example,\nyou might need to turn this:\n\nhttps://&lt;circleci&gt;/0/mkdocs-jekyll/docs/getting-started/\n\ninto this:\n\nhttps://&lt;circleci&gt;/0/mkdocs-jekyll/docs/getting-started/index.html\n\n\nCustomization\n\nconfig.yml\n\nTo edit configuration values, customize the _config.yml.\nMost are documented there, and please open an issue if you have questions.\n\nAdding pages\n\nTo add pages, write them into the pages folder. \nYou define urls based on the permalink attribute in your pages,\nand then add them to the navigation by adding to the content of _data/toc.yml.\n\nTags\n\nIf you include tags on a page, by default they will link to the tags page on the site. However, if you define a tag_search_endpoint url in your configuration file, by clicking\nthe tag, the user will be taken to this page to search for it. As an example,\nwe define the current search endpoint to be Ask Cyberinfrastructure, and\npage tags link to a search on it:\n\ntag_search_endpoint: https://ask.cyberinfrastructure.org/search?q=\ntag_color: danger # danger, success, warning, primary, secondary, info\n\n\nNote that you can also choose a color! The tags appear at the top of the page,\nas they do on this page. The tags should be defined like this in the front end\nmatter:\n\ntags: \n - jekyll\n - github\n\n\nThey are appended to the first h1 block, so generally your pages should have a header.\nIf you comment out this variable, then each of your tags will link to it’s appropriate\nspot on the tags page linked above.\n\n#tag_search_endpoint: https://ask.cyberinfrastructure.org/search?q=\ntag_color: primary # danger, success, warning, primary, info, secondary"
-					}
-					
-				
-		
-				
-					,
-					
-					"docs-subfolder-example-page": {
-						"id": "docs-subfolder-example-page",
-						"title": "A Nested Page",
-						"categories": "",
-						"url": " /docs/subfolder/example-page",
-						"content": "A Nested Page\n\nThis is an example of a page that doesn’t have a permalink defined, and\nis not included in the table of contents (_data/toc.yml)."
-					}
-					
-				
-		
-		
-				
-					,
-					
-					"2020-docker-overveiw": {
-						"id": "2020-docker-overveiw",
-						"title": "Docker Overview",
-						"categories": "docker",
-						"url": " /2020/docker_overveiw/",
-						"content": "Docker Cocepts\n\n\n  Docker는 개발자 및 관리자를 위해 컨테이너와 함꼐 애플리케이션을 build, run and share하기 위한 platform\n  \n    application을 deploy하기 위해 컨테이너의 사용을 컨테이너화 containerization 이라고도 부름\n  \n  Containerization은 대중적이고 인기있게 사용\n    \n      Flexible(유연함)\n        \n          복잡한 애플리케이션을 컨테이너화containerized 가능\n        \n      \n      LightWeight (가벼움)\n        \n          Container는 host kernel을 사용하고 공유하므로 virtual machine보다 시스템리소스 사용 측면에서 더 효율적으로 사용\n        \n      \n      Portable(이식성높음)\n        \n          build locally, deploy to the cloud, and run anywhere\n        \n      \n      Loosely coupled\n        \n          Container은 higly self sufficient and encapsulated.  (다른것에 영향을 끼지치않음)\n        \n      \n      Scalabe(확장성)\n        \n          datacenter를 가로질러서 container를 증가시키고 자동으로 확장(분산)가능\n        \n      \n      Secure\n        \n          사용자의 어떠한 구성 필요없이 프로세스에 적극적인 제약과 격리를 적용\n        \n      \n    \n  \n\n\nImages and containers\n\n  기본적으로 container는 hosts와 다른 container로부터 격리 시키기 위한 어떤 encapsulation feature가 추가되고 적용된 실행 중 인 프로세스이다\n  컨테이너 격리의 가장 중요한 측면 중 하나는 각 container는 자체 개인의 파일시스템과 상호 작용하고, 이 파일시스템은 Docker image로 제공\n  이 image에는 애플리케이션 실행에 필요한 모든 것을 제공- code/binary/ runtimes/ dependencies/ 그리고 다른 어떤 파일시스템\n    Container and virtual machines\n    container\n  \n  Linux 기본적으로 실행하고 다른 containter들과 host machine kernel을 공유한다\n  별도의 프로세스를 실행\n  다른 실행 파일보다 더 많은 메모리를 사용하지 않으므로 가볍다\n\n\n\nVirtual machines\n\n  반면에 vm은 hypervisor를 통해 host 리소스에 가상으로 접근할수있는  철저히 guest os 에서 실행\n  일반적으로 VM은 애플리케이션 로직에서 소비하는 것보다 더많은 오버헤드를 일으킴\n  \n\n\n\nDocker Engine\n\n  Docker Engine은 client-server application\n    \n      server는 daemon 프로세스라고불르는 long-running 프로그램의 종류이다\n      프로그램과 특정한 인터페이스를 하는 REST API를 통해 daemon과 통신하고 지시를 구성\n      CLI 클리이언트를 통해 통신\n      \n      \n        CLI는 Docker REST API를 통해 Docker daemon과 통신 및 제어를 한다\n        Docker Architecture\n      \n    \n  \n  Docker는 client-server 아키텍처 사용\n  Docker client는 Docker daemon에게 얘기함\n    \n      building\n      running\n      distributing\n    \n  \n  Docker client와 Docker daemon같은 시스템에서 작동\n  Docker client를 통해 remote Docker daemon에게 통신연결\n  Docker client 및 daemon은 REST API를 통해 서로 통신 UNIX sockets 그리고 network interface를 통해서\n  \n    The Docker daemon\n  \n  docker daemon dockerd 는 Docker API 요청을 듣고 Docker object를 관리 (image, containters, network, volumes)\n    The Docker Client\n    -docker는 많은 Docker user들이 Docker와 통신하는 주요 방법\n  \n  docker run과 같은 명령어를 사용시, client는 명령어를 dockerd에게 보내고 그것을 실행\n  docker는 Docker API를 사용\n    Docker registries\n  \n  Docker registiy 는 Docker 이미지를 저장\n  Docker Hub는 pulbic registry 이다 (누구나 사용가능)\n    SERVICES\n  \n  service는 multiple Docker daemon들에게 container를 확장가능\n    NAMESPACES\n  \n  namespace라고 불리는 기술을 사용\n  격리된 workspace cotainer라고 불리는 장소를 제공\n  container를 실행시, Docker는 container를 위한 namespace를 생성\n  이 namespace들은 격리된 계층을 제공\n  각각의 container는 분리된 namespace를 실행 그리고 그것의 접근은 namespace에 한정\n  Docker Engine은 다음의 namespace 를 사용\n    \n      pid namespaces : Process isolation (PID: process ID)\n      netnamespaces : Managing network interfaces(NET: networking)\n      ipcnamespaces: Managing access to IPC 리소스 (IPC : InterProcess Communication)\n      mnt namespaces :  Managin filesystem mount points : (MNT: mount)\n      uts namespaces : Isolatiing kernel and version identifies (UTS : Unix Timeshraring System)\n        Control Groups\n      \n    \n  \n  control groups(cgroups)f라고 불리는 기술을 Docker Engine이 사용\n  특정 리소스들의 집합의 애플리케이션으로 제한\n  cgroup를 제어하는것을 통해 Docker Engine은 hardware 리소스를 공유 제한 및 제약을 강제로 적용\n    \n      ex) 특정 container에 메모리를 한정\n        Union file systems\n      \n    \n  \n  layer를 생성함으로써 Union File systtem UnionFS를 제공\n  ligthweight 그리고 fast\n  Docker Engine은 UnionFS를 사용하여 container를 위한 block를 제공\n  Docker Engine은 multiple UnionFS variants(AUFS, btrfs,vfs, DeviceMapper를 사용)\n    Container Format\n  \n  Docker engine은 namespace, cgroups, UnionFS를 wrapper하여 container format을 사용\n  기본 container format은 libcontainer라고 부름"
-					}
-					
-				
-		
-				
-					,
-					
-					"2020-docker-introduction": {
-						"id": "2020-docker-introduction",
-						"title": "Docker Introduction",
-						"categories": "docker",
-						"url": " /2020/docker_introduction/",
-						"content": "1. 컨테이너 기술의 개요\nDocker란?\n\n  컨테이너 기술을 사용하여 애플리케이션의 실행 환경을 구축 및 운용하기 위한 플랫폼\n  애플리케이션의 실행에 필요로한 것을 하나로 모아 Docker이미지를 관리함으로써 이식성을 높임\n \n    1-1. 컨테이너란 ?\n  \n  Host OS상에 논리적인 구획(컨테이너)을 만들고, 애플리케이션을 작동시키기 위해 필요한 라이브러리나 애플리케이션을 하나로 모아, 마치 별도의 서버처럼 제공\n  Host OS의 리소스를 논리적으로 분산, 여러개의 컨테이너가 공유\n  오버헤드가 적고 가볍다\n  애플리케이션의 실행환경을 모음으로써, 이식성을 높이고 portable, 확장성이 좋은 환경 지향\n※ 오버헤드 : 가상화를 수행하기 위해 필요한 CPU,Memory,Disk등 사용량\n※ 서버가상화 기술\n    \n      호스트형 서버 가상화\n        \n          oracle의 VM VirtualBox,\n          VMware의 VMware Workstation Player\n        \n      \n      하이퍼바지어형 서버 가상화\n        \n          Host OS없이 HW를 직접제어 자원을 효율적 이용\n          단, 가상환경마다 별도의 OS가 작동하므로 가상환경 시작에 걸리는 오버헤드 단점\n          Microsoft Windows Server의 Hyper-V\n          Citrix의 XenServer\n        \n      \n    \n  \n\n\n\n\n2. 컨테이너의 역사\n\n\n  FressBSD Jail\n    \n      오픈소스인 UNIX의 FreeBSD의기술\n \t-  2000년에 FreeBSD 4.0에서 도입\n      특징\n        \n          프로세스 구획화\n          네트워크 구획화 \t\t\t\n     3. 파일시스템 구획화\n        \n      \n    \n  \n\n\n \t- Solaris Container\n\t - Oracle의 상용 UNIX인 Solaris에서 사용하는 컨테이너 기술\n\t - 2005년에 release된 Solaris10에 추가된 기능\n\t- 특징\n\t\t1. Solaris 존 : 하나의 OS공간을 가상적으로 분할하여 여러OS가 작동하는것처럼 SW 파티셔닝기술\n\t\t2. Solaris 리소스매니저\n - Linux Container(LXC)\n\t  - Linux상에서 사용하는 컨테이너 환경을 LXC\n\t  - Linux커널의 컨테이너 기능을 이용하기 위한 툴이나 API제공\n\t  - **namespace와 cgroups**라는 리소스 관리 장치를 사용하여 분리된 환경 제공 \n\t  - 특정 디렉토리를 루트 디렉토리로 변경하는 chroot를 사용하여 분리환경 만듬\n\t  - Docker이전버전에서는 LXC사용, 현재버전은 미사용\n\n\n참고\n\n  CNCF(Cloud Native Computing Foundation)\n    \n      클라우드 네이티브 컴퓨팅을 추진하는 조기\n      2016년 Linux Foundation으로부터 정식 발족\n      컨테이너 오케스트레이션 툴인 kubernetes\n      모니터링을 하는 Prometheus\n      로그수집하는 Fluetnd\n      컨테이너 런타임인 container 및 rkt\n      서비스 디스크버리인 CoreDNS\n      RPC프레임워크인 gRPC\n      위를 포함하는 16개 프로젝트를 관리\n      성숙도\n        \n          Inception\n          Incubating\n          Graduated\n        \n      \n      Docker는 물론 Google, Mircrosoft, Amazon 등과 같은 주요 퍼블릭 클라우드 업체를 플래티넘 넘버로\n      Red Hat, VMWare, IBM, Intel등 많은 기업이 참ㅇ여\n      http://www.cncf.io\n        3.  Docker 개요\n        \n        1. Docker?\n      \n    \n  \n  애플리케이션의 실행에 필요한 환경을 하나의 이미졸 모아두고, 그 이미지를 사용하여 다양한 환경에서\n  애플리케이션 실행환경을 구축 및 운용하기 위한 오픈소스 플랫폼\n  내부에서 컨테이너기술을 사용\n  Docker공식사이트\n    2. 프로그래머에게 Docker란?\n  \n  웹시스템 개발 애플리케이션을 제품환경에서 가동시키기 위해서\n    \n      애플리케이션 실행모듈(프로그램 본체)\n      미들웨어나 라이브러리\n      OS/네트워크 인프라 환경설정\n    \n  \n  waterfall모델로 개발시 개발 및 테스트 환경에서 올바르게 작동해도 Staging, production환경에서 정상적으로 작동하지 않는 경우도 있음\n    \n      Docker에서는 이러한 인프라 환경을 컨테이너로 관리\n      애플리케이션에 실행에 필요한 모든 파일 및 디렉토리들을 컨테이너로 모음\n      이러한 컨테이너의 바탕이 되는 Docker이미지를 Docker Hub와 같은 Repository에 공유\n      프로그래머는 Docker를 사용하여 개발한 애플리케이션의 실행에 필요한 모든것이 포함되어 있는 이미지를 배포\n      애플리케이션 개발부터 테스트, production환경에 대한 전개를 모두 애플리케이션 엔지니어가 수행 하는 것 이 가능\n      지속적인 CI/CD가 가능하고 변화에 강한 시스템 구축 가능\n          ※ 애플리케이션이식성 \n  한번 만들면 어디서든지 작동하는 SW의 특성을 이식성(portability)이라고 한다\n  Docker는 이식성이 높기 때문에 클라우드 시스템과의 친화력이 높음\n  개발한 업무 애플리케이션을 On-premise환경-&gt; Cloud 및 Cloud-&gt;On-premise환경에서 쉽게 가능\n  클라우드 Iaas서비스는 시스템이 사용한 리소스(CPU,GPU,메모리,Disk)용량에 따라 요금측정\n        \n        4. Docker기능\n        \n        다음과 같은 기능 3가지\n      \n    \n  \n  Docker 이미지를 만드는 기능(Build)\n  Docker 이미지를 공유하는 기능(Ship)\n  Docker 컨테이너를 작동시키는 기능(Run)\n    1. Docker이미지를 만드는 기능(Build)\n  \n  프로그램본체, 라이브러리, 미들웨어, OS/네트워크 설정등을 하나모로 모아서 Docker 이미지생성\n  컨테이너의 바탕이 바로 이미지\n  Docker에서는 하나의 이미지에는 하나의 애플리케이션만 넣어 두고, 여러 개의 컨테이너를 조합하여 서비스를 구축!\n  Docker 이미지의 정체는 애플리케이션에 실행에 필요한 파일들이 저장된 디렉토리\n  Docker 명령을 사용하면 이미지를 tar파일로 출력가능\n  Docker이미지 만드는방법\n    \n      Docker 명령을 사용하여 수동 생성\n      Dockerfile이라는 설정파일을 만들어 그것을 바탕으로 자동으로 이미지 생성가능 ( 더 바람직)\n    \n  \n  Docker이미지는 겹처서 사용 가능\n    2. Docker이미지를 공유하는 기능(Ship)\n  \n  Docker이미지는 Docker레지스트리에 공유 가능\n  Docker허브에서 Ubuntu나 Centos와 같은 Linux 배포판 기본기능을 제공하는 베이스이미지 배포\n  기본 베이스 이미지에 미들웨어나 라이브러리 전개 할 애플리케이션 등을 넣은 이미지를 겹처서 독자적인 Docker 이미지로 구축 가능\n  Automated Build : Docker Hub는 GItHub나 Bitbucket과 연계가능\n    \n      Github상에서 Dockerfile을 관리하고, 거기서 Docker이미지를 자동으로 생성하여 Docker Hub공유 가능\n    \n  \n  Docker Container Trust\n    \n      Docker이미지의 제공자를 검증할 수 있는 기능\n      Docker 레지스트리에 이미지를 송신하기 전에 로컬환경에서 비밀키를 사용하여 이미지에 서명\n      그 이후, 이미지를 이용할때는 이미지 제공자의 공개키를 사용하여 실행하려고 하는 이미지가 정말 제공자가 작성한 것 인지를 확인\n      Docker Security Scanning\n        \n          Docker이미지를 검사하여 이미 알려진 보안상의 취약성이 없다는 것을 확인\n            3. Docker컨테이너를 작동시키는 기능(Run)\n          \n        \n      \n    \n  \n  Docker이미지를 가지고 여러개의 컨테이너 기동 가능\n  컨테이너 기동, 정지, 파기는 Docker명령을 사용\n  이미 움직이고 있는 OS상에서 프로세스를 실행시키는 것과 유사 (속도 빠름)\n  하나의 Linux 커널을 여러개의 컨테이너에서 공유\n  컨테이너 안에서 작동하는 프로세스를 하나의 그룹으로 관리\n  각 그룹마다 각각 파일 시스템/ 호스트명/ 네트워크등을 할당\n  그룹이 다르면 프로세스나 파일에 대한 액세스 불가능\n  이러한 구조를 사용하여 컨테이너를 독립된 공간으로서 관리\n  Linux커널기능(namespace, cgroups)기술이 사용\n  Production환경에서는 모든 Docker 컨테이너를 한대의 호스트 머신에서 작동시키는일은 드뭄\n  시스템의 트랙픽 증감이나 가용성 요건, 신뢰도 요건등을 고려한 후에 여러 대의 호스트 머신으로 된 분산환경을 구축\n  보통 컨테이너 관리에 대해서는 오케스트레이션 툴을 이용!!\n    5. Docker 컴포넌트\n    \n  \n  Docker Engine(핵심)\n    \n      Docke 이미지를 생성하고 컨테이너를 기동시키기 위한 Docker의 핵심기능. Docker명령 실행이나 Dockerfile에의한 이미지 생성\n    \n  \n  Docker Registry(이미지 공개 및 공유)\n    \n      Docker이미지를 공개 및 공유하기 위한 레지스트리 기능\n    \n  \n  Docker Compose(컨테이너 일원관리)\n    \n      여러개의 컨테이너 구성정보를 코드로 정의하고, 명령을 실행함으로써 애플리케이션 실행 환경을 구성하는 컨테이너들을 일원 관리하기 위한 툴\n    \n  \n  Docker Machine(Docker 실행환경 구축)\n    \n      로컬 호스트용인 Virtual Box, AWS EC2나 MS의 Azure와 같은 클라우드 환경에서 Docker 실행환경을 명령으로 자동 생성하기 위하 툴"
-					}
-					
-				
-		
-				
-					,
-					
-					"2019-hello-world": {
-						"id": "2019-hello-world",
-						"title": "Two Thousand Nineteen",
-						"categories": "jekyll, update",
-						"url": " /2019/hello-world/",
-						"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-					}
-					
-				
-		
-				
-					,
-					
-					"2019-welcome": {
-						"id": "2019-welcome",
-						"title": "Welcome to MkDocs Jekyll",
-						"categories": "jekyll, update",
-						"url": " /2019/welcome/",
-						"content": "You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.\n\n\n\nTo add new posts, simply add a file in the _posts directory that follows the convention YYYY-MM-DD-name-of-post.ext and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.\n\nJekyll also offers powerful support for code snippets:\n\ndef print_hi(name)\n  puts \"Hi, #{name}\"\nend\nprint_hi('Tom')\n#=&gt; prints 'Hi, Tom' to STDOUT.\n\nCheck out the Jekyll docs for more info on how to get the most out of Jekyll. File all bugs/feature requests at Jekyll’s GitHub repo. If you have questions, you can ask them on Jekyll Talk."
-					}
-					
-				
-		
-		
-				
-					,
-					
-					"about": {
-						"id": "about",
-						"title": "About",
-						"categories": "",
-						"url": " /about/",
-						"content": "About\n\nThis is a starter template for a Docsy jekyll theme, based\non the Beautiful Docsy that renders with Hugo. This version is intended for\nnative deployment on GitHub pages. See the respository for more details.\n\nSupport\n\nIf you need help, please don’t hesitate to open an issue."
-					}
-					
-				
-		
-				
-					,
-					
-					"archive": {
-						"id": "archive",
-						"title": "Articles",
-						"categories": "",
-						"url": " /archive/",
-						"content": "News Archive\n\n2020\n\n\n  Dec 28, 2020: Docker Overview\n  \n\n\n\n  Dec 28, 2020: Docker Introduction\n  \n\n2019\n\n\n\n\n  Jun 29, 2019: Two Thousand Nineteen\n  \n\n\n\n  Jun 28, 2019: Welcome to MkDocs Jekyll"
-					}
-					
-				
-		
-				
-					,
-					
-					"docker": {
-						"id": "docker",
-						"title": "Docker",
-						"categories": "",
-						"url": " /docker",
-						"content": "Docker\n\n\n   Docker Overview\n   December 28, 2020\n   dockeroverviewconcept\n   \n      read more\n   \n   \n\n\n\n   Docker Introduction\n   December 28, 2020\n   dockerintroductionconcept\n   \n      read more"
-					}
-					
-				
-		
-				
-					,
-					
-					"docs": {
-						"id": "docs",
-						"title": "Documentation",
-						"categories": "",
-						"url": " /docs/",
-						"content": "Documentation\n\nWelcome to the SKH Blog Documentation pages! Here you can quickly jump to a \nparticular page.\n\n\n    \n            \n    \n    A Nested Page\n    An example of a nested page\n            \n    \n    Quiz\n    How to add interactive quizzes to your site.\n            \n    \n    Extras\n    Extras, including quizzes.\n            \n    \n    Getting Started\n    Getting started with Docsy Jekyll\n            \n    \n    A Nested Page\n    An example of a a nested page in a subfolder."
-					}
-					
-				
-		
-				
-					,
-					
-					"feed-xml": {
-						"id": "feed-xml",
-						"title": "",
-						"categories": "",
-						"url": " /feed.xml",
-						"content": "SKH Blog\n    Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.\n\n    http://localhost:4000/\n    \n    Mon, 28 Dec 2020 04:45:06 +0900\n    Mon, 28 Dec 2020 04:45:06 +0900\n    Jekyll v3.8.5\n    \n      \n        Docker Overview\n        &lt;!--more--&gt;\n&lt;h3 id=&quot;docker-cocepts&quot;&gt;Docker Cocepts&lt;/h3&gt;\n\n&lt;ul&gt;\n  &lt;li&gt;Docker는 개발자 및 관리자를 위해 컨테이너와 함꼐 애플리케이션을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build, run and share&lt;/code&gt;하기 위한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;platform&lt;/code&gt;&lt;/li&gt;\n  &lt;li&gt;\n    &lt;p&gt;application을 deploy하기 위해 컨테이너의 사용을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;컨테이너화 containerization&lt;/code&gt; 이라고도 부름&lt;/p&gt;\n  &lt;/li&gt;\n  &lt;li&gt;Containerization은 대중적이고 인기있게 사용\n    &lt;ul&gt;\n      &lt;li&gt;Flexible(유연함)\n        &lt;ul&gt;\n          &lt;li&gt;복잡한 애플리케이션을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;컨테이너화containerized&lt;/code&gt; 가능&lt;/li&gt;\n        &lt;/ul&gt;\n      &lt;/li&gt;\n      &lt;li&gt;LightWeight (가벼움)\n        &lt;ul&gt;\n          &lt;li&gt;Container는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;host kernel을 사용하고 공유&lt;/code&gt;하므로 virtual machine보다 시스템리소스 사용 측면에서 더 효율적으로 사용&lt;/li&gt;\n        &lt;/ul&gt;\n      &lt;/li&gt;\n      &lt;li&gt;Portable(이식성높음)\n        &lt;ul&gt;\n          &lt;li&gt;build locally, deploy to the cloud, and run anywhere&lt;/li&gt;\n        &lt;/ul&gt;\n      &lt;/li&gt;\n      &lt;li&gt;Loosely coupled\n        &lt;ul&gt;\n          &lt;li&gt;Container은 higly self sufficient and encapsulated.  (다른것에 영향을 끼지치않음)&lt;/li&gt;\n        &lt;/ul&gt;\n      &lt;/li&gt;\n      &lt;li&gt;Scalabe(확장성)\n        &lt;ul&gt;\n          &lt;li&gt;datacenter를 가로질러서 container를 증가시키고 자동으로 확장(분산)가능&lt;/li&gt;\n        &lt;/ul&gt;\n      &lt;/li&gt;\n      &lt;li&gt;Secure\n        &lt;ul&gt;\n          &lt;li&gt;사용자의 어떠한 구성 필요없이 프로세스에 적극적인 제약과 격리를 적용&lt;/li&gt;\n        &lt;/ul&gt;\n      &lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;h3 id=&quot;images-and-containers&quot;&gt;Images and containers&lt;/h3&gt;\n&lt;ul&gt;\n  &lt;li&gt;기본적으로 container는 hosts와 다른 container로부터 격리 시키기 위한 어떤 encapsulation feature가 추가되고 적용된 실행 중 인 프로세스이다&lt;/li&gt;\n  &lt;li&gt;컨테이너 격리의 가장 중요한 측면 중 하나는 각 container는 자체 개인의 파일시스템과 상호 작용하고, 이 파일시스템은 Docker image로 제공&lt;/li&gt;\n  &lt;li&gt;이 image에는 애플리케이션 실행에 필요한 모든 것을 제공- code/binary/ runtimes/ dependencies/ 그리고 다른 어떤 파일시스템\n    &lt;h3 id=&quot;container-and-virtual-machines&quot;&gt;Container and virtual machines&lt;/h3&gt;\n    &lt;h4 id=&quot;container&quot;&gt;container&lt;/h4&gt;\n  &lt;/li&gt;\n  &lt;li&gt;Linux 기본적으로 실행하고 다른 containter들과 host machine kernel을 공유한다&lt;/li&gt;\n  &lt;li&gt;별도의 프로세스를 실행&lt;/li&gt;\n  &lt;li&gt;다른 실행 파일보다 더 많은 메모리를 사용하지 않으므로 가볍다\n&lt;img src=&quot;https://docs.docker.com/images/Container@2x.png&quot; alt=&quot;enter image description here&quot; /&gt;&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;h4 id=&quot;virtual-machines&quot;&gt;Virtual machines&lt;/h4&gt;\n&lt;ul&gt;\n  &lt;li&gt;반면에 vm은 hypervisor를 통해 host 리소스에 가상으로 접근할수있는  철저히 guest os 에서 실행&lt;/li&gt;\n  &lt;li&gt;일반적으로 VM은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;애플리케이션 로직에서 소비하는 것보다 더많은 오버헤드를 일으킴&lt;/code&gt;&lt;/li&gt;\n  &lt;li&gt;&lt;img src=&quot;https://docs.docker.com/images/VM@2x.png&quot; alt=&quot;enter image description here&quot; /&gt;&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;hr /&gt;\n&lt;h3 id=&quot;docker-engine&quot;&gt;Docker Engine&lt;/h3&gt;\n&lt;ul&gt;\n  &lt;li&gt;Docker Engine은 client-server application\n    &lt;ul&gt;\n      &lt;li&gt;server는 daemon 프로세스라고불르는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;long-running&lt;/code&gt; 프로그램의 종류이다&lt;/li&gt;\n      &lt;li&gt;프로그램과 특정한 인터페이스를 하는 REST API를 통해 daemon과 통신하고 지시를 구성&lt;/li&gt;\n      &lt;li&gt;CLI 클리이언트를 통해 통신&lt;/li&gt;\n      &lt;li&gt;&lt;img src=&quot;https://docs.docker.com/engine/images/engine-components-flow.png&quot; alt=&quot;enter image description here&quot; /&gt;&lt;/li&gt;\n      &lt;li&gt;\n        &lt;h2 id=&quot;cli는-docker-rest-api를-통해-docker-daemon과-통신-및-제어를-한다&quot;&gt;CLI는 Docker REST API를 통해 Docker daemon과 통신 및 제어를 한다&lt;/h2&gt;\n        &lt;h3 id=&quot;docker-architecture&quot;&gt;Docker Architecture&lt;/h3&gt;\n      &lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;/li&gt;\n  &lt;li&gt;Docker는 client-server 아키텍처 사용&lt;/li&gt;\n  &lt;li&gt;Docker client는 Docker daemon에게 얘기함\n    &lt;ul&gt;\n      &lt;li&gt;building&lt;/li&gt;\n      &lt;li&gt;running&lt;/li&gt;\n      &lt;li&gt;distributing&lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;/li&gt;\n  &lt;li&gt;Docker client와 Docker daemon같은 시스템에서 작동&lt;/li&gt;\n  &lt;li&gt;Docker client를 통해 remote Docker daemon에게 통신연결&lt;/li&gt;\n  &lt;li&gt;Docker client 및 daemon은 REST API를 통해 서로 통신 UNIX sockets 그리고 network interface를 통해서&lt;/li&gt;\n  &lt;li&gt;&lt;img src=&quot;https://docs.docker.com/engine/images/architecture.svg&quot; alt=&quot;enter image description here&quot; /&gt;\n    &lt;h3 id=&quot;the-docker-daemon&quot;&gt;The Docker daemon&lt;/h3&gt;\n  &lt;/li&gt;\n  &lt;li&gt;docker daemon &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dockerd&lt;/code&gt; 는 Docker API 요청을 듣고 Docker object를 관리 (image, containters, network, volumes)\n    &lt;h3 id=&quot;the-docker-client&quot;&gt;The Docker Client&lt;/h3&gt;\n    &lt;p&gt;-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker&lt;/code&gt;는 많은 Docker user들이 Docker와 통신하는 주요 방법&lt;/p&gt;\n  &lt;/li&gt;\n  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker run&lt;/code&gt;과 같은 명령어를 사용시, client는 명령어를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dockerd&lt;/code&gt;에게 보내고 그것을 실행&lt;/li&gt;\n  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker&lt;/code&gt;는 Docker API를 사용\n    &lt;h3 id=&quot;docker-registries&quot;&gt;Docker registries&lt;/h3&gt;\n  &lt;/li&gt;\n  &lt;li&gt;Docker registiy 는 Docker 이미지를 저장&lt;/li&gt;\n  &lt;li&gt;Docker Hub는 pulbic registry 이다 (누구나 사용가능)\n    &lt;h3 id=&quot;services&quot;&gt;SERVICES&lt;/h3&gt;\n  &lt;/li&gt;\n  &lt;li&gt;service는 multiple Docker daemon들에게 container를 확장가능\n    &lt;h4 id=&quot;namespaces&quot;&gt;NAMESPACES&lt;/h4&gt;\n  &lt;/li&gt;\n  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;namespace&lt;/code&gt;라고 불리는 기술을 사용&lt;/li&gt;\n  &lt;li&gt;격리된 workspace &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cotainer&lt;/code&gt;라고 불리는 장소를 제공&lt;/li&gt;\n  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;container&lt;/code&gt;를 실행시, Docker는 container를 위한 namespace를 생성&lt;/li&gt;\n  &lt;li&gt;이 namespace들은 격리된 계층을 제공&lt;/li&gt;\n  &lt;li&gt;각각의 container는 분리된 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;namespace&lt;/code&gt;를 실행 그리고 그것의 접근은 namespace에 한정&lt;/li&gt;\n  &lt;li&gt;Docker Engine은 다음의 namespace 를 사용\n    &lt;ul&gt;\n      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pid&lt;/code&gt; namespaces : Process isolation (PID: process ID)&lt;/li&gt;\n      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;net&lt;/code&gt;namespaces : Managing network interfaces(NET: networking)&lt;/li&gt;\n      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ipc&lt;/code&gt;namespaces: Managing access to IPC 리소스 (IPC : InterProcess Communication)&lt;/li&gt;\n      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mnt&lt;/code&gt; namespaces :  Managin filesystem mount points : (MNT: mount)&lt;/li&gt;\n      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;uts&lt;/code&gt; namespaces : Isolatiing kernel and version identifies (UTS : Unix Timeshraring System)\n        &lt;h3 id=&quot;control-groups&quot;&gt;Control Groups&lt;/h3&gt;\n      &lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;/li&gt;\n  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;control groups(cgroups)&lt;/code&gt;f라고 불리는 기술을 Docker Engine이 사용&lt;/li&gt;\n  &lt;li&gt;특정 리소스들의 집합의 애플리케이션으로 제한&lt;/li&gt;\n  &lt;li&gt;cgroup를 제어하는것을 통해 Docker Engine은 hardware 리소스를 공유 제한 및 제약을 강제로 적용\n    &lt;ul&gt;\n      &lt;li&gt;ex) 특정 container에 메모리를 한정\n        &lt;h3 id=&quot;union-file-systems&quot;&gt;Union file systems&lt;/h3&gt;\n      &lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;/li&gt;\n  &lt;li&gt;layer를 생성함으로써 Union File systtem UnionFS를 제공&lt;/li&gt;\n  &lt;li&gt;ligthweight 그리고 fast&lt;/li&gt;\n  &lt;li&gt;Docker Engine은 UnionFS를 사용하여 container를 위한 block를 제공&lt;/li&gt;\n  &lt;li&gt;Docker Engine은 multiple UnionFS variants(AUFS, btrfs,vfs, DeviceMapper를 사용)\n    &lt;h3 id=&quot;container-format&quot;&gt;Container Format&lt;/h3&gt;\n  &lt;/li&gt;\n  &lt;li&gt;Docker engine은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;namespace&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cgroups&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UnionFS&lt;/code&gt;를 wrapper하여 container format을 사용&lt;/li&gt;\n  &lt;li&gt;기본 container format은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;libcontainer&lt;/code&gt;라고 부름&lt;/li&gt;\n&lt;/ul&gt;\n\n\n        Mon, 28 Dec 2020 00:00:00 +0900\n        http://localhost:4000/2020/docker_overveiw/\n        http://localhost:4000/2020/docker_overveiw/\n        \n        docker\n        \n        \n        docker\n        \n      \n    \n      \n        Docker Introduction\n        &lt;h3 id=&quot;1-컨테이너-기술의-개요&quot;&gt;1. &lt;strong&gt;컨테이너 기술의 개요&lt;/strong&gt;&lt;/h3&gt;\n&lt;h3 id=&quot;docker란&quot;&gt;Docker란?&lt;/h3&gt;\n&lt;ul&gt;\n  &lt;li&gt;컨테이너 기술을 사용하여 애플리케이션의 실행 환경을 구축 및 운용하기 위한 플랫폼&lt;/li&gt;\n  &lt;li&gt;애플리케이션의 실행에 필요로한 것을 하나로 모아 Docker이미지를 관리함으로써 이식성을 높임\n &lt;!--more--&gt;\n    &lt;h4 id=&quot;1-1-컨테이너란-&quot;&gt;1-1. &lt;strong&gt;컨테이너란 ?&lt;/strong&gt;&lt;/h4&gt;\n  &lt;/li&gt;\n  &lt;li&gt;Host OS상에 논리적인 구획(컨테이너)을 만들고, 애플리케이션을 작동시키기 위해 필요한 라이브러리나 애플리케이션을 하나로 모아, 마치 별도의 서버처럼 제공&lt;/li&gt;\n  &lt;li&gt;Host OS의 리소스를 논리적으로 분산, 여러개의 컨테이너가 공유&lt;/li&gt;\n  &lt;li&gt;오버헤드가 적고 가볍다&lt;/li&gt;\n  &lt;li&gt;애플리케이션의 실행환경을 모음으로써, 이식성을 높이고 portable, 확장성이 좋은 환경 지향\n※ 오버헤드 : 가상화를 수행하기 위해 필요한 CPU,Memory,Disk등 사용량\n※ 서버가상화 기술\n    &lt;ul&gt;\n      &lt;li&gt;호스트형 서버 가상화\n        &lt;ul&gt;\n          &lt;li&gt;oracle의 VM VirtualBox,&lt;/li&gt;\n          &lt;li&gt;VMware의 VMware Workstation Player&lt;/li&gt;\n        &lt;/ul&gt;\n      &lt;/li&gt;\n      &lt;li&gt;하이퍼바지어형 서버 가상화\n        &lt;ul&gt;\n          &lt;li&gt;Host OS없이 HW를 직접제어 자원을 효율적 이용&lt;/li&gt;\n          &lt;li&gt;단, 가상환경마다 별도의 OS가 작동하므로 가상환경 시작에 걸리는 오버헤드 단점&lt;/li&gt;\n          &lt;li&gt;Microsoft Windows Server의 Hyper-V&lt;/li&gt;\n          &lt;li&gt;Citrix의 XenServer&lt;/li&gt;\n        &lt;/ul&gt;\n      &lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;p&gt;&lt;img src=&quot;https://www.docker.com/sites/default/files/d8/styles/large/public/2018-11/container-what-is-container.png?itok=vle7kjDj&quot; alt=&quot;enter image description here&quot; /&gt;&lt;/p&gt;\n\n&lt;h3 id=&quot;2-컨테이너의-역사&quot;&gt;2. &lt;strong&gt;컨테이너의 역사&lt;/strong&gt;&lt;/h3&gt;\n&lt;hr /&gt;\n&lt;ul&gt;\n  &lt;li&gt;FressBSD Jail\n    &lt;ul&gt;\n      &lt;li&gt;오픈소스인 UNIX의 FreeBSD의기술\n \t-  2000년에 FreeBSD 4.0에서 도입&lt;/li&gt;\n      &lt;li&gt;특징\n        &lt;ol&gt;\n          &lt;li&gt;프로세스 구획화&lt;/li&gt;\n          &lt;li&gt;네트워크 구획화 \t\t\t\n     3. 파일시스템 구획화&lt;/li&gt;\n        &lt;/ol&gt;\n      &lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;/li&gt;\n&lt;/ul&gt;\n\n \t- Solaris Container\n&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;\t - Oracle의 상용 UNIX인 Solaris에서 사용하는 컨테이너 기술\n\t - 2005년에 release된 Solaris10에 추가된 기능\n\t- 특징\n\t\t1. Solaris 존 : 하나의 OS공간을 가상적으로 분할하여 여러OS가 작동하는것처럼 SW 파티셔닝기술\n\t\t2. Solaris 리소스매니저\n - Linux Container(LXC)\n\t  - Linux상에서 사용하는 컨테이너 환경을 LXC\n\t  - Linux커널의 컨테이너 기능을 이용하기 위한 툴이나 API제공\n\t  - **namespace와 cgroups**라는 리소스 관리 장치를 사용하여 분리된 환경 제공 \n\t  - 특정 디렉토리를 루트 디렉토리로 변경하는 chroot를 사용하여 분리환경 만듬\n\t  - Docker이전버전에서는 LXC사용, 현재버전은 미사용\n&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;\n\n&lt;h4 id=&quot;참고&quot;&gt;참고&lt;/h4&gt;\n&lt;ul&gt;\n  &lt;li&gt;CNCF(Cloud Native Computing Foundation)\n    &lt;ul&gt;\n      &lt;li&gt;클라우드 네이티브 컴퓨팅을 추진하는 조기&lt;/li&gt;\n      &lt;li&gt;2016년 Linux Foundation으로부터 정식 발족&lt;/li&gt;\n      &lt;li&gt;컨테이너 오케스트레이션 툴인 kubernetes&lt;/li&gt;\n      &lt;li&gt;모니터링을 하는 Prometheus&lt;/li&gt;\n      &lt;li&gt;로그수집하는 Fluetnd&lt;/li&gt;\n      &lt;li&gt;컨테이너 런타임인 container 및 rkt&lt;/li&gt;\n      &lt;li&gt;서비스 디스크버리인 CoreDNS&lt;/li&gt;\n      &lt;li&gt;RPC프레임워크인 gRPC&lt;/li&gt;\n      &lt;li&gt;위를 포함하는 16개 프로젝트를 관리&lt;/li&gt;\n      &lt;li&gt;성숙도\n        &lt;ul&gt;\n          &lt;li&gt;Inception&lt;/li&gt;\n          &lt;li&gt;Incubating&lt;/li&gt;\n          &lt;li&gt;Graduated&lt;/li&gt;\n        &lt;/ul&gt;\n      &lt;/li&gt;\n      &lt;li&gt;Docker는 물론 Google, Mircrosoft, Amazon 등과 같은 주요 퍼블릭 클라우드 업체를 플래티넘 넘버로&lt;/li&gt;\n      &lt;li&gt;Red Hat, VMWare, IBM, Intel등 많은 기업이 참ㅇ여&lt;/li&gt;\n      &lt;li&gt;http://www.cncf.io\n        &lt;h3 id=&quot;3--docker-개요&quot;&gt;3.  &lt;strong&gt;Docker 개요&lt;/strong&gt;&lt;/h3&gt;\n        &lt;hr /&gt;\n        &lt;h4 id=&quot;1-docker&quot;&gt;1. &lt;strong&gt;Docker?&lt;/strong&gt;&lt;/h4&gt;\n      &lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;/li&gt;\n  &lt;li&gt;애플리케이션의 실행에 필요한 환경을 하나의 이미졸 모아두고, 그 이미지를 사용하여 다양한 환경에서&lt;/li&gt;\n  &lt;li&gt;애플리케이션 실행환경을 구축 및 운용하기 위한 오픈소스 플랫폼&lt;/li&gt;\n  &lt;li&gt;내부에서 컨테이너기술을 사용&lt;/li&gt;\n  &lt;li&gt;&lt;a href=&quot;www.docker.com&quot;&gt;Docker공식사이트&lt;/a&gt;\n    &lt;h4 id=&quot;2-프로그래머에게-docker란&quot;&gt;2. &lt;strong&gt;프로그래머에게 Docker란?&lt;/strong&gt;&lt;/h4&gt;\n  &lt;/li&gt;\n  &lt;li&gt;웹시스템 개발 애플리케이션을 제품환경에서 가동시키기 위해서\n    &lt;ul&gt;\n      &lt;li&gt;애플리케이션 실행모듈(프로그램 본체)&lt;/li&gt;\n      &lt;li&gt;미들웨어나 라이브러리&lt;/li&gt;\n      &lt;li&gt;OS/네트워크 인프라 환경설정&lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;/li&gt;\n  &lt;li&gt;waterfall모델로 개발시 개발 및 테스트 환경에서 올바르게 작동해도 Staging, production환경에서 정상적으로 작동하지 않는 경우도 있음\n    &lt;ul&gt;\n      &lt;li&gt;Docker에서는 이러한 인프라 환경을 컨테이너로 관리&lt;/li&gt;\n      &lt;li&gt;애플리케이션에 실행에 필요한 모든 파일 및 디렉토리들을 컨테이너로 모음&lt;/li&gt;\n      &lt;li&gt;이러한 컨테이너의 바탕이 되는 Docker이미지를 Docker Hub와 같은 Repository에 공유&lt;/li&gt;\n      &lt;li&gt;프로그래머는 Docker를 사용하여 개발한 애플리케이션의 실행에 필요한 모든것이 포함되어 있는 이미지를 배포&lt;/li&gt;\n      &lt;li&gt;애플리케이션 개발부터 테스트, production환경에 대한 전개를 모두 애플리케이션 엔지니어가 수행 하는 것 이 가능&lt;/li&gt;\n      &lt;li&gt;지속적인 CI/CD가 가능하고 변화에 강한 시스템 구축 가능\n        &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ※ 애플리케이션이식성 \n  한번 만들면 어디서든지 작동하는 SW의 특성을 이식성(portability)이라고 한다\n  Docker는 이식성이 높기 때문에 클라우드 시스템과의 친화력이 높음\n  개발한 업무 애플리케이션을 On-premise환경-&amp;gt; Cloud 및 Cloud-&amp;gt;On-premise환경에서 쉽게 가능\n  클라우드 Iaas서비스는 시스템이 사용한 리소스(CPU,GPU,메모리,Disk)용량에 따라 요금측정\n&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;\n        &lt;h3 id=&quot;4-docker기능&quot;&gt;4. &lt;strong&gt;Docker기능&lt;/strong&gt;&lt;/h3&gt;\n        &lt;hr /&gt;\n        &lt;h4 id=&quot;다음과-같은-기능-3가지&quot;&gt;다음과 같은 기능 3가지&lt;/h4&gt;\n      &lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;/li&gt;\n  &lt;li&gt;Docker 이미지를 만드는 기능(Build)&lt;/li&gt;\n  &lt;li&gt;Docker 이미지를 공유하는 기능(Ship)&lt;/li&gt;\n  &lt;li&gt;Docker 컨테이너를 작동시키는 기능(Run)\n    &lt;h4 id=&quot;1-docker이미지를-만드는-기능build&quot;&gt;1. Docker이미지를 만드는 기능(Build)&lt;/h4&gt;\n  &lt;/li&gt;\n  &lt;li&gt;프로그램본체, 라이브러리, 미들웨어, OS/네트워크 설정등을 하나모로 모아서 Docker 이미지생성&lt;/li&gt;\n  &lt;li&gt;컨테이너의 바탕이 바로 이미지&lt;/li&gt;\n  &lt;li&gt;Docker에서는 하나의 이미지에는 하나의 애플리케이션만 넣어 두고, 여러 개의 컨테이너를 조합하여 서비스를 구축!&lt;/li&gt;\n  &lt;li&gt;Docker 이미지의 정체는 애플리케이션에 실행에 필요한 파일들이 저장된 디렉토리&lt;/li&gt;\n  &lt;li&gt;Docker 명령을 사용하면 이미지를 tar파일로 출력가능&lt;/li&gt;\n  &lt;li&gt;Docker이미지 만드는방법\n    &lt;ol&gt;\n      &lt;li&gt;Docker 명령을 사용하여 수동 생성&lt;/li&gt;\n      &lt;li&gt;Dockerfile이라는 설정파일을 만들어 그것을 바탕으로 자동으로 이미지 생성가능 ( 더 바람직)&lt;/li&gt;\n    &lt;/ol&gt;\n  &lt;/li&gt;\n  &lt;li&gt;Docker이미지는 겹처서 사용 가능\n    &lt;h4 id=&quot;2-docker이미지를-공유하는-기능ship&quot;&gt;2. Docker이미지를 공유하는 기능(Ship)&lt;/h4&gt;\n  &lt;/li&gt;\n  &lt;li&gt;Docker이미지는 Docker레지스트리에 공유 가능&lt;/li&gt;\n  &lt;li&gt;Docker허브에서 Ubuntu나 Centos와 같은 Linux 배포판 기본기능을 제공하는 베이스이미지 배포&lt;/li&gt;\n  &lt;li&gt;기본 베이스 이미지에 미들웨어나 라이브러리 전개 할 애플리케이션 등을 넣은 이미지를 겹처서 독자적인 Docker 이미지로 구축 가능&lt;/li&gt;\n  &lt;li&gt;Automated Build : Docker Hub는 GItHub나 Bitbucket과 연계가능\n    &lt;ul&gt;\n      &lt;li&gt;Github상에서 Dockerfile을 관리하고, 거기서 Docker이미지를 자동으로 생성하여 Docker Hub공유 가능&lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;/li&gt;\n  &lt;li&gt;Docker Container Trust\n    &lt;ul&gt;\n      &lt;li&gt;Docker이미지의 제공자를 검증할 수 있는 기능&lt;/li&gt;\n      &lt;li&gt;Docker 레지스트리에 이미지를 송신하기 전에 로컬환경에서 비밀키를 사용하여 이미지에 서명&lt;/li&gt;\n      &lt;li&gt;그 이후, 이미지를 이용할때는 이미지 제공자의 공개키를 사용하여 실행하려고 하는 이미지가 정말 제공자가 작성한 것 인지를 확인&lt;/li&gt;\n      &lt;li&gt;Docker Security Scanning\n        &lt;ul&gt;\n          &lt;li&gt;Docker이미지를 검사하여 이미 알려진 보안상의 취약성이 없다는 것을 확인\n            &lt;h4 id=&quot;3-docker컨테이너를-작동시키는-기능run&quot;&gt;3. Docker컨테이너를 작동시키는 기능(Run)&lt;/h4&gt;\n          &lt;/li&gt;\n        &lt;/ul&gt;\n      &lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;/li&gt;\n  &lt;li&gt;Docker이미지를 가지고 여러개의 컨테이너 기동 가능&lt;/li&gt;\n  &lt;li&gt;컨테이너 기동, 정지, 파기는 Docker명령을 사용&lt;/li&gt;\n  &lt;li&gt;이미 움직이고 있는 OS상에서 프로세스를 실행시키는 것과 유사 (속도 빠름)&lt;/li&gt;\n  &lt;li&gt;하나의 Linux 커널을 여러개의 컨테이너에서 공유&lt;/li&gt;\n  &lt;li&gt;컨테이너 안에서 작동하는 프로세스를 하나의 그룹으로 관리&lt;/li&gt;\n  &lt;li&gt;각 그룹마다 각각 파일 시스템/ 호스트명/ 네트워크등을 할당&lt;/li&gt;\n  &lt;li&gt;그룹이 다르면 프로세스나 파일에 대한 액세스 불가능&lt;/li&gt;\n  &lt;li&gt;이러한 구조를 사용하여 컨테이너를 독립된 공간으로서 관리&lt;/li&gt;\n  &lt;li&gt;Linux커널기능(namespace, cgroups)기술이 사용&lt;/li&gt;\n  &lt;li&gt;Production환경에서는 모든 Docker 컨테이너를 한대의 호스트 머신에서 작동시키는일은 드뭄&lt;/li&gt;\n  &lt;li&gt;시스템의 트랙픽 증감이나 가용성 요건, 신뢰도 요건등을 고려한 후에 여러 대의 호스트 머신으로 된 분산환경을 구축&lt;/li&gt;\n  &lt;li&gt;보통 컨테이너 관리에 대해서는 오케스트레이션 툴을 이용!!\n    &lt;h3 id=&quot;5-docker-컴포넌트&quot;&gt;5. Docker 컴포넌트&lt;/h3&gt;\n    &lt;hr /&gt;\n  &lt;/li&gt;\n  &lt;li&gt;Docker Engine(핵심)\n    &lt;ul&gt;\n      &lt;li&gt;Docke 이미지를 생성하고 컨테이너를 기동시키기 위한 Docker의 핵심기능. Docker명령 실행이나 Dockerfile에의한 이미지 생성&lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;/li&gt;\n  &lt;li&gt;Docker Registry(이미지 공개 및 공유)\n    &lt;ul&gt;\n      &lt;li&gt;Docker이미지를 공개 및 공유하기 위한 레지스트리 기능&lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;/li&gt;\n  &lt;li&gt;Docker Compose(컨테이너 일원관리)\n    &lt;ul&gt;\n      &lt;li&gt;여러개의 컨테이너 구성정보를 코드로 정의하고, 명령을 실행함으로써 애플리케이션 실행 환경을 구성하는 컨테이너들을 일원 관리하기 위한 툴&lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;/li&gt;\n  &lt;li&gt;Docker Machine(Docker 실행환경 구축)\n    &lt;ul&gt;\n      &lt;li&gt;로컬 호스트용인 Virtual Box, AWS EC2나 MS의 Azure와 같은 클라우드 환경에서 Docker 실행환경을 명령으로 자동 생성하기 위하 툴&lt;/li&gt;\n    &lt;/ul&gt;\n  &lt;/li&gt;\n&lt;/ul&gt;\n\n\n        Mon, 28 Dec 2020 00:00:00 +0900\n        http://localhost:4000/2020/docker_introduction/\n        http://localhost:4000/2020/docker_introduction/\n        \n        \n        docker\n        \n      \n    \n      \n        Two Thousand Nineteen\n        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;\n\n        Sat, 29 Jun 2019 03:52:21 +0900\n        http://localhost:4000/2019/hello-world/\n        http://localhost:4000/2019/hello-world/\n        \n        \n        jekyll\n        \n        update\n        \n      \n    \n      \n        Welcome to MkDocs Jekyll\n        &lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;\n\n&lt;!--more--&gt;\n\n&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;\n\n&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;\n\n&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;\n  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;\n&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;\n&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;\n&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;\n\n&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;\n\n\n        Fri, 28 Jun 2019 19:52:21 +0900\n        http://localhost:4000/2019/welcome/\n        http://localhost:4000/2019/welcome/\n        \n        \n        jekyll\n        \n        update"
-					}
-					
-				
-		
-				
-					,
-					
-					"": {
-						"id": "",
-						"title": "Docsy Jekyll Theme",
-						"categories": "",
-						"url": " /",
-						"content": "Welcome to Docsy Jekyll\n\nThis is a starter template for a docsy jekyll theme.\n\n\n\nPurpose\n\nGitHub pages uses Jekyll natively, so when I make documentation, I typically\nlook for Jekyll templates. Why? Using Jekyll means that I can use markdown,\nand allow for users to easily contribute, and build automatically just by\nway of pushing to a master branch (or general GitHub pages).\nI found Docsy, a beautiful Hugo template, but it requires hugo with GoLang\nwhich doesn’t render natively on GitHub pages. For this reason, I’ve spent\nsome time creating a custom Jekyll template that is (almost) as beautiful,\nand includes all the features that I might want.\n\nFeatures\n\nWhat are these features? You should see the Getting Started\n\nguide for a complete summary. Briefly:\n\n\n  User interaction including consistent permalinks, links to ask questions via GitHub issues, and edit the file on GitHub directly.\n  Search across posts, documentation, and other site pages, with an ability to exclude from search.\n  External Search meaning an ability to link any page tag to trigger an external search.\n  Documentation A documentation collection that was easy to organize on the filesystem, render with nested headings for the user, and refer to in markdown.\n  Pages A separate folder for more traditional pages (e.g, about).\n  Navigation: Control over the main navigation on the left of the page, and automatic generation of table of contents for each page on the right.\n  News A posts feed for news and updates, along with an archive (organized by year).\n  Templates or specifically, “includes” that make it easy to create an alert, documentation link, or other content.\n  Continuous Integration recipes to preview the site\n\n\nFor features, getting started with development, see the Getting Started\n page. Would you like to request a feature or contribute?\nOpen an issue"
-					}
-					
-				
-		
-				
-		
-				
-					,
-					
-					"assets-js-main-js": {
-						"id": "assets-js-main-js",
-						"title": "",
-						"categories": "",
-						"url": " /assets/js/main.js",
-						"content": "(function($) {\n    'use strict';\n    $(function() {\n        $('[data-toggle=\"tooltip\"]').tooltip();\n        $('[data-toggle=\"popover\"]').popover();\n        $('.popover-dismiss').popover({\n            trigger: 'focus'\n        })\n    });\n\n    function bottomPos(element) {\n        return element.offset().top + element.outerHeight();\n    }\n    $(function() {\n        var promo = $(\".js-td-cover\");\n        if (!promo.length) {\n            return\n        }\n        var promoOffset = bottomPos(promo);\n        var navbarOffset = $('.js-navbar-scroll').offset().top;\n        var threshold = Math.ceil($('.js-navbar-scroll').outerHeight());\n        if ((promoOffset - navbarOffset) < threshold) {\n            $('.js-navbar-scroll').addClass('navbar-bg-onscroll');\n        }\n        $(window).on('scroll', function() {\n            var navtop = $('.js-navbar-scroll').offset().top - $(window).scrollTop();\n            var promoOffset = bottomPos($('.js-td-cover'));\n            var navbarOffset = $('.js-navbar-scroll').offset().top;\n            if ((promoOffset - navbarOffset) < threshold) {\n                $('.js-navbar-scroll').addClass('navbar-bg-onscroll');\n            } else {\n                $('.js-navbar-scroll').removeClass('navbar-bg-onscroll');\n                $('.js-navbar-scroll').addClass('navbar-bg-onscroll--fade');\n            }\n        });\n    });\n}(jQuery));\n(function($) {\n    'use strict';\n    var Search = {\n        init: function() {\n            $(document).ready(function() {\n                $(document).on('keypress', '.td-search-input', function(e) {\n                    if (e.keyCode !== 13) {\n                        return\n                    }\n                    var query = $(this).val();\n                    var searchPage = \"http://localhost:4000/search/?q=\" + query;\n                    document.location = searchPage;\n                    return false;\n                });\n            });\n        },\n    };\n    Search.init();\n}(jQuery));"
-					}
-					
-				
-		
-				
-					,
-					
-					"news": {
-						"id": "news",
-						"title": "News",
-						"categories": "",
-						"url": " /news/",
-						"content": "News\n\nSubscribe with RSS to keep up with the latest news.\nFor site changes, see the changelog kept with the code base.\n\n\n\n\n   Docker Overview\n   December 28, 2020\n   dockeroverviewconcept\n   \n   \n      read more\n   \n   \n\n\n\n   Docker Introduction\n   December 28, 2020\n   dockerintroductionconcept\n   1. 컨테이너 기술의 개요\nDocker란?\n\n  컨테이너 기술을 사용하여 애플리케이션의 실행 환경을 구축 및 운용하기 위한 플랫폼\n  애플리케이션의 실행에 필요로한 것을 하나로 모아 Docker이미지를 관리함으로써 이식성을 높임\n \n   \n      read more\n   \n   &lt;/div&gt;\n   \n\n   \n   Two Thousand Nineteen\n   June 29, 2019\n   warning-badgedanger-badge\n   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n   \n   \n   \n\n   \n   Welcome to MkDocs Jekyll\n   June 28, 2019\n   primary-badgesecondary-badgeinfo-badgesuccess-badge\n   You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.\n\n\n   \n      read more\n   \n   \n   \n\n\nWant to see more? See the News Archive."
-					}
-					
-				
-		
-				
-		
-				
-		
-				
-		
-				
-					,
-					
-					"sitemap-xml": {
-						"id": "sitemap-xml",
-						"title": "",
-						"categories": "",
-						"url": " /sitemap.xml",
-						"content": "/\n     {{ \"now\" | date: \"%Y-%m-%d\" }}\n     daily\n    \n{% for section in site.data.toc %}\n     {{ site.baseurl }}{{ section.url }}/\n     {{ \"now\" | date: \"%Y-%m-%d\" }}\n     daily\n    \n{% endfor %}"
-					}
-					
-				
-		
-				
-					,
-					
-					"tags": {
-						"id": "tags",
-						"title": "Tags Index",
-						"categories": "",
-						"url": " /tags/",
-						"content": "Tags Index\n{% capture site_tags %}{% for tag in site.tags %}{% if tag %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}{% endcapture %}{% assign docs_tags = \"\" %}{% for doc in site.docs %}{% assign ttags = doc.tags | join:',' | append:',' %}{% assign docs_tags = docs_tags | append:ttags %}{% endfor %}\n{% assign all_tags = site_tags | append:docs_tags %}{% assign tags_list = all_tags | split:',' | uniq | sort %}\n\n{% for tag in tags_list %}{% if tag %}{{ tag }}\n\n    {% for post in site.tags[tag] %}\n    {{- post.title -}}\n     {{- post.date | date: \"%B %d, %Y\" -}}\n{%- endfor -%}\n{% for doc in site.docs %}{% if doc.tags contains tag %}\n\n    {{ doc.title }}\n         {{- doc.date | date: \"%B %d, %Y\" -}}\n    {% endif %}{% endfor %}\n{% endif %}{%- endfor -%}"
-					}
-					
-				
-		
-				
-					,
-					
-					"assets-css-style-css": {
-						"id": "assets-css-style-css",
-						"title": "",
-						"categories": "",
-						"url": " /assets/css/style.css",
-						"content": "@import \"jekyll-theme-primer\";"
-					}
-					
-				
-		
-	};
-</script>
-<script src="/assets/js/lunr.min.js"></script>
-<script src="/assets/js/search.js"></script>
-
-<script
-  src="/assets/js/jquery-3.3.1/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-
-<script>
-$(document).ready(function() {
-
-    var toc = $('#TOC');
-
-    // Select each header
-    sections = $('.td-content h1');
-        $.each(sections, function(idx, v) {
-            section = $(v);
-            var div_id = $(section).attr('id');
-            var div_text = section.text().split('¶')[0];
-            var parent = $("#" + div_id)
-            var content = '<li id="link_' + div_id + '" class="md-nav__item"><a class="md-nav__link" href="#' + div_id + '" title="' + div_text +'">' + div_text +'</a></li>';
-            $(toc).append(content);
-
-            // Add section code to subnavigation
-            var children = $('<nav class="md-nav"><ul class="md-nav__list"></nav></ul>')
-            var contenders = $("#" + div_id).nextUntil("h1");
-            $.each(contenders, function(idx, contender){
-               if($(contender).is('h2') || $(contender).is('h3')) {
-                   var contender_id = $(contender).attr('id');
-                   var contender_text = $(contender).text().split('¶')[0];
-                   var content = '<li class="md-nav__item"><a class="md-nav__link" href="#' + contender_id + '" title="' + contender_text +'">' + contender_text +'</a></li>';
-                   children.append(content);
-                }
-             })
-             $("#link_" + div_id).append(children);
-        });
-    });
-</script>
-
-<script>
-var headers = ["h1", "h2", "h3", "h4"]
-var colors = ["red", "orange", "green", "blue"]
-
-$.each(headers, function(i, header){
-    var color = colors[i];
-    $(header).each(function () {
-        var href=$(this).attr("id");
-        $(this).append('<a class="headerlink" style="color:' + color + '" href="#' + href + '" title="Permanent link">¶</a>')
-    });
-})
-</script>
-
-
-
-	
-              
-              <style>
-  .feedback--answer {
-    display: inline-block;
-  }
-  .feedback--answer-no {
-    margin-left: 1em;
-  }
-  .feedback--response {
-    display: none;
-    margin-top: 1em;
-  }
-  .feedback--response__visible {
-    display: block;
-  }
-</style>
-<h5 class="feedback--title">Feedback</h5>
-<p class="feedback--question">Was this page helpful?</p>
-<button class="feedback--answer feedback--answer-yes">Yes</button>
-<button class="feedback--answer feedback--answer-no">No</button>
-<p class="feedback--response feedback--response-yes">
-  Glad to hear it! Please <a href="https://github.com/kevinsung123/kevinsung123.github.io/issues/new">tell us how we can improve</a>.
-</p>
-<p class="feedback--response feedback--response-no">
-  Sorry to hear that. Please <a href="https://github.com/kevinsung123/kevinsung123.github.io/issues/new">tell us how we can improve</a>.
-</p>
-<script>
-  const yesButton = document.querySelector('.feedback--answer-yes');
-  const noButton = document.querySelector('.feedback--answer-no');
-  const yesResponse = document.querySelector('.feedback--response-yes');
-  const noResponse = document.querySelector('.feedback--response-no');
-  const disableButtons = () => {
-    yesButton.disabled = true;
-    noButton.disabled = true;
-  };
-  const sendFeedback = (value) => {
-    if (typeof ga !== 'function') return;
-    const args = {
-      command: 'send',
-      hitType: 'event',
-      category: 'Helpful',
-      action: 'click',
-      label: window.location.pathname,
-      value: value
-    };
-    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
-  };
-  yesButton.addEventListener('click', () => {
-    yesResponse.classList.add('feedback--response__visible');
-    disableButtons();
-    sendFeedback(1);
-  });
-  noButton.addEventListener('click', () => {
-    noResponse.classList.add('feedback--response__visible');
-    disableButtons();
-    sendFeedback(0);
-  });
-</script><br/>
-
-
-           </div>
-          </main>
-        </div>
-      </div>
-      <footer class="bg-dark py-5 row d-print-none">
-  <div class="container-fluid mx-sm-5">
-    <div class="row">
-      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
-        
-
-</div>
-<div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
-<ul class="list-inline mb-0">  
-  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
-    <a class="text-white" target="_blank" href="https://github.com/kevinsung123/kevinsung123.github.io">
-      <i class="fab fa-github"></i>
-    </a>
-  </li>
-</ul>
-</div>
-<div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-  <small class="text-white">© 2019 Kyung Hwan Sung All Rights Reserved</small>
-  
-  <p class="mt-2"><a href="/about/">About Docsy</a></p>	
-      </div>
-    </div>
-  </div>
+  <p>
+    <code>Powered by <a href="https://theorydb.github.io/">theorydb</a></code>
+  </p>
 </footer>
 
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script src="/assets/js/main.js"></script>
+    </main>
+    <div class="right-side">
+  <div class="ad-first">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- 블로그-상단-모바일 -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:100%;"
+         data-ad-client="ca-pub-1200017190012992"
+         data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+<br/>
+<br/>
+  <div class="ad-second">
+    <!-- 블로그-스카이스크래퍼 -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;max-width:320px;width:100%;height:600px"
+         data-ad-client="ca-pub-1200017190012992"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+</div>
 
-  </body>
+  </div>
+  <div id="_yDrawer">
+  <div id="_sidebar" class="sidebar">
+    <div class="sidebar-bg" style="background-color:#4f86aa;background-image:url(/assets/img/bg-post.jpg)"></div>
+    <header class="sidebar-sticky" role="banner">
+      <br/>
+      <div class="sidebar-about">
+        <h1><a id="_title" href="/">Data Enginner of SKH</a></h1>
+        <p>All roads lead to data.</p>
+
+      </div>
+
+      <br/>
+      <br/>
+      <nav class="sidebar-nav heading" role="navigation">
+        <span class="sr-only">Navigation:</span>
+<ul>
+  
+
+  
+
+  
+  
+  
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-1"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/category/cs/">ComputerScience</a>
+       <label class="folder" for="list-item-1">▾</label>
+    </div>
+     <ul class="list-body">
+       
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/cs-os/">OS</a>
+             </li>
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/cs-cli/">CLI</a>
+             </li>
+           
+         
+           
+         
+           
+         
+           
+         
+     </ul>
+    </li>
+
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-2"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/category/docker/">Docker</a>
+       
+    </div>
+     <ul class="list-body">
+       
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+     </ul>
+    </li>
+
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-3"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/category/envops/">EnvOps</a>
+       
+    </div>
+     <ul class="list-body">
+       
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+     </ul>
+    </li>
+
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-4"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/category/dev/">Dev</a>
+       <label class="folder" for="list-item-4">▾</label>
+    </div>
+     <ul class="list-body">
+       
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/dev-statisticsr/">Statistics & R</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/dev-ml/">ML</a>
+             </li>
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/dev-dl/">DL</a>
+             </li>
+           
+         
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/dev-papertomath/">PaperToMath</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/dev-competition/">Competition</a>
+             </li>
+           
+         
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/dev-rdbms/">Rdbms</a>
+             </li>
+           
+         
+     </ul>
+    </li>
+
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-5"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/about/">About</a>
+       
+    </div>
+     <ul class="list-body">
+       
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+     </ul>
+    </li>
+
+  
+</ul>
+
+      </nav>
+    <br/>
+
+    <form action="/search">
+      <div class="tipue_search_left">
+        <img src="/assets/tipuesearch/search.png" class="tipue_search_icon">
+      </div>
+      <div class="tipue_search_right">
+        <input type="text" name="q" id="tipue_search_input" pattern=".{1,}" title="At least 1 characters" required></div>
+      <div style="clear: both;"></div>
+    </form>
+
+    <br/>
+      <div class="sidebar-box">
+        
+          
+  
+
+  
+
+  <img
+    src="/assets/img/bg-about.jpg"
+    class="me"
+    alt="skh"
+    srcset="/assets/img/bg-about.jpg 1x,/assets/img/bg-about.jpg 2x"
+    
+  />
+
+
+        
+      </div>
+      <p>Data Engineering &amp; DevOPS :)</p>
+
+      
+      
+        <div class="sidebar-social">
+          <span class="sr-only">Social:</span>
+<ul>
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://github.com/kevinsung123">
+    <span class="icon-github" title="GitHub"></span>
+    <span class="sr-only">GitHub</span>
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="mailto:kevinsung123@naver.com">
+    <span class="icon-mail" title="Email"></span>
+    <span class="sr-only">Email</span>
+  </a>
+</li>
+
+  
+    
+
+
+
+
+
+
+
+
+
+<li>
+  <a href="https://kevinsung123.github.io/feed.xml">
+    <span class="icon-rss2" title="RSS"></span>
+    <span class="sr-only">RSS</span>
+  </a>
+</li>
+
+  
+</ul>
+
+        </div>
+      
+    </header>
+  </div>
+</div>
+
+</div>
+
+<!-- =============== -->
+<!-- SCRIPTS         -->
+<!-- =============== -->
+
+<script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-137374202-1', 'auto');
+  ga('send', 'pageview');
+  loadJSDeferred('https://www.google-analytics.com/analytics.js');
+</script>
+
+
+
+
+
+<!--[if gt IE 8]><!---->
+<script src="//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+<script>
+  WebFont.load({
+    
+    google: {
+      families: 'Lato'.split('|')
+    },
+    
+
+    custom: {
+      families: ['icomoon'],
+      urls: ['/assets/icomoon/style.css']
+    }
+  });
+</script>
+<!--<![endif]-->
+
+
+  <!--[if gt IE 9]><!---->
+  
+  <script>loadJSDeferred('/assets/js/hydejack.js?v=6.4.0');</script>
+
+  
+  <!--<![endif]-->
+
+
+
+</body>
+
 </html>

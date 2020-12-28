@@ -1,17 +1,12 @@
-﻿---
-title: Docker Introduction
-layout: post
-category: docker
-description: docker introduction
-badges:
- - type: primary
-   tag: docker
- - type: info
-   tag: introduction
- - type: success
-   tag: concept
----
-
+﻿---  
+layout: post  
+title: "[Docker]Introduction"  
+subtitle: "Docker 기본소개"  
+categories: docker  
+tags: review book 빅데이터분석기사 이기적 2021 필기 수험서 DL ML 통계 분석
+comments: true  
+header-img: img/review/2020-12-19-review-book-big-data-engineer-certificate-yj-1.png
+---  
 
 ### 1. **컨테이너 기술의 개요**
 ### Docker란?

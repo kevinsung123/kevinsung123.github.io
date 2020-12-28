@@ -1,96 +1,140 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing these this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# -----------------------------------------------------------------------------
+#  User configuration
+# -----------------------------------------------------------------------------
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+title:               Data Enginner of SKH
 
-title: SKH Blog
-email: kevinsung123@naver.com
-author: Kyung Hwan Sung
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+# The unique resource location of your page.
+# Set to `https://<username>.github.io` when hosting on GitHub Pages
+url:                 https://kevinsung123.github.io
 
-# DO NOT CHANGE THE LINE OF THIS FILE without editing .circleci/circle_urls.sh
-baseurl: "" # the subpath of your site, e.g. /blog
+# Set to '' when hosting a blog on GitHub Pages, ie on `//<username>.github.io`
+# Set to '/<reponame>' when using the `gh-pages` branch of a repository
+baseurl:             ""
 
-# This is mostly for testing
-url: "https://kevinsung123.github.io" # the base hostname & protocol for your site
+# A very short description of your page
+tagline:             "All roads lead to data."
 
-# Social (First three Required)
-repo: "https://github.com/kevinsung123/kevinsung123.github.io"
-github_user: "skh"
-github_repo: "kevinsung123"
+# A short description of the page, used in the sidebar and as fallback for the meta description tag.
+# Markdown enabled, but don't use more than one paragraph (enforced by `>`)
+description:         >
+  Data Engineering & DevOPS 
 
-# Optional
-# twitter: vsoch
-# linkedin: vsochat
-# dockerhub: vanessa
+# This should be the same author as first entry in `_data/authors.yml`
+author:
+  name:              skh
+  email:             kevinsung123@naver.com
 
-# Should there be feedback buttons at the bottom of pages?
-feedback: true
+# Fallback image and color
+image:               /assets/img/bg-post.jpg
+color:               '#4f86aa'
 
-# Link to a privacy policy in footer, uncomment and define if wanted
-# privacy: https://domain.com/privacy
+# The font used for headings. Expects a string that is a valid CSS font-family value.
+font_heading:        "'Merriweather-Light','Lato','-apple-system','Verdana','PingFang SC','Helvetica Neue','Arial','Hiragino Sans GB','Microsoft YaHei','WenQuanYi Micro Hei','sans-serif'"
 
-# google-analytics: UA-XXXXXXXXXX
-# Image and (square) dimension for logo (don't start with /)
-# If commented, will use material hat theme
-# logo: "assets/img/logo/SRCC-square-red.png"
-logo_pixels: 34
-color: "#30638e"
-# color: "#8c1515" # primary color for header, buttons
+# The text font. Expects a string that is a valid CSS font-family value.
+font:                "'Merriweather-Light','Lato','-apple-system','Verdana','PingFang SC','Helvetica Neue','Arial','Hiragino Sans GB','Microsoft YaHei','WenQuanYi Micro Hei','sans-serif'"
 
-# Build settings
-markdown: kramdown
+# The string encoding what fonts to fetch from Google Fonts.
+# See: https://qwtel.com/hydejack/docs/configuration/
+google_fonts:        Lato
 
-# If you add tags to pages, define this variable to link them to some external search
-# If you want to link to tags locally on the site, leave this commented out
-# tag_search_endpoint: https://ask.cyberinfrastructure.org/search?q=
-tag_color: primary # danger, success, warning, primary, info, secondary
+# If you do not use a Google Fonts, uncomment the line below
+# no_google_fonts:     true
 
-accentColor: red # purple, green, etc.
-themeColor: red # purple, green, blue, orange, purple, grey
-fixedNav: 'true' # true or false
+# Set your Google Analytics id to receive `pageview` events.
+# To remove Google Anaylics from your page, remove the line below.
+google_analytics:    UA-137374202-1
 
-permalink: /:year/:title/
-markdown: kramdown
-exclude: [_site, CHANGELOG.md, LICENSE, README.md, vendor]
+# Setting a disqus shortname will enable the comment section on pages with `comments: true` in the front matter
+disqus: True
+disqus_shortname:    skh
 
-# Collections
+# This text will appear in the footer of every page. Markdown enabled.
+copyright:           '&copy; 2020.12. by skh'
+
+# Format of the permalinks
+permalink:           pretty
+
+# Pagination configuration (used by the `blog` layout)
+paginate:            20
+paginate_path:       '/page-:num/'
+
+# If you are upgrading form a v5 verison of Hydejack, uncomment the two lines below,
+# so that the location of the feed XML stays the same.
+# feed:
+#   path:              atom.xml
+
+# Set to true when building with the `--lsi` option
+# See: https://jekyllrb.com/docs/variables/#site-variables
+# use_lsi:             true
+
+# Set to `true` if you don't want to show an icon after each link that opens to an external site
+# no_mark_external:    true
+
+# Uncomment this line if third party plugins fail to work with dynimically loaded pages
+# disable_push_state:  true
+
+# Uncomment this line if want to disable the touch drawer on mobile
+# disable_drawer: true
+
+# -----------------------------------------------------------------------------
+#  Collections
+# -----------------------------------------------------------------------------
+
 collections:
-  docs:
-    output: true
-    permalink: /:collection/:path
+  featured_categories:
+    permalink:       /category/:name/
+    output:          true
+  featured_tags:
+    permalink:       /tag/:name/
+    output:          true
+  projects:
+    permalink:       /projects/:path/
+    output:          true
 
-# Defaults
-defaults:
-  - scope:
-      path: "_docs"
-      type: "docs"
-    values:
-      layout: page
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "page"
-  -
-    scope:
-      path: "posts"
-      type: "posts"
-    values:
-      layout: "post"
+# -----------------------------------------------------------------------------
+#  Advanced configuration
+# -----------------------------------------------------------------------------
 
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-redirect-from
+
+exclude:
+  - README.md
+  - LICENSE.md
+  - node_modules
+  - package.json
+  - package-lock.json
+  - Gemfile
+  - Gemfile.lock
+
+kramdown:
+  footnote_backlink: '&#x21a9;&#xfe0e;'
+  math_engine:       mathjax
+  math_engine_opts:
+    preview:         true
+    preview_as_code: true
+
+compress_html:
+  comments:          ["<!-- ", " -->"]
+  clippings:         all
+  endings:           all
+  ignore:
+    envs:            [development]
+
+sass:
+  style:             compressed
+
+tipue_search:
+  include:
+    pages: false
+    collections: []
+  exclude:
+    files: [search.html, index.html, tags.html]
+    categories: []
+    tags: []
+    

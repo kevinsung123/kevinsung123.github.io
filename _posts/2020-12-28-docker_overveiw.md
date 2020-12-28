@@ -1,17 +1,11 @@
-﻿---
-title: Docker Overview
-layout: post
-tags: docker
-category: docker
-description: docker key-concept
-badges:
- - type: primary
-   tag: docker
- - type: info
-   tag: overview
- - type: success
-   tag: concept
----
+﻿---  
+layout: post  
+title: "[Docker]Overview"  
+subtitle: "Docker 전체개요"  
+categories: docker  
+tags: docker concept
+comments: true  
+---  
 <!--more-->
 ### Docker Cocepts
 

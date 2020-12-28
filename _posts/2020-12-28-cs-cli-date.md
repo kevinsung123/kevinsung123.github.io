@@ -1,0 +1,30 @@
+﻿---  
+layout: post  
+title: "[Shell] Date "  
+subtitle: "Linux CLI"  
+categories: cs
+tags: cli date
+comments: true  
+---  
+## DATE
+- 일자,시간을 처리
+-
+	|옵션|내용|
+	| -- |--|
+	| d | 원하는일자를 지정
+	| + | 출력포맷지정 |
+- 예제
+	- **일자 출력 포맷 지정**
+	```
+	
+	# 년월일 형태 $ date +%Y%m%d 20190212  
+	# %를 지원하지 않는 환경(ex: crontab)에서는 특수기호로 입력 $ date +\%Y\%m\%d 20190212  
+	# 년월일 시간 출력 $ date +"%Y%m%d %H:%M:%S"  20190212  08:46:53  			 
+	# 주차 계산 $ date +%W 06
+	```
+	-  **일자 변경**
+	```
+	# 1일 전 $ date +%Y-%m-%d -d  '1 days ago'  2019-02-11  
+	# 1일 후 $ date +%Y-%m-%d -d  '+1days'  2019-02-13  
+	# 20190101 일자 지정후 1일 추가 $ date +%Y-%m-%d -d  '20190101 +1days'  2019-01-02
+	```
