@@ -2,13 +2,98 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Enginner of SKH</title>
-    <description>Data Engineering &amp; DevOPS :)
+    <description>Data Engineering &amp; DevOPS 
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 29 Dec 2020 00:48:16 +0900</pubDate>
-    <lastBuildDate>Tue, 29 Dec 2020 00:48:16 +0900</lastBuildDate>
+    <pubDate>Sat, 16 Jan 2021 19:25:46 +0900</pubDate>
+    <lastBuildDate>Sat, 16 Jan 2021 19:25:46 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[Python]Assert</title>
+        <description>&lt;h3 id=&quot;assert가정설정문&quot;&gt;assert(가정설정문)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;어떤 조건을 테스트하는 디버깅 보조 도구&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Assertions or assert statement are build into python and are a tool for debugging
+try to assert its authorityt over the rest of the code wher checking for a condititon specified by the programmer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;example
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;speed라는 변수가 0이상인지를 체크할때, True이면 아무일도 발생 안하고 프로그램 정상실행. condititon이 faile이면 AssertionError를 일으킴
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;일반-예외처리와-다른점&quot;&gt;일반 예외처리와 다른점?&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;if try except구문을 사용한 예외처리와 다른 역할을 함&lt;/li&gt;
+  &lt;li&gt;File Not Found와 같은 예상되는 에러 조건을 검사하기 위해 사용되는 것은 올바른 활용 방식이 아님&lt;/li&gt;
+  &lt;li&gt;예상하지 않은 프로그램의 상태를 확인하기 위해 활용해야함&lt;/li&gt;
+  &lt;li&gt;구문의 조건을 만족하지 않으면 프로그램이 정상적으로 실행되지 않고 종료되는데, 이는 프로그램의 버그가 있다는 것을 의미&lt;/li&gt;
+  &lt;li&gt;런타임 환경이 아닌 &lt;code class=&quot;highlighter-rouge&quot;&gt;디버깅 환경&lt;/code&gt;에 도움을 주는 역할&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;syntax&quot;&gt;Syntax&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;assert condtition , erroe_message(optional)&lt;/li&gt;
+  &lt;li&gt;Parameter
+    &lt;ul&gt;
+      &lt;li&gt;condition : the boolean condititon returning true/false&lt;/li&gt;
+      &lt;li&gt;error_message : the optional argument to be printed in console in case of Assertion Error&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;assert_stmt ::= &quot;assert&quot; expression1 [&quot;,&quot;,expression2]&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;expression1은 테스트 조건이고 뒤의 &lt;code class=&quot;highlighter-rouge&quot;&gt;expression2&lt;/code&gt;는 테스트조건이 거짓일때 예외의 메시지로 전달&lt;/li&gt;
+  &lt;li&gt;위의 문법을 인터프리터가 해석하는 방식의 수도코드
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if __debug__:
+if not expression1:
+  raise AssertionError(expression2)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Assertion구문은 debug라는 전역변수를 검사&lt;/li&gt;
+  &lt;li&gt;일반적인 상황에서는 항상 참이지만 &lt;code class=&quot;highlighter-rouge&quot;&gt;최적화가 필요한 경우에는 거짓&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Aseertion구문을 예외처리에 잘못 활용하게되면 코드가 의도한대로 동작하지 않을 수 있음&lt;/li&gt;
+  &lt;li&gt;데이터 유효성을 검증하는데 Assertion구문을 사용하면 안됨!
+    &lt;h3 id=&quot;where-not-assertions&quot;&gt;Where Not Assertions?&lt;/h3&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;assert (    
+       speed &amp;gt;= 0,    
+       &quot;Speed should be non-negative!&quot;
+)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tuple&lt;/code&gt; 구문의 경우 Non-empty일떄 항상 참을 반환&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;()&lt;/code&gt;구문은 항상 tuple object를 반환 하므로 항상 &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt; 이런경우 조심해야함&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;PYTHON OPTIMIZE ENVIRONMENT&lt;/code&gt; 에서는 실행이 불가&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;참조&quot;&gt;참조&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.python.org/3/reference/simple_stmts.html#grammar-token-assert-stmt&quot;&gt;docs.python.assertion&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/better-programming/an-intro-to-python-assert-statements-bdd45834d303&quot;&gt;An Intro to Python Assert Statements-medium&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.tutorialspoint.com/python/assertions_in_python.htm&quot;&gt;tutorialsporint&lt;/a&gt;
+ = &lt;a href=&quot;https://medium.com/@crystelpheonix/python-dont-use-assert-for-data-evaluation-721bfa93c571&quot;&gt;Python : Don’t user aseert for Data Evalution&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 16 Jan 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/python/2021/01/16/python-assert/</link>
+        <guid isPermaLink="true">http://localhost:4000/python/2021/01/16/python-assert/</guid>
+        
+        <category>python</category>
+        
+        <category>assert</category>
+        
+        
+        <category>python</category>
+        
+      </item>
     
       <item>
         <title>[Docker]Overview</title>
@@ -165,6 +250,8 @@
         
         <category>concept</category>
         
+        <category>overview</category>
+        
         
         <category>docker</category>
         
@@ -173,13 +260,15 @@
       <item>
         <title>[Docker]Introduction</title>
         <description>&lt;h3 id=&quot;1-컨테이너-기술의-개요&quot;&gt;1. &lt;strong&gt;컨테이너 기술의 개요&lt;/strong&gt;&lt;/h3&gt;
-&lt;h3 id=&quot;docker란&quot;&gt;Docker란?&lt;/h3&gt;
+&lt;h4 id=&quot;docker란&quot;&gt;Docker란?&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;컨테이너 기술을 사용하여 애플리케이션의 실행 환경을 구축 및 운용하기 위한 플랫폼&lt;/li&gt;
   &lt;li&gt;애플리케이션의 실행에 필요로한 것을 하나로 모아 Docker이미지를 관리함으로써 이식성을 높임
- &lt;!--more--&gt;
-    &lt;h4 id=&quot;1-1-컨테이너란-&quot;&gt;1-1. &lt;strong&gt;컨테이너란 ?&lt;/strong&gt;&lt;/h4&gt;
-  &lt;/li&gt;
+&lt;!--more--&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;1-1-컨테이너란-&quot;&gt;1-1. &lt;strong&gt;컨테이너란 ?&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
   &lt;li&gt;Host OS상에 논리적인 구획(컨테이너)을 만들고, 애플리케이션을 작동시키기 위해 필요한 라이브러리나 애플리케이션을 하나로 모아, 마치 별도의 서버처럼 제공&lt;/li&gt;
   &lt;li&gt;Host OS의 리소스를 논리적으로 분산, 여러개의 컨테이너가 공유&lt;/li&gt;
   &lt;li&gt;오버헤드가 적고 가볍다&lt;/li&gt;
@@ -207,8 +296,8 @@
 
 &lt;p&gt;&lt;img src=&quot;https://www.docker.com/sites/default/files/d8/styles/large/public/2018-11/container-what-is-container.png?itok=vle7kjDj&quot; alt=&quot;enter image description here&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;2-컨테이너의-역사&quot;&gt;2. &lt;strong&gt;컨테이너의 역사&lt;/strong&gt;&lt;/h3&gt;
 &lt;hr /&gt;
+&lt;h3 id=&quot;2-컨테이너의-역사&quot;&gt;2. &lt;strong&gt;컨테이너의 역사&lt;/strong&gt;&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;FressBSD Jail
     &lt;ul&gt;
@@ -239,35 +328,10 @@
 	  - Docker이전버전에서는 LXC사용, 현재버전은 미사용
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;참고&quot;&gt;참고&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;3--docker-개요&quot;&gt;3.  &lt;strong&gt;Docker 개요&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&quot;1-docker&quot;&gt;1. &lt;strong&gt;Docker?&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
-  &lt;li&gt;CNCF(Cloud Native Computing Foundation)
-    &lt;ul&gt;
-      &lt;li&gt;클라우드 네이티브 컴퓨팅을 추진하는 조기&lt;/li&gt;
-      &lt;li&gt;2016년 Linux Foundation으로부터 정식 발족&lt;/li&gt;
-      &lt;li&gt;컨테이너 오케스트레이션 툴인 kubernetes&lt;/li&gt;
-      &lt;li&gt;모니터링을 하는 Prometheus&lt;/li&gt;
-      &lt;li&gt;로그수집하는 Fluetnd&lt;/li&gt;
-      &lt;li&gt;컨테이너 런타임인 container 및 rkt&lt;/li&gt;
-      &lt;li&gt;서비스 디스크버리인 CoreDNS&lt;/li&gt;
-      &lt;li&gt;RPC프레임워크인 gRPC&lt;/li&gt;
-      &lt;li&gt;위를 포함하는 16개 프로젝트를 관리&lt;/li&gt;
-      &lt;li&gt;성숙도
-        &lt;ul&gt;
-          &lt;li&gt;Inception&lt;/li&gt;
-          &lt;li&gt;Incubating&lt;/li&gt;
-          &lt;li&gt;Graduated&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Docker는 물론 Google, Mircrosoft, Amazon 등과 같은 주요 퍼블릭 클라우드 업체를 플래티넘 넘버로&lt;/li&gt;
-      &lt;li&gt;Red Hat, VMWare, IBM, Intel등 많은 기업이 참ㅇ여&lt;/li&gt;
-      &lt;li&gt;http://www.cncf.io
-        &lt;h3 id=&quot;3--docker-개요&quot;&gt;3.  &lt;strong&gt;Docker 개요&lt;/strong&gt;&lt;/h3&gt;
-        &lt;hr /&gt;
-        &lt;h4 id=&quot;1-docker&quot;&gt;1. &lt;strong&gt;Docker?&lt;/strong&gt;&lt;/h4&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
   &lt;li&gt;애플리케이션의 실행에 필요한 환경을 하나의 이미졸 모아두고, 그 이미지를 사용하여 다양한 환경에서&lt;/li&gt;
   &lt;li&gt;애플리케이션 실행환경을 구축 및 운용하기 위한 오픈소스 플랫폼&lt;/li&gt;
   &lt;li&gt;내부에서 컨테이너기술을 사용&lt;/li&gt;
@@ -384,27 +448,9 @@
         <link>http://localhost:4000/docker/2020/12/28/docker_introduction/</link>
         <guid isPermaLink="true">http://localhost:4000/docker/2020/12/28/docker_introduction/</guid>
         
-        <category>review</category>
+        <category>docekr</category>
         
-        <category>book</category>
-        
-        <category>빅데이터분석기사</category>
-        
-        <category>이기적</category>
-        
-        <category>2021</category>
-        
-        <category>필기</category>
-        
-        <category>수험서</category>
-        
-        <category>DL</category>
-        
-        <category>ML</category>
-        
-        <category>통계</category>
-        
-        <category>분석</category>
+        <category>introduction</category>
         
         
         <category>docker</category>

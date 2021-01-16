@@ -3,16 +3,16 @@ layout: post
 title: "[Docker]Introduction"  
 subtitle: "Docker 기본소개"  
 categories: docker  
-tags: review book 빅데이터분석기사 이기적 2021 필기 수험서 DL ML 통계 분석
+tags: docekr introduction 
 comments: true  
-header-img: img/review/2020-12-19-review-book-big-data-engineer-certificate-yj-1.png
 ---  
 
 ### 1. **컨테이너 기술의 개요**
-### Docker란?
- - 컨테이너 기술을 사용하여 애플리케이션의 실행 환경을 구축 및 운용하기 위한 플랫폼
- - 애플리케이션의 실행에 필요로한 것을 하나로 모아 Docker이미지를 관리함으로써 이식성을 높임
- <!--more-->
+#### Docker란?
+- 컨테이너 기술을 사용하여 애플리케이션의 실행 환경을 구축 및 운용하기 위한 플랫폼
+- 애플리케이션의 실행에 필요로한 것을 하나로 모아 Docker이미지를 관리함으로써 이식성을 높임
+<!--more-->
+
 #### 1-1. **컨테이너란 ?**
 - Host OS상에 논리적인 구획(컨테이너)을 만들고, 애플리케이션을 작동시키기 위해 필요한 라이브러리나 애플리케이션을 하나로 모아, 마치 별도의 서버처럼 제공
 - Host OS의 리소스를 논리적으로 분산, 여러개의 컨테이너가 공유
@@ -31,8 +31,8 @@ header-img: img/review/2020-12-19-review-book-big-data-engineer-certificate-yj-1
 	
 ![enter image description here](https://www.docker.com/sites/default/files/d8/styles/large/public/2018-11/container-what-is-container.png?itok=vle7kjDj)
 
-### 2. **컨테이너의 역사**
 ---
+### 2. **컨테이너의 역사**
 - FressBSD Jail
 	- 오픈소스인 UNIX의 FreeBSD의기술
    	-  2000년에 FreeBSD 4.0에서 도입
@@ -54,26 +54,8 @@ header-img: img/review/2020-12-19-review-book-big-data-engineer-certificate-yj-1
 		  - 특정 디렉토리를 루트 디렉토리로 변경하는 chroot를 사용하여 분리환경 만듬
 		  - Docker이전버전에서는 LXC사용, 현재버전은 미사용
 
-####  참고
-- CNCF(Cloud Native Computing Foundation) 
-	- 클라우드 네이티브 컴퓨팅을 추진하는 조기
-	- 2016년 Linux Foundation으로부터 정식 발족
-	- 컨테이너 오케스트레이션 툴인 kubernetes
-	- 모니터링을 하는 Prometheus
-	- 로그수집하는 Fluetnd
-	- 컨테이너 런타임인 container 및 rkt
-	- 서비스 디스크버리인 CoreDNS
-	- RPC프레임워크인 gRPC
-	- 위를 포함하는 16개 프로젝트를 관리
-	- 성숙도	
-		- Inception
-		- Incubating
-		- Graduated
-	- Docker는 물론 Google, Mircrosoft, Amazon 등과 같은 주요 퍼블릭 클라우드 업체를 플래티넘 넘버로
-	- Red Hat, VMWare, IBM, Intel등 많은 기업이 참ㅇ여
-	- http://www.cncf.io 
+---
 ### 3.  **Docker 개요**
-----
 #### 1. **Docker?** 
 - 애플리케이션의 실행에 필요한 환경을 하나의 이미졸 모아두고, 그 이미지를 사용하여 다양한 환경에서 				
 - 애플리케이션 실행환경을 구축 및 운용하기 위한 오픈소스 플랫폼 
@@ -149,4 +131,5 @@ header-img: img/review/2020-12-19-review-book-big-data-engineer-certificate-yj-1
 	- 여러개의 컨테이너 구성정보를 코드로 정의하고, 명령을 실행함으로써 애플리케이션 실행 환경을 구성하는 컨테이너들을 일원 관리하기 위한 툴
 - Docker Machine(Docker 실행환경 구축)
 	- 로컬 호스트용인 Virtual Box, AWS EC2나 MS의 Azure와 같은 클라우드 환경에서 Docker 실행환경을 명령으로 자동 생성하기 위하 툴
+	 
 	 
