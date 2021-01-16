@@ -62,4 +62,4 @@ assert (
 - [docs.python.assertion](https://docs.python.org/3/reference/simple_stmts.html#grammar-token-assert-stmt)
 - [An Intro to Python Assert Statements-medium](https://medium.com/better-programming/an-intro-to-python-assert-statements-bdd45834d303)
  - [tutorialsporint](https://www.tutorialspoint.com/python/assertions_in_python.htm)
- = [Python : Don't user aseert for Data Evalution](https://medium.com/@crystelpheonix/python-dont-use-assert-for-data-evaluation-721bfa93c571)
+ = [Python : Don't user aseert for Data Evalution](https://medium.com/@crystelpheonix/python-dont-use-assert-https://medium.com/@crystelpheonix/python-dont-use-assert-for-data-evaluation-721bfa93c571for-data-evaluation-721bfa93c571)
