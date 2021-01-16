@@ -6,6 +6,7 @@ categories: python
 tags: python assert
 comments: true  
 ---  
+
 ### assert(가정설정문)
 - 어떤 조건을 테스트하는 디버깅 보조 도구
 
@@ -42,6 +43,7 @@ if __debug__:
 - 일반적인 상황에서는 항상 참이지만 `최적화가 필요한 경우에는 거짓`
 - Aseertion구문을 예외처리에 잘못 활용하게되면 코드가 의도한대로 동작하지 않을 수 있음 
 - 데이터 유효성을 검증하는데 Assertion구문을 사용하면 안됨!
+
 ### Where Not Assertions?
 
  ```
