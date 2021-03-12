@@ -3,10 +3,11 @@ layout: post
 title: "[Shell] print "  
 subtitle: "Print Format "  
 categories: cs
-tags: cli print
+tags: linux print
 comments: true  
 ---  
 ## Print
+<!--more-->
 #### Modifiers for `print` Formats
 ```
 printf "%s %s\n", "don't", "panic"

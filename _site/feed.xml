@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 12 Mar 2021 18:48:17 +0900</pubDate>
-    <lastBuildDate>Fri, 12 Mar 2021 18:48:17 +0900</lastBuildDate>
+    <pubDate>Fri, 12 Mar 2021 19:04:53 +0900</pubDate>
+    <lastBuildDate>Fri, 12 Mar 2021 19:04:53 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -32,10 +32,64 @@
       </item>
     
       <item>
-        <title>[k8s]Overview</title>
+        <title>[k8s]Components</title>
         <description>&lt;!--more--&gt;
 &lt;h2 id=&quot;kubernetes-components&quot;&gt;Kubernetes Components&lt;/h2&gt;
+&lt;h3 id=&quot;kubernetes란&quot;&gt;Kubernetes란&lt;/h3&gt;
+&lt;p&gt;Kubernetes(약어 k8s)란 Container Orchestration 플랫폼이다. container화 된 워크로드/서비스/애플리케이션을 관리하기 이식성 있고, 확장 가능한 오픈 소스 플랫폼. 시스템에 배포 가능한 애플리케이션의 구성 요소가 많아짐에 따라 모든 구성의 요소를 관리를 용이하기 위해 사용.&lt;/p&gt;
 
+&lt;p&gt;개발과 관리를 단순화할 뿐만 아니라 인프라 활용률을 크게 높일 수 있음 linux의 container의 기능에 의존해 애플리케이션의 내부 세부 사항을 알 필요 없이 각 Host에 애플리케이션을 수동으로 배포하지 않고도 이기종 애플리케이션을 배포. 모든 node가 하나의 Cluster로 구성하여 수천 대의 컴퓨터에서 애플리케이션을 배포/관리 가능. 기본 인프라를 추상화 하고 개발/배포/관리 단순화&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;kubernetes-components-1&quot;&gt;Kubernetes Components&lt;/h4&gt;
+&lt;p&gt;k8s 구성요소는 크게 Control-Plane(Master Node)과 Worker Node로 구성
+Control-Plane은 k8s cluster의 전반적인 결정을 수행하고 cluster 이벤트에 충족되지 않을 경우 새로운 Pod를 감지하고 반응. 실질적으로 Cluster를 전체적인 관리를 담당Control-Plane 구성요소는 아래와 같음 구성 요소는 아래와 같음&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;API Server&lt;/li&gt;
+  &lt;li&gt;etcd&lt;/li&gt;
+  &lt;li&gt;kube-scheduler&lt;/li&gt;
+  &lt;li&gt;controller-manager&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;kube-apiserver-api-server&quot;&gt;kube-apiserver (API Server)&lt;/h4&gt;
+&lt;p&gt;API서버는 k8s  API를 노출하는 Control-Plane 컴포넌트의 프론트 엔드. k8s cluster에서 API를 사용할 수 있게 해줌. cluster로 요청이 왔을떄 그 요청이 유효한지 검증. 모든 요청을 API Server를 통해서 다른곳으로 전달되도록 구성.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/&quot;&gt;kube-apiserver상세&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;etcd&quot;&gt;etcd&lt;/h4&gt;
+&lt;p&gt;모든 Cluster의 데이터를 담는 k8s의 Backing store로 사용되는 consistent &amp;amp; high-available key값을 저장. k8s cluster에서 etcd를 backing store로 사용 시 이 데이터를 백업계획이 필요&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://etcd.io/docs/current/&quot;&gt;etcd상세&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;kube-scheduler&quot;&gt;kube-scheduler&lt;/h4&gt;
+&lt;p&gt;Node가 배정되지 않은 새로 생성된 Pod를 감지하고, 실행할 Node를 선택하는 Control-Plane 컴포넌트&lt;/p&gt;
+
+&lt;p&gt;스케쥴링 결정을 위해서 고려되는 요소는 아래와 같음&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;리소스에대한 개별 및 총체적인 요구사항&lt;/li&gt;
+  &lt;li&gt;HW/SW/정책적 제약&lt;/li&gt;
+  &lt;li&gt;affinity / anti-affinity 명세
+    &lt;ul&gt;
+      &lt;li&gt;affinity? popd를 특정 node에 배포되는 정책&lt;/li&gt;
+      &lt;li&gt;Node affinity : pod가 특정 Node에 배포 되도록 하는 기능&lt;/li&gt;
+      &lt;li&gt;Pod affinity : 기존에 배포된 Pod를 기준으로 해서 배포될 Node를 결정&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;data locality&lt;/li&gt;
+  &lt;li&gt;workload 간섭&lt;/li&gt;
+  &lt;li&gt;dead line&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;kube-controller-manager&quot;&gt;kube-controller-manager&lt;/h4&gt;
+&lt;p&gt;Controller를 구성하는 Master Node의 Component 중 하나. 논리적으로 각 Controller는 개별 프로세스이지만, 복잡성을 낮추기 위해 모두 단일 binary파일로 compile되고 단일 프로세스 내에서 실행된다. Controller는 아래 구성요소를 포함&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Node Controller : Node가 다운되었을 때 통지와 대응에 관한 기능을 담당&lt;/li&gt;
+  &lt;li&gt;Replication Controller : 시스템의 모든 Replication Controller의 Object에대해 알맞은 수의 pod들을 유지시켜 주는 기능 담당&lt;/li&gt;
+  &lt;li&gt;Endpoint Controller : EndPoint Object를 채운다 service 와 pod를 연결&lt;/li&gt;
+  &lt;li&gt;Service Account &amp;amp; Token Controller : 새로운 Namespace에대한 기본 계정과 API 접근 Token을 생성&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Sun, 24 Jan 2021 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/k8s/2021/01/24/k8s-components/</link>
@@ -53,9 +107,9 @@
       <item>
         <title>[Linux] Linux Distibution Type </title>
         <description>&lt;h3 id=&quot;linux란&quot;&gt;Linux란?&lt;/h3&gt;
-&lt;p&gt;리눅스(Linux)는 리누스 토발즈가 커뮤니티 주체로 개발한 컴퓨터 운영 체제입니다.&lt;/p&gt;
-
-&lt;p&gt;리눅스(Linux)는 UNIX운영체제를 기반으로 만들어진 운영체제 입니다. 리눅스(Linux)는 유닉스(UNIX)와 마찬가지로 다중 사용자, 다중 작업(멀티태스킹), 다중 스레드를 지원하는 네트워크 운영 체제(NOS)입니다.&lt;/p&gt;
+&lt;p&gt;리눅스(Linux)는 리누스 토발즈가 커뮤니티 주체로 개발한 컴퓨터 운영 체제입니다. 
+&lt;!--more--&gt;
+리눅스(Linux)는 UNIX운영체제를 기반으로 만들어진 운영체제 입니다. 리눅스(Linux)는 유닉스(UNIX)와 마찬가지로 다중 사용자, 다중 작업(멀티태스킹), 다중 스레드를 지원하는 네트워크 운영 체제(NOS)입니다.&lt;/p&gt;
 
 &lt;p&gt;리눅스의 원형이 되는 UNIX가 애초부터 통신 네트워크를 지향하여 설계된것처럼 리눅스 역시 서버로 작동하는데 최적화되어있습니다. 고로 서버에서 사용되는 운영체제로 많이 사용되고 있습니다.&lt;/p&gt;
 
@@ -106,7 +160,7 @@
         <link>http://localhost:4000/cs/2021/01/17/cs-os-type/</link>
         <guid isPermaLink="true">http://localhost:4000/cs/2021/01/17/cs-os-type/</guid>
         
-        <category>os</category>
+        <category>linux</category>
         
         <category>type</category>
         
@@ -119,8 +173,8 @@
         <title>[Shell] df </title>
         <description>&lt;h3 id=&quot;dfdisk-free&quot;&gt;DF(Disk Free)&lt;/h3&gt;
 &lt;h4 id=&quot;name&quot;&gt;Name&lt;/h4&gt;
-&lt;p&gt;df - report file system disk space usage&lt;/p&gt;
-
+&lt;p&gt;df - report file system disk space usage
+&lt;!--more--&gt;&lt;/p&gt;
 &lt;h4 id=&quot;synopsis&quot;&gt;Synopsis&lt;/h4&gt;
 &lt;p&gt;df [OPTION]…[FILE]&lt;/p&gt;
 
@@ -153,7 +207,7 @@
         <link>http://localhost:4000/cs/2021/01/17/cs-cli-df/</link>
         <guid isPermaLink="true">http://localhost:4000/cs/2021/01/17/cs-cli-df/</guid>
         
-        <category>cli</category>
+        <category>linux</category>
         
         <category>df</category>
         
@@ -771,7 +825,8 @@ complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
   |옵션|내용|
   | – |–|
   | d | 원하는일자를 지정
-  | + | 출력포맷지정 |&lt;/li&gt;
+  | + | 출력포맷지정 |
+&lt;!--more--&gt;&lt;/li&gt;
   &lt;li&gt;예제
     &lt;ul&gt;
       &lt;li&gt;&lt;strong&gt;일자 출력 포맷 지정&lt;/strong&gt;
@@ -795,7 +850,7 @@ complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
         <link>http://localhost:4000/cs/2020/12/28/cs-linux-date/</link>
         <guid isPermaLink="true">http://localhost:4000/cs/2020/12/28/cs-linux-date/</guid>
         
-        <category>cli</category>
+        <category>linux</category>
         
         <category>date</category>
         
@@ -807,6 +862,7 @@ complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
       <item>
         <title>[Shell] print </title>
         <description>&lt;h2 id=&quot;print&quot;&gt;Print&lt;/h2&gt;
+&lt;!--more--&gt;
 &lt;h4 id=&quot;modifiers-for-print-formats&quot;&gt;Modifiers for &lt;code class=&quot;highlighter-rouge&quot;&gt;print&lt;/code&gt; Formats&lt;/h4&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;printf &quot;%s %s\n&quot;, &quot;don't&quot;, &quot;panic&quot;
 printf &quot;%2$s %1$s\n&quot;, &quot;panic&quot;, &quot;don't&quot;
@@ -831,7 +887,7 @@ printf &quot;%2$s %1$s\n&quot;, &quot;panic&quot;, &quot;don't&quot;
         <link>http://localhost:4000/cs/2020/12/28/cs-linux-awk/</link>
         <guid isPermaLink="true">http://localhost:4000/cs/2020/12/28/cs-linux-awk/</guid>
         
-        <category>cli</category>
+        <category>linux</category>
         
         <category>print</category>
         

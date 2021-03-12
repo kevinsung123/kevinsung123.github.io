@@ -3,15 +3,17 @@ layout: post
 title: "[Shell] Date "  
 subtitle: "Linux CLI"  
 categories: cs
-tags: cli date
+tags: linux date
 comments: true  
 ---  
+
 ## DATE
 - 일자,시간을 처리
 	|옵션|내용|
 	| -- |--|
 	| d | 원하는일자를 지정
 	| + | 출력포맷지정 |
+<!--more-->
 - 예제
 	- **일자 출력 포맷 지정**
 	```
