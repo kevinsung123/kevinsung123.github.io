@@ -6,9 +6,49 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 17 Jan 2021 23:22:33 +0900</pubDate>
-    <lastBuildDate>Sun, 17 Jan 2021 23:22:33 +0900</lastBuildDate>
+    <pubDate>Fri, 12 Mar 2021 18:48:17 +0900</pubDate>
+    <lastBuildDate>Fri, 12 Mar 2021 18:48:17 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[k8s]Pod Lifecycle</title>
+        <description>&lt;!--more--&gt;
+&lt;h2 id=&quot;pod-lifecycle&quot;&gt;Pod Lifecycle&lt;/h2&gt;
+
+</description>
+        <pubDate>Sat, 06 Feb 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/k8s/2021/02/06/k8s-pod-lifecycle/</link>
+        <guid isPermaLink="true">http://localhost:4000/k8s/2021/02/06/k8s-pod-lifecycle/</guid>
+        
+        <category>k8s</category>
+        
+        <category>pod</category>
+        
+        <category>lifecycle</category>
+        
+        
+        <category>k8s</category>
+        
+      </item>
+    
+      <item>
+        <title>[k8s]Overview</title>
+        <description>&lt;!--more--&gt;
+&lt;h2 id=&quot;kubernetes-components&quot;&gt;Kubernetes Components&lt;/h2&gt;
+
+</description>
+        <pubDate>Sun, 24 Jan 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/k8s/2021/01/24/k8s-components/</link>
+        <guid isPermaLink="true">http://localhost:4000/k8s/2021/01/24/k8s-components/</guid>
+        
+        <category>k8s</category>
+        
+        <category>components</category>
+        
+        
+        <category>k8s</category>
+        
+      </item>
     
       <item>
         <title>[Linux] Linux Distibution Type </title>
@@ -249,7 +289,62 @@ if not expression1:
       </item>
     
       <item>
-        <title>[Leetcode]1.Two-sum</title>
+        <title>K8s Overview</title>
+        <description>&lt;h3 id=&quot;kuberntes-doc&quot;&gt;kuberntes doc&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;컨테이너 오케스트레이션 엔진&lt;/code&gt; :배포, 스케일링 그리고 컨테이너화된 애플리케이션의 관리를 자동화 해주는&lt;/li&gt;
+  &lt;li&gt;
+    &lt;h2 id=&quot;cncfcloud-native-computing-foundation-에서-주관&quot;&gt;CNCF(Cloud Native Computing Foundation) 에서 주관&lt;/h2&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;concepts&quot;&gt;Concepts&lt;/h3&gt;
+&lt;h4 id=&quot;what-is-kubernetes&quot;&gt;What is Kubernetes?&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Kubernetes란 &lt;strong&gt;containerized workloads and service(컨테이너화된 워크로드 와 서비스)&lt;/strong&gt; 들을 아래 특성을 가지며  지원하는 오픈소스 플랫폼
+    &lt;ul&gt;
+      &lt;li&gt;declartive configuration and automation을 지원하는 오픈소스 플랫폼&lt;/li&gt;
+      &lt;li&gt;portable 이식가능&lt;/li&gt;
+      &lt;li&gt;
+        &lt;h2 id=&quot;extensible-확장가능&quot;&gt;extensible 확장가능&lt;/h2&gt;
+        &lt;h4 id=&quot;kubernetes-components&quot;&gt;Kubernetes Components&lt;/h4&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;kubernetes클러스터는  아래2가지 컴포넌트로 구성
+    &lt;ol&gt;
+      &lt;li&gt;control pane&lt;/li&gt;
+      &lt;li&gt;
+        &lt;h2 id=&quot;node&quot;&gt;node&lt;/h2&gt;
+        &lt;h4 id=&quot;the-kubernetes-api&quot;&gt;The Kubernetes API&lt;/h4&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Kubernetes API는 Kubernetes의 object의 상태들을 &lt;code class=&quot;highlighter-rouge&quot;&gt;query그리고 manipulate&lt;/code&gt; 가능&lt;/li&gt;
+  &lt;li&gt;K8s의 control pane의 core는
+    &lt;ul&gt;
+      &lt;li&gt;The API server&lt;/li&gt;
+      &lt;li&gt;
+        &lt;h2 id=&quot;http-api&quot;&gt;HTTP API&lt;/h2&gt;
+        &lt;h4 id=&quot;working-with-kubernetes-object&quot;&gt;Working with Kubernetes Object&lt;/h4&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Kubernets object들은 persistenet entity(영구개체)&lt;/li&gt;
+  &lt;li&gt;Kubernetes들은 이 entity들을 사용해서 cluster의 상태를 표현&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sat, 16 Jan 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2021/01/16/k8s-overview/</link>
+        <guid isPermaLink="true">http://localhost:4000/2021/01/16/k8s-overview/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>[Leetcode] 1.Two-sum</title>
         <description>&lt;h3 id=&quot;problem&quot;&gt;Problem&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/two-sum/&quot;&gt;1.Two Sums&lt;/a&gt;&lt;/li&gt;
@@ -532,14 +627,15 @@ complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;hr /&gt;
+
 &lt;h3 id=&quot;3--docker-개요&quot;&gt;3.  &lt;strong&gt;Docker 개요&lt;/strong&gt;&lt;/h3&gt;
-&lt;h4 id=&quot;1-docker&quot;&gt;1. &lt;strong&gt;Docker?&lt;/strong&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;3-1-docker&quot;&gt;3-1. &lt;strong&gt;Docker?&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;애플리케이션의 실행에 필요한 환경을 하나의 이미졸 모아두고, 그 이미지를 사용하여 다양한 환경에서&lt;/li&gt;
   &lt;li&gt;애플리케이션 실행환경을 구축 및 운용하기 위한 오픈소스 플랫폼&lt;/li&gt;
   &lt;li&gt;내부에서 컨테이너기술을 사용&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;www.docker.com&quot;&gt;Docker공식사이트&lt;/a&gt;
-    &lt;h4 id=&quot;2-프로그래머에게-docker란&quot;&gt;2. &lt;strong&gt;프로그래머에게 Docker란?&lt;/strong&gt;&lt;/h4&gt;
+    &lt;h4 id=&quot;3-2-프로그래머에게-docker란&quot;&gt;3-2. &lt;strong&gt;프로그래머에게 Docker란?&lt;/strong&gt;&lt;/h4&gt;
   &lt;/li&gt;
   &lt;li&gt;웹시스템 개발 애플리케이션을 제품환경에서 가동시키기 위해서
     &lt;ul&gt;
@@ -562,16 +658,20 @@ complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
   개발한 업무 애플리케이션을 On-premise환경-&amp;gt; Cloud 및 Cloud-&amp;gt;On-premise환경에서 쉽게 가능
   클라우드 Iaas서비스는 시스템이 사용한 리소스(CPU,GPU,메모리,Disk)용량에 따라 요금측정
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-        &lt;h3 id=&quot;4-docker기능&quot;&gt;4. &lt;strong&gt;Docker기능&lt;/strong&gt;&lt;/h3&gt;
         &lt;hr /&gt;
-        &lt;h4 id=&quot;다음과-같은-기능-3가지&quot;&gt;다음과 같은 기능 3가지&lt;/h4&gt;
+        &lt;h3 id=&quot;4-docker기능&quot;&gt;4. &lt;strong&gt;Docker기능&lt;/strong&gt;&lt;/h3&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;다음과-같은-기능-3가지&quot;&gt;다음과 같은 기능 3가지&lt;/h4&gt;
+&lt;ul&gt;
   &lt;li&gt;Docker 이미지를 만드는 기능(Build)&lt;/li&gt;
   &lt;li&gt;Docker 이미지를 공유하는 기능(Ship)&lt;/li&gt;
-  &lt;li&gt;Docker 컨테이너를 작동시키는 기능(Run)
-    &lt;h4 id=&quot;1-docker이미지를-만드는-기능build&quot;&gt;1. Docker이미지를 만드는 기능(Build)&lt;/h4&gt;
+  &lt;li&gt;
+    &lt;h2 id=&quot;docker-컨테이너를-작동시키는-기능run&quot;&gt;Docker 컨테이너를 작동시키는 기능(Run)&lt;/h2&gt;
+    &lt;h4 id=&quot;4-1-docker이미지를-만드는-기능build&quot;&gt;4-1. Docker이미지를 만드는 기능(Build)&lt;/h4&gt;
   &lt;/li&gt;
   &lt;li&gt;프로그램본체, 라이브러리, 미들웨어, OS/네트워크 설정등을 하나모로 모아서 Docker 이미지생성&lt;/li&gt;
   &lt;li&gt;컨테이너의 바탕이 바로 이미지&lt;/li&gt;
@@ -584,8 +684,9 @@ complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
       &lt;li&gt;Dockerfile이라는 설정파일을 만들어 그것을 바탕으로 자동으로 이미지 생성가능 ( 더 바람직)&lt;/li&gt;
     &lt;/ol&gt;
   &lt;/li&gt;
-  &lt;li&gt;Docker이미지는 겹처서 사용 가능
-    &lt;h4 id=&quot;2-docker이미지를-공유하는-기능ship&quot;&gt;2. Docker이미지를 공유하는 기능(Ship)&lt;/h4&gt;
+  &lt;li&gt;
+    &lt;h2 id=&quot;docker이미지는-겹처서-사용-가능&quot;&gt;Docker이미지는 겹처서 사용 가능&lt;/h2&gt;
+    &lt;h4 id=&quot;4-2-docker이미지를-공유하는-기능ship&quot;&gt;4-2. Docker이미지를 공유하는 기능(Ship)&lt;/h4&gt;
   &lt;/li&gt;
   &lt;li&gt;Docker이미지는 Docker레지스트리에 공유 가능&lt;/li&gt;
   &lt;li&gt;Docker허브에서 Ubuntu나 Centos와 같은 Linux 배포판 기본기능을 제공하는 베이스이미지 배포&lt;/li&gt;
@@ -602,8 +703,9 @@ complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
       &lt;li&gt;그 이후, 이미지를 이용할때는 이미지 제공자의 공개키를 사용하여 실행하려고 하는 이미지가 정말 제공자가 작성한 것 인지를 확인&lt;/li&gt;
       &lt;li&gt;Docker Security Scanning
         &lt;ul&gt;
-          &lt;li&gt;Docker이미지를 검사하여 이미 알려진 보안상의 취약성이 없다는 것을 확인
-            &lt;h4 id=&quot;3-docker컨테이너를-작동시키는-기능run&quot;&gt;3. Docker컨테이너를 작동시키는 기능(Run)&lt;/h4&gt;
+          &lt;li&gt;
+            &lt;h2 id=&quot;docker이미지를-검사하여-이미-알려진-보안상의-취약성이-없다는-것을-확인&quot;&gt;Docker이미지를 검사하여 이미 알려진 보안상의 취약성이 없다는 것을 확인&lt;/h2&gt;
+            &lt;h4 id=&quot;4-3-docker컨테이너를-작동시키는-기능run&quot;&gt;4-3. Docker컨테이너를 작동시키는 기능(Run)&lt;/h4&gt;
           &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
@@ -620,7 +722,8 @@ complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
   &lt;li&gt;Linux커널기능(namespace, cgroups)기술이 사용&lt;/li&gt;
   &lt;li&gt;Production환경에서는 모든 Docker 컨테이너를 한대의 호스트 머신에서 작동시키는일은 드뭄&lt;/li&gt;
   &lt;li&gt;시스템의 트랙픽 증감이나 가용성 요건, 신뢰도 요건등을 고려한 후에 여러 대의 호스트 머신으로 된 분산환경을 구축&lt;/li&gt;
-  &lt;li&gt;보통 컨테이너 관리에 대해서는 오케스트레이션 툴을 이용!!
+  &lt;li&gt;
+    &lt;h2 id=&quot;보통-컨테이너-관리에-대해서는-오케스트레이션-툴을-이용&quot;&gt;보통 컨테이너 관리에 대해서는 오케스트레이션 툴을 이용!!&lt;/h2&gt;
     &lt;h3 id=&quot;5-docker-컴포넌트&quot;&gt;5. Docker 컴포넌트&lt;/h3&gt;
     &lt;hr /&gt;
   &lt;/li&gt;
@@ -689,8 +792,8 @@ complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 28 Dec 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/cs/2020/12/28/cs-cli-date/</link>
-        <guid isPermaLink="true">http://localhost:4000/cs/2020/12/28/cs-cli-date/</guid>
+        <link>http://localhost:4000/cs/2020/12/28/cs-linux-date/</link>
+        <guid isPermaLink="true">http://localhost:4000/cs/2020/12/28/cs-linux-date/</guid>
         
         <category>cli</category>
         
@@ -725,8 +828,8 @@ printf &quot;%2$s %1$s\n&quot;, &quot;panic&quot;, &quot;don't&quot;
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 28 Dec 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/cs/2020/12/28/cs-cli-awk/</link>
-        <guid isPermaLink="true">http://localhost:4000/cs/2020/12/28/cs-cli-awk/</guid>
+        <link>http://localhost:4000/cs/2020/12/28/cs-linux-awk/</link>
+        <guid isPermaLink="true">http://localhost:4000/cs/2020/12/28/cs-linux-awk/</guid>
         
         <category>cli</category>
         

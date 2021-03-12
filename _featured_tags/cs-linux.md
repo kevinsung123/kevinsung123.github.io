@@ -1,7 +1,7 @@
 ---
 layout: tag-blog
-title: CLI
-slug: cli
+title: Linux
+slug: linux
 category: cs
 menu: false
 order: 2
