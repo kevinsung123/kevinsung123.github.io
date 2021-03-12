@@ -32,6 +32,7 @@ comments: true
 ![enter image description here](https://www.docker.com/sites/default/files/d8/styles/large/public/2018-11/container-what-is-container.png?itok=vle7kjDj)
 
 ---
+
 ### 2. **컨테이너의 역사**
 - FressBSD Jail
 	- 오픈소스인 UNIX의 FreeBSD의기술
@@ -57,11 +58,13 @@ comments: true
 ---
 
 ### 3.  **Docker 개요**
+
 #### 3-1. **Docker?** 
-- 애플리케이션의 실행에 필요한 환경을 하나의 이미졸 모아두고, 그 이미지를 사용하여 다양한 환경에서 				
+- 애플리케이션의 실행에 필요한 환경을 하나의 이미졸 모아두고, 그 이미지를 사용하여 다양한 환경에서 
 - 애플리케이션 실행환경을 구축 및 운용하기 위한 오픈소스 플랫폼 
 - 내부에서 컨테이너기술을 사용
 - [Docker공식사이트](www.docker.com)
+
 #### 3-2. **프로그래머에게 Docker란?**
 - 웹시스템 개발 애플리케이션을 제품환경에서 가동시키기 위해서 
 	- 애플리케이션 실행모듈(프로그램 본체)
@@ -81,13 +84,16 @@ comments: true
 	개발한 업무 애플리케이션을 On-premise환경-> Cloud 및 Cloud->On-premise환경에서 쉽게 가능
 	클라우드 Iaas서비스는 시스템이 사용한 리소스(CPU,GPU,메모리,Disk)용량에 따라 요금측정
     ```
+
 ---
+
 ### 4. **Docker기능**
 
 ####  다음과 같은 기능 3가지
 - Docker 이미지를 만드는 기능(Build)
 - Docker 이미지를 공유하는 기능(Ship)
 - Docker 컨테이너를 작동시키는 기능(Run)
+
 ---
 #### 4-1. Docker이미지를 만드는 기능(Build)
 - 프로그램본체, 라이브러리, 미들웨어, OS/네트워크 설정등을 하나모로 모아서 Docker 이미지생성
@@ -99,7 +105,9 @@ comments: true
 	1. Docker 명령을 사용하여 수동 생성
 	2. Dockerfile이라는 설정파일을 만들어 그것을 바탕으로 자동으로 이미지 생성가능 ( 더 바람직)
 - Docker이미지는 겹처서 사용 가능
+
 ---
+
 #### 4-2. Docker이미지를 공유하는 기능(Ship)
 - Docker이미지는 Docker레지스트리에 공유 가능
 - Docker허브에서 Ubuntu나 Centos와 같은 Linux 배포판 기본기능을 제공하는 베이스이미지 배포
@@ -112,7 +120,9 @@ comments: true
 	- 그 이후, 이미지를 이용할때는 이미지 제공자의 공개키를 사용하여 실행하려고 하는 이미지가 정말 제공자가 작성한 것 인지를 확인
 	- Docker Security Scanning
 		- Docker이미지를 검사하여 이미 알려진 보안상의 취약성이 없다는 것을 확인
+
 ---
+
 #### 4-3. Docker컨테이너를 작동시키는 기능(Run)
 - Docker이미지를 가지고 여러개의 컨테이너 기동 가능
 - 컨테이너 기동, 정지, 파기는 Docker명령을 사용
@@ -126,9 +136,10 @@ comments: true
 - Production환경에서는 모든 Docker 컨테이너를 한대의 호스트 머신에서 작동시키는일은 드뭄
 - 시스템의 트랙픽 증감이나 가용성 요건, 신뢰도 요건등을 고려한 후에 여러 대의 호스트 머신으로 된 분산환경을 구축 
 - 보통 컨테이너 관리에 대해서는 오케스트레이션 툴을 이용!!
+
 ---
+
 ### 5. Docker 컴포넌트
----
 - Docker Engine(핵심)
 	- Docke 이미지를 생성하고 컨테이너를 기동시키기 위한 Docker의 핵심기능. Docker명령 실행이나 Dockerfile에의한 이미지 생성
 - Docker Registry(이미지 공개 및 공유)

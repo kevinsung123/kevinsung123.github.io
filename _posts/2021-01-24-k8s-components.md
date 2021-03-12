@@ -16,6 +16,7 @@ Kubernetes(약어 k8s)란 Container Orchestration 플랫폼이다. container화 
 ---
 
 #### Kubernetes Components	
+![kubernetes architecture](https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg)
 k8s 구성요소는 크게 Control-Plane(Master Node)과 Worker Node로 구성
 Control-Plane은 k8s cluster의 전반적인 결정을 수행하고 cluster 이벤트에 충족되지 않을 경우 새로운 Pod를 감지하고 반응. 실질적으로 Cluster를 전체적인 관리를 담당Control-Plane 구성요소는 아래와 같음 구성 요소는 아래와 같음
 - API Server

@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 12 Mar 2021 19:04:53 +0900</pubDate>
-    <lastBuildDate>Fri, 12 Mar 2021 19:04:53 +0900</lastBuildDate>
+    <pubDate>Fri, 12 Mar 2021 19:13:41 +0900</pubDate>
+    <lastBuildDate>Fri, 12 Mar 2021 19:13:41 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -43,7 +43,8 @@
 &lt;hr /&gt;
 
 &lt;h4 id=&quot;kubernetes-components-1&quot;&gt;Kubernetes Components&lt;/h4&gt;
-&lt;p&gt;k8s 구성요소는 크게 Control-Plane(Master Node)과 Worker Node로 구성
+&lt;p&gt;&lt;img src=&quot;https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg&quot; alt=&quot;kubernetes architecture&quot; /&gt;
+k8s 구성요소는 크게 Control-Plane(Master Node)과 Worker Node로 구성
 Control-Plane은 k8s cluster의 전반적인 결정을 수행하고 cluster 이벤트에 충족되지 않을 경우 새로운 Pod를 감지하고 반응. 실질적으로 Cluster를 전체적인 관리를 담당Control-Plane 구성요소는 아래와 같음 구성 요소는 아래와 같음&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;API Server&lt;/li&gt;
@@ -450,7 +451,7 @@ complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
       <item>
         <title>[Docker]Overview</title>
         <description>&lt;!--more--&gt;
-&lt;h3 id=&quot;docker-cocepts&quot;&gt;Docker Cocepts&lt;/h3&gt;
+&lt;h3 id=&quot;docker-concepts&quot;&gt;Docker Concepts&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Docker는 개발자 및 관리자를 위해 컨테이너와 함꼐 애플리케이션을 &lt;code class=&quot;highlighter-rouge&quot;&gt;build, run and share&lt;/code&gt;하기 위한 &lt;code class=&quot;highlighter-rouge&quot;&gt;platform&lt;/code&gt;&lt;/li&gt;
@@ -493,14 +494,20 @@ complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;hr /&gt;
+
 &lt;h3 id=&quot;images-and-containers&quot;&gt;Images and containers&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;기본적으로 container는 hosts와 다른 container로부터 격리 시키기 위한 어떤 encapsulation feature가 추가되고 적용된 실행 중 인 프로세스이다&lt;/li&gt;
   &lt;li&gt;컨테이너 격리의 가장 중요한 측면 중 하나는 각 container는 자체 개인의 파일시스템과 상호 작용하고, 이 파일시스템은 Docker image로 제공&lt;/li&gt;
-  &lt;li&gt;이 image에는 애플리케이션 실행에 필요한 모든 것을 제공- code/binary/ runtimes/ dependencies/ 그리고 다른 어떤 파일시스템
-    &lt;h3 id=&quot;container-and-virtual-machines&quot;&gt;Container and virtual machines&lt;/h3&gt;
-    &lt;h4 id=&quot;container&quot;&gt;container&lt;/h4&gt;
-  &lt;/li&gt;
+  &lt;li&gt;이 image에는 애플리케이션 실행에 필요한 모든 것을 제공- code/binary/ runtimes/ dependencies/ 그리고 다른 어떤 파일시스템&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;container-and-virtual-machines&quot;&gt;Container and virtual machines&lt;/h3&gt;
+&lt;h4 id=&quot;container&quot;&gt;container&lt;/h4&gt;
+&lt;ul&gt;
   &lt;li&gt;Linux 기본적으로 실행하고 다른 containter들과 host machine kernel을 공유한다&lt;/li&gt;
   &lt;li&gt;별도의 프로세스를 실행&lt;/li&gt;
   &lt;li&gt;다른 실행 파일보다 더 많은 메모리를 사용하지 않으므로 가볍다
@@ -522,13 +529,15 @@ complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
       &lt;li&gt;server는 daemon 프로세스라고불르는 &lt;code class=&quot;highlighter-rouge&quot;&gt;long-running&lt;/code&gt; 프로그램의 종류이다&lt;/li&gt;
       &lt;li&gt;프로그램과 특정한 인터페이스를 하는 REST API를 통해 daemon과 통신하고 지시를 구성&lt;/li&gt;
       &lt;li&gt;CLI 클리이언트를 통해 통신&lt;/li&gt;
-      &lt;li&gt;&lt;img src=&quot;https://docs.docker.com/engine/images/engine-components-flow.png&quot; alt=&quot;enter image description here&quot; /&gt;&lt;/li&gt;
-      &lt;li&gt;
-        &lt;h2 id=&quot;cli는-docker-rest-api를-통해-docker-daemon과-통신-및-제어를-한다&quot;&gt;CLI는 Docker REST API를 통해 Docker daemon과 통신 및 제어를 한다&lt;/h2&gt;
-        &lt;h3 id=&quot;docker-architecture&quot;&gt;Docker Architecture&lt;/h3&gt;
-      &lt;/li&gt;
+      &lt;li&gt;CLI는 Docker REST API를 통해 Docker daemon과 통신 및 제어를 한다
+&lt;img src=&quot;https://docs.docker.com/engine/images/engine-components-flow.png&quot; alt=&quot;enter image description here&quot; /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;docker-architecture&quot;&gt;Docker Architecture&lt;/h3&gt;
+&lt;ul&gt;
   &lt;li&gt;Docker는 client-server 아키텍처 사용&lt;/li&gt;
   &lt;li&gt;Docker client는 Docker daemon에게 얘기함
     &lt;ul&gt;
@@ -539,25 +548,40 @@ complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;Docker client와 Docker daemon같은 시스템에서 작동&lt;/li&gt;
   &lt;li&gt;Docker client를 통해 remote Docker daemon에게 통신연결&lt;/li&gt;
-  &lt;li&gt;Docker client 및 daemon은 REST API를 통해 서로 통신 UNIX sockets 그리고 network interface를 통해서&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://docs.docker.com/engine/images/architecture.svg&quot; alt=&quot;enter image description here&quot; /&gt;
-    &lt;h3 id=&quot;the-docker-daemon&quot;&gt;The Docker daemon&lt;/h3&gt;
-  &lt;/li&gt;
-  &lt;li&gt;docker daemon &lt;code class=&quot;highlighter-rouge&quot;&gt;dockerd&lt;/code&gt; 는 Docker API 요청을 듣고 Docker object를 관리 (image, containters, network, volumes)
-    &lt;h3 id=&quot;the-docker-client&quot;&gt;The Docker Client&lt;/h3&gt;
-    &lt;p&gt;-&lt;code class=&quot;highlighter-rouge&quot;&gt;docker&lt;/code&gt;는 많은 Docker user들이 Docker와 통신하는 주요 방법&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Docker client 및 daemon은 REST API를 통해 서로 통신 UNIX sockets 그리고 network interface를 통해서
+&lt;img src=&quot;https://docs.docker.com/engine/images/architecture.svg&quot; alt=&quot;enter image description here&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;the-docker-daemon&quot;&gt;The Docker daemon&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;docker daemon &lt;code class=&quot;highlighter-rouge&quot;&gt;dockerd&lt;/code&gt; 는 Docker API 요청을 듣고 Docker object를 관리 (image, containters, network, volumes)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;the-docker-client&quot;&gt;The Docker Client&lt;/h3&gt;
+&lt;p&gt;-&lt;code class=&quot;highlighter-rouge&quot;&gt;docker&lt;/code&gt;는 많은 Docker user들이 Docker와 통신하는 주요 방법&lt;/p&gt;
+&lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run&lt;/code&gt;과 같은 명령어를 사용시, client는 명령어를 &lt;code class=&quot;highlighter-rouge&quot;&gt;dockerd&lt;/code&gt;에게 보내고 그것을 실행&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker&lt;/code&gt;는 Docker API를 사용
-    &lt;h3 id=&quot;docker-registries&quot;&gt;Docker registries&lt;/h3&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker&lt;/code&gt;는 Docker API를 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;docker-registries&quot;&gt;Docker registries&lt;/h3&gt;
+&lt;ul&gt;
   &lt;li&gt;Docker registiy 는 Docker 이미지를 저장&lt;/li&gt;
-  &lt;li&gt;Docker Hub는 pulbic registry 이다 (누구나 사용가능)
-    &lt;h3 id=&quot;services&quot;&gt;SERVICES&lt;/h3&gt;
-  &lt;/li&gt;
-  &lt;li&gt;service는 multiple Docker daemon들에게 container를 확장가능
-    &lt;h4 id=&quot;namespaces&quot;&gt;NAMESPACES&lt;/h4&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Docker Hub는 pulbic registry 이다 (누구나 사용가능)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;services&quot;&gt;SERVICES&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;service는 multiple Docker daemon들에게 container를 확장가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h4 id=&quot;namespaces&quot;&gt;NAMESPACES&lt;/h4&gt;
+&lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;namespace&lt;/code&gt;라고 불리는 기술을 사용&lt;/li&gt;
   &lt;li&gt;격리된 workspace &lt;code class=&quot;highlighter-rouge&quot;&gt;cotainer&lt;/code&gt;라고 불리는 장소를 제공&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;container&lt;/code&gt;를 실행시, Docker는 container를 위한 namespace를 생성&lt;/li&gt;
@@ -569,26 +593,35 @@ complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
       &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;net&lt;/code&gt;namespaces : Managing network interfaces(NET: networking)&lt;/li&gt;
       &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ipc&lt;/code&gt;namespaces: Managing access to IPC 리소스 (IPC : InterProcess Communication)&lt;/li&gt;
       &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mnt&lt;/code&gt; namespaces :  Managin filesystem mount points : (MNT: mount)&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;uts&lt;/code&gt; namespaces : Isolatiing kernel and version identifies (UTS : Unix Timeshraring System)
-        &lt;h3 id=&quot;control-groups&quot;&gt;Control Groups&lt;/h3&gt;
-      &lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;uts&lt;/code&gt; namespaces : Isolatiing kernel and version identifies (UTS : Unix Timeshraring System)&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;control-groups&quot;&gt;Control Groups&lt;/h3&gt;
+&lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;control groups(cgroups)&lt;/code&gt;f라고 불리는 기술을 Docker Engine이 사용&lt;/li&gt;
   &lt;li&gt;특정 리소스들의 집합의 애플리케이션으로 제한&lt;/li&gt;
   &lt;li&gt;cgroup를 제어하는것을 통해 Docker Engine은 hardware 리소스를 공유 제한 및 제약을 강제로 적용
     &lt;ul&gt;
-      &lt;li&gt;ex) 특정 container에 메모리를 한정
-        &lt;h3 id=&quot;union-file-systems&quot;&gt;Union file systems&lt;/h3&gt;
-      &lt;/li&gt;
+      &lt;li&gt;ex) 특정 container에 메모리를 한정&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;union-file-systems&quot;&gt;Union file systems&lt;/h3&gt;
+&lt;ul&gt;
   &lt;li&gt;layer를 생성함으로써 Union File systtem UnionFS를 제공&lt;/li&gt;
   &lt;li&gt;ligthweight 그리고 fast&lt;/li&gt;
   &lt;li&gt;Docker Engine은 UnionFS를 사용하여 container를 위한 block를 제공&lt;/li&gt;
-  &lt;li&gt;Docker Engine은 multiple UnionFS variants(AUFS, btrfs,vfs, DeviceMapper를 사용)
-    &lt;h3 id=&quot;container-format&quot;&gt;Container Format&lt;/h3&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Docker Engine은 multiple UnionFS variants(AUFS, btrfs,vfs, DeviceMapper를 사용)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;container-format&quot;&gt;Container Format&lt;/h3&gt;
+&lt;ul&gt;
   &lt;li&gt;Docker engine은 &lt;code class=&quot;highlighter-rouge&quot;&gt;namespace&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;cgroups&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;UnionFS&lt;/code&gt;를 wrapper하여 container format을 사용&lt;/li&gt;
   &lt;li&gt;기본 container format은 &lt;code class=&quot;highlighter-rouge&quot;&gt;libcontainer&lt;/code&gt;라고 부름&lt;/li&gt;
 &lt;/ul&gt;
@@ -649,6 +682,7 @@ complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://www.docker.com/sites/default/files/d8/styles/large/public/2018-11/container-what-is-container.png?itok=vle7kjDj&quot; alt=&quot;enter image description here&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
+
 &lt;h3 id=&quot;2-컨테이너의-역사&quot;&gt;2. &lt;strong&gt;컨테이너의 역사&lt;/strong&gt;&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;FressBSD Jail
@@ -683,14 +717,17 @@ complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;h3 id=&quot;3--docker-개요&quot;&gt;3.  &lt;strong&gt;Docker 개요&lt;/strong&gt;&lt;/h3&gt;
+
 &lt;h4 id=&quot;3-1-docker&quot;&gt;3-1. &lt;strong&gt;Docker?&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;애플리케이션의 실행에 필요한 환경을 하나의 이미졸 모아두고, 그 이미지를 사용하여 다양한 환경에서&lt;/li&gt;
   &lt;li&gt;애플리케이션 실행환경을 구축 및 운용하기 위한 오픈소스 플랫폼&lt;/li&gt;
   &lt;li&gt;내부에서 컨테이너기술을 사용&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;www.docker.com&quot;&gt;Docker공식사이트&lt;/a&gt;
-    &lt;h4 id=&quot;3-2-프로그래머에게-docker란&quot;&gt;3-2. &lt;strong&gt;프로그래머에게 Docker란?&lt;/strong&gt;&lt;/h4&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;www.docker.com&quot;&gt;Docker공식사이트&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;3-2-프로그래머에게-docker란&quot;&gt;3-2. &lt;strong&gt;프로그래머에게 Docker란?&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
   &lt;li&gt;웹시스템 개발 애플리케이션을 제품환경에서 가동시키기 위해서
     &lt;ul&gt;
       &lt;li&gt;애플리케이션 실행모듈(프로그램 본체)&lt;/li&gt;
@@ -712,21 +749,25 @@ complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
   개발한 업무 애플리케이션을 On-premise환경-&amp;gt; Cloud 및 Cloud-&amp;gt;On-premise환경에서 쉽게 가능
   클라우드 Iaas서비스는 시스템이 사용한 리소스(CPU,GPU,메모리,Disk)용량에 따라 요금측정
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-        &lt;hr /&gt;
-        &lt;h3 id=&quot;4-docker기능&quot;&gt;4. &lt;strong&gt;Docker기능&lt;/strong&gt;&lt;/h3&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;4-docker기능&quot;&gt;4. &lt;strong&gt;Docker기능&lt;/strong&gt;&lt;/h3&gt;
+
 &lt;h4 id=&quot;다음과-같은-기능-3가지&quot;&gt;다음과 같은 기능 3가지&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;Docker 이미지를 만드는 기능(Build)&lt;/li&gt;
   &lt;li&gt;Docker 이미지를 공유하는 기능(Ship)&lt;/li&gt;
-  &lt;li&gt;
-    &lt;h2 id=&quot;docker-컨테이너를-작동시키는-기능run&quot;&gt;Docker 컨테이너를 작동시키는 기능(Run)&lt;/h2&gt;
-    &lt;h4 id=&quot;4-1-docker이미지를-만드는-기능build&quot;&gt;4-1. Docker이미지를 만드는 기능(Build)&lt;/h4&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Docker 컨테이너를 작동시키는 기능(Run)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h4 id=&quot;4-1-docker이미지를-만드는-기능build&quot;&gt;4-1. Docker이미지를 만드는 기능(Build)&lt;/h4&gt;
+&lt;ul&gt;
   &lt;li&gt;프로그램본체, 라이브러리, 미들웨어, OS/네트워크 설정등을 하나모로 모아서 Docker 이미지생성&lt;/li&gt;
   &lt;li&gt;컨테이너의 바탕이 바로 이미지&lt;/li&gt;
   &lt;li&gt;Docker에서는 하나의 이미지에는 하나의 애플리케이션만 넣어 두고, 여러 개의 컨테이너를 조합하여 서비스를 구축!&lt;/li&gt;
@@ -738,10 +779,13 @@ complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
       &lt;li&gt;Dockerfile이라는 설정파일을 만들어 그것을 바탕으로 자동으로 이미지 생성가능 ( 더 바람직)&lt;/li&gt;
     &lt;/ol&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;h2 id=&quot;docker이미지는-겹처서-사용-가능&quot;&gt;Docker이미지는 겹처서 사용 가능&lt;/h2&gt;
-    &lt;h4 id=&quot;4-2-docker이미지를-공유하는-기능ship&quot;&gt;4-2. Docker이미지를 공유하는 기능(Ship)&lt;/h4&gt;
-  &lt;/li&gt;
+  &lt;li&gt;Docker이미지는 겹처서 사용 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;4-2-docker이미지를-공유하는-기능ship&quot;&gt;4-2. Docker이미지를 공유하는 기능(Ship)&lt;/h4&gt;
+&lt;ul&gt;
   &lt;li&gt;Docker이미지는 Docker레지스트리에 공유 가능&lt;/li&gt;
   &lt;li&gt;Docker허브에서 Ubuntu나 Centos와 같은 Linux 배포판 기본기능을 제공하는 베이스이미지 배포&lt;/li&gt;
   &lt;li&gt;기본 베이스 이미지에 미들웨어나 라이브러리 전개 할 애플리케이션 등을 넣은 이미지를 겹처서 독자적인 Docker 이미지로 구축 가능&lt;/li&gt;
@@ -757,14 +801,17 @@ complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
       &lt;li&gt;그 이후, 이미지를 이용할때는 이미지 제공자의 공개키를 사용하여 실행하려고 하는 이미지가 정말 제공자가 작성한 것 인지를 확인&lt;/li&gt;
       &lt;li&gt;Docker Security Scanning
         &lt;ul&gt;
-          &lt;li&gt;
-            &lt;h2 id=&quot;docker이미지를-검사하여-이미-알려진-보안상의-취약성이-없다는-것을-확인&quot;&gt;Docker이미지를 검사하여 이미 알려진 보안상의 취약성이 없다는 것을 확인&lt;/h2&gt;
-            &lt;h4 id=&quot;4-3-docker컨테이너를-작동시키는-기능run&quot;&gt;4-3. Docker컨테이너를 작동시키는 기능(Run)&lt;/h4&gt;
-          &lt;/li&gt;
+          &lt;li&gt;Docker이미지를 검사하여 이미 알려진 보안상의 취약성이 없다는 것을 확인&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;4-3-docker컨테이너를-작동시키는-기능run&quot;&gt;4-3. Docker컨테이너를 작동시키는 기능(Run)&lt;/h4&gt;
+&lt;ul&gt;
   &lt;li&gt;Docker이미지를 가지고 여러개의 컨테이너 기동 가능&lt;/li&gt;
   &lt;li&gt;컨테이너 기동, 정지, 파기는 Docker명령을 사용&lt;/li&gt;
   &lt;li&gt;이미 움직이고 있는 OS상에서 프로세스를 실행시키는 것과 유사 (속도 빠름)&lt;/li&gt;
@@ -776,11 +823,13 @@ complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
   &lt;li&gt;Linux커널기능(namespace, cgroups)기술이 사용&lt;/li&gt;
   &lt;li&gt;Production환경에서는 모든 Docker 컨테이너를 한대의 호스트 머신에서 작동시키는일은 드뭄&lt;/li&gt;
   &lt;li&gt;시스템의 트랙픽 증감이나 가용성 요건, 신뢰도 요건등을 고려한 후에 여러 대의 호스트 머신으로 된 분산환경을 구축&lt;/li&gt;
-  &lt;li&gt;
-    &lt;h2 id=&quot;보통-컨테이너-관리에-대해서는-오케스트레이션-툴을-이용&quot;&gt;보통 컨테이너 관리에 대해서는 오케스트레이션 툴을 이용!!&lt;/h2&gt;
-    &lt;h3 id=&quot;5-docker-컴포넌트&quot;&gt;5. Docker 컴포넌트&lt;/h3&gt;
-    &lt;hr /&gt;
-  &lt;/li&gt;
+  &lt;li&gt;보통 컨테이너 관리에 대해서는 오케스트레이션 툴을 이용!!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;5-docker-컴포넌트&quot;&gt;5. Docker 컴포넌트&lt;/h3&gt;
+&lt;ul&gt;
   &lt;li&gt;Docker Engine(핵심)
     &lt;ul&gt;
       &lt;li&gt;Docke 이미지를 생성하고 컨테이너를 기동시키기 위한 Docker의 핵심기능. Docker명령 실행이나 Dockerfile에의한 이미지 생성&lt;/li&gt;
