@@ -2,8 +2,8 @@
 layout: post  
 title: "[Shell] print "  
 subtitle: "Print Format "  
-categories: cs
-tags: linux print
+categories: os
+tags: shell print
 comments: true  
 ---  
 ## Print

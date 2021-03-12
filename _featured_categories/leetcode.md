@@ -4,7 +4,7 @@ title: Leetcode
 slug: leetcode
 menu: true
 submenu: false
-order: 1
+order: 7
 description: >
   Leetcode Algorithm
 ---

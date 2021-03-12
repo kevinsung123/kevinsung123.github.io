@@ -2,9 +2,9 @@
 layout: tag-blog
 title: Linux
 slug: linux
-category: cs
+category: os
 menu: false
 order: 2
 description: >
-  ComputerScience - OS, DB, Network, Security etc
+  Operation System - Linux, Shell
 ---

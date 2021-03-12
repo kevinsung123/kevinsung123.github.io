@@ -4,7 +4,7 @@ title: Kubernetes
 slug: k8s
 menu: true
 submenu: false
-order: 4
+order: 0
 description: >
   Concept and Pratice of Kubernetes
 ---

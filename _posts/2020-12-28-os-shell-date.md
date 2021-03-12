@@ -2,8 +2,8 @@
 layout: post  
 title: "[Shell] Date "  
 subtitle: "Linux CLI"  
-categories: cs
-tags: linux date
+categories: os
+tags: shell date
 comments: true  
 ---  
 

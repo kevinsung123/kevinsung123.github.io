@@ -2,8 +2,8 @@
 layout: post  
 title: "[Shell] df "  
 subtitle: "File system "  
-categories: cs
-tags: linux df
+categories: os
+tags: shell df
 comments: true  
 ---  
 

@@ -1,8 +1,8 @@
 ---  
 layout: post  
-title: "[Linux] Linux Distibution Type "  
+title: "[Linux] Linux 종류 "  
 subtitle: "Linux Type "  
-categories: cs
+categories: os
 tags: linux type
 comments: true  
 ---  
