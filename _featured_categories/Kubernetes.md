@@ -1,7 +1,7 @@
 ---
 layout: list
 title: Kubernetes
-slug: kubernetes
+slug: k8s
 menu: true
 submenu: false
 order: 4
