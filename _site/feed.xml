@@ -6,9 +6,71 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 13 Mar 2021 01:43:17 +0900</pubDate>
-    <lastBuildDate>Sat, 13 Mar 2021 01:43:17 +0900</lastBuildDate>
+    <pubDate>Sun, 14 Mar 2021 18:48:41 +0900</pubDate>
+    <lastBuildDate>Sun, 14 Mar 2021 18:48:41 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[BigQuery]How does BigQuery work</title>
+        <description>&lt;h3 id=&quot;bigquery-is-two-services-in--one&quot;&gt;BigQuery is two services in  one&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;Fast SQL Engine&lt;/li&gt;
+  &lt;li&gt;Managed storegae for dataset
+    &lt;ul&gt;
+      &lt;li&gt;serverless service&lt;/li&gt;
+      &lt;li&gt;fully managed&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;how-does-bigquery-work&quot;&gt;How does BigQuery work?&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets\img\post_img\2021-03-14-bigquery.PNG&quot; alt=&quot;bigquery&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;user는 BigQuery가 어덯게 data를 disk에 저장하는지 걱정 할 필요 없음&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;large queries들에 대해 어떻게 machine들을 autoscale하는지 걱정 할 필요 없음&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;data 관리는 project &amp;gt; dataset &amp;gt; table로 관리&lt;/li&gt;
+  &lt;li&gt;table들은 &lt;code class=&quot;highlighter-rouge&quot;&gt;highly-compressed columns&lt;/code&gt;으로 저장&lt;/li&gt;
+  &lt;li&gt;Goole의 내부적인 file-system인 &lt;code class=&quot;highlighter-rouge&quot;&gt;Colossus&lt;/code&gt;는 아래 2가지 특성을 제공
+    &lt;ul&gt;
+      &lt;li&gt;durablity&lt;/li&gt;
+      &lt;li&gt;global availability&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;모든 data는 project team에 의해서만 접근 가능&lt;/li&gt;
+  &lt;li&gt;storage서비스는 &lt;code class=&quot;highlighter-rouge&quot;&gt;bulk data ingestion&lt;/code&gt; 그리고 &lt;code class=&quot;highlighter-rouge&quot;&gt;streaming data ingestion&lt;/code&gt;을 제공&lt;/li&gt;
+  &lt;li&gt;Query서비스 아래 방법을 제공
+    &lt;ul&gt;
+      &lt;li&gt;interactive(상호작용) 작동(Console,bq cli)&lt;/li&gt;
+      &lt;li&gt;batch queries(Console,bq cli)&lt;/li&gt;
+      &lt;li&gt;REST API - 7 languaged supported&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;BigQuery Connector를 제공하여 BigQUery와 아래 GCP 데이터 처리 서비스간 복잡한 workflow를 간단하게 해줌
+    &lt;ul&gt;
+      &lt;li&gt;DataProc&lt;/li&gt;
+      &lt;li&gt;Cloud Dataflow&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Storage서비스&lt;/code&gt;와 &lt;code class=&quot;highlighter-rouge&quot;&gt;Query서비스&lt;/code&gt;는 내부적으로 쿼리를 생성하고 terabytes, petabytes의 데이터를 효율적으로 처리하도록 작동&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 14 Mar 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/gcp/2021/03/14/gcp-bigquery/</link>
+        <guid isPermaLink="true">http://localhost:4000/gcp/2021/03/14/gcp-bigquery/</guid>
+        
+        <category>bigquery</category>
+        
+        <category>work</category>
+        
+        
+        <category>gcp</category>
+        
+      </item>
     
       <item>
         <title>[k8s]Components</title>
