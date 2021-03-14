@@ -6,16 +6,161 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 14 Mar 2021 18:48:41 +0900</pubDate>
-    <lastBuildDate>Sun, 14 Mar 2021 18:48:41 +0900</lastBuildDate>
+    <pubDate>Mon, 15 Mar 2021 00:37:24 +0900</pubDate>
+    <lastBuildDate>Mon, 15 Mar 2021 00:37:24 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[BigQuery]Apply ML using SQL with BigQuery ML</title>
+        <description>&lt;!--more--&gt;
+
+&lt;h2 id=&quot;choose-the-right-model-type-for-your-structed-data-use-case&quot;&gt;Choose the right model type for your structed data use case&lt;/h2&gt;
+&lt;h3 id=&quot;bigquery-ml-decision-tree&quot;&gt;BigQuery ML Decision Tree&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\img\post_img\2021-03-14-bigquery-ml.PNG&quot; alt=&quot;bigquery-ml&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;structured data를 활용하여 ML을 할떄 적절한 model type을 찾아야함&lt;/li&gt;
+  &lt;li&gt;어떤 activity를 할 것이느냐에 따라 다름&lt;/li&gt;
+  &lt;li&gt;Supervised ML는 아래 3종류로 분류
+    &lt;ol&gt;
+      &lt;li&gt;forecaset
+        &lt;ul&gt;
+          &lt;li&gt;linear regression&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;classify
+        &lt;ul&gt;
+          &lt;li&gt;logistic regression (binary or multi-class)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;recommend
+        &lt;ul&gt;
+          &lt;li&gt;matrixx factorization&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;더 복잡한 model도 가능
+    &lt;ul&gt;
+      &lt;li&gt;deep neural network&lt;/li&gt;
+      &lt;li&gt;decision tree&lt;/li&gt;
+      &lt;li&gt;random forests&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;적절한 model을 선택 한 후, 학습을 위한 &lt;code class=&quot;highlighter-rouge&quot;&gt;high-quality training data&lt;/code&gt;가 필요&lt;/li&gt;
+  &lt;li&gt;Machine Learning
+    &lt;ul&gt;
+      &lt;li&gt;Machine : linear regression과 같은 알고리즘 혹은 tool&lt;/li&gt;
+      &lt;li&gt;Learning : &lt;code class=&quot;highlighter-rouge&quot;&gt;Insights&lt;/code&gt; 즉 ,model은 known과 unknown data사이 관계에대한 통찰력(우리가 modeling라고 부른는 것)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;scenario--predicting-customer-lifetime-value&quot;&gt;Scenario : Predicting customer lifetime value&lt;/h3&gt;
+&lt;h4 id=&quot;raw-data&quot;&gt;raw data&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\img\post_img\2021-03-14-bigquery-ml-2.PNG&quot; alt=&quot;biguerty-ml-2&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;record or row는 1개의 instance or observation&lt;/li&gt;
+  &lt;li&gt;위의 예시는 8개의 instance가 존재&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;label&lt;/code&gt;은 역사적으로 알려진 답
+    &lt;ul&gt;
+      &lt;li&gt;ex) 이 특정한 고개들이 얼마나 소비하였는지&lt;/li&gt;
+      &lt;li&gt;미래의 데이터는 &lt;code class=&quot;highlighter-rouge&quot;&gt;unknown&lt;/code&gt; 이거나 &lt;code class=&quot;highlighter-rouge&quot;&gt;missing&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;model, traning 그리고 prediction이 필요&lt;/li&gt;
+  &lt;li&gt;가령, website에서 많은 시간을 소비한 트랜잭션을 만든 고객을 알고 있다면, 그 고객들이 매출을 위한 high LTV라고 밝혀졌다면, 우리는 이 데이터를 활용하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;prediction&lt;/code&gt;이 가능
+    &lt;ul&gt;
+      &lt;li&gt;예측을 위해서 &lt;code class=&quot;highlighter-rouge&quot;&gt;linear regression&lt;/code&gt;을 활용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;label은 또한 &lt;code class=&quot;highlighter-rouge&quot;&gt;binary value&lt;/code&gt;가 될 수도 있음
+    &lt;ul&gt;
+      &lt;li&gt;ex) high-value customer or not&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;table의 columns들은 &lt;code class=&quot;highlighter-rouge&quot;&gt;features&lt;/code&gt;라고 부름 또는 &lt;code class=&quot;highlighter-rouge&quot;&gt;potential features&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;model의 &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;table의 각각의 column의 quality를 이해하고, 다른 팀들과 더 많은 &lt;code class=&quot;highlighter-rouge&quot;&gt;features&lt;/code&gt;를 찾는것은 ML 프로젝트에서 가장 어려운 파트 중 하나&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Feature Engineering&lt;/code&gt; : combine or transform features과정을 일컫음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;create-models-with-sql&quot;&gt;Create models with SQL&lt;/h3&gt;
+&lt;h4 id=&quot;common-creating-model&quot;&gt;Common Creating model&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;ML model을 작업하기 위해서는 보통 data scientists들은 datalake로부터 조금씩 data를  IPython Notebook으로 추출하여 pandas같은 data handling framework를 활용 매우 많은 시간이 소모&lt;/li&gt;
+  &lt;li&gt;custome model을 만들기 위해서 모든 데이터를 전처리/변형을 하고 모든 feature engineering이 필요&lt;/li&gt;
+  &lt;li&gt;model을 만들고 tnesorflow 같은 라이브러리를 활용하여 traning을 함&lt;/li&gt;
+  &lt;li&gt;더 많은 feature가 필요하거나 performance를 향상 시키기 위해서 위의 과정을 계속 반복해야함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;bigquery-ml-in-2-steps&quot;&gt;BigQuery ML in 2 steps&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Create Model with SQL&lt;/li&gt;
+  &lt;li&gt;Predict Model
+    &lt;ul&gt;
+      &lt;li&gt;learning rate 또는 training/test data를 BigQuery ML은 자동 수행&lt;/li&gt;
+      &lt;li&gt;옵션을 사용하여 해당 데이터를 분할 또는 테스트하고 학습률 및 기타 다른 hyperparamter를 수동으로 설정하기위한 정규화 또는 다른 전략을 직접 설정가능&lt;/li&gt;
+      &lt;li&gt;hyperparamter? ML을 학습을 할 때에 더 효과가 좋도록 하는 주 변수가 아닌 자동 설정되는 변수를 의미
+        &lt;ol&gt;
+          &lt;li&gt;learning rate - gradient를 할때에 iteration을 얼마나 gap으로 빠르게/느리게 결정 계수&lt;/li&gt;
+          &lt;li&gt;error function - 실제 output/계산한 output사이의 차이&lt;/li&gt;
+          &lt;li&gt;batch size - data를 어떻게 그룹지어 학습 시킬지&lt;/li&gt;
+          &lt;li&gt;epoch - training 반복횟수&lt;/li&gt;
+          &lt;li&gt;hidden layer의 개수&lt;/li&gt;
+          &lt;li&gt;각 parameter의 초깃값&lt;/li&gt;
+          &lt;li&gt;regulzarizaion term parameter - ML을 통해 결국 하고싶은것은 error function을 최소화 시키는 Weight를 찾아내느것. 이를 찾는 과정에서 overfitting문제가 자주 등장. 이를 해결하기 위해 regularization term을 error-function에 더하여 추가항을 만들우점&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;profit, review the results&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;supported-features&quot;&gt;Supported Features&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Standard SQL and UDFS within the ML queries&lt;/li&gt;
+  &lt;li&gt;Linear Regression(Forecasting)&lt;/li&gt;
+  &lt;li&gt;Binary and Multi-class Logistics Regression(Classficiation)&lt;/li&gt;
+  &lt;li&gt;Model evalutaion functions for stadard metrics, including ROC and precision-recall curves&lt;/li&gt;
+  &lt;li&gt;Model weight inspection&lt;/li&gt;
+  &lt;li&gt;Feature distribution analysis through statndard fucntions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;phases-in-ml-model-lifecycle&quot;&gt;Phases in ML model lifecycle&lt;/h3&gt;
+&lt;h4 id=&quot;the-end-to-end-bqml-process&quot;&gt;The End-to-End BQML Process&lt;/h4&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.coursera.org/learn/gcp-big-data-ml-fundamentals/lecture/o0sgc/bigquery-ml-create-models-with-sql&quot;&gt;cousera : bigquery-ml-create-models-with-sql&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 15 Mar 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/gcp/2021/03/15/gcp-bigquery-ml/</link>
+        <guid isPermaLink="true">http://localhost:4000/gcp/2021/03/15/gcp-bigquery-ml/</guid>
+        
+        <category>bigquery</category>
+        
+        <category>ml</category>
+        
+        
+        <category>gcp</category>
+        
+      </item>
     
       <item>
         <title>[BigQuery]How does BigQuery work</title>
         <description>&lt;h3 id=&quot;bigquery-is-two-services-in--one&quot;&gt;BigQuery is two services in  one&lt;/h3&gt;
 &lt;ol&gt;
   &lt;li&gt;Fast SQL Engine&lt;/li&gt;
-  &lt;li&gt;Managed storegae for dataset
+  &lt;li&gt;Managed storage for datasets
     &lt;ul&gt;
       &lt;li&gt;serverless service&lt;/li&gt;
       &lt;li&gt;fully managed&lt;/li&gt;
@@ -58,6 +203,33 @@
   &lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Storage서비스&lt;/code&gt;와 &lt;code class=&quot;highlighter-rouge&quot;&gt;Query서비스&lt;/code&gt;는 내부적으로 쿼리를 생성하고 terabytes, petabytes의 데이터를 효율적으로 처리하도록 작동&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&quot;bigquery-manged-storage&quot;&gt;BigQuery Manged Storage&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;dataset의 metadata와 storage를 BigQuery는 관리&lt;/li&gt;
+  &lt;li&gt;다양한 다른 format들로부터 dataset을 ingest 가능&lt;/li&gt;
+  &lt;li&gt;BigQuery native storage 내부에서는, data들은 Google BigQuery Team에 의해 관리
+    &lt;ul&gt;
+      &lt;li&gt;automatically replicated&lt;/li&gt;
+      &lt;li&gt;autoscale for your query needs&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Querying external source directly(bypass BigQuery’s managed storage)
+    &lt;ul&gt;
+      &lt;li&gt;일반적으로 사용 사례는 다른팀이 유지관리하고 지속적으로 업데이트하는 상품의 가격표와 같이 상대적으로 작지만 지속적으로 변경되는 외부데이터소스 를 사용&lt;/li&gt;
+      &lt;li&gt;보통 사용하지 않은 이유?
+        &lt;ul&gt;
+          &lt;li&gt;data consistency(데이터 일관성)가 보장되지 않음&lt;/li&gt;
+          &lt;li&gt;외부 data source가 진행중에 update가 되는 경우 BigQuery가 보장하지 않음&lt;/li&gt;
+          &lt;li&gt;이에대해서는 Cloud Dataflow를 사용하여 BigQuery에 streaming data pipeline을 구축하는 것이 좋음&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;참조&quot;&gt;참조&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.coursera.org/learn/gcp-big-data-ml-fundamentals/lecture/H1irf/bigquery-fast-sql-engine&quot;&gt;coursera : bigquery-fast-sql-engine&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 14 Mar 2021 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/gcp/2021/03/14/gcp-bigquery/</link>

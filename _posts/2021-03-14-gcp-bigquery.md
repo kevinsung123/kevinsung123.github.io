@@ -9,7 +9,7 @@ comments: true
 
 ### BigQuery is two services in  one
 1. Fast SQL Engine
-2. Managed storegae for dataset
+2. Managed storage for datasets
 	- serverless service
 	- fully managed 
 
@@ -36,3 +36,20 @@ comments: true
 	- DataProc
 	- Cloud Dataflow 
 - `Storage서비스`와 `Query서비스`는 내부적으로 쿼리를 생성하고 terabytes, petabytes의 데이터를 효율적으로 처리하도록 작동
+
+### BigQuery Manged Storage
+- dataset의 metadata와 storage를 BigQuery는 관리
+- 다양한 다른 format들로부터 dataset을 ingest 가능
+- BigQuery native storage 내부에서는, data들은 Google BigQuery Team에 의해 관리
+	- automatically replicated
+	- autoscale for your query needs
+- Querying external source directly(bypass BigQuery's managed storage)
+	- 일반적으로 사용 사례는 다른팀이 유지관리하고 지속적으로 업데이트하는 상품의 가격표와 같이 상대적으로 작지만 지속적으로 변경되는 외부데이터소스 를 사용
+	- 보통 사용하지 않은 이유?
+		- data consistency(데이터 일관성)가 보장되지 않음
+		- 외부 data source가 진행중에 update가 되는 경우 BigQuery가 보장하지 않음
+		- 이에대해서는 Cloud Dataflow를 사용하여 BigQuery에 streaming data pipeline을 구축하는 것이 좋음
+
+
+### 참조
+[coursera : bigquery-fast-sql-engine](https://www.coursera.org/learn/gcp-big-data-ml-fundamentals/lecture/H1irf/bigquery-fast-sql-engine)
