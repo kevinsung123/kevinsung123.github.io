@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 15 Mar 2021 00:37:24 +0900</pubDate>
-    <lastBuildDate>Mon, 15 Mar 2021 00:37:24 +0900</lastBuildDate>
+    <pubDate>Mon, 15 Mar 2021 01:10:46 +0900</pubDate>
+    <lastBuildDate>Mon, 15 Mar 2021 01:10:46 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -138,6 +138,49 @@
 
 &lt;h3 id=&quot;phases-in-ml-model-lifecycle&quot;&gt;Phases in ML model lifecycle&lt;/h3&gt;
 &lt;h4 id=&quot;the-end-to-end-bqml-process&quot;&gt;The End-to-End BQML Process&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\img\post_img\2021-03-14-bigquery-ml-process.PNG&quot; alt=&quot;bigquery-ml-process&quot; /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;ETL into BigQuery&lt;/li&gt;
+  &lt;li&gt;Preprocess Features&lt;/li&gt;
+  &lt;li&gt;Create Model&lt;/li&gt;
+  &lt;li&gt;Trainig Model&lt;/li&gt;
+  &lt;li&gt;Predict&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;bigquery-ml-cheatsheet&quot;&gt;BigQuery ML Cheatsheet&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;\assets\img\post_img\2021-03-14-bigquery-ml-workflow.PNG&quot; alt=&quot;bigquery-ml-process&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Label&lt;/strong&gt; : alias a column ‘label’ or 특정 column in OPTIONS using &lt;code class=&quot;highlighter-rouge&quot;&gt;input_label_cols&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Feature&lt;/strong&gt; : passed through to the model as part of your SQL SELECT statement
+    &lt;ul&gt;
+      &lt;li&gt;SELECT * FROM ML.FEATURE_INFO(MODEL &lt;code class=&quot;highlighter-rouge&quot;&gt;mydataset.mymodel&lt;/code&gt;)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Model&lt;/strong&gt; : an object created in BigQuery&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Model Types&lt;/strong&gt; : Linear Regression, Logistic Regression&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CREATE OR REPLACE MODEL &amp;lt;dataset&amp;gt;.&amp;lt;name&amp;gt;
+OPTIONS (model_type='&amp;lt;type&amp;gt;') AS
+&amp;lt;training dataset&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Traning Progress&lt;/strong&gt; : SELECT * FROM ML.TRAINING_INFO(MODEL &lt;code class=&quot;highlighter-rouge&quot;&gt;mydataset.mymodel&lt;/code&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Inspect Weigths&lt;/strong&gt; : SELECT * FROM ML.WEIGHTS(MODEL &lt;code class=&quot;highlighter-rouge&quot;&gt;mydataset.mymodel&lt;/code&gt;), &lt;query&gt;)&lt;/query&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Evaluation&lt;/strong&gt; : SELECT * FROM ML.EVALUATE((MODEL &lt;code class=&quot;highlighter-rouge&quot;&gt;mydataset.mymodel&lt;/code&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Prediction&lt;/strong&gt; : SELECT * FROM ML.PREDICT((MODEL &lt;code class=&quot;highlighter-rouge&quot;&gt;mydataset.mymodel&lt;/code&gt;, &lt;query&gt;)&lt;/query&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.coursera.org/learn/gcp-big-data-ml-fundamentals/lecture/o0sgc/bigquery-ml-create-models-with-sql&quot;&gt;cousera : bigquery-ml-create-models-with-sql&lt;/a&gt;&lt;/p&gt;

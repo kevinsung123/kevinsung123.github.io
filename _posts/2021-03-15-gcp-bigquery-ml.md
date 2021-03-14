@@ -89,6 +89,36 @@ comments: true
 
 ### Phases in ML model lifecycle
 #### The End-to-End BQML Process
+![bigquery-ml-process](\assets\img\post_img\2021-03-14-bigquery-ml-process.PNG)
+1. ETL into BigQuery
+2. Preprocess Features
+3. Create Model
+4. Trainig Model
+5. Predict
+
+---
+
+### BigQuery ML Cheatsheet
+![bigquery-ml-process](\assets\img\post_img\2021-03-14-bigquery-ml-workflow.PNG)
+- **Label** : alias a column 'label' or 특정 column in OPTIONS using `input_label_cols`
+- **Feature** : passed through to the model as part of your SQL SELECT statement
+	- SELECT * FROM ML.FEATURE_INFO(MODEL `mydataset.mymodel`)
+- **Model** : an object created in BigQuery 
+- **Model Types** : Linear Regression, Logistic Regression
+
+```
+CREATE OR REPLACE MODEL <dataset>.<name>
+OPTIONS (model_type='<type>') AS
+<training dataset>
+```
+
+- **Traning Progress** : SELECT * FROM ML.TRAINING_INFO(MODEL `mydataset.mymodel`)
+
+- **Inspect Weigths** : SELECT * FROM ML.WEIGHTS(MODEL `mydataset.mymodel`), <query>)
+
+- **Evaluation** : SELECT * FROM ML.EVALUATE((MODEL `mydataset.mymodel`)
+
+- **Prediction** : SELECT * FROM ML.PREDICT((MODEL `mydataset.mymodel`, <query>)
 
 
 ### 참고
