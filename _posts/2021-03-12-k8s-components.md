@@ -15,7 +15,7 @@ Kubernetes(약어 k8s)란 Container Orchestration 플랫폼이다. container화 
 
 ---
 
-#### Kubernetes Components	
+### Control Plane Components(Master Node)
 ![kubernetes architecture](https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg)
 k8s 구성요소는 크게 Control-Plane(Master Node)과 Worker Node로 구성
 Control-Plane은 k8s cluster의 전반적인 결정을 수행하고 cluster 이벤트에 충족되지 않을 경우 새로운 Pod를 감지하고 반응. 실질적으로 Cluster를 전체적인 관리를 담당Control-Plane 구성요소는 아래와 같음 구성 요소는 아래와 같음
@@ -58,3 +58,38 @@ Controller를 구성하는 Master Node의 Component 중 하나. 논리적으로 
 - Replication Controller : 시스템의 모든 Replication Controller의 Object에대해 알맞은 수의 pod들을 유지시켜 주는 기능 담당
 - Endpoint Controller : EndPoint Object를 채운다 service 와 pod를 연결
 - Service Account & Token Controller : 새로운 Namespace에대한 기본 계정과 API 접근 Token을 생성
+
+---
+
+### Node Components
+- Node Components들은 모든 Node에서 실행, 실행 중인 pods들은 유지관리 및 Kubernetes runtime 환경을 제공
+
+#### Kubelet
+cluster의 모든Node위에서 실행되는 agent. kubelet은 pod에서 container가 확실하게 작동되로고 관리
+
+kubelet은 다양한 메커니즘을 통해 제공된 podSpec의 집합을 받아서 container가 해당 pod의 spec에 따라 동작하는 것을 확실히 함
+Kubelet은 kubernetes를 통해 생성되지 않은 container는 관리하지 않음
+
+#### Kube-proxy
+kube-proxy는 Cluster의 각 Node에서 실행되는 network-proxy로 k8s의 서비스개념의 구현부 
+Node의 network 규칙을 관리. 이 network 규칙이 내부 network session이나 cluster 외부에서 pod로 network 통신이 가능하게 해줌
+kube-proxy는 OS에 가용한 packet filtering이 있을경우 이를사용, 그렇지 않으면 traffic 자체를 forwarding함
+
+#### Container-runtime
+Container-runtime은 container 실행을 담당하는 소프트웨어. k8s는 여러 container runtime을 지원. docker, containerd, CRI-O 그리고 kubernetes CRI를 구현한 모든 소프트웨어를 지원
+
+
+[Kubernetes CRI](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md)
+
+---
+
+### Addons
+- k8s의 리소스(DaemonSet, Deployment, etc)을 이용하여 cluster 기능을 구현. 이들은 cluster단위의 기능을 제공하기 때문에 addon에대한 namespace 리소스는 `kube-system` namespace에 속함
+
+#### DNS
+
+#### Dashboard
+
+#### Container resource Monitoring
+
+#### Cluster-Level Logging
