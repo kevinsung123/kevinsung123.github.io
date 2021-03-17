@@ -1,10 +1,13 @@
 ---
 layout: page
+current: archive
 title: Archive
-permalink: /archive/
-slug: archive
+navigation : true
+class: page-template
+subcalss: 'post page'
 menu: true
-submenu: false
+permalink : category
+#submenu: false
 order: 9
 description: >
   
