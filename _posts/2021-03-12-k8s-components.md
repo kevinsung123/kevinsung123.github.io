@@ -62,11 +62,10 @@ Controller를 구성하는 Master Node의 Component 중 하나. 논리적으로 
 ---
 
 ### Node Components
-- Node Components들은 모든 Node에서 실행, 실행 중인 pods들은 유지관리 및 Kubernetes runtime 환경을 제공
+Node Components들은 모든 Node에서 실행, 실행 중인 pods들은 유지관리 및 Kubernetes runtime 환경을 제공
 
 #### Kubelet
 cluster의 모든Node위에서 실행되는 agent. kubelet은 pod에서 container가 확실하게 작동되로고 관리
-
 kubelet은 다양한 메커니즘을 통해 제공된 podSpec의 집합을 받아서 container가 해당 pod의 spec에 따라 동작하는 것을 확실히 함
 Kubelet은 kubernetes를 통해 생성되지 않은 container는 관리하지 않음
 

@@ -157,6 +157,152 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
       
   
 
+<article id="post-python/2021/03/17/python-collections-ordereddict" class="post mb6" role="article">
+  <header>
+    <h1 class="post-title">
+      <a href="/python/2021/03/17/python-collections-ordereddict/" data-flip="title">
+        [Python] Collection모듈 - OrderedDict
+      </a>
+    </h1>
+
+    <p class="post-date heading">
+      <time datetime="2021-03-17T00:00:00+09:00">17 Mar 2021</time>
+      
+
+
+
+
+
+
+
+
+
+in <a href="/category/python/" data-flip="title">Python</a>
+
+      
+
+
+
+
+
+
+
+
+
+on <span>Collections</span>, <span>Ordereddict</span>
+
+    </p>
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
+
+
+  </header>
+  
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+    <h3 id="ordereddict">OrderedDict</h3>
+<ul>
+  <li>python의 collections 모듈에 존재하는 자료구조인 OrderedDict는 기본 dictionary와 거의 비슷하지만, 입력된 item의 순서를 기억하는 <code class="highlighter-rouge">Dictionary class</code>.</li>
+  <li>iterating을 할때, 먼저 추가된 key의 item을 반환</li>
+  <li>정렬된 dictionary를 만들떄 유용</li>
+</ul>
+
+
+    <p class="read-more"><a class="heading" href="/python/2021/03/17/python-collections-ordereddict/" data-flip="title">Continue reading </a></p>
+  
+
+</article>
+
+
+
+  
+
+<article id="post-leetcode/2021/03/17/leetcode-146-lrucache" class="post mb6" role="article">
+  <header>
+    <h1 class="post-title">
+      <a href="/leetcode/2021/03/17/leetcode-146-lrucache/" data-flip="title">
+        [Leetcode] 146.LRUCache
+      </a>
+    </h1>
+
+    <p class="post-date heading">
+      <time datetime="2021-03-17T00:00:00+09:00">17 Mar 2021</time>
+      
+
+
+
+
+
+
+
+
+
+in <a href="/category/leetcode/" data-flip="title">Leetcode</a>
+
+      
+
+
+
+
+
+
+
+
+
+on <span>Leetcode</span>, <span>Lru-cache</span>
+
+    </p>
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
+
+
+  </header>
+  
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+    <h3 id="background">Background</h3>
+<h4 id="페이지-교체-알고리즘page-replacement-algorithm-or-cache-replacemnt">페이지 교체 알고리즘(page-replacement algorithm or cache replacemnt)</h4>
+<ul>
+  <li>컴퓨터는 보통 주기억 장치인 ram과 보조기억 장치인 hard나 ssd의 대용량 기억장치를 가지고 있음</li>
+  <li>ram이 속도가 빠르기 때문에 보조기억장치로 부터 data를 ram에 저장해놓고 ram에 있는 data를 가지고 빠르게 cpu가 연산을 함</li>
+  <li>ram을 같은 크기의 block으로 구성해서 운용하는데 이 block를 <code class="highlighter-rouge">page</code>라고 일컫음</li>
+  <li>만약 cpu가 계산을 할때 data가 page에 있다면 <code class="highlighter-rouge">cache hit</code>, 없을 경우 보조기억장치로부터 data를 page로 옮겨온 후에 계산 하는데 이때를 <code class="highlighter-rouge">cache miss</code>라고 일컫음. hit일떄가 miss일떄보다 시간 단축</li>
+  <li>hit와 miss의 시간 차이로 인해 보다 빠른 연산을 위해 page에 여러 정보 중 어떤 정보를 오래 저장해 놓아야 하는지가 매우 중요한 문제. 이때문에 관련 알고리즘들이 존재</li>
+  <li>page-replacement 알고리즘 종류
+    <ul>
+      <li>FIFO(First In First Out)</li>
+      <li>LIFO(Last In First Out)</li>
+      <li>FILO(First In Last Out)</li>
+      <li>OPT(OPTimal Page Replacement)</li>
+      <li>LRU(Leastly Recently Used)</li>
+      <li>Coundt-Based</li>
+      <li>LFU(Leastly Frequently Used)</li>
+      <li>MFU(Most Frequently Used)
+        <h4 id="lrucache">LRUCache</h4>
+      </li>
+    </ul>
+  </li>
+  <li>LRU란 Least Recently Used Algorithm의 약자로 Cache에서 memory를 다루기 위한 알고리즘</li>
+  <li>cache가 사용하는 리소스는 제한되어 있고, 제한된 리소스 내에서 데이터를 빠르게 저장하고 접근할 수 있어야한다</li>
+  <li>이를 위해 LRU알고리즘은 메모리 상에서 가장 최근에 사용된 적이 없은 cache의 메모리부터 대체하여 데이터를 갱신</li>
+  <li>이 이론의 가설은 제일 오랫동안 참조되지 않은 데이터를 제거하는 방법
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Lruexample.png" alt="LRUCache" /></li>
+</ul>
+
+
+    <p class="read-more"><a class="heading" href="/leetcode/2021/03/17/leetcode-146-lrucache/" data-flip="title">Continue reading </a></p>
+  
+
+</article>
+
+
+
+  
+
 <article id="post-gcp/2021/03/15/gcp-bigquery-ml" class="post mb6" role="article">
   <header>
     <h1 class="post-title">
@@ -1402,7 +1548,7 @@ on <span>Docekr</span>, <span>Introduction</span>
     <li>
       <input type="checkbox" id="list-item-9"/>
       <div  class="list-wrapper">
-      <a class="sidebar-nav-item" href="/archive/">Archive</a>
+      <a class="sidebar-nav-item" href="/category">Archive</a>
        
     </div>
      <ul class="list-body">
