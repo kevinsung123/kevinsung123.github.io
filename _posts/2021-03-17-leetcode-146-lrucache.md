@@ -34,8 +34,31 @@ comments: true
 
 
 ### Problem
+[leetcode](https://leetcode.com/problems/lru-cache/)
 
+Design a data structure that follows the constraints of a Least Recently Used (LRU) cache.
 
+Implement the LRUCache class:
+- LRUCache(int capacity) Initialize the LRU cache with positive size capacity.
+- int get(int key) Return the value of the key if the key exists, otherwise return -1.
+- void put(int key, int value) Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity from this operation, evict the least recently used key.
+
+Follow up:
+Could you do get and put in O(1) time complexity?
+
+### Solving
+- LRUCache를 구현하는데 O(1) Time Complexity로 구현
+- 순서가 있는 OrderedDict로 구현
+- cache를 조회 시 (get)
+    - key 존재 시 : 조회한 값을 맨 오른쪽으로 이동 및 값을 return
+    - key 미존재 시 : -1를 return
+- cache에 data를 입력 시(put)
+    - key 존재 시 : data를 맨 오른쪽 이동(조회 하였으므로)
+    - key 미존재 시 : 
+        - capacity 미만 : 값을 추가
+        - capacity 초과 : LRU(Least Recently Used)값을 삭제 및 신규 값 추가
+### Code
+<script src="https://gist.github.com/kevinsung123/332aff480d516faa34f5fca0151e5cbb.js"></script>
 ### 참고
 [wikipedia](https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU))
 [page-blog](https://gomguard.tistory.com/115)

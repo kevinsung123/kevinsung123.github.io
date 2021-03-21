@@ -1,6 +1,6 @@
 ﻿---  
 layout: post  
-title: "[k8s]Components"  
+title: "[k8s] Components"  
 subtitle: "Kubernetes Components"  
 categories: k8s  
 tags: k8s components
