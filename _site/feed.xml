@@ -6,9 +6,180 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 20 Mar 2021 01:13:32 +0900</pubDate>
-    <lastBuildDate>Sat, 20 Mar 2021 01:13:32 +0900</lastBuildDate>
+    <pubDate>Sat, 27 Mar 2021 23:37:29 +0900</pubDate>
+    <lastBuildDate>Sat, 27 Mar 2021 23:37:29 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[Python] 3 Key Skills for Handling Modules in Python</title>
+        <description>&lt;!--more--&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;3-key-skills-for-handling-modules-in-python&quot;&gt;3 Key Skills for Handling Modules in Python&lt;/h2&gt;
+
+&lt;p&gt;Python에서 module은 python code를 포함하는 파일 그것의 &lt;code class=&quot;highlighter-rouge&quot;&gt;.py&lt;/code&gt;라는 suffix가 붙음
+일반적으로 관련 class또는 function을 모듈에 넣고 전체프로그램을 다른 module로 분리하는것이 좋은 programming practice이다&lt;/p&gt;
+
+&lt;p&gt;아래에는 module을 잘 사용하고 관리하기 위한 좋은 3가지 skill에대한 소개&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;1-import-python-modules-skillfully&quot;&gt;1. Import Python Modules Skillfully&lt;/h3&gt;
+
+&lt;h5 id=&quot;1-dont-use-an-asterisk-to-import-all-things-at-once&quot;&gt;(1) Don’t use an asterisk to import all things at once&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;모든 모듈을 import할떄 가장 기본적인 방법은 asterisk를 사용하는 것
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;from module_a import *&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;그러나 위의 방법은 무엇을 import했는지 불명료하고 bug를 일으킬 가능성이 있음
+    &lt;ul&gt;
+      &lt;li&gt;현재 파일의 name이 다른 imported name과 총동 가능성&lt;/li&gt;
+      &lt;li&gt;imported module에 새로운것을 추가하면, 모든 new names은 또한 import된다. name conflict를 일으킬 가능성이 높음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;필요한 모듈부분만 import 하는것은 좋은 습관이다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2-give-it-a-nickname-for-convenience&quot;&gt;(2) Give it a nickname for convenience&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;datascientist라면 아래코드가 친숙할 것이다
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;as&lt;/code&gt; keyword를 alias를 줌으로써 긴이름의 module을 더 짧게사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2-use-relative-imports-smartly&quot;&gt;(2) Use relative imports smartly&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;dots&lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt;를 사용함으로써 현재 파일의 상대 경로 모듈을 더 효과적으로 가져옴
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;from . import module_a
+from .. import module_b
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;single dot은 &lt;code class=&quot;highlighter-rouge&quot;&gt;module_a&lt;/code&gt;는 현재 파일의 위치에서 같은 directory에서 import(its’s siblings)&lt;/li&gt;
+  &lt;li&gt;two dots은 &lt;code class=&quot;highlighter-rouge&quot;&gt;module_b&lt;/code&gt; 현재 파일의 위에서 상대적으로 위의 directory에서 import(it’s parent)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;2-execute-python-moduels-as-scripts&quot;&gt;2. Execute Python Moduels as Scripts&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;importing module에다가 또한 우리는 module을 개별적으로 script같이 실행가능&lt;/li&gt;
+  &lt;li&gt;아래는 예시
+&lt;code class=&quot;highlighter-rouge&quot;&gt;test.py&lt;/code&gt;라는 모듈이 있고 아래 code가 포함
+&lt;code class=&quot;highlighter-rouge&quot;&gt;print(&quot;Yang Zhou&quot;)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;terminal에서 module을 실행 시킬때, 아래와 같은 command를 입력
+&lt;img src=&quot;https://miro.medium.com/max/6000/1*Hf2a0I3GU_z88Ri30MqMTg.png&quot; alt=&quot;sample&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위에 예와 같은이 &lt;code class=&quot;highlighter-rouge&quot;&gt;python&lt;/code&gt;을 module이름 앞에 붙여서 실행&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;text.py&lt;/code&gt;가 function or class를 포함시 우리는 &lt;code class=&quot;highlighter-rouge&quot;&gt;main&lt;/code&gt;function을 포함하여 실행&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def output_author(name):
+    print(name)
+
+if __name__ == &quot;__main__&quot;:
+    import sys
+    output_author(name=sys.argv[1])
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;module이 다른 module에 import 되면 main function은 실행하지 않으므로 유연성을 제공&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;2-manage-python-modules-by-packages&quot;&gt;2. Manage Python Modules by Packages&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;python package는 다른 module들을 grouping시킴. logically related module들을 package에 넣는것은 좋은 습관
+!(blog)[https://miro.medium.com/max/568/1*iy9OaOsJ9nU9OL2r702aBw.png]&lt;/li&gt;
+  &lt;li&gt;위의 예시에서는 blog 그리고 mysite라는 2개의 python package그리고 migration이라는 blog의 sub package가 존재
+package를 사용함으로써 프로젝트를 좀더 논리적으로 명확하게 관리가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/techtofreedom/3-key-skills-for-handling-modules-in-python-d644c5e5682&quot;&gt;medium&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/collections.html#collections.namedtuple&quot;&gt;docs-python&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 27 Mar 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/python/2021/03/27/python-skills-handling-modules/</link>
+        <guid isPermaLink="true">http://localhost:4000/python/2021/03/27/python-skills-handling-modules/</guid>
+        
+        <category>skills</category>
+        
+        <category>module</category>
+        
+        
+        <category>python</category>
+        
+      </item>
+    
+      <item>
+        <title>[Python] Collection모듈 - namedTuples</title>
+        <description>&lt;h3 id=&quot;namedtuple&quot;&gt;namedtuple&lt;/h3&gt;
+&lt;p&gt;dicionary와 같은 container을 지원. 특정 값에 hash를 적용한 key를 포함. key, idex 둘다 접근 가능. tuple의 성질을 가졌고, tuple은 일반적으로 index로 접근하므로 직관적이지 않음. namedtuple은 field의 key(이름)을 붙여 사용 가능&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;access-options&quot;&gt;Access options&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Access by index : The attribute values of namedtuple() are ordered and can be accessed using the index number unlike dictionaries which are not accessible by index.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Access by keyname : Access by keyname is also allowed as in dictionaries.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;using getattr() :- This is yet another way to access the value by giving namedtuple and key value as its argument.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;conversion-operations&quot;&gt;Conversion Operations&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;_make()&lt;/strong&gt; : iterable객체를 argument로 넘겨  namedtuple()로 return&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;_asdict()&lt;/strong&gt; : OrderDict()로 return ( namedtupel()의 mapping된 value로 구성)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;**(double start) operator&lt;/strong&gt; : dictionary를 namedtuple()로 변환&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;additional-operations&quot;&gt;Additional Operations&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;_fields&lt;/strong&gt; : namespace의 모든 keyname을 return&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;_replace()&lt;/strong&gt; : keyname을 넘겨 value값을 변환&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;example&quot;&gt;Example&lt;/h3&gt;
+&lt;script src=&quot;https://gist.github.com/kevinsung123/7385f076603c1bd5bbd13f2998ead973.js&quot;&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/namedtuple-in-python/&quot;&gt;geeks&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/collections.html#collections.namedtuple&quot;&gt;docs-python&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 21 Mar 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/python/2021/03/21/python-collections-namedtuples/</link>
+        <guid isPermaLink="true">http://localhost:4000/python/2021/03/21/python-collections-namedtuples/</guid>
+        
+        <category>collections</category>
+        
+        <category>namedtuple</category>
+        
+        
+        <category>python</category>
+        
+      </item>
     
       <item>
         <title>[k8s] Container - images</title>
