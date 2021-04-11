@@ -6,9 +6,237 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 28 Mar 2021 02:09:53 +0900</pubDate>
-    <lastBuildDate>Sun, 28 Mar 2021 02:09:53 +0900</lastBuildDate>
+    <pubDate>Sun, 11 Apr 2021 20:52:39 +0900</pubDate>
+    <lastBuildDate>Sun, 11 Apr 2021 20:52:39 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[Python] Pandas DataFrame Basics: How To Perform Indexing And Slicing</title>
+        <description>&lt;h2 id=&quot;python-pandas-dataframe-basics-how-to-perform-indexing-and-slicing&quot;&gt;Python Pandas DataFrame Basics: How To Perform Indexing And Slicing&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;1-introduction&quot;&gt;1. Introduction&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;pandas는 data analysis를 위한 오픈소스 python 라이브러리&lt;/li&gt;
+  &lt;li&gt;spread-sheet같은 data를 아래와 같은 기능을 하도록 지원
+    &lt;ul&gt;
+      &lt;li&gt;fast-data loading&lt;/li&gt;
+      &lt;li&gt;manipulating&lt;/li&gt;
+      &lt;li&gt;aligning&lt;/li&gt;
+      &lt;li&gt;mering&lt;/li&gt;
+      &lt;li&gt;among other functions&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;pandas의 이런 기능을 잘 이용하기 위해서 pandas는 2가지 새로운 type data를 이용
+    &lt;ol&gt;
+      &lt;li&gt;&lt;strong&gt;Series&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Dataframe&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Series: Pandas series are basically dataset having only one row or one column. Means, if we filter out only one row or only one column from a dataframe, its called “series”.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;dataframe으로부터 one row or one column을 가지는 dataset&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Dataframe: The DataFrame represents your entire spreadsheet or rectangular data, whereas the Series is a single column of the DataFrame.&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;전체 data를 가짐 반며에 Series는 Dataframe의 one column or one row&lt;/li&gt;
+    &lt;li&gt;Dataframe은 Series Object들의 dictionary or collection으로 취급&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;dataframe-example&quot;&gt;Dataframe example&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1161/1*eH1aoTy_1vmFn0nm6XpkmQ.png&quot; alt=&quot;example&quot; /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;series-example&quot;&gt;Series example&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;위의 dataframe에서 3번째 index를 추출 또는 one row를 추출하면 그것이 series object가 된다
+    &lt;h4 id=&quot;filtering-one-row&quot;&gt;filtering one row&lt;/h4&gt;
+    &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/752/1*TtCtnswZiE56A43QoojPMw.png&quot; alt=&quot;series-example&quot; /&gt;&lt;/p&gt;
+    &lt;h4 id=&quot;slicing-one-column&quot;&gt;slicing one column&lt;/h4&gt;
+    &lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1001/1*Ap45iPiYb_PG1SQSGdS5JA.png&quot; alt=&quot;ex&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;2dataframe-explained-in-detail&quot;&gt;2.Dataframe Explained in Detail&lt;/h2&gt;
+&lt;h4 id=&quot;21-get-the-number-of-rows-and-columns&quot;&gt;2.1 Get the number of rows and columns&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;df.shape&lt;/code&gt;은 첫번째 row은 &lt;code class=&quot;highlighter-rouge&quot;&gt;tuple&lt;/code&gt;을 반환 그리고 2번째 row부터 column을 반환&lt;/li&gt;
+  &lt;li&gt;shape는 dataframe의 attribute이기 때문에 function이나 method가 아님&lt;/li&gt;
+  &lt;li&gt;shape[0] : 행&lt;/li&gt;
+  &lt;li&gt;shape[1] : 열
+&lt;img src=&quot;https://miro.medium.com/max/790/1*bNxF7_RRYfL1bH8JLE-vRg.png&quot; alt=&quot;test&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;22-get-the-column-names&quot;&gt;2.2 Get the column names&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;df.columns&lt;/code&gt; method는 dataframe의 column명을 가져옴
+&lt;img src=&quot;https://miro.medium.com/max/1400/1*biTHDrCgQFYId9TNWJTS-Q.png&quot; alt=&quot;df.columns&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;23-get-the-dtype-of-each-column&quot;&gt;2.3 Get the dtype of each column&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/564/1*ZS4EyVRdOwObAkyTy99Iug.png&quot; alt=&quot;df.dtypes&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;24-get-more-information-about-our-data&quot;&gt;2.4 Get more information about our data&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/834/1*0kDrGT4Y_T6Fv18J8hCyjQ.png&quot; alt=&quot;df.info&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;25-pandas-type-versus-python-types&quot;&gt;2.5 Pandas Type Versus Python Types&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1400/1*2T-tpls38xuWUk02WROXew.png&quot; alt=&quot;type-versus&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;3-lookig-at-columns-rows-cells&quot;&gt;3. Lookig at columns, rows, cells&lt;/h2&gt;
+&lt;p&gt;data가 너무 많으므로 handling할 경우, subsets of data를 보고 data를 handling한다
+—&lt;/p&gt;
+
+&lt;h4 id=&quot;31-subsetting-columns&quot;&gt;3.1 Subsetting Columns&lt;/h4&gt;
+&lt;h5 id=&quot;311-subsetting-columns-by-name&quot;&gt;3.1.1 Subsetting Columns by name&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;data의 특정 column만 보고 싶은 경우 &lt;code class=&quot;highlighter-rouge&quot;&gt;square bracket&lt;/code&gt;를 사용
+&lt;img src=&quot;https://miro.medium.com/max/646/1*OaqNjla02FqvO_0MsHb3Uw.png&quot; alt=&quot;square.bracket&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;여러 column을 subset으로 지정
+&lt;img src=&quot;https://miro.medium.com/max/914/1*NsIntRZrZziIVHGbmMoTjA.png&quot; alt=&quot;square.bracket.2&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;312-subsetting-columns-by-range&quot;&gt;3.1.2 Subsetting Columns by Range&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;built-in range function을 활용하여 생성가능&lt;/li&gt;
+  &lt;li&gt;
+    &lt;h2 id=&quot;특정-begin-and-end-value값을-지정하여-해당-범위-subset자동-생성&quot;&gt;특정 begin and end value값을 지정하여 해당 범위 subset자동 생성&lt;/h2&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;32-subsetting-rows&quot;&gt;3.2 Subsetting Rows&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;rows은 multiple way로 subset 생성가능
+&lt;img src=&quot;https://miro.medium.com/max/1120/1*6OAeU_cifn-siTVkHcmnAg.png&quot; alt=&quot;subset.rows&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;321-subset-rows-by-index-label--loc&quot;&gt;3.2.1 Subset Rows by Index Label : loc&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;loc[integer]&lt;/code&gt;를 활용하여 특정 row의 data를 가져옴
+&lt;img src=&quot;https://miro.medium.com/max/882/1*sKHi5HZnEuNtQtl2XW4ryg.png&quot; alt=&quot;loc&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;322-subset-rows-by-row-number-iloc&quot;&gt;3.2.2 Subset Rows by Row Number: iloc&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;iloc&lt;/code&gt;는 loc와 유사하지만, row index number를 활용&lt;/li&gt;
+  &lt;li&gt;index label이 같으면 &lt;code class=&quot;highlighter-rouge&quot;&gt;iloc&lt;/code&gt;와 &lt;code class=&quot;highlighter-rouge&quot;&gt;loc&lt;/code&gt;과 같은 동작으로 사용&lt;/li&gt;
+  &lt;li&gt;
+    &lt;h2 id=&quot;index-label은-row-number가-필요&quot;&gt;index label은 row number가 필요&lt;/h2&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;33-mixing-it-up--subsetting-multiple-rows-and-colums&quot;&gt;3.3 Mixing it up : Subsetting Multiple rows and colums&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;loc&lt;/code&gt;그리고 &lt;code class=&quot;highlighter-rouge&quot;&gt;iloc&lt;/code&gt; attribute는 subset of columns, rows, or 둘다 가져 올 수 있음&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;comma의 left&lt;/code&gt; : subset의 row values&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;comma의 right&lt;/code&gt; : subset의 column values
+    &lt;blockquote&gt;
+      &lt;p&gt;df.loc[[rows],[columns]] or df.iloc[[rows],[columns]]&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;331-subsetting-columns-using-loc&quot;&gt;3.3.1 Subsetting columns using loc&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;python slicing syntax을 colon을 사용&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;df.loc[:,[columns]]&lt;/code&gt;와 같은 syntax로사용
+&lt;img src=&quot;https://miro.medium.com/max/978/1*pbZpYbBgU-mPAm0GFkAG-g.png&quot; alt=&quot;ex&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;332-subsetting-columns-uinsg-iloc&quot;&gt;3.3.2 Subsetting columns uinsg iloc&lt;/h5&gt;
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/794/1*5x4hews-g-xVJOUN9ExN0Q.png&quot; alt=&quot;ex&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;333-slicing-cclumns&quot;&gt;3.3.3 Slicing Cclumns&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;python slicing syntax &lt;code class=&quot;highlighter-rouge&quot;&gt;,&lt;/code&gt;column은 range syntax와 유사
+&lt;img src=&quot;https://miro.medium.com/max/788/1*OuwkZ4rDvyszzMejF0ce0Q.png&quot; alt=&quot;ex&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/devops-bites/pandas-dataframe-basics-how-to-perform-indexing-and-slicing-95cc46fac1e1&quot;&gt;medium&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/collections.html#collections.namedtuple&quot;&gt;docs-python&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 11 Apr 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/python/2021/04/11/python-pandas/</link>
+        <guid isPermaLink="true">http://localhost:4000/python/2021/04/11/python-pandas/</guid>
+        
+        <category>pandas</category>
+        
+        <category>chunksize</category>
+        
+        
+        <category>python</category>
+        
+      </item>
+    
+      <item>
+        <title>[Python] Pandas - Chunksize</title>
+        <description>&lt;h3 id=&quot;namedtuple&quot;&gt;namedtuple&lt;/h3&gt;
+&lt;p&gt;dicionary와 같은 container을 지원. 특정 값에 hash를 적용한 key를 포함. key, idex 둘다 접근 가능. tuple의 성질을 가졌고, tuple은 일반적으로 index로 접근하므로 직관적이지 않음. namedtuple은 field의 key(이름)을 붙여 사용 가능&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;access-options&quot;&gt;Access options&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Access by index : The attribute values of namedtuple() are ordered and can be accessed using the index number unlike dictionaries which are not accessible by index.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Access by keyname : Access by keyname is also allowed as in dictionaries.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;using getattr() :- This is yet another way to access the value by giving namedtuple and key value as its argument.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;conversion-operations&quot;&gt;Conversion Operations&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;_make()&lt;/strong&gt; : iterable객체를 argument로 넘겨  namedtuple()로 return&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;_asdict()&lt;/strong&gt; : OrderDict()로 return ( namedtupel()의 mapping된 value로 구성)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;**(double start) operator&lt;/strong&gt; : dictionary를 namedtuple()로 변환&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;additional-operations&quot;&gt;Additional Operations&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;_fields&lt;/strong&gt; : namespace의 모든 keyname을 return&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;_replace()&lt;/strong&gt; : keyname을 넘겨 value값을 변환&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;example&quot;&gt;Example&lt;/h3&gt;
+&lt;script src=&quot;https://gist.github.com/kevinsung123/7385f076603c1bd5bbd13f2998ead973.js&quot;&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/namedtuple-in-python/&quot;&gt;geeks&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/collections.html#collections.namedtuple&quot;&gt;docs-python&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 11 Apr 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/python/2021/04/11/python-pandas-chunksize/</link>
+        <guid isPermaLink="true">http://localhost:4000/python/2021/04/11/python-pandas-chunksize/</guid>
+        
+        <category>pandas</category>
+        
+        <category>chunksize</category>
+        
+        
+        <category>python</category>
+        
+      </item>
     
       <item>
         <title>[Python] 3 Key Skills for Handling Modules in Python</title>
@@ -226,15 +454,15 @@ CMD [&quot;hello&quot;]
 
 </description>
         <pubDate>Sat, 27 Mar 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/python/2021/03/27/docker-dockerfile/</link>
-        <guid isPermaLink="true">http://localhost:4000/python/2021/03/27/docker-dockerfile/</guid>
+        <link>http://localhost:4000/docker/2021/03/27/docker-dockerfile/</link>
+        <guid isPermaLink="true">http://localhost:4000/docker/2021/03/27/docker-dockerfile/</guid>
         
         <category>skills</category>
         
         <category>module</category>
         
         
-        <category>python</category>
+        <category>docker</category>
         
       </item>
     

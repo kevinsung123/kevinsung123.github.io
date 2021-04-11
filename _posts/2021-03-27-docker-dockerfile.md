@@ -2,7 +2,7 @@
 layout: post  
 title: "[Docker] Dockerfile 작성"  
 subtitle: "Dockerfile 작성"  
-categories: python  
+categories: docker  
 tags: skills module
 comments: true  
 ---  
