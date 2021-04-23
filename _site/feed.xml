@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 11 Apr 2021 20:52:39 +0900</pubDate>
-    <lastBuildDate>Sun, 11 Apr 2021 20:52:39 +0900</lastBuildDate>
+    <pubDate>Fri, 23 Apr 2021 19:59:50 +0900</pubDate>
+    <lastBuildDate>Fri, 23 Apr 2021 19:59:50 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -918,19 +918,19 @@ Could you do get and put in O(1) time complexity?&lt;/p&gt;
       &lt;li&gt;key 미존재 시 :
         &lt;ul&gt;
           &lt;li&gt;capacity 미만 : 값을 추가&lt;/li&gt;
-          &lt;li&gt;capacity 초과 : LRU(Least Recently Used)값을 삭제 및 신규 값 추가
-            &lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
-            &lt;script src=&quot;https://gist.github.com/kevinsung123/332aff480d516faa34f5fca0151e5cbb.js&quot;&gt;&lt;/script&gt;
-
-            &lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
-            &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)&quot;&gt;wikipedia&lt;/a&gt;
-&lt;a href=&quot;https://gomguard.tistory.com/115&quot;&gt;page-blog&lt;/a&gt;&lt;/p&gt;
-          &lt;/li&gt;
+          &lt;li&gt;capacity 초과 : LRU(Least Recently Used)값을 삭제 및 신규 값 추가&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
+&lt;script src=&quot;https://gist.github.com/kevinsung123/332aff480d516faa34f5fca0151e5cbb.js&quot;&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)&quot;&gt;wikipedia&lt;/a&gt;
+&lt;a href=&quot;https://gomguard.tistory.com/115&quot;&gt;page-blog&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 17 Mar 2021 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/leetcode/2021/03/17/leetcode-146-lrucache/</link>
@@ -939,6 +939,63 @@ Could you do get and put in O(1) time complexity?&lt;/p&gt;
         <category>leetcode</category>
         
         <category>lru-cache</category>
+        
+        
+        <category>leetcode</category>
+        
+      </item>
+    
+      <item>
+        <title>[Leetcode] 104.Maximm depth of binary tree</title>
+        <description>&lt;h3 id=&quot;problem&quot;&gt;Problem&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/maximum-depth-of-binary-tree/&quot;&gt;leetcode&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Given the root of a binary tree, return its maximum depth.&lt;/p&gt;
+
+&lt;p&gt;A binary tree’s maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.&lt;/p&gt;
+
+&lt;h3 id=&quot;solving&quot;&gt;Solving&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;BT의 depth를 구하기 위해서 DFS/BFS방법으로 구현&lt;/li&gt;
+  &lt;li&gt;BT의 DFS 조회 : node를 방문하는 기준으로 방법이 달라짐
+    &lt;ul&gt;
+      &lt;li&gt;전위 순회(preorder)
+        &lt;ul&gt;
+          &lt;li&gt;node -&amp;gt; 왼쪽 -&amp;gt; 오른쪽&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;중위 순회(inorder)
+        &lt;ul&gt;
+          &lt;li&gt;왼쪽 서브트리 -&amp;gt; node -&amp;gt; 오르쪽 서브 트리&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;후위 순회(postorder)
+        &lt;ul&gt;
+          &lt;li&gt;왼쪽 서브트리 - &amp;gt; 오른쪽 서브 트리 - &amp;gt; node&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;BT의 BFS 조회
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;from collections import deque&lt;/code&gt;를 활용&lt;/li&gt;
+      &lt;li&gt;root를 맨처음 queue에 넣고 아래 서브트리를 계속 넣고 조회&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
+&lt;script src=&quot;https://gist.github.com/kevinsung123/8c890ac90ab3d16630a9304b1b488263.js&quot;&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+</description>
+        <pubDate>Wed, 17 Mar 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/leetcode/2021/03/17/leetcode-104-maximum_depth_of_binary_tree/</link>
+        <guid isPermaLink="true">http://localhost:4000/leetcode/2021/03/17/leetcode-104-maximum_depth_of_binary_tree/</guid>
+        
+        <category>leetcode</category>
+        
+        <category>binary-tree</category>
         
         
         <category>leetcode</category>
