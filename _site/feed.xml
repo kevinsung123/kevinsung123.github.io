@@ -6,9 +6,262 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 23 Apr 2021 19:59:50 +0900</pubDate>
-    <lastBuildDate>Fri, 23 Apr 2021 19:59:50 +0900</lastBuildDate>
+    <pubDate>Fri, 23 Apr 2021 21:27:56 +0900</pubDate>
+    <lastBuildDate>Fri, 23 Apr 2021 21:27:56 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[Python] Python dictionary sort</title>
+        <description>&lt;h3 id=&quot;dictionary&quot;&gt;Dictionary&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/tutorial/datastructures.html&quot;&gt;docs 참고&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;정렬되지 않은 값들을 넣는다&lt;/li&gt;
+  &lt;li&gt;map과같이 값들을 저장&lt;/li&gt;
+  &lt;li&gt;key, value 쌍으로 이루어짐&lt;/li&gt;
+  &lt;li&gt;key는 unique&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;생성&quot;&gt;생성&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;{ } (braces)으로 생성&lt;/li&gt;
+  &lt;li&gt;comma로 구분&lt;/li&gt;
+  &lt;li&gt;mixed key로 생성가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;defualtdict&quot;&gt;defualtdict&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;from collections import defaultdict&lt;/li&gt;
+  &lt;li&gt;dict클래스의 subclass이다&lt;/li&gt;
+  &lt;li&gt;차이점은 keyerror를 일으키지 않는다&lt;/li&gt;
+  &lt;li&gt;defaultvalue를 제공&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dic_list=default(list)
+for src,target in tickets:
+    dic_lista[src].append(target)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;sorted-vs-sort&quot;&gt;sorted vs sort&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;sort는 자체적으로 리스트를 정렬&lt;/li&gt;
+  &lt;li&gt;sorted는 정렬하여 새로운 리스트 생성&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;dictionary-정렬&quot;&gt;dictionary 정렬&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;key 기준 정렬
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sorted(dic_list.keys())
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;key,value 알파벳순 정렬
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sorted(dic_list)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;key, value 기준으로 정렬 =&amp;gt; value,key순서대로
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sorted(dic_list.items(),key=lambda x : (x[1],x[0]))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;정렬&quot;&gt;정렬&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.python.org/3/howto/sorting.html#ascending-and-descending&quot;&gt;정렬문서 참고&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;sorted(sorted(count_dict.keys()), key=lambda x: count_dict[x])&lt;/li&gt;
+  &lt;li&gt;내림 차순 정렬 reverse=True 추가&lt;/li&gt;
+  &lt;li&gt;sorted(iterable,key,reverse)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;sorted&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  count_dict = {}  
+  for num in row:  
+  if num == 0:  
+  continue  
+  if num in count_dict:  
+  count_dict[num] += 1  
+  else:  
+  count_dict[num] = 1  
+  next_row = []  
+  for key in sorted(sorted(count_dict.keys()), key=lambda x: count_dict[x]):  
+  next_row.append(key)  
+  next_row.append(count_dict[key])  
+  next_arr.append(next_row)  
+  max_len = max(max_len, len(next_row)  
+  sorted(sorted(count_dict.keys()), key=lambda x: count_dict[x]):  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;접근&quot;&gt;접근&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;key로 접근가능&lt;/li&gt;
+  &lt;li&gt;ex) Dict[‘name’]=1&lt;/li&gt;
+  &lt;li&gt;get 메소드로 접근가능&lt;/li&gt;
+  &lt;li&gt;ex) Dict.get(‘name’)=1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;삭제&quot;&gt;삭제&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;key로 삭제가능&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  # Initial Dictionary  
+  Dict = { 5 : 'Welcome', 6 : 'To', 7 : 'Geeks',  
+  'A' : {1 : 'Geeks', 2 : 'For', 3 : 'Geeks'},  
+  'B' : {1 : 'Geeks', 2 : 'Life'}}  
+  print(&quot;Initial Dictionary: &quot;)  
+  print(Dict)  
+    
+  # Deleting a Key value  
+  del Dict[6]  
+  print(&quot;\nDeleting a specific key: &quot;)  
+  print(Dict)  
+    
+  # Deleting a Key from  
+  # Nested Dictionary  
+  del Dict['A'][2]  
+  print(&quot;\nDeleting a key from Nested Dictionary: &quot;)  
+  print(Dict)  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;pop 메소드 : 출력 후 그 key에해당하는 값 삭제
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  # Creating a Dictionary  
+  Dict = {1: 'Geeks', 'name': 'For', 3: 'Geeks'}  
+    
+  # Deleting a key  
+  # using pop() method  
+  pop_ele = Dict.pop(1)  
+  print('\nDictionary after deletion: ' + str(Dict))  
+  print('Value associated to poped key is: ' + str(pop_ele))  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;popitem 메소드 : 임의의 key에 해당하는 key,value 삭제&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#### Creating Dictionary  
+Dict = {1: 'Geeks', 'name': 'For', 3: 'Geeks'}  
+  
+#### Deleting an arbitrary key  
+##### using popitem() function  
+pop_ele = Dict.popitem()  
+print(&quot;\nDictionary after deletion: &quot; + str(Dict))  
+print(&quot;The arbitrary pair returned is: &quot; + str(pop_ele))  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h4 id=&quot;clear---모든-값-삭제&quot;&gt;clear () : 모든 값 삭제&lt;/h4&gt;
+
+&lt;h4 id=&quot;methods-description&quot;&gt;METHODS DESCRIPTION&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;copy() They copy() method returns a shallow copy of the dictionary.&lt;/li&gt;
+  &lt;li&gt;clear() The clear() method removes all items from the dictionary.&lt;/li&gt;
+  &lt;li&gt;pop() Removes and returns an element from a dictionary having the given key.&lt;/li&gt;
+  &lt;li&gt;popitem() Removes the arbitrary key-value pair from the dictionary and returns it as tuple.&lt;/li&gt;
+  &lt;li&gt;get() It is a conventional method to access a value for a key.&lt;/li&gt;
+  &lt;li&gt;dictionary_name.values() returns a list of all the values available in a given dictionary.&lt;/li&gt;
+  &lt;li&gt;str() Produces a printable string representation of a dictionary.&lt;/li&gt;
+  &lt;li&gt;update() Adds dictionary dict2’s key-values pairs to dict&lt;br /&gt;
+setdefault() Set dict[key]=default if key is not already in dict&lt;/li&gt;
+  &lt;li&gt;keys() Returns list of dictionary dict’s keys&lt;/li&gt;
+  &lt;li&gt;items() Returns a list of dict’s (key, value) tuple pairs&lt;/li&gt;
+  &lt;li&gt;has_key() Returns true if key in dictionary dict, false otherwise&lt;/li&gt;
+  &lt;li&gt;fromkeys() Create a new dictionary with keys from seq and values set to value.&lt;/li&gt;
+  &lt;li&gt;type() Returns the type of the passed variable.&lt;/li&gt;
+  &lt;li&gt;cmp() Compares elements of both dict.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 23 Apr 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/python/2021/04/23/python-dict-sort/</link>
+        <guid isPermaLink="true">http://localhost:4000/python/2021/04/23/python-dict-sort/</guid>
+        
+        <category>pandas</category>
+        
+        <category>dict</category>
+        
+        <category>sort</category>
+        
+        
+        <category>python</category>
+        
+      </item>
+    
+      <item>
+        <title>[Python] Python collection defaultdict</title>
+        <description>&lt;h2 id=&quot;python-collection-default-dict&quot;&gt;Python Collection Default dict&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;python-collections-이란&quot;&gt;python collections 이란?&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;python collections are specialized container datatypes providing alternatives to Python’s general purposd built-in conatiners dict,list,set and tuple&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;python의 built-in type에 mechanisim이 추가됨&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;so-what-exactly-is-defaultdict&quot;&gt;So What exactly is DefaultDict?&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;defaultdict&lt;/code&gt;는 모든 일반적인 목적으로 만든 &lt;code class=&quot;highlighter-rouge&quot;&gt;dict&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;keyerror&lt;/code&gt;를 일으키지 않음(일반적인 dict는 handling code를 작성해야하지만 내부에 이미 구현)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;defaultdict&lt;/code&gt;는 다음 사항이 적용
+    &lt;ol&gt;
+      &lt;li&gt;access할때 dictionary에 key가 미존재시 &lt;code class=&quot;highlighter-rouge&quot;&gt;keyerror&lt;/code&gt;를 일으키지 않음&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;defaultdict&lt;/code&gt; 생성시 default value를 제공해서 자동으로 key가 생성되게함&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/max/1750/1*SIe_ipQF6o37G0u6mKoXBg.png&quot; alt=&quot;example&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;default-value-생성&quot;&gt;default value 생성&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;아래는 &lt;code class=&quot;highlighter-rouge&quot;&gt;defaultdict&lt;/code&gt;를 생성할때 &lt;code class=&quot;highlighter-rouge&quot;&gt;int, float and str&lt;/code&gt;로 생성하는 예제
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;a_dct = defaultdict(int)   # The Default Value is &quot;0&quot;
+a_dct = defaultdict(float)   # The Default Value is &quot;0.0&quot;
+a_dct = defaultdict(str)   # The Default Value is &quot;&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;default value를 자동으로 조회 가능&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;list, tuple&lt;/code&gt;로도 생성가능 (Using defaultdict with list)
+    &lt;ul&gt;
+      &lt;li&gt;key 존재유무와 상관없이 &lt;code class=&quot;highlighter-rouge&quot;&gt;append&lt;/code&gt;와 같은 list function을 사용가능
+&lt;img src=&quot;https://miro.medium.com/max/1750/1*9BW-GUCUV_FaTajcEIPIWg.png&quot; alt=&quot;example2&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;extreamly careful about&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;defaultdict&lt;/code&gt;를 &lt;code class=&quot;highlighter-rouge&quot;&gt;list, tuple, int, float&lt;/code&gt;로 만들때 overwrite and assign (with totally different)가능, 이런 상황시 code fail
+&lt;img src=&quot;https://miro.medium.com/max/1750/1*jXHATFe_KN9317R7n7Kxlw.png&quot; alt=&quot;example3&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 23 Apr 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/python/2021/04/23/python-collection-defaultdict/</link>
+        <guid isPermaLink="true">http://localhost:4000/python/2021/04/23/python-collection-defaultdict/</guid>
+        
+        <category>pandas</category>
+        
+        <category>collection</category>
+        
+        <category>defaultdict</category>
+        
+        
+        <category>python</category>
+        
+      </item>
+    
+      <item>
+        <title>Leetcode 387 First_unique_character_in_a_string</title>
+        <description>
+</description>
+        <pubDate>Fri, 23 Apr 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2021/04/23/leetcode-387-first_unique_character_in_a_string/</link>
+        <guid isPermaLink="true">http://localhost:4000/2021/04/23/leetcode-387-first_unique_character_in_a_string/</guid>
+        
+        
+      </item>
     
       <item>
         <title>[Python] Pandas DataFrame Basics: How To Perform Indexing And Slicing</title>
