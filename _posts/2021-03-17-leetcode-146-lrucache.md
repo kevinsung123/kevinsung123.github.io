@@ -57,6 +57,7 @@ Could you do get and put in O(1) time complexity?
     - key 미존재 시 : 
         - capacity 미만 : 값을 추가
         - capacity 초과 : LRU(Least Recently Used)값을 삭제 및 신규 값 추가
+
 ### Code
 <script src="https://gist.github.com/kevinsung123/332aff480d516faa34f5fca0151e5cbb.js"></script>
 ### 참고
