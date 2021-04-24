@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 23 Apr 2021 21:27:56 +0900</pubDate>
-    <lastBuildDate>Fri, 23 Apr 2021 21:27:56 +0900</lastBuildDate>
+    <pubDate>Fri, 23 Apr 2021 21:28:15 +0900</pubDate>
+    <lastBuildDate>Fri, 23 Apr 2021 21:28:15 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -136,19 +136,21 @@ for src,target in tickets:
   print('Value associated to poped key is: ' + str(pop_ele))  
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-  &lt;li&gt;popitem 메소드 : 임의의 key에 해당하는 key,value 삭제&lt;/li&gt;
-&lt;/ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;popitem 메소드 : 임의의 key에 해당하는 key,value 삭제&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#### Creating Dictionary  
-Dict = {1: 'Geeks', 'name': 'For', 3: 'Geeks'}  
-  
-#### Deleting an arbitrary key  
-##### using popitem() function  
-pop_ele = Dict.popitem()  
-print(&quot;\nDictionary after deletion: &quot; + str(Dict))  
-print(&quot;The arbitrary pair returned is: &quot; + str(pop_ele))  
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h4 id=&quot;clear---모든-값-삭제&quot;&gt;clear () : 모든 값 삭제&lt;/h4&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  #### Creating Dictionary  
+  Dict = {1: 'Geeks', 'name': 'For', 3: 'Geeks'}  
+    
+  #### Deleting an arbitrary key  
+  ##### using popitem() function  
+  pop_ele = Dict.popitem()  
+  print(&quot;\nDictionary after deletion: &quot; + str(Dict))  
+  print(&quot;The arbitrary pair returned is: &quot; + str(pop_ele))  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;h4 id=&quot;clear---모든-값-삭제&quot;&gt;clear () : 모든 값 삭제&lt;/h4&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h4 id=&quot;methods-description&quot;&gt;METHODS DESCRIPTION&lt;/h4&gt;
 &lt;ul&gt;
