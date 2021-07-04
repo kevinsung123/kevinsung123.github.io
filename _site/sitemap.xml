@@ -2,6 +2,54 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
+      <loc>http://localhost:4000/k8s/2021/07/02/k8s-kubectl/</loc>
+      
+        <lastmod>2021-07-02T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/leetcode/2021/06/06/leetcode-121-best_time_to_buy_and_sell_stock/</loc>
+      
+        <lastmod>2021-06-06T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
+      <loc>http://localhost:4000/python/2021/04/24/python-collection-counter/</loc>
+      
+        <lastmod>2021-04-24T00:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>1.0</priority>
+      
+
+    </url>
+  
+    <url>
       <loc>http://localhost:4000/python/2021/04/23/python-dict-sort/</loc>
       
         <lastmod>2021-04-23T00:00:00+09:00</lastmod>
@@ -34,7 +82,7 @@
     </url>
   
     <url>
-      <loc>http://localhost:4000/2021/04/23/leetcode-387-first_unique_character_in_a_string/</loc>
+      <loc>http://localhost:4000/leetcode/2021/04/23/leetcode-387-first_unique_character_in_a_string/</loc>
       
         <lastmod>2021-04-23T00:00:00+09:00</lastmod>
       
