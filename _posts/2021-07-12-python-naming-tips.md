@@ -79,6 +79,9 @@ comments: true
 ### 10. Check if a function call is readable
 - func을 작서할때 어떻게 그리고 어디서 func이 호출되는지 생각
 - 거기에 적합한지 읽을만한지 생각
+- good name은 2군데에서 읽을만해야함
+    - where the function is defined and called
+- all you need is to thinks aboud a second case : will the nmae look readbale when fucntion is called
 
 ### 참고
 - [medium - Python functions naming: 10 tips](https://melevir.medium.com/python-functions-naming-tips-376f12549f9)
