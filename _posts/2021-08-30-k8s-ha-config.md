@@ -1,9 +1,9 @@
 ---  
 layout: post  
-title: "[Shell] df "  
-subtitle: "How to Kill Zombie process "  
-categories: os
-tags: shell zombie
+title: "[k8s] HA Configuration "  
+subtitle: "k8s HA Configuration"  
+categories: k8s
+tags: k8s ha
 comments: true  
 ---  
 
