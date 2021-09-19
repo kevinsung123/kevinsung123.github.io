@@ -8,13 +8,12 @@ comments: true
 ---  
 
 
---- 
 
 ## What does a Loss function do ?
 - measures how good the current guess is
 
 ## What does the optimizer do?
-# 
+-  
 
 ## What is Convergence?
 - The process of getting very close to the correct answer

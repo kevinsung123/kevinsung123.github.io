@@ -6,59 +6,180 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 09 Sep 2021 18:32:26 +0900</pubDate>
-    <lastBuildDate>Thu, 09 Sep 2021 18:32:26 +0900</lastBuildDate>
+    <pubDate>Sun, 19 Sep 2021 19:30:22 +0900</pubDate>
+    <lastBuildDate>Sun, 19 Sep 2021 19:30:22 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
-        <title>[Shell] Linux tools </title>
-        <description>&lt;h3 id=&quot;linux-tools-that-i-learned-10-years-ago-which-i-still-use-every-day&quot;&gt;Linux tools that I learned 10 years ago, which I still use every day&lt;/h3&gt;
-
-&lt;!--more--&gt;
-&lt;h3 id=&quot;ps-and-htop---listeing-and-finding-proceess&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ps&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;htop&lt;/code&gt; - listeing and finding proceess&lt;/h3&gt;
+        <title>[Devops] git push with existsing project</title>
+        <description>&lt;h3 id=&quot;step-1--create-a-new-github-repo&quot;&gt;Step 1 : Create a new GitHub Repo&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;htop&lt;/code&gt; 프로그램은 더 유연하고 사용하기 쉬움&lt;/li&gt;
-  &lt;li&gt;terminal에서 sorting column을 mouse로 지원
-&lt;img src=&quot;https://miro.medium.com/max/1575/1*0WsxoUIZsK4wvTskHFhv_w.png&quot; alt=&quot;htop&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;empty repo를 먼저 생성&lt;a href=&quot;https://github.com/new&quot;&gt;create a new empty repo&lt;/a&gt;. README를 넣을지 말지 결정가능. 
+&lt;img src=&quot;https://assets.digitalocean.com/articles/how-to-push-an-existing-project-to-github/new-github-repo.png&quot; alt=&quot;image&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;ss-and-netstat---what-ports-is-that-process-using&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ss&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;netstat&lt;/code&gt; - what ports is that process using&lt;/h3&gt;
+&lt;h3 id=&quot;step-2--initialize-git-in-the-project-folder&quot;&gt;Step 2 : Initialize Git in the project folder&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;netstat&lt;/code&gt;은 old way이고 요즘 배포판은 &lt;code class=&quot;highlighter-rouge&quot;&gt;ss&lt;/code&gt;가 많이 적용&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ss -ntaupe&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ss -ntpl&lt;/code&gt; : listening port만 찾기 위함
-    &lt;h4 id=&quot;options&quot;&gt;options&lt;/h4&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-n&lt;/code&gt; : lists processing using numeric address&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-t&lt;/code&gt; : list TCP connections&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-a&lt;/code&gt; : list all connections  listening and establised&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-u&lt;/code&gt; : lists UDP connections&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-p&lt;/code&gt; : shows the process using the socket - probably the most useful&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-e&lt;/code&gt; : shows some extened information like the uid&lt;/li&gt;
+  &lt;li&gt;terminal에서 추가하고 싶은 폴더로 이동하여 아래 command를 실행&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;shell-job-control---fgbgjobs&quot;&gt;Shell job control - fg/bg/jobs&lt;/h3&gt;
+&lt;h5 id=&quot;initialize-the-git-repo&quot;&gt;Initialize the Git Repo&lt;/h5&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;ul&gt;
-  &lt;li&gt;fg &lt;jobnumber&gt;&lt;/jobnumber&gt;&lt;/li&gt;
-  &lt;li&gt;bg &lt;jobnumber&gt;&lt;/jobnumber&gt;&lt;/li&gt;
-  &lt;li&gt;ds
-    &lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+  &lt;li&gt;
+    &lt;p&gt;프로젝트의 root directory로 이동 후 아래 command를 실행&lt;/p&gt;
   &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이번 step에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;.git&lt;/code&gt;directory를 프로젝트 폴더에 생성. &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; software가 인식을 하고 모든 metadata 그리고 version history를 프로젝트에 생성&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;add-the-files-to-git-index&quot;&gt;Add the files to Git index&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add -A
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git add&lt;/code&gt; command는 git에게 어떤 파일들이 commit에 포함될지 그리고 &lt;code class=&quot;highlighter-rouge&quot;&gt;-A&lt;/code&gt; 의미는 “include all&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;commit-added-files&quot;&gt;Commit Added Files&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git commit -m &quot;added my project&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git commit&lt;/code&gt; command는 added된 new commit를 만들고 message와 함께 포함. commit을 이해하기 위해 future reference를 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;add-new-remote-originin-this-case&quot;&gt;Add new remote origin(in this case)&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote add origin git@github.com:sammy/my-new-project.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;git에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;remote&lt;/code&gt;는 remote version of the same repository, which is typically on a server software. &lt;code class=&quot;highlighter-rouge&quot;&gt;origin&lt;/code&gt;은 remote server(you can have multiple remotes)의 default이름&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git remote add origin&lt;/code&gt;는 이 repo의 기본 remote server의 URL을 추가하는 것&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;push-to-github&quot;&gt;Push to GitHub&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git push -u -f origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-f&lt;/code&gt; flag는 force. 이것은 자동으로 remote directory를 overwrite하는 과정.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-u&lt;/code&gt;flag는 remote origin 설정. 이것은 &lt;code class=&quot;highlighter-rouge&quot;&gt;git push&lt;/code&gt; 그리고 &lt;code class=&quot;highlighter-rouge&quot;&gt;git pull&lt;/code&gt;를 나중에 특정 origin을 설정하지 않고 항상 push하게 해줌&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;all-together&quot;&gt;All together&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git init
+git add -A
+git commit -m &quot;Addded my project&quot;
+git remote add origin git@github.com:sammy/my-new-project.git
+git push -u -f origin masater
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;###&lt;/p&gt;
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-push-an-existing-project-to-github&quot;&gt;digitalocean&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 15 Sep 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/devops/2021/09/15/devops-git-init/</link>
+        <guid isPermaLink="true">http://localhost:4000/devops/2021/09/15/devops-git-init/</guid>
+        
+        <category>devops</category>
+        
+        <category>git</category>
+        
+        <category>init</category>
+        
+        
+        <category>devops</category>
+        
+      </item>
+    
+      <item>
+        <title>[AI] Cousera Quiz </title>
+        <description>&lt;h2 id=&quot;what-does-a-loss-function-do-&quot;&gt;What does a Loss function do ?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;measures how good the current guess is&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-does-the-optimizer-do&quot;&gt;What does the optimizer do?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-is-convergence&quot;&gt;What is Convergence?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;The process of getting very close to the correct answer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-does-modelfit-do&quot;&gt;What does model.fit do?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;It trains the neural network to fit one set of values to another&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://medium.com/james-reads-public-cloud-technology-blog/linux-tools-that-i-learned-10-years-ago-which-i-still-use-every-day-9289f952f169&quot;&gt;medium - Linux tools tips&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
+        <pubDate>Wed, 15 Sep 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/ai/2021/09/15/cousera-week1-quiz/</link>
+        <guid isPermaLink="true">http://localhost:4000/ai/2021/09/15/cousera-week1-quiz/</guid>
+        
+        <category>ai</category>
+        
+        <category>cousera</category>
+        
+        <category>quiz</category>
+        
+        
+        <category>ai</category>
+        
+      </item>
+    
+      <item>
+        <title>[AI] Term</title>
+        <description>&lt;h3 id=&quot;ai용어&quot;&gt;AI용어&lt;/h3&gt;
+&lt;h6 id=&quot;fnnfully-connected-neural-network&quot;&gt;FNN(Fully-connected Neural Network)&lt;/h6&gt;
+&lt;ul&gt;
+  &lt;li&gt;뉴런을 단계별로 층층히 연결하여 데이터를 흘려보내는 방식의 인공신경망&lt;/li&gt;
+  &lt;li&gt;Input.Hidden/Output layer들로 구성&lt;/li&gt;
+  &lt;li&gt;세로로 묶인 일련의 뉴런의 묶음을 &lt;strong&gt;layer&lt;/strong&gt;라고 부름&lt;/li&gt;
+  &lt;li&gt;뉴런끼리 레이어간 빽빽하게 연결되어 있어서 이러한 형태의 layer를 &lt;strong&gt;Dense layer&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;tensor&quot;&gt;Tensor&lt;/h6&gt;
+&lt;ul&gt;
+  &lt;li&gt;tensor란 수학적인 개념으로 데이터의 배열&lt;/li&gt;
+  &lt;li&gt;tensor의 Rank는 간단히 말해서 몇 차원 배열인가를 의미&lt;/li&gt;
+  &lt;li&gt;차원의 수는 Rank와 같은말&lt;/li&gt;
+  &lt;li&gt;matrix의 집합인 tensor는 당연히 3차원 부터 시작하니 최소 3이상의 수&lt;/li&gt;
+  &lt;li&gt;Rank/Type
+    &lt;ul&gt;
+      &lt;li&gt;0/scalar : [1]&lt;/li&gt;
+      &lt;li&gt;1/vecotr : [1,1]&lt;/li&gt;
+      &lt;li&gt;2/matrix : [[1,1],[1,1]]&lt;/li&gt;
+      &lt;li&gt;3/3-tensor : [[[1,1],[1,2]]]&lt;/li&gt;
+      &lt;li&gt;n/n-tensor : etc&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://rekt77.tistory.com/102&quot;&gt;rekt77&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
         <pubDate>Thu, 09 Sep 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/os/2021/09/09/ai/</link>
-        <guid isPermaLink="true">http://localhost:4000/os/2021/09/09/ai/</guid>
+        <link>http://localhost:4000/ai/2021/09/09/ai/</link>
+        <guid isPermaLink="true">http://localhost:4000/ai/2021/09/09/ai/</guid>
         
-        <category>shell</category>
+        <category>ai</category>
         
-        <category>tools</category>
+        <category>term</category>
         
         
-        <category>os</category>
+        <category>ai</category>
         
       </item>
     
@@ -2540,156 +2661,6 @@ kube-proxy는 OS에 가용한 packet filtering이 있을경우 이를사용, 그
         
         
         <category>os</category>
-        
-      </item>
-    
-      <item>
-        <title>[Linux] Linux 종류 </title>
-        <description>&lt;h3 id=&quot;linux란&quot;&gt;Linux란?&lt;/h3&gt;
-&lt;p&gt;리눅스(Linux)는 리누스 토발즈가 커뮤니티 주체로 개발한 컴퓨터 운영 체제입니다. 
-&lt;!--more--&gt;
-리눅스(Linux)는 UNIX운영체제를 기반으로 만들어진 운영체제 입니다. 리눅스(Linux)는 유닉스(UNIX)와 마찬가지로 다중 사용자, 다중 작업(멀티태스킹), 다중 스레드를 지원하는 네트워크 운영 체제(NOS)입니다.&lt;/p&gt;
-
-&lt;p&gt;리눅스의 원형이 되는 UNIX가 애초부터 통신 네트워크를 지향하여 설계된것처럼 리눅스 역시 서버로 작동하는데 최적화되어있습니다. 고로 서버에서 사용되는 운영체제로 많이 사용되고 있습니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;linux특징&quot;&gt;Linux특징&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;리눅스는 유닉스와 완벽하게 호환가능합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;리눅스는 공개 운영체제입니다. 오픈소스이므로 누구든지 자유롭게 수정이 가능합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;리눅스는 PC용 OS보다 안정이며 보안쪽면에서도 PC용 OS보다 비교적 우수한 성능을 가지고 있습니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;리눅스는 다양한 네트워킹 기술을 제공하고 있으며 서버용 OS로 적합합니다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;배포판이 아닌 리눅스 그 자체는 무료입니다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;linux-종류&quot;&gt;Linux 종류&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;대표적인 계열이 레드햇 계열과 데비안 계열&lt;/li&gt;
-  &lt;li&gt;레드햇 계열 : Redhat, Centos&lt;/li&gt;
-  &lt;li&gt;데비안 계열 : Ubuntu&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;redhat계열&quot;&gt;REDHAT계열&lt;/h4&gt;
-&lt;p&gt;레드햇계열은 레드햇이라는 회사에서 배포한 리눅스를 말합니다. 2003년까지는 오픈소스 라이선스로 진행하다가 이후 상용화되었습니다. 레드햇 리눅스는 배포판 중에서 가장 인기가 많습니다. 커뮤니티가 아닌 회사에서 관리하는 레드햇계열의 리눅스는 다른 리눅스 배포판에 비해 패치가 빠르며 내장되어있는 유틸리티의 양도 많고 관리툴의 성능도 우수합니다. 또 호환성면에서도 나무랄데가 없지요. 여러모로 장점이 많습니다. 레드햇 계열의 리눅스에는 페도라와 센토스가 있는데 오늘날에는 페도라보다는 센토스를 더 많이 사용하는 추세입니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;centos&quot;&gt;CENTOS&lt;/h4&gt;
-&lt;p&gt;CentOS는 Community Enterprise Operating System 의 약자로 Red Hat이 공개한 RHEL을 그대로 가져와서 Red Hat의 브랜드와 로고만 제거하고 배포한 배포본입니다. 사실상 RHEL 의 소스를 그대로 사용하고 있기에 RHEL 과 OS 버전, Kernel 버전, 패키지 구성이 똑같고 바이너리가 100%로 호환됩니다. 무료로 사용 가능하지만 문제 발생시 레드햇이라는 회사가 아닌 커뮤니티를 통해 지원이 되므로 다소 패치가 느린감이 없지않아 있습니다. 특히 서버용 운영체제로 인기가 매우 높으며 서버용으로 리눅스를 운영할 목적이라면 아마 대부분 이 센토스OS를 사용하는것이 대부분일 것입니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;데비안계열&quot;&gt;데비안계열&lt;/h4&gt;
-&lt;p&gt;데비안은 온라인 커뮤니티에서 제작하여 레드햇보다 더 먼저 배포되어 시장을 선점하였습니다. 이 데비안에서 파생되어진 OS를 데비안 계열이라고 부릅니다. 하지만, 자발적인 커뮤니티에서 만드는 배포판이라 전문적인 회사에서 서비스를 했던 레드햇계열에 비해 사후지원과 배포가 늦고 내장 유틸들의 성능이 레드햇계열에 비해 부족한감이 있어 오랫동안 레드햇에 밀렸었습니다. 하지만 현재는 무료 개인사용자 서버용으로 인기가 매우 높으며 최근에는 지속적인 업데이트를 거친 결과 레드햇계열에 비해 결코 성능이나 뒤쳐지지 않습니다. 그리고 넓은 유저층을 가지고 있는 데비안계열은 그 사용법이 온라인 웹사이트나 커뮤니티에 자세히 기술되어 있다는 점이 진입장벽을 낮추어 초보 리눅스유저들이 접근하기 쉬운 OS라고 할 수 있겠습니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;ubuntu&quot;&gt;UBUNTU&lt;/h4&gt;
-&lt;p&gt;영국의 캐노니컬이라는 회사에서 만든 배포판으로 쉽고 편한 설치와 이용법 덕분에 진입장벽이 낮아 초보자들이 쉽게 접근할 수 있으며 데스크탑용 리눅스 배포판 가운데서 가장 많이 사용되어지고있는 배포판입니다. 개인용 데스크톱 운영체제로 많이들 사용합니다., 서버용으로도 기능이 부족하거나 성능이 딸리지는 않습니다만 서버용 리눅스 점유율로 볼때 센토스에 많이 밀리는것은 사실입니다. 서버는 센토스 데스크톱으로는 우분투라고 생각하시면 될듯 하네요.&lt;/p&gt;
-
-&lt;h3 id=&quot;참조&quot;&gt;참조&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://coding-factory.tistory.com/318?category=760718&quot;&gt;blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sun, 17 Jan 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/os/2021/01/17/os-linux-type/</link>
-        <guid isPermaLink="true">http://localhost:4000/os/2021/01/17/os-linux-type/</guid>
-        
-        <category>linux</category>
-        
-        <category>type</category>
-        
-        
-        <category>os</category>
-        
-      </item>
-    
-      <item>
-        <title>[Python]Assert</title>
-        <description>&lt;h3 id=&quot;assert가정설정문&quot;&gt;assert(가정설정문)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;어떤 조건을 테스트하는 디버깅 보조 도구&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Assertions or assert statement are build into python and are a tool for debugging
-try to assert its authorityt over the rest of the code wher checking for a condititon specified by the programmer
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;example
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;speed라는 변수가 0이상인지를 체크할때, True이면 아무일도 발생 안하고 프로그램 정상실행. condititon이 faile이면 AssertionError를 일으킴
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;일반-예외처리와-다른점&quot;&gt;일반 예외처리와 다른점?&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;if try except구문을 사용한 예외처리와 다른 역할을 함&lt;/li&gt;
-  &lt;li&gt;File Not Found와 같은 예상되는 에러 조건을 검사하기 위해 사용되는 것은 올바른 활용 방식이 아님&lt;/li&gt;
-  &lt;li&gt;예상하지 않은 프로그램의 상태를 확인하기 위해 활용해야함&lt;/li&gt;
-  &lt;li&gt;구문의 조건을 만족하지 않으면 프로그램이 정상적으로 실행되지 않고 종료되는데, 이는 프로그램의 버그가 있다는 것을 의미&lt;/li&gt;
-  &lt;li&gt;런타임 환경이 아닌 &lt;code class=&quot;highlighter-rouge&quot;&gt;디버깅 환경&lt;/code&gt;에 도움을 주는 역할&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;syntax&quot;&gt;Syntax&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;assert condtition , erroe_message(optional)&lt;/li&gt;
-  &lt;li&gt;Parameter
-    &lt;ul&gt;
-      &lt;li&gt;condition : the boolean condititon returning true/false&lt;/li&gt;
-      &lt;li&gt;error_message : the optional argument to be printed in console in case of Assertion Error&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;assert_stmt ::= &quot;assert&quot; expression1 [&quot;,&quot;,expression2]&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;expression1은 테스트 조건이고 뒤의 &lt;code class=&quot;highlighter-rouge&quot;&gt;expression2&lt;/code&gt;는 테스트조건이 거짓일때 예외의 메시지로 전달&lt;/li&gt;
-  &lt;li&gt;위의 문법을 인터프리터가 해석하는 방식의 수도코드
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if __debug__:
-if not expression1:
-  raise AssertionError(expression2)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Assertion구문은 debug라는 전역변수를 검사&lt;/li&gt;
-  &lt;li&gt;일반적인 상황에서는 항상 참이지만 &lt;code class=&quot;highlighter-rouge&quot;&gt;최적화가 필요한 경우에는 거짓&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Aseertion구문을 예외처리에 잘못 활용하게되면 코드가 의도한대로 동작하지 않을 수 있음&lt;/li&gt;
-  &lt;li&gt;데이터 유효성을 검증하는데 Assertion구문을 사용하면 안됨!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;where-not-assertions&quot;&gt;Where Not Assertions?&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;assert (    
-       speed &amp;gt;= 0,    
-       &quot;Speed should be non-negative!&quot;
-)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tuple&lt;/code&gt; 구문의 경우 Non-empty일떄 항상 참을 반환&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;()&lt;/code&gt;구문은 항상 tuple object를 반환 하므로 항상 &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt; 이런경우 조심해야함&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;PYTHON OPTIMIZE ENVIRONMENT&lt;/code&gt; 에서는 실행이 불가&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;참조&quot;&gt;참조&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.python.org/3/reference/simple_stmts.html#grammar-token-assert-stmt&quot;&gt;docs.python.assertion&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/better-programming/an-intro-to-python-assert-statements-bdd45834d303&quot;&gt;An Intro to Python Assert Statements-medium&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.tutorialspoint.com/python/assertions_in_python.htm&quot;&gt;tutorialsporint&lt;/a&gt;
- = &lt;a href=&quot;https://medium.com/@crystelpheonix/python-dont-use-assert-https://medium.com/@crystelpheonix/python-dont-use-assert-for-data-evaluation-721bfa93c571for-data-evaluation-721bfa93c571&quot;&gt;Python : Don’t user aseert for Data Evalution&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 16 Jan 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/python/2021/01/16/python-assert/</link>
-        <guid isPermaLink="true">http://localhost:4000/python/2021/01/16/python-assert/</guid>
-        
-        <category>python</category>
-        
-        <category>assert</category>
-        
-        
-        <category>python</category>
         
       </item>
     
