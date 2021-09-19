@@ -6,9 +6,470 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 04 Jul 2021 17:58:03 +0900</pubDate>
-    <lastBuildDate>Sun, 04 Jul 2021 17:58:03 +0900</lastBuildDate>
+    <pubDate>Thu, 09 Sep 2021 18:32:26 +0900</pubDate>
+    <lastBuildDate>Thu, 09 Sep 2021 18:32:26 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[Shell] Linux tools </title>
+        <description>&lt;h3 id=&quot;linux-tools-that-i-learned-10-years-ago-which-i-still-use-every-day&quot;&gt;Linux tools that I learned 10 years ago, which I still use every day&lt;/h3&gt;
+
+&lt;!--more--&gt;
+&lt;h3 id=&quot;ps-and-htop---listeing-and-finding-proceess&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ps&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;htop&lt;/code&gt; - listeing and finding proceess&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;htop&lt;/code&gt; 프로그램은 더 유연하고 사용하기 쉬움&lt;/li&gt;
+  &lt;li&gt;terminal에서 sorting column을 mouse로 지원
+&lt;img src=&quot;https://miro.medium.com/max/1575/1*0WsxoUIZsK4wvTskHFhv_w.png&quot; alt=&quot;htop&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;ss-and-netstat---what-ports-is-that-process-using&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ss&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;netstat&lt;/code&gt; - what ports is that process using&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;netstat&lt;/code&gt;은 old way이고 요즘 배포판은 &lt;code class=&quot;highlighter-rouge&quot;&gt;ss&lt;/code&gt;가 많이 적용&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ss -ntaupe&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ss -ntpl&lt;/code&gt; : listening port만 찾기 위함
+    &lt;h4 id=&quot;options&quot;&gt;options&lt;/h4&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-n&lt;/code&gt; : lists processing using numeric address&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-t&lt;/code&gt; : list TCP connections&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-a&lt;/code&gt; : list all connections  listening and establised&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-u&lt;/code&gt; : lists UDP connections&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-p&lt;/code&gt; : shows the process using the socket - probably the most useful&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-e&lt;/code&gt; : shows some extened information like the uid&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;shell-job-control---fgbgjobs&quot;&gt;Shell job control - fg/bg/jobs&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;fg &lt;jobnumber&gt;&lt;/jobnumber&gt;&lt;/li&gt;
+  &lt;li&gt;bg &lt;jobnumber&gt;&lt;/jobnumber&gt;&lt;/li&gt;
+  &lt;li&gt;ds
+    &lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/james-reads-public-cloud-technology-blog/linux-tools-that-i-learned-10-years-ago-which-i-still-use-every-day-9289f952f169&quot;&gt;medium - Linux tools tips&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 09 Sep 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/os/2021/09/09/ai/</link>
+        <guid isPermaLink="true">http://localhost:4000/os/2021/09/09/ai/</guid>
+        
+        <category>shell</category>
+        
+        <category>tools</category>
+        
+        
+        <category>os</category>
+        
+      </item>
+    
+      <item>
+        <title>[k8s] Cluster Initialzation</title>
+        <description>&lt;h3 id=&quot;k8s-reset하기&quot;&gt;k8s reset하기&lt;/h3&gt;
+
+&lt;h4 id=&quot;docker-reset&quot;&gt;Docker Reset&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Docker 초기화
+$ docker rm -f `docker ps -aq`
+$ docker volume rm `docker volume ls -q`
+$ sudo umount /var/lib/docker/volumes
+$ sudo rm -rf /var/lib/docker/
+$ sudo systemctl restart docker
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;kubeadm-reset&quot;&gt;kubeadm Reset&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# kubeadm 초기화
+$ sudo kubeadm reset
+$ sudo systemctl restart kubelet
+$ sudo reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=b457Nrk9GKk&quot;&gt;youtube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Tue, 31 Aug 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/k8s/2021/08/31/k8s-init/</link>
+        <guid isPermaLink="true">http://localhost:4000/k8s/2021/08/31/k8s-init/</guid>
+        
+        <category>k8s</category>
+        
+        <category>cluster</category>
+        
+        <category>init</category>
+        
+        
+        <category>k8s</category>
+        
+      </item>
+    
+      <item>
+        <title>[k8s] HA Configuration </title>
+        <description>&lt;h3 id=&quot;k8s-multi-master-ha-구성&quot;&gt;k8s multi-master HA 구성&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;컨테이너 runtime 설치
+    &lt;ul&gt;
+      &lt;li&gt;k8s는 기본적으로 CRI(Container Runtime Interface)를 사용하여 컨테이너 런타임과 연동&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=b457Nrk9GKk&quot;&gt;youtube&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Mon, 30 Aug 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/k8s/2021/08/30/k8s-ha-config/</link>
+        <guid isPermaLink="true">http://localhost:4000/k8s/2021/08/30/k8s-ha-config/</guid>
+        
+        <category>k8s</category>
+        
+        <category>ha</category>
+        
+        
+        <category>k8s</category>
+        
+      </item>
+    
+      <item>
+        <title>[Shell] df </title>
+        <description>&lt;h3 id=&quot;how-to-identify-and-kill-zombiedefunct-processes-in-linux-without-reboot&quot;&gt;How to identify and kill zombie/defunct processes in Linux without reboot&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Linux에서는 maximum process 개수가 잇고 그리고 process id가 존재&lt;/li&gt;
+  &lt;li&gt;maximum에 다다르면, 새로운 process를 시작이 불가능&lt;/li&gt;
+  &lt;li&gt;zombie process는 &lt;code class=&quot;highlighter-rouge&quot;&gt;그들이 parent process로부터 적절하게 정리되지 않은 dead process&lt;/code&gt;이다&lt;/li&gt;
+  &lt;li&gt;process가 linux에 죽을때, 메모리로부터 모든것을 즉시 제거한다.
+    &lt;ol&gt;
+      &lt;li&gt;process status는 EXIT ZOMBIE로 변하고 parent process는 child process로부터 &lt;code class=&quot;highlighter-rouge&quot;&gt;SIGCHLD&lt;/code&gt; signal을 받는다&lt;/li&gt;
+      &lt;li&gt;parent process는 dead process의 exit status를 읽기 위해 &lt;code class=&quot;highlighter-rouge&quot;&gt;wait() 시스템 콜&lt;/code&gt;을 호출&lt;/li&gt;
+      &lt;li&gt;parent process는 dead process로부터 정보를 얻는다&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wait()&lt;/code&gt;이 호출 된 후, zombie process는 완전히 메모리부터 제거&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위의 과정은 보통 굉장히 빨리 발생하고 system에 zombie process로부터 쌓이는 것을 보지 못함&lt;/li&gt;
+  &lt;li&gt;parent process가 적절히 프로그래밍 되지 않고, wait() 시스템 호출을 절대로 하지 않으면, 그것의 zombie children은 계속 메모리에 남는다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;steps-to-attempt-killing-processes-without-system-reboot&quot;&gt;Steps to attempt killing processes without system reboot&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;identify the zombie processes
+    &lt;blockquote&gt;
+      &lt;table&gt;
+        &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;td&gt;top -b1 -n1&lt;/td&gt;
+            &lt;td&gt;grep Z&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;27230 root   20  0   0  0  0 Z 0.0 0.0  0:00.00 java &amp;lt;defunct&amp;gt;
+27231 root   20  0   0  0  0 Z 0.0 0.0  0:00.00 java &amp;lt;defunct&amp;gt;
+27264 root   20  0   0  0  0 Z 0.0 0.0  0:00.00 java &amp;lt;defunct&amp;gt;
+27265 root   20  0   0  0  0 Z 0.0 0.0  0:00.00 java &amp;lt;defunct&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Find the parent of zombie processes
+    &lt;blockquote&gt;
+      &lt;table&gt;
+        &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;td&gt;ps -A -ostat,ppid&lt;/td&gt;
+            &lt;td&gt;grep -e ‘[zZ]’&lt;/td&gt;
+            &lt;td&gt;awk ‘{ print $2 }’&lt;/td&gt;
+            &lt;td&gt;uniq&lt;/td&gt;
+            &lt;td&gt;xargs ps -p&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;PID TTY     TIME CMD
+27229 pts/0  00:00:00 example_Java_program.jar
+Note the parent process ID (ppid) is 27229
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Send SIGCHLD signal to the parent process. This signal tells the parent process to execute the wait() system call and clean up its zombie children
+    &lt;blockquote&gt;
+      &lt;p&gt;kill -s SIGCHLD ppid&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Identify if the zombie processes have been killed
+    &lt;ul&gt;
+      &lt;li&gt;If there are still zombie processes then the parent process isn’t programmed properly and is ignoring SIGCHLD signals.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/pulse/how-identify-kill-zombiedefunct-processes-linux-without-george-gabra&quot;&gt;linkedin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Wed, 11 Aug 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/os/2021/08/11/os-shell-kill-zombie/</link>
+        <guid isPermaLink="true">http://localhost:4000/os/2021/08/11/os-shell-kill-zombie/</guid>
+        
+        <category>shell</category>
+        
+        <category>zombie</category>
+        
+        
+        <category>os</category>
+        
+      </item>
+    
+      <item>
+        <title>[Shell] Linux tools </title>
+        <description>&lt;h3 id=&quot;linux-tools-that-i-learned-10-years-ago-which-i-still-use-every-day&quot;&gt;Linux tools that I learned 10 years ago, which I still use every day&lt;/h3&gt;
+
+&lt;!--more--&gt;
+&lt;h3 id=&quot;ps-and-htop---listeing-and-finding-proceess&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ps&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;htop&lt;/code&gt; - listeing and finding proceess&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;htop&lt;/code&gt; 프로그램은 더 유연하고 사용하기 쉬움&lt;/li&gt;
+  &lt;li&gt;terminal에서 sorting column을 mouse로 지원
+&lt;img src=&quot;https://miro.medium.com/max/1575/1*0WsxoUIZsK4wvTskHFhv_w.png&quot; alt=&quot;htop&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;ss-and-netstat---what-ports-is-that-process-using&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ss&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;netstat&lt;/code&gt; - what ports is that process using&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;netstat&lt;/code&gt;은 old way이고 요즘 배포판은 &lt;code class=&quot;highlighter-rouge&quot;&gt;ss&lt;/code&gt;가 많이 적용&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ss -ntaupe&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ss -ntpl&lt;/code&gt; : listening port만 찾기 위함
+    &lt;h4 id=&quot;options&quot;&gt;options&lt;/h4&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-n&lt;/code&gt; : lists processing using numeric address&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-t&lt;/code&gt; : list TCP connections&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-a&lt;/code&gt; : list all connections  listening and establised&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-u&lt;/code&gt; : lists UDP connections&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-p&lt;/code&gt; : shows the process using the socket - probably the most useful&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-e&lt;/code&gt; : shows some extened information like the uid&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;shell-job-control---fgbgjobs&quot;&gt;Shell job control - fg/bg/jobs&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;fg &lt;jobnumber&gt;&lt;/jobnumber&gt;&lt;/li&gt;
+  &lt;li&gt;bg &lt;jobnumber&gt;&lt;/jobnumber&gt;&lt;/li&gt;
+  &lt;li&gt;ds
+    &lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/james-reads-public-cloud-technology-blog/linux-tools-that-i-learned-10-years-ago-which-i-still-use-every-day-9289f952f169&quot;&gt;medium - Linux tools tips&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 16 Jul 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/os/2021/07/16/os-shell-tools/</link>
+        <guid isPermaLink="true">http://localhost:4000/os/2021/07/16/os-shell-tools/</guid>
+        
+        <category>shell</category>
+        
+        <category>tools</category>
+        
+        
+        <category>os</category>
+        
+      </item>
+    
+      <item>
+        <title>[python] Python - Naming Tips</title>
+        <description>&lt;!--more--&gt;
+
+&lt;h3 id=&quot;1-dont-use-saveload-without-tofrom&quot;&gt;1. Don’t use save/load without to/from&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;save_user_to_mongo&lt;/code&gt; (O)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;save_user&lt;/code&gt;(X)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;load_categories_from_cache&lt;/code&gt; (O)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;load_categories&lt;/code&gt;(x)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;h3 id=&quot;2-use-test__-template-for-test-names&quot;&gt;2. Use test_&lt;entity&gt;_&lt;behavior&gt; template for test names&lt;/behavior&gt;&lt;/entity&gt;&lt;/h3&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;validate_user_from&lt;/code&gt;이라 불리는 func을 위한 unit test를 작성한다고 가정하자&lt;/li&gt;
+  &lt;li&gt;bad example
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;test_validation_ok&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;test_user_can_submit_profile_data&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;test_test_test&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;test_asfqerfjeghmnsa&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;good example
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;test_validate_user_from_raises_no_errors_on_correct_data&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;test_validate_user_from_raises_an_error_on_empty_eamil&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;behaviour part&lt;/code&gt;가 중요함(우리가 무엇을 테스트하는지 정확히 명시해야함)&lt;/li&gt;
+  &lt;li&gt;예를들어 &lt;code class=&quot;highlighter-rouge&quot;&gt;works_fine&lt;/code&gt;그리고 &lt;code class=&quot;highlighter-rouge&quot;&gt;is_ok&lt;/code&gt;라는 behaviour part를 사용한다고 할때, 실패시 다시 한번 무엇을 테스트 하는지 확인이 필요하다&lt;/li&gt;
+  &lt;li&gt;위와 같은 이름은 테스트에 오랜 시간이 필요하다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3-beware-of-using-and&quot;&gt;3. Beware of using and&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;bad example
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;processes_and_save_profile_info&lt;/code&gt; 는 읽기에는 좋지만 여전히 나쁨&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;그러나 성격에 의해 위의 example은  아래와 같이 되어야함
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;clean_profile_info&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;save_profile_info_to_db&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위의 규칙은 &lt;code class=&quot;highlighter-rouge&quot;&gt;single-reponsibility principle(단일 책임 원칙)&lt;/code&gt;과 &lt;code class=&quot;highlighter-rouge&quot;&gt;command-query separation pattern(명령 쿼리 분리 패턴)&lt;/code&gt;에 관련이 있음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4-make-a-function-name-readable-with-its-argumnets&quot;&gt;4. Make a function name readable with its argumnets&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;bad example
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;list_item_to_marketplace(marketplace,item)&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;good example
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;list_item_to(marketplace, item)&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위의 rule은 function name을 좀더 간략하고 이해하기 쉽게 만들어줌&lt;/li&gt;
+  &lt;li&gt;이러한 예들은 가끔 preposition(전치사)로 끝남 &lt;code class=&quot;highlighter-rouge&quot;&gt;_at&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;_to&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;_in&lt;/code&gt; 등등&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;5-think-of-repeating-entity-type-in-a-function-name&quot;&gt;5. Think of repeating entity type in a function name&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;parsers=[integer, string]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;6-keep-function-names-as-short-as-possible-without-hurt-to-a-context&quot;&gt;6. Keep function names as short as possible (without hurt to a context)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;bad example
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;save_full_user_profile_to_postgresql_storage_sync&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;goode example
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;save_full_profile_data_to_postgresql_sync&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;postgrelsql은 storage알고 있으므로 생략&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;프로젝트에서 모든 func이 synchronous하다면 &lt;code class=&quot;highlighter-rouge&quot;&gt;_sync&lt;/code&gt;부분을 제거히야함  &lt;code class=&quot;highlighter-rouge&quot;&gt;save_user_profile_to_postgresql&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;마지막으로 &lt;code class=&quot;highlighter-rouge&quot;&gt;postgresql&lt;/code&gt;을 &lt;code class=&quot;highlighter-rouge&quot;&gt;db&lt;/code&gt;로 치환&lt;/li&gt;
+  &lt;li&gt;마지막 결과는 &lt;code class=&quot;highlighter-rouge&quot;&gt;save_user_profile_to_db&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;func의 이름은 의미있는 context와 length 최적화를 생갹해야함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;7-use-subject-area-vocabulary&quot;&gt;7. Use subject area vocabulary&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;프로젝트에서  찾을 수 있는 모든 영역별 의미와 함께 어휘를 기록하는 것이 좋음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;8-forbid-typos&quot;&gt;8. Forbid typos&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;automation을 설정하여 code 내부에서 이름 오류 체크를 설정&lt;/li&gt;
+  &lt;li&gt;만약 발견되면, build에 오류를 내뱉음&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scspell&lt;/code&gt; (python library)를 사용
+    &lt;ul&gt;
+      &lt;li&gt;여러 특정 단어를 한 공간에 모는 장점이 있음&lt;/li&gt;
+      &lt;li&gt;이전 article의 단어를 체크함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;9-dont-forget-about-grammar&quot;&gt;9. Don’t forget about grammar&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;bad
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;are_user_active&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;good
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;is_user_active&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;보통 func이름은 기본 문법을 사용
+    &lt;ul&gt;
+      &lt;li&gt;is/are, have/has, present/ast, simple/perfact&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;10-check-if-a-function-call-is-readable&quot;&gt;10. Check if a function call is readable&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;func을 작서할때 어떻게 그리고 어디서 func이 호출되는지 생각&lt;/li&gt;
+  &lt;li&gt;거기에 적합한지 읽을만한지 생각&lt;/li&gt;
+  &lt;li&gt;good name은 2군데에서 읽을만해야함
+    &lt;ul&gt;
+      &lt;li&gt;where the function is defined and called&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;all you need is to thinks aboud a second case : will the nmae look readbale when fucntion is called&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://melevir.medium.com/python-functions-naming-tips-376f12549f9&quot;&gt;medium - Python functions naming: 10 tips&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 12 Jul 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/python/2021/07/12/python-naming-tips/</link>
+        <guid isPermaLink="true">http://localhost:4000/python/2021/07/12/python-naming-tips/</guid>
+        
+        <category>python</category>
+        
+        <category>naming</category>
+        
+        <category>tips</category>
+        
+        
+        <category>python</category>
+        
+      </item>
+    
+      <item>
+        <title>[k8s] Kubectl - Resource</title>
+        <description>&lt;!--more--&gt;
+
+&lt;h2 id=&quot;overview-of-kubectl&quot;&gt;Overview of kubectl&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;kubectl은 k8s cluster를 제어하기 위한 cli(command line tool)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;kubectl&lt;/code&gt;은 &lt;code class=&quot;highlighter-rouge&quot;&gt;$HOME/.kube&lt;/code&gt; directory안에 &lt;code class=&quot;highlighter-rouge&quot;&gt;config&lt;/code&gt;파일을 참조한다&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;KUBECONFIG&lt;/code&gt; 환경변수를 setting함으로써 kubeconfig file 수정이 가능 (–kubeconfig  flag 사용)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://kubernetes.io/docs/reference/kubectl/overview/&quot;&gt;k8s공식doc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 07 Jul 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/k8s/2021/07/07/k8s-resource/</link>
+        <guid isPermaLink="true">http://localhost:4000/k8s/2021/07/07/k8s-resource/</guid>
+        
+        <category>k8s</category>
+        
+        <category>resource</category>
+        
+        
+        <category>k8s</category>
+        
+      </item>
     
       <item>
         <title>[k8s] Kubectl - Cheatsheet</title>
@@ -2229,649 +2690,6 @@ if not expression1:
         
         
         <category>python</category>
-        
-      </item>
-    
-      <item>
-        <title>[Leetcode] 7.Reverse integer</title>
-        <description>&lt;h3 id=&quot;problem&quot;&gt;Problem&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/reverse-integer/&quot;&gt;7.Reveser Integer&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.&lt;/p&gt;
-
-&lt;p&gt;Assume the environment does not allow you to store 64-bit integers (signed or unsigned).&lt;/p&gt;
-&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
-&lt;h4 id=&quot;1-arithmetic&quot;&gt;1. arithmetic&lt;/h4&gt;
-&lt;p&gt;pop/push 연산을 통하여 마지막 one digit부터 reverse 숫자를 구함. overflow check! 필수&lt;/p&gt;
-&lt;h4 id=&quot;2-string&quot;&gt;2. string&lt;/h4&gt;
-&lt;p&gt;string으로 표현하여 reverse string을 구함&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;sign 체크&lt;/li&gt;
-  &lt;li&gt;reverse string 구함&lt;/li&gt;
-  &lt;li&gt;overflow 검사&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;code&quot;&gt;CODE&lt;/h3&gt;
-&lt;div class=&quot;colorscripter-code&quot; style=&quot;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto&quot;&gt;&lt;table class=&quot;colorscripter-code-table&quot; style=&quot;margin:0;padding:0;border:none;border-radius:4px;&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td style=&quot;padding:6px;border-right:2px solid #e5e5e5&quot;&gt;&lt;div style=&quot;margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%&quot;&gt;&lt;div style=&quot;line-height:130%&quot;&gt;1&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;2&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;3&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;4&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;5&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;6&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;7&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;8&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;9&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;10&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;11&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;12&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;13&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;14&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;15&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;16&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;17&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;18&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;19&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;20&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;21&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;22&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;23&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;24&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;25&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;26&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;27&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;28&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;29&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;30&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;31&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;32&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;33&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;34&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;35&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;36&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;37&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;38&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;39&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;40&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;41&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;42&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;43&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;44&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;45&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;46&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;47&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;48&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;49&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;50&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;51&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;&lt;td style=&quot;padding:6px 0;text-align:left&quot;&gt;&lt;div style=&quot;margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%&quot;&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;import&lt;/span&gt;&amp;nbsp;functools&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;from&lt;/span&gt;&amp;nbsp;typing&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;import&lt;/span&gt;&amp;nbsp;List&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;class&lt;/span&gt;&amp;nbsp;Solution:&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;def&lt;/span&gt;&amp;nbsp;reverse(&lt;span style=&quot;color:#0099cc&quot;&gt;self&lt;/span&gt;,&amp;nbsp;x:&amp;nbsp;&lt;span style=&quot;color:#0099cc&quot;&gt;int&lt;/span&gt;)&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;&amp;gt;&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#0099cc&quot;&gt;int&lt;/span&gt;:&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#993333&quot;&gt;''&lt;/span&gt;&lt;span style=&quot;color:#993333&quot;&gt;'&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#993333&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Runtime&amp;nbsp;:&amp;nbsp;36ms&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#993333&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Memory&amp;nbsp;Usage&amp;nbsp;:&amp;nbsp;14.3MB&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#993333&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;sol&amp;nbsp;:&amp;nbsp;&amp;nbsp;%연산으로&amp;nbsp;일의자리수&amp;nbsp;부터&amp;nbsp;구하여&amp;nbsp;reverse&amp;nbsp;숫자를&amp;nbsp;구함&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#993333&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;:param&amp;nbsp;x:&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#993333&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;:return:&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#993333&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'&lt;/span&gt;&lt;span style=&quot;color:#993333&quot;&gt;''&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#999999&quot;&gt;#&amp;nbsp;set&amp;nbsp;variable&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;sign&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;1&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ans&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;0&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#999999&quot;&gt;#&amp;nbsp;&amp;nbsp;check&amp;nbsp;whether&amp;nbsp;positive&amp;nbsp;and&amp;nbsp;negative&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;if&lt;/span&gt;&amp;nbsp;x&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;&amp;lt;&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;0&lt;/span&gt;:&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;sign&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color:#308ce5&quot;&gt;1&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;x&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;-&lt;/span&gt;x&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#999999&quot;&gt;#&amp;nbsp;algorithm&amp;nbsp;for&amp;nbsp;reverse&amp;nbsp;integer&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;while&lt;/span&gt;&amp;nbsp;x&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;&amp;gt;&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;0&lt;/span&gt;:&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ans&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;ans&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;*&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;10&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;+&lt;/span&gt;&amp;nbsp;x&amp;nbsp;%&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;10&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;x&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#0099cc&quot;&gt;int&lt;/span&gt;(x&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;/&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;10&lt;/span&gt;)&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#999999&quot;&gt;#&amp;nbsp;overflow&amp;nbsp;check&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;if&lt;/span&gt;&amp;nbsp;ans&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;&amp;gt;&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;2&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;*&lt;/span&gt;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;*&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;31&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;-&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;1&lt;/span&gt;:&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;return&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;0&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;else&lt;/span&gt;:&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;return&lt;/span&gt;&amp;nbsp;sign&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;*&lt;/span&gt;&amp;nbsp;ans&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;def&lt;/span&gt;&amp;nbsp;reverse2(&lt;span style=&quot;color:#0099cc&quot;&gt;self&lt;/span&gt;,&amp;nbsp;x:&amp;nbsp;&lt;span style=&quot;color:#0099cc&quot;&gt;int&lt;/span&gt;)&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;&amp;gt;&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#0099cc&quot;&gt;int&lt;/span&gt;:&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#993333&quot;&gt;''&lt;/span&gt;&lt;span style=&quot;color:#993333&quot;&gt;'&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#993333&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;string으로&amp;nbsp;&amp;nbsp;reverse&amp;nbsp;str구하고&amp;nbsp;sign를&amp;nbsp;구함&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#993333&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;:param&amp;nbsp;x:&amp;nbsp;x&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#993333&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;:return:&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#993333&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'&lt;/span&gt;&lt;span style=&quot;color:#993333&quot;&gt;''&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;sign&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;1&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;if&lt;/span&gt;&amp;nbsp;x&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;&amp;lt;&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;0&lt;/span&gt;:&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;sign&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color:#308ce5&quot;&gt;1&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;x&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;-&lt;/span&gt;x&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#999999&quot;&gt;#&amp;nbsp;reverse&amp;nbsp;str&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ans&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#0099cc&quot;&gt;str&lt;/span&gt;(x)[::&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color:#308ce5&quot;&gt;1&lt;/span&gt;]&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ans&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#0099cc&quot;&gt;int&lt;/span&gt;(ans)&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#999999&quot;&gt;#&amp;nbsp;overflow&amp;nbsp;check&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;if&lt;/span&gt;&amp;nbsp;ans&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;&amp;lt;&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;-&lt;/span&gt;(&lt;span style=&quot;color:#308ce5&quot;&gt;2&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;*&lt;/span&gt;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;*&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;31&lt;/span&gt;)&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;or&lt;/span&gt;&amp;nbsp;ans&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;&amp;gt;&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;2&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;*&lt;/span&gt;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;*&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;31&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;-&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;1&lt;/span&gt;:&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;return&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;0&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;else&lt;/span&gt;:&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;return&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;-&lt;/span&gt;ans&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;if&lt;/span&gt;&amp;nbsp;sign&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color:#308ce5&quot;&gt;1&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;else&lt;/span&gt;&amp;nbsp;ans&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;text-align:right;margin-top:-13px;margin-right:5px;font-size:9px;font-style:italic&quot;&gt;&lt;a href=&quot;http://colorscripter.com/info#e&quot; target=&quot;_blank&quot; style=&quot;color:#e5e5e5text-decoration:none&quot;&gt;Colored by Color Scripter&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;&lt;td style=&quot;vertical-align:bottom;padding:0 2px 4px 0&quot;&gt;&lt;a href=&quot;http://colorscripter.com/info#e&quot; target=&quot;_blank&quot; style=&quot;text-decoration:none;color:white&quot;&gt;&lt;span style=&quot;font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px&quot;&gt;cs&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
-</description>
-        <pubDate>Sat, 16 Jan 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/leetcode/2021/01/16/leetcdoe-7-reverse_integer/</link>
-        <guid isPermaLink="true">http://localhost:4000/leetcode/2021/01/16/leetcdoe-7-reverse_integer/</guid>
-        
-        <category>leetcode</category>
-        
-        <category>7</category>
-        
-        <category>reverse</category>
-        
-        <category>integer</category>
-        
-        
-        <category>leetcode</category>
-        
-      </item>
-    
-      <item>
-        <title>K8s Overview</title>
-        <description>&lt;h3 id=&quot;kuberntes-doc&quot;&gt;kuberntes doc&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;컨테이너 오케스트레이션 엔진&lt;/code&gt; :배포, 스케일링 그리고 컨테이너화된 애플리케이션의 관리를 자동화 해주는&lt;/li&gt;
-  &lt;li&gt;
-    &lt;h2 id=&quot;cncfcloud-native-computing-foundation-에서-주관&quot;&gt;CNCF(Cloud Native Computing Foundation) 에서 주관&lt;/h2&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;concepts&quot;&gt;Concepts&lt;/h3&gt;
-&lt;h4 id=&quot;what-is-kubernetes&quot;&gt;What is Kubernetes?&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Kubernetes란 &lt;strong&gt;containerized workloads and service(컨테이너화된 워크로드 와 서비스)&lt;/strong&gt; 들을 아래 특성을 가지며  지원하는 오픈소스 플랫폼
-    &lt;ul&gt;
-      &lt;li&gt;declartive configuration and automation을 지원하는 오픈소스 플랫폼&lt;/li&gt;
-      &lt;li&gt;portable 이식가능&lt;/li&gt;
-      &lt;li&gt;
-        &lt;h2 id=&quot;extensible-확장가능&quot;&gt;extensible 확장가능&lt;/h2&gt;
-        &lt;h4 id=&quot;kubernetes-components&quot;&gt;Kubernetes Components&lt;/h4&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;kubernetes클러스터는  아래2가지 컴포넌트로 구성
-    &lt;ol&gt;
-      &lt;li&gt;control pane&lt;/li&gt;
-      &lt;li&gt;
-        &lt;h2 id=&quot;node&quot;&gt;node&lt;/h2&gt;
-        &lt;h4 id=&quot;the-kubernetes-api&quot;&gt;The Kubernetes API&lt;/h4&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Kubernetes API는 Kubernetes의 object의 상태들을 &lt;code class=&quot;highlighter-rouge&quot;&gt;query그리고 manipulate&lt;/code&gt; 가능&lt;/li&gt;
-  &lt;li&gt;K8s의 control pane의 core는
-    &lt;ul&gt;
-      &lt;li&gt;The API server&lt;/li&gt;
-      &lt;li&gt;
-        &lt;h2 id=&quot;http-api&quot;&gt;HTTP API&lt;/h2&gt;
-        &lt;h4 id=&quot;working-with-kubernetes-object&quot;&gt;Working with Kubernetes Object&lt;/h4&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Kubernets object들은 persistenet entity(영구개체)&lt;/li&gt;
-  &lt;li&gt;Kubernetes들은 이 entity들을 사용해서 cluster의 상태를 표현&lt;/li&gt;
-  &lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Sat, 16 Jan 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/2021/01/16/k8s-overview/</link>
-        <guid isPermaLink="true">http://localhost:4000/2021/01/16/k8s-overview/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>[Leetcode] 1.Two-sum</title>
-        <description>&lt;h3 id=&quot;problem&quot;&gt;Problem&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://leetcode.com/problems/two-sum/&quot;&gt;1.Two Sums&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.&lt;/p&gt;
-
-&lt;p&gt;You may assume that each input would have exactly one solution, and you may not use the same element twice.&lt;/p&gt;
-
-&lt;p&gt;You can return the answer in any order.&lt;/p&gt;
-&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
-&lt;h4 id=&quot;1-brute-force&quot;&gt;1. &lt;strong&gt;Brute Force&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;For-Loop을 2번 돌아서 target이 되는 Index List를 구함&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Time Complexity : O(N^2)&lt;/li&gt;
-  &lt;li&gt;Space Complexity : O(1)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;2-hash-table-사용&quot;&gt;2. &lt;strong&gt;Hash Table 사용&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;Time Complexity를 줄이기 위해 complement가 array에 존재하는지 체크
-complement가 존재하면, 그것의 index만 구하면됨.&lt;/p&gt;
-
-&lt;p&gt;nums를 iterate하면서 element를 Dictionay에 적재, 그리고 현재 loop 도는 element의 complement가 Dict에 존재하는지 체크&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Time Complexity : O(1) ~ O(N)&lt;/li&gt;
-  &lt;li&gt;Space Complexity : O(N)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;code&quot;&gt;CODE&lt;/h3&gt;
-&lt;div class=&quot;colorscripter-code&quot; style=&quot;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto&quot;&gt;&lt;table class=&quot;colorscripter-code-table&quot; style=&quot;margin:0;padding:0;border:none;border-radius:4px;&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td style=&quot;padding:6px;border-right:2px solid #e5e5e5&quot;&gt;&lt;div style=&quot;margin:0;padding:0;word-break:normal;text-align:right;color:#666;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%&quot;&gt;&lt;div style=&quot;line-height:130%&quot;&gt;1&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;2&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;3&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;4&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;5&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;6&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;7&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;8&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;9&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;10&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;11&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;12&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;13&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;14&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;15&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;16&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;17&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;18&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;19&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;20&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;21&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;22&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;23&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;24&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;25&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;26&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;27&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;28&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;29&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;30&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;31&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;32&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;33&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;34&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;35&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;36&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;37&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;38&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;39&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;40&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;41&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;42&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;43&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;44&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;45&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;46&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;47&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;48&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;49&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;50&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;51&lt;/div&gt;&lt;div style=&quot;line-height:130%&quot;&gt;52&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;&lt;td style=&quot;padding:6px 0;text-align:left&quot;&gt;&lt;div style=&quot;margin:0;padding:0;color:#010101;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%&quot;&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;import&lt;/span&gt;&amp;nbsp;functools&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;from&lt;/span&gt;&amp;nbsp;typing&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;import&lt;/span&gt;&amp;nbsp;List&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;class&lt;/span&gt;&amp;nbsp;Solution:&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#999999&quot;&gt;#&amp;nbsp;approach1.&amp;nbsp;brute&amp;nbsp;force&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;def&lt;/span&gt;&amp;nbsp;twoSum(&lt;span style=&quot;color:#0099cc&quot;&gt;self&lt;/span&gt;,&amp;nbsp;nums:&amp;nbsp;List[&lt;span style=&quot;color:#0099cc&quot;&gt;int&lt;/span&gt;],&amp;nbsp;target:&amp;nbsp;&lt;span style=&quot;color:#0099cc&quot;&gt;int&lt;/span&gt;)&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;&amp;gt;&lt;/span&gt;&amp;nbsp;List[&lt;span style=&quot;color:#0099cc&quot;&gt;int&lt;/span&gt;]:&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;answer&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;[]&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;for&lt;/span&gt;&amp;nbsp;idx,&amp;nbsp;val&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;in&lt;/span&gt;&amp;nbsp;enumerate(nums):&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;tmp&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;val&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;for&lt;/span&gt;&amp;nbsp;idx2,&amp;nbsp;val2&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;in&lt;/span&gt;&amp;nbsp;enumerate(nums):&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;if&lt;/span&gt;&amp;nbsp;target&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;tmp&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;+&lt;/span&gt;&amp;nbsp;val2&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;and&lt;/span&gt;&amp;nbsp;idx&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;!&lt;/span&gt;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;idx2:&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;answer.append(idx)&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;answer.append(idx2)&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;return&lt;/span&gt;&amp;nbsp;answer&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#999999&quot;&gt;#&amp;nbsp;aprpoch2&amp;nbsp;.hash-table(with&amp;nbsp;dict)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;def&lt;/span&gt;&amp;nbsp;twoSum(&lt;span style=&quot;color:#0099cc&quot;&gt;self&lt;/span&gt;,&amp;nbsp;nums:&amp;nbsp;List[&lt;span style=&quot;color:#0099cc&quot;&gt;int&lt;/span&gt;],&amp;nbsp;target:&amp;nbsp;&lt;span style=&quot;color:#0099cc&quot;&gt;int&lt;/span&gt;)&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;&amp;gt;&lt;/span&gt;&amp;nbsp;List[&lt;span style=&quot;color:#0099cc&quot;&gt;int&lt;/span&gt;]:&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#999999&quot;&gt;#&amp;nbsp;empty&amp;nbsp;dict&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;answer&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;dict()&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#999999&quot;&gt;#&amp;nbsp;loop&amp;nbsp;nums&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;for&lt;/span&gt;&amp;nbsp;idx,&amp;nbsp;val&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;in&lt;/span&gt;&amp;nbsp;enumerate(nums):&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#999999&quot;&gt;#&amp;nbsp;complement&amp;nbsp;+&amp;nbsp;val&amp;nbsp;=&amp;nbsp;target&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;complement&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;target&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;-&lt;/span&gt;&amp;nbsp;val&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#999999&quot;&gt;#&amp;nbsp;find&amp;nbsp;answer&amp;nbsp;set&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;if&lt;/span&gt;&amp;nbsp;complement&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;in&lt;/span&gt;&amp;nbsp;answer:&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;return&lt;/span&gt;&amp;nbsp;[answer[complement],&amp;nbsp;idx]&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#ff3399&quot;&gt;else&lt;/span&gt;:&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;answer[val]&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;idx&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;if&lt;/span&gt;&amp;nbsp;__name__&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#993333&quot;&gt;'__main__'&lt;/span&gt;:&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#993333&quot;&gt;''&lt;/span&gt;&lt;span style=&quot;color:#993333&quot;&gt;'&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#993333&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;example1&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#993333&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Input&amp;nbsp;:&amp;nbsp;nums=[2,7,11,15]&amp;nbsp;target=9&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#993333&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Output&amp;nbsp;:&amp;nbsp;[0,1]&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#993333&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'&lt;/span&gt;&lt;span style=&quot;color:#993333&quot;&gt;''&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;nums&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;[&lt;span style=&quot;color:#308ce5&quot;&gt;2&lt;/span&gt;,&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;7&lt;/span&gt;,&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;11&lt;/span&gt;,&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;15&lt;/span&gt;]&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;target&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;9&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;sol&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;Solution()&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;assert&amp;nbsp;sol.twoSum(nums&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;nums,&amp;nbsp;target&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;target)&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;[&lt;span style=&quot;color:#308ce5&quot;&gt;0&lt;/span&gt;,&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;3&lt;/span&gt;]&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span style=&quot;color:#993333&quot;&gt;''&lt;/span&gt;&lt;span style=&quot;color:#993333&quot;&gt;'&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#993333&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;example2&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#993333&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Input&amp;nbsp;:&amp;nbsp;nums=[3,2,4]&amp;nbsp;target=6&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#993333&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Output&amp;nbsp;:&amp;nbsp;[1.2]&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&lt;span style=&quot;color:#993333&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;'&lt;/span&gt;&lt;span style=&quot;color:#993333&quot;&gt;''&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;nums&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;[&lt;span style=&quot;color:#308ce5&quot;&gt;3&lt;/span&gt;,&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;2&lt;/span&gt;,&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;4&lt;/span&gt;]&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;target&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;6&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;assert&amp;nbsp;sol.twoSum(nums&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;nums,&amp;nbsp;target&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;target)&amp;nbsp;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&lt;span style=&quot;color:#0086b3&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#ff3399&quot;&gt;=&lt;/span&gt;&amp;nbsp;[&lt;span style=&quot;color:#308ce5&quot;&gt;0&lt;/span&gt;,&amp;nbsp;&lt;span style=&quot;color:#308ce5&quot;&gt;3&lt;/span&gt;]&lt;/div&gt;&lt;div style=&quot;padding:0 6px; white-space:pre; line-height:130%&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;text-align:right;margin-top:-13px;margin-right:5px;font-size:9px;font-style:italic&quot;&gt;&lt;a href=&quot;http://colorscripter.com/info#e&quot; target=&quot;_blank&quot; style=&quot;color:#e5e5e5text-decoration:none&quot;&gt;Colored by Color Scripter&lt;/a&gt;&lt;/div&gt;&lt;/td&gt;&lt;td style=&quot;vertical-align:bottom;padding:0 2px 4px 0&quot;&gt;&lt;a href=&quot;http://colorscripter.com/info#e&quot; target=&quot;_blank&quot; style=&quot;text-decoration:none;color:white&quot;&gt;&lt;span style=&quot;font-size:9px;word-break:normal;background-color:#e5e5e5;color:white;border-radius:10px;padding:1px&quot;&gt;cs&lt;/span&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
-</description>
-        <pubDate>Mon, 04 Jan 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/leetcode/2021/01/04/leetcdoe-1-twosum/</link>
-        <guid isPermaLink="true">http://localhost:4000/leetcode/2021/01/04/leetcdoe-1-twosum/</guid>
-        
-        <category>leetcode</category>
-        
-        <category>1</category>
-        
-        <category>two-sums</category>
-        
-        
-        <category>leetcode</category>
-        
-      </item>
-    
-      <item>
-        <title>[Shell] Date </title>
-        <description>&lt;h2 id=&quot;date&quot;&gt;DATE&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;일자,시간을 처리
-  |옵션|내용|
-  | – |–|
-  | d | 원하는일자를 지정
-  | + | 출력포맷지정 |
-&lt;!--more--&gt;&lt;/li&gt;
-  &lt;li&gt;예제
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;일자 출력 포맷 지정&lt;/strong&gt;
-  ```&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;# 년월일 형태 $ date +%Y%m%d 20190212&lt;br /&gt;
-  # %를 지원하지 않는 환경(ex: crontab)에서는 특수기호로 입력 $ date +\%Y\%m\%d 20190212&lt;br /&gt;
-  # 년월일 시간 출력 $ date +”%Y%m%d %H:%M:%S”  20190212  08:46:53  			 
-  # 주차 계산 $ date +%W 06&lt;/p&gt;
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  -  **일자 변경**
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;# 1일 전 $ date +%Y-%m-%d -d  ‘1 days ago’  2019-02-11&lt;br /&gt;
-  # 1일 후 $ date +%Y-%m-%d -d  ‘+1days’  2019-02-13&lt;br /&gt;
-  # 20190101 일자 지정후 1일 추가 $ date +%Y-%m-%d -d  ‘20190101 +1days’  2019-01-02
-  ```&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 28 Dec 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/os/2020/12/28/os-shell-date/</link>
-        <guid isPermaLink="true">http://localhost:4000/os/2020/12/28/os-shell-date/</guid>
-        
-        <category>shell</category>
-        
-        <category>date</category>
-        
-        
-        <category>os</category>
-        
-      </item>
-    
-      <item>
-        <title>[Shell] print </title>
-        <description>&lt;h2 id=&quot;print&quot;&gt;Print&lt;/h2&gt;
-&lt;!--more--&gt;
-&lt;h4 id=&quot;modifiers-for-print-formats&quot;&gt;Modifiers for &lt;code class=&quot;highlighter-rouge&quot;&gt;print&lt;/code&gt; Formats&lt;/h4&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;printf &quot;%s %s\n&quot;, &quot;don't&quot;, &quot;panic&quot;
-printf &quot;%2$s %1$s\n&quot;, &quot;panic&quot;, &quot;don't&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;ul&gt;
-  &lt;li&gt;Minus
-    &lt;ul&gt;
-      &lt;li&gt;width 식별자&lt;/li&gt;
-      &lt;li&gt;left-justify 인수&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;space
-    &lt;ul&gt;
-      &lt;li&gt;양수 : space  우측에서 시작&lt;/li&gt;
-      &lt;li&gt;음수 : 마이너스 좌측에서 시작&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;`&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 28 Dec 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/os/2020/12/28/os-shell-awk/</link>
-        <guid isPermaLink="true">http://localhost:4000/os/2020/12/28/os-shell-awk/</guid>
-        
-        <category>shell</category>
-        
-        <category>print</category>
-        
-        
-        <category>os</category>
-        
-      </item>
-    
-      <item>
-        <title>[Docker]Overview</title>
-        <description>&lt;!--more--&gt;
-&lt;h3 id=&quot;docker-concepts&quot;&gt;Docker Concepts&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Docker는 개발자 및 관리자를 위해 컨테이너와 함꼐 애플리케이션을 &lt;code class=&quot;highlighter-rouge&quot;&gt;build, run and share&lt;/code&gt;하기 위한 &lt;code class=&quot;highlighter-rouge&quot;&gt;platform&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;application을 deploy하기 위해 컨테이너의 사용을 &lt;code class=&quot;highlighter-rouge&quot;&gt;컨테이너화 containerization&lt;/code&gt; 이라고도 부름&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Containerization은 대중적이고 인기있게 사용
-    &lt;ul&gt;
-      &lt;li&gt;Flexible(유연함)
-        &lt;ul&gt;
-          &lt;li&gt;복잡한 애플리케이션을 &lt;code class=&quot;highlighter-rouge&quot;&gt;컨테이너화containerized&lt;/code&gt; 가능&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;LightWeight (가벼움)
-        &lt;ul&gt;
-          &lt;li&gt;Container는 &lt;code class=&quot;highlighter-rouge&quot;&gt;host kernel을 사용하고 공유&lt;/code&gt;하므로 virtual machine보다 시스템리소스 사용 측면에서 더 효율적으로 사용&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Portable(이식성높음)
-        &lt;ul&gt;
-          &lt;li&gt;build locally, deploy to the cloud, and run anywhere&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Loosely coupled
-        &lt;ul&gt;
-          &lt;li&gt;Container은 higly self sufficient and encapsulated.  (다른것에 영향을 끼지치않음)&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Scalabe(확장성)
-        &lt;ul&gt;
-          &lt;li&gt;datacenter를 가로질러서 container를 증가시키고 자동으로 확장(분산)가능&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Secure
-        &lt;ul&gt;
-          &lt;li&gt;사용자의 어떠한 구성 필요없이 프로세스에 적극적인 제약과 격리를 적용&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;images-and-containers&quot;&gt;Images and containers&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;기본적으로 container는 hosts와 다른 container로부터 격리 시키기 위한 어떤 encapsulation feature가 추가되고 적용된 실행 중 인 프로세스이다&lt;/li&gt;
-  &lt;li&gt;컨테이너 격리의 가장 중요한 측면 중 하나는 각 container는 자체 개인의 파일시스템과 상호 작용하고, 이 파일시스템은 Docker image로 제공&lt;/li&gt;
-  &lt;li&gt;이 image에는 애플리케이션 실행에 필요한 모든 것을 제공- code/binary/ runtimes/ dependencies/ 그리고 다른 어떤 파일시스템&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;container-and-virtual-machines&quot;&gt;Container and virtual machines&lt;/h3&gt;
-&lt;h4 id=&quot;container&quot;&gt;container&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Linux 기본적으로 실행하고 다른 containter들과 host machine kernel을 공유한다&lt;/li&gt;
-  &lt;li&gt;별도의 프로세스를 실행&lt;/li&gt;
-  &lt;li&gt;다른 실행 파일보다 더 많은 메모리를 사용하지 않으므로 가볍다
-&lt;img src=&quot;https://docs.docker.com/images/Container@2x.png&quot; alt=&quot;enter image description here&quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;virtual-machines&quot;&gt;Virtual machines&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;반면에 vm은 hypervisor를 통해 host 리소스에 가상으로 접근할수있는  철저히 guest os 에서 실행&lt;/li&gt;
-  &lt;li&gt;일반적으로 VM은 &lt;code class=&quot;highlighter-rouge&quot;&gt;애플리케이션 로직에서 소비하는 것보다 더많은 오버헤드를 일으킴&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://docs.docker.com/images/VM@2x.png&quot; alt=&quot;enter image description here&quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h3 id=&quot;docker-engine&quot;&gt;Docker Engine&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Docker Engine은 client-server application
-    &lt;ul&gt;
-      &lt;li&gt;server는 daemon 프로세스라고불르는 &lt;code class=&quot;highlighter-rouge&quot;&gt;long-running&lt;/code&gt; 프로그램의 종류이다&lt;/li&gt;
-      &lt;li&gt;프로그램과 특정한 인터페이스를 하는 REST API를 통해 daemon과 통신하고 지시를 구성&lt;/li&gt;
-      &lt;li&gt;CLI 클리이언트를 통해 통신&lt;/li&gt;
-      &lt;li&gt;CLI는 Docker REST API를 통해 Docker daemon과 통신 및 제어를 한다
-&lt;img src=&quot;https://docs.docker.com/engine/images/engine-components-flow.png&quot; alt=&quot;enter image description here&quot; /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h3 id=&quot;docker-architecture&quot;&gt;Docker Architecture&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Docker는 client-server 아키텍처 사용&lt;/li&gt;
-  &lt;li&gt;Docker client는 Docker daemon에게 얘기함
-    &lt;ul&gt;
-      &lt;li&gt;building&lt;/li&gt;
-      &lt;li&gt;running&lt;/li&gt;
-      &lt;li&gt;distributing&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Docker client와 Docker daemon같은 시스템에서 작동&lt;/li&gt;
-  &lt;li&gt;Docker client를 통해 remote Docker daemon에게 통신연결&lt;/li&gt;
-  &lt;li&gt;Docker client 및 daemon은 REST API를 통해 서로 통신 UNIX sockets 그리고 network interface를 통해서
-&lt;img src=&quot;https://docs.docker.com/engine/images/architecture.svg&quot; alt=&quot;enter image description here&quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h3 id=&quot;the-docker-daemon&quot;&gt;The Docker daemon&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;docker daemon &lt;code class=&quot;highlighter-rouge&quot;&gt;dockerd&lt;/code&gt; 는 Docker API 요청을 듣고 Docker object를 관리 (image, containters, network, volumes)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h3 id=&quot;the-docker-client&quot;&gt;The Docker Client&lt;/h3&gt;
-&lt;p&gt;-&lt;code class=&quot;highlighter-rouge&quot;&gt;docker&lt;/code&gt;는 많은 Docker user들이 Docker와 통신하는 주요 방법&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker run&lt;/code&gt;과 같은 명령어를 사용시, client는 명령어를 &lt;code class=&quot;highlighter-rouge&quot;&gt;dockerd&lt;/code&gt;에게 보내고 그것을 실행&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;docker&lt;/code&gt;는 Docker API를 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h3 id=&quot;docker-registries&quot;&gt;Docker registries&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Docker registiy 는 Docker 이미지를 저장&lt;/li&gt;
-  &lt;li&gt;Docker Hub는 pulbic registry 이다 (누구나 사용가능)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h3 id=&quot;services&quot;&gt;SERVICES&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;service는 multiple Docker daemon들에게 container를 확장가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h4 id=&quot;namespaces&quot;&gt;NAMESPACES&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;namespace&lt;/code&gt;라고 불리는 기술을 사용&lt;/li&gt;
-  &lt;li&gt;격리된 workspace &lt;code class=&quot;highlighter-rouge&quot;&gt;cotainer&lt;/code&gt;라고 불리는 장소를 제공&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;container&lt;/code&gt;를 실행시, Docker는 container를 위한 namespace를 생성&lt;/li&gt;
-  &lt;li&gt;이 namespace들은 격리된 계층을 제공&lt;/li&gt;
-  &lt;li&gt;각각의 container는 분리된 &lt;code class=&quot;highlighter-rouge&quot;&gt;namespace&lt;/code&gt;를 실행 그리고 그것의 접근은 namespace에 한정&lt;/li&gt;
-  &lt;li&gt;Docker Engine은 다음의 namespace 를 사용
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pid&lt;/code&gt; namespaces : Process isolation (PID: process ID)&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;net&lt;/code&gt;namespaces : Managing network interfaces(NET: networking)&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ipc&lt;/code&gt;namespaces: Managing access to IPC 리소스 (IPC : InterProcess Communication)&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mnt&lt;/code&gt; namespaces :  Managin filesystem mount points : (MNT: mount)&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;uts&lt;/code&gt; namespaces : Isolatiing kernel and version identifies (UTS : Unix Timeshraring System)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h3 id=&quot;control-groups&quot;&gt;Control Groups&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;control groups(cgroups)&lt;/code&gt;f라고 불리는 기술을 Docker Engine이 사용&lt;/li&gt;
-  &lt;li&gt;특정 리소스들의 집합의 애플리케이션으로 제한&lt;/li&gt;
-  &lt;li&gt;cgroup를 제어하는것을 통해 Docker Engine은 hardware 리소스를 공유 제한 및 제약을 강제로 적용
-    &lt;ul&gt;
-      &lt;li&gt;ex) 특정 container에 메모리를 한정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h3 id=&quot;union-file-systems&quot;&gt;Union file systems&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;layer를 생성함으로써 Union File systtem UnionFS를 제공&lt;/li&gt;
-  &lt;li&gt;ligthweight 그리고 fast&lt;/li&gt;
-  &lt;li&gt;Docker Engine은 UnionFS를 사용하여 container를 위한 block를 제공&lt;/li&gt;
-  &lt;li&gt;Docker Engine은 multiple UnionFS variants(AUFS, btrfs,vfs, DeviceMapper를 사용)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h3 id=&quot;container-format&quot;&gt;Container Format&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Docker engine은 &lt;code class=&quot;highlighter-rouge&quot;&gt;namespace&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;cgroups&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;UnionFS&lt;/code&gt;를 wrapper하여 container format을 사용&lt;/li&gt;
-  &lt;li&gt;기본 container format은 &lt;code class=&quot;highlighter-rouge&quot;&gt;libcontainer&lt;/code&gt;라고 부름&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Mon, 28 Dec 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/docker/2020/12/28/docker_overveiw/</link>
-        <guid isPermaLink="true">http://localhost:4000/docker/2020/12/28/docker_overveiw/</guid>
-        
-        <category>docker</category>
-        
-        <category>concept</category>
-        
-        <category>overview</category>
-        
-        
-        <category>docker</category>
-        
-      </item>
-    
-      <item>
-        <title>[Docker]Introduction</title>
-        <description>&lt;h3 id=&quot;1-컨테이너-기술의-개요&quot;&gt;1. &lt;strong&gt;컨테이너 기술의 개요&lt;/strong&gt;&lt;/h3&gt;
-&lt;h4 id=&quot;docker란&quot;&gt;Docker란?&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;컨테이너 기술을 사용하여 애플리케이션의 실행 환경을 구축 및 운용하기 위한 플랫폼&lt;/li&gt;
-  &lt;li&gt;애플리케이션의 실행에 필요로한 것을 하나로 모아 Docker이미지를 관리함으로써 이식성을 높임
-&lt;!--more--&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;1-1-컨테이너란-&quot;&gt;1-1. &lt;strong&gt;컨테이너란 ?&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Host OS상에 논리적인 구획(컨테이너)을 만들고, 애플리케이션을 작동시키기 위해 필요한 라이브러리나 애플리케이션을 하나로 모아, 마치 별도의 서버처럼 제공&lt;/li&gt;
-  &lt;li&gt;Host OS의 리소스를 논리적으로 분산, 여러개의 컨테이너가 공유&lt;/li&gt;
-  &lt;li&gt;오버헤드가 적고 가볍다&lt;/li&gt;
-  &lt;li&gt;애플리케이션의 실행환경을 모음으로써, 이식성을 높이고 portable, 확장성이 좋은 환경 지향
-※ 오버헤드 : 가상화를 수행하기 위해 필요한 CPU,Memory,Disk등 사용량
-※ 서버가상화 기술
-    &lt;ul&gt;
-      &lt;li&gt;호스트형 서버 가상화
-        &lt;ul&gt;
-          &lt;li&gt;oracle의 VM VirtualBox,&lt;/li&gt;
-          &lt;li&gt;VMware의 VMware Workstation Player&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;하이퍼바지어형 서버 가상화
-        &lt;ul&gt;
-          &lt;li&gt;Host OS없이 HW를 직접제어 자원을 효율적 이용&lt;/li&gt;
-          &lt;li&gt;단, 가상환경마다 별도의 OS가 작동하므로 가상환경 시작에 걸리는 오버헤드 단점&lt;/li&gt;
-          &lt;li&gt;Microsoft Windows Server의 Hyper-V&lt;/li&gt;
-          &lt;li&gt;Citrix의 XenServer&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://www.docker.com/sites/default/files/d8/styles/large/public/2018-11/container-what-is-container.png?itok=vle7kjDj&quot; alt=&quot;enter image description here&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;2-컨테이너의-역사&quot;&gt;2. &lt;strong&gt;컨테이너의 역사&lt;/strong&gt;&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;FressBSD Jail
-    &lt;ul&gt;
-      &lt;li&gt;오픈소스인 UNIX의 FreeBSD의기술
- 	-  2000년에 FreeBSD 4.0에서 도입&lt;/li&gt;
-      &lt;li&gt;특징
-        &lt;ol&gt;
-          &lt;li&gt;프로세스 구획화&lt;/li&gt;
-          &lt;li&gt;네트워크 구획화 			
-     3. 파일시스템 구획화&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
- 	- Solaris Container
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	 - Oracle의 상용 UNIX인 Solaris에서 사용하는 컨테이너 기술
-	 - 2005년에 release된 Solaris10에 추가된 기능
-	- 특징
-		1. Solaris 존 : 하나의 OS공간을 가상적으로 분할하여 여러OS가 작동하는것처럼 SW 파티셔닝기술
-		2. Solaris 리소스매니저
- - Linux Container(LXC)
-	  - Linux상에서 사용하는 컨테이너 환경을 LXC
-	  - Linux커널의 컨테이너 기능을 이용하기 위한 툴이나 API제공
-	  - **namespace와 cgroups**라는 리소스 관리 장치를 사용하여 분리된 환경 제공 
-	  - 특정 디렉토리를 루트 디렉토리로 변경하는 chroot를 사용하여 분리환경 만듬
-	  - Docker이전버전에서는 LXC사용, 현재버전은 미사용
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;3--docker-개요&quot;&gt;3.  &lt;strong&gt;Docker 개요&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;h4 id=&quot;3-1-docker&quot;&gt;3-1. &lt;strong&gt;Docker?&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;애플리케이션의 실행에 필요한 환경을 하나의 이미졸 모아두고, 그 이미지를 사용하여 다양한 환경에서&lt;/li&gt;
-  &lt;li&gt;애플리케이션 실행환경을 구축 및 운용하기 위한 오픈소스 플랫폼&lt;/li&gt;
-  &lt;li&gt;내부에서 컨테이너기술을 사용&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;www.docker.com&quot;&gt;Docker공식사이트&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;3-2-프로그래머에게-docker란&quot;&gt;3-2. &lt;strong&gt;프로그래머에게 Docker란?&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;웹시스템 개발 애플리케이션을 제품환경에서 가동시키기 위해서
-    &lt;ul&gt;
-      &lt;li&gt;애플리케이션 실행모듈(프로그램 본체)&lt;/li&gt;
-      &lt;li&gt;미들웨어나 라이브러리&lt;/li&gt;
-      &lt;li&gt;OS/네트워크 인프라 환경설정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;waterfall모델로 개발시 개발 및 테스트 환경에서 올바르게 작동해도 Staging, production환경에서 정상적으로 작동하지 않는 경우도 있음
-    &lt;ul&gt;
-      &lt;li&gt;Docker에서는 이러한 인프라 환경을 컨테이너로 관리&lt;/li&gt;
-      &lt;li&gt;애플리케이션에 실행에 필요한 모든 파일 및 디렉토리들을 컨테이너로 모음&lt;/li&gt;
-      &lt;li&gt;이러한 컨테이너의 바탕이 되는 Docker이미지를 Docker Hub와 같은 Repository에 공유&lt;/li&gt;
-      &lt;li&gt;프로그래머는 Docker를 사용하여 개발한 애플리케이션의 실행에 필요한 모든것이 포함되어 있는 이미지를 배포&lt;/li&gt;
-      &lt;li&gt;애플리케이션 개발부터 테스트, production환경에 대한 전개를 모두 애플리케이션 엔지니어가 수행 하는 것 이 가능&lt;/li&gt;
-      &lt;li&gt;지속적인 CI/CD가 가능하고 변화에 강한 시스템 구축 가능
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ※ 애플리케이션이식성 
-  한번 만들면 어디서든지 작동하는 SW의 특성을 이식성(portability)이라고 한다
-  Docker는 이식성이 높기 때문에 클라우드 시스템과의 친화력이 높음
-  개발한 업무 애플리케이션을 On-premise환경-&amp;gt; Cloud 및 Cloud-&amp;gt;On-premise환경에서 쉽게 가능
-  클라우드 Iaas서비스는 시스템이 사용한 리소스(CPU,GPU,메모리,Disk)용량에 따라 요금측정
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;4-docker기능&quot;&gt;4. &lt;strong&gt;Docker기능&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;h4 id=&quot;다음과-같은-기능-3가지&quot;&gt;다음과 같은 기능 3가지&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Docker 이미지를 만드는 기능(Build)&lt;/li&gt;
-  &lt;li&gt;Docker 이미지를 공유하는 기능(Ship)&lt;/li&gt;
-  &lt;li&gt;Docker 컨테이너를 작동시키는 기능(Run)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h4 id=&quot;4-1-docker이미지를-만드는-기능build&quot;&gt;4-1. Docker이미지를 만드는 기능(Build)&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;프로그램본체, 라이브러리, 미들웨어, OS/네트워크 설정등을 하나모로 모아서 Docker 이미지생성&lt;/li&gt;
-  &lt;li&gt;컨테이너의 바탕이 바로 이미지&lt;/li&gt;
-  &lt;li&gt;Docker에서는 하나의 이미지에는 하나의 애플리케이션만 넣어 두고, 여러 개의 컨테이너를 조합하여 서비스를 구축!&lt;/li&gt;
-  &lt;li&gt;Docker 이미지의 정체는 애플리케이션에 실행에 필요한 파일들이 저장된 디렉토리&lt;/li&gt;
-  &lt;li&gt;Docker 명령을 사용하면 이미지를 tar파일로 출력가능&lt;/li&gt;
-  &lt;li&gt;Docker이미지 만드는방법
-    &lt;ol&gt;
-      &lt;li&gt;Docker 명령을 사용하여 수동 생성&lt;/li&gt;
-      &lt;li&gt;Dockerfile이라는 설정파일을 만들어 그것을 바탕으로 자동으로 이미지 생성가능 ( 더 바람직)&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Docker이미지는 겹처서 사용 가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;4-2-docker이미지를-공유하는-기능ship&quot;&gt;4-2. Docker이미지를 공유하는 기능(Ship)&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Docker이미지는 Docker레지스트리에 공유 가능&lt;/li&gt;
-  &lt;li&gt;Docker허브에서 Ubuntu나 Centos와 같은 Linux 배포판 기본기능을 제공하는 베이스이미지 배포&lt;/li&gt;
-  &lt;li&gt;기본 베이스 이미지에 미들웨어나 라이브러리 전개 할 애플리케이션 등을 넣은 이미지를 겹처서 독자적인 Docker 이미지로 구축 가능&lt;/li&gt;
-  &lt;li&gt;Automated Build : Docker Hub는 GItHub나 Bitbucket과 연계가능
-    &lt;ul&gt;
-      &lt;li&gt;Github상에서 Dockerfile을 관리하고, 거기서 Docker이미지를 자동으로 생성하여 Docker Hub공유 가능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Docker Container Trust
-    &lt;ul&gt;
-      &lt;li&gt;Docker이미지의 제공자를 검증할 수 있는 기능&lt;/li&gt;
-      &lt;li&gt;Docker 레지스트리에 이미지를 송신하기 전에 로컬환경에서 비밀키를 사용하여 이미지에 서명&lt;/li&gt;
-      &lt;li&gt;그 이후, 이미지를 이용할때는 이미지 제공자의 공개키를 사용하여 실행하려고 하는 이미지가 정말 제공자가 작성한 것 인지를 확인&lt;/li&gt;
-      &lt;li&gt;Docker Security Scanning
-        &lt;ul&gt;
-          &lt;li&gt;Docker이미지를 검사하여 이미 알려진 보안상의 취약성이 없다는 것을 확인&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;4-3-docker컨테이너를-작동시키는-기능run&quot;&gt;4-3. Docker컨테이너를 작동시키는 기능(Run)&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Docker이미지를 가지고 여러개의 컨테이너 기동 가능&lt;/li&gt;
-  &lt;li&gt;컨테이너 기동, 정지, 파기는 Docker명령을 사용&lt;/li&gt;
-  &lt;li&gt;이미 움직이고 있는 OS상에서 프로세스를 실행시키는 것과 유사 (속도 빠름)&lt;/li&gt;
-  &lt;li&gt;하나의 Linux 커널을 여러개의 컨테이너에서 공유&lt;/li&gt;
-  &lt;li&gt;컨테이너 안에서 작동하는 프로세스를 하나의 그룹으로 관리&lt;/li&gt;
-  &lt;li&gt;각 그룹마다 각각 파일 시스템/ 호스트명/ 네트워크등을 할당&lt;/li&gt;
-  &lt;li&gt;그룹이 다르면 프로세스나 파일에 대한 액세스 불가능&lt;/li&gt;
-  &lt;li&gt;이러한 구조를 사용하여 컨테이너를 독립된 공간으로서 관리&lt;/li&gt;
-  &lt;li&gt;Linux커널기능(namespace, cgroups)기술이 사용&lt;/li&gt;
-  &lt;li&gt;Production환경에서는 모든 Docker 컨테이너를 한대의 호스트 머신에서 작동시키는일은 드뭄&lt;/li&gt;
-  &lt;li&gt;시스템의 트랙픽 증감이나 가용성 요건, 신뢰도 요건등을 고려한 후에 여러 대의 호스트 머신으로 된 분산환경을 구축&lt;/li&gt;
-  &lt;li&gt;보통 컨테이너 관리에 대해서는 오케스트레이션 툴을 이용!!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;5-docker-컴포넌트&quot;&gt;5. Docker 컴포넌트&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Docker Engine(핵심)
-    &lt;ul&gt;
-      &lt;li&gt;Docke 이미지를 생성하고 컨테이너를 기동시키기 위한 Docker의 핵심기능. Docker명령 실행이나 Dockerfile에의한 이미지 생성&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Docker Registry(이미지 공개 및 공유)
-    &lt;ul&gt;
-      &lt;li&gt;Docker이미지를 공개 및 공유하기 위한 레지스트리 기능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Docker Compose(컨테이너 일원관리)
-    &lt;ul&gt;
-      &lt;li&gt;여러개의 컨테이너 구성정보를 코드로 정의하고, 명령을 실행함으로써 애플리케이션 실행 환경을 구성하는 컨테이너들을 일원 관리하기 위한 툴&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Docker Machine(Docker 실행환경 구축)
-    &lt;ul&gt;
-      &lt;li&gt;로컬 호스트용인 Virtual Box, AWS EC2나 MS의 Azure와 같은 클라우드 환경에서 Docker 실행환경을 명령으로 자동 생성하기 위하 툴&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Mon, 28 Dec 2020 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/docker/2020/12/28/docker_introduction/</link>
-        <guid isPermaLink="true">http://localhost:4000/docker/2020/12/28/docker_introduction/</guid>
-        
-        <category>docekr</category>
-        
-        <category>introduction</category>
-        
-        
-        <category>docker</category>
         
       </item>
     

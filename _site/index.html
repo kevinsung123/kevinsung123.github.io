@@ -157,6 +157,420 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
       
   
 
+<article id="post-os/2021/09/09/ai" class="post mb6" role="article">
+  <header>
+    <h1 class="post-title">
+      <a href="/os/2021/09/09/ai/" data-flip="title">
+        [Shell] Linux tools 
+      </a>
+    </h1>
+
+    <p class="post-date heading">
+      <time datetime="2021-09-09T00:00:00+09:00">09 Sep 2021</time>
+      
+
+
+
+
+
+
+
+
+
+in <a href="/category/os/" data-flip="title">OS</a>
+
+      
+
+
+
+
+
+
+
+
+
+on <a href="/tag/os-os/" data-flip="title">Shell</a>, <span>Tools</span>
+
+    </p>
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
+
+
+  </header>
+  
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+    <h3 id="linux-tools-that-i-learned-10-years-ago-which-i-still-use-every-day">Linux tools that I learned 10 years ago, which I still use every day</h3>
+
+
+    <p class="read-more"><a class="heading" href="/os/2021/09/09/ai/" data-flip="title">Continue reading </a></p>
+  
+
+</article>
+
+
+
+  
+
+<article id="post-k8s/2021/08/31/k8s-init" class="post mb6" role="article">
+  <header>
+    <h1 class="post-title">
+      <a href="/k8s/2021/08/31/k8s-init/" data-flip="title">
+        [k8s] Cluster Initialzation
+      </a>
+    </h1>
+
+    <p class="post-date heading">
+      <time datetime="2021-08-31T00:00:00+09:00">31 Aug 2021</time>
+      
+
+
+
+
+
+
+
+
+
+in <a href="/category/kubernetes/" data-flip="title">Kubernetes</a>
+
+      
+
+
+
+
+
+
+
+
+
+on <span>K8s</span>, <span>Cluster</span>, <span>Init</span>
+
+    </p>
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
+
+
+  </header>
+  
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+    <h3 id="k8s-reset하기">k8s reset하기</h3>
+
+
+    <p class="read-more"><a class="heading" href="/k8s/2021/08/31/k8s-init/" data-flip="title">Continue reading </a></p>
+  
+
+</article>
+
+
+
+  
+
+<article id="post-k8s/2021/08/30/k8s-ha-config" class="post mb6" role="article">
+  <header>
+    <h1 class="post-title">
+      <a href="/k8s/2021/08/30/k8s-ha-config/" data-flip="title">
+        [k8s] HA Configuration 
+      </a>
+    </h1>
+
+    <p class="post-date heading">
+      <time datetime="2021-08-30T00:00:00+09:00">30 Aug 2021</time>
+      
+
+
+
+
+
+
+
+
+
+in <a href="/category/kubernetes/" data-flip="title">Kubernetes</a>
+
+      
+
+
+
+
+
+
+
+
+
+on <span>K8s</span>, <span>Ha</span>
+
+    </p>
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
+
+
+  </header>
+  
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+    <h3 id="k8s-multi-master-ha-구성">k8s multi-master HA 구성</h3>
+
+
+    <p class="read-more"><a class="heading" href="/k8s/2021/08/30/k8s-ha-config/" data-flip="title">Continue reading </a></p>
+  
+
+</article>
+
+
+
+  
+
+<article id="post-os/2021/08/11/os-shell-kill-zombie" class="post mb6" role="article">
+  <header>
+    <h1 class="post-title">
+      <a href="/os/2021/08/11/os-shell-kill-zombie/" data-flip="title">
+        [Shell] df 
+      </a>
+    </h1>
+
+    <p class="post-date heading">
+      <time datetime="2021-08-11T00:00:00+09:00">11 Aug 2021</time>
+      
+
+
+
+
+
+
+
+
+
+in <a href="/category/os/" data-flip="title">OS</a>
+
+      
+
+
+
+
+
+
+
+
+
+on <a href="/tag/os-os/" data-flip="title">Shell</a>, <span>Zombie</span>
+
+    </p>
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
+
+
+  </header>
+  
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+    <h3 id="how-to-identify-and-kill-zombiedefunct-processes-in-linux-without-reboot">How to identify and kill zombie/defunct processes in Linux without reboot</h3>
+<ul>
+  <li>Linux에서는 maximum process 개수가 잇고 그리고 process id가 존재</li>
+  <li>maximum에 다다르면, 새로운 process를 시작이 불가능</li>
+  <li>zombie process는 <code class="highlighter-rouge">그들이 parent process로부터 적절하게 정리되지 않은 dead process</code>이다</li>
+  <li>process가 linux에 죽을때, 메모리로부터 모든것을 즉시 제거한다.
+    <ol>
+      <li>process status는 EXIT ZOMBIE로 변하고 parent process는 child process로부터 <code class="highlighter-rouge">SIGCHLD</code> signal을 받는다</li>
+      <li>parent process는 dead process의 exit status를 읽기 위해 <code class="highlighter-rouge">wait() 시스템 콜</code>을 호출</li>
+      <li>parent process는 dead process로부터 정보를 얻는다</li>
+      <li><code class="highlighter-rouge">wait()</code>이 호출 된 후, zombie process는 완전히 메모리부터 제거</li>
+    </ol>
+  </li>
+  <li>위의 과정은 보통 굉장히 빨리 발생하고 system에 zombie process로부터 쌓이는 것을 보지 못함</li>
+  <li>parent process가 적절히 프로그래밍 되지 않고, wait() 시스템 호출을 절대로 하지 않으면, 그것의 zombie children은 계속 메모리에 남는다</li>
+</ul>
+
+
+    <p class="read-more"><a class="heading" href="/os/2021/08/11/os-shell-kill-zombie/" data-flip="title">Continue reading </a></p>
+  
+
+</article>
+
+
+
+  
+
+<article id="post-os/2021/07/16/os-shell-tools" class="post mb6" role="article">
+  <header>
+    <h1 class="post-title">
+      <a href="/os/2021/07/16/os-shell-tools/" data-flip="title">
+        [Shell] Linux tools 
+      </a>
+    </h1>
+
+    <p class="post-date heading">
+      <time datetime="2021-07-16T00:00:00+09:00">16 Jul 2021</time>
+      
+
+
+
+
+
+
+
+
+
+in <a href="/category/os/" data-flip="title">OS</a>
+
+      
+
+
+
+
+
+
+
+
+
+on <a href="/tag/os-os/" data-flip="title">Shell</a>, <span>Tools</span>
+
+    </p>
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
+
+
+  </header>
+  
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+    <h3 id="linux-tools-that-i-learned-10-years-ago-which-i-still-use-every-day">Linux tools that I learned 10 years ago, which I still use every day</h3>
+
+
+    <p class="read-more"><a class="heading" href="/os/2021/07/16/os-shell-tools/" data-flip="title">Continue reading </a></p>
+  
+
+</article>
+
+
+
+  
+
+<article id="post-python/2021/07/12/python-naming-tips" class="post mb6" role="article">
+  <header>
+    <h1 class="post-title">
+      <a href="/python/2021/07/12/python-naming-tips/" data-flip="title">
+        [python] Python - Naming Tips
+      </a>
+    </h1>
+
+    <p class="post-date heading">
+      <time datetime="2021-07-12T00:00:00+09:00">12 Jul 2021</time>
+      
+
+
+
+
+
+
+
+
+
+in <a href="/category/python/" data-flip="title">Python</a>
+
+      
+
+
+
+
+
+
+
+
+
+on <span>Python</span>, <span>Naming</span>, <span>Tips</span>
+
+    </p>
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
+
+
+  </header>
+  
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+    <!--more-->
+
+
+    <p class="read-more"><a class="heading" href="/python/2021/07/12/python-naming-tips/" data-flip="title">Continue reading </a></p>
+  
+
+</article>
+
+
+
+  
+
+<article id="post-k8s/2021/07/07/k8s-resource" class="post mb6" role="article">
+  <header>
+    <h1 class="post-title">
+      <a href="/k8s/2021/07/07/k8s-resource/" data-flip="title">
+        [k8s] Kubectl - Resource
+      </a>
+    </h1>
+
+    <p class="post-date heading">
+      <time datetime="2021-07-07T00:00:00+09:00">07 Jul 2021</time>
+      
+
+
+
+
+
+
+
+
+
+in <a href="/category/kubernetes/" data-flip="title">Kubernetes</a>
+
+      
+
+
+
+
+
+
+
+
+
+on <span>K8s</span>, <span>Resource</span>
+
+    </p>
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
+
+
+  </header>
+  
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+    <!--more-->
+
+
+    <p class="read-more"><a class="heading" href="/k8s/2021/07/07/k8s-resource/" data-flip="title">Continue reading </a></p>
+  
+
+</article>
+
+
+
+  
+
 <article id="post-k8s/2021/07/02/k8s-kubectl" class="post mb6" role="article">
   <header>
     <h1 class="post-title">
@@ -919,451 +1333,6 @@ on <span>K8s</span>, <span>Dns</span>
 
 
 
-  
-
-<article id="post-python/2021/03/17/python-collections-ordereddict" class="post mb6" role="article">
-  <header>
-    <h1 class="post-title">
-      <a href="/python/2021/03/17/python-collections-ordereddict/" data-flip="title">
-        [Python] Collection모듈 - OrderedDict
-      </a>
-    </h1>
-
-    <p class="post-date heading">
-      <time datetime="2021-03-17T00:00:00+09:00">17 Mar 2021</time>
-      
-
-
-
-
-
-
-
-
-
-in <a href="/category/python/" data-flip="title">Python</a>
-
-      
-
-
-
-
-
-
-
-
-
-on <span>Collections</span>, <span>Ordereddict</span>
-
-    </p>
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-  </header>
-  
-
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  
-    <h3 id="ordereddict">OrderedDict</h3>
-<ul>
-  <li>python의 collections 모듈에 존재하는 자료구조인 OrderedDict는 기본 dictionary와 거의 비슷하지만, 입력된 item의 순서를 기억하는 <code class="highlighter-rouge">Dictionary class</code>.</li>
-  <li>iterating을 할때, 먼저 추가된 key의 item을 반환</li>
-  <li>정렬된 dictionary를 만들떄 유용</li>
-</ul>
-
-
-    <p class="read-more"><a class="heading" href="/python/2021/03/17/python-collections-ordereddict/" data-flip="title">Continue reading </a></p>
-  
-
-</article>
-
-
-
-  
-
-<article id="post-leetcode/2021/03/17/leetcode-146-lrucache" class="post mb6" role="article">
-  <header>
-    <h1 class="post-title">
-      <a href="/leetcode/2021/03/17/leetcode-146-lrucache/" data-flip="title">
-        [Leetcode] 146.LRUCache
-      </a>
-    </h1>
-
-    <p class="post-date heading">
-      <time datetime="2021-03-17T00:00:00+09:00">17 Mar 2021</time>
-      
-
-
-
-
-
-
-
-
-
-in <a href="/category/leetcode/" data-flip="title">Leetcode</a>
-
-      
-
-
-
-
-
-
-
-
-
-on <span>Leetcode</span>, <span>Lru-cache</span>
-
-    </p>
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-  </header>
-  
-
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  
-    <h3 id="background">Background</h3>
-<h4 id="페이지-교체-알고리즘page-replacement-algorithm-or-cache-replacemnt">페이지 교체 알고리즘(page-replacement algorithm or cache replacemnt)</h4>
-<ul>
-  <li>컴퓨터는 보통 주기억 장치인 ram과 보조기억 장치인 hard나 ssd의 대용량 기억장치를 가지고 있음</li>
-  <li>ram이 속도가 빠르기 때문에 보조기억장치로 부터 data를 ram에 저장해놓고 ram에 있는 data를 가지고 빠르게 cpu가 연산을 함</li>
-  <li>ram을 같은 크기의 block으로 구성해서 운용하는데 이 block를 <code class="highlighter-rouge">page</code>라고 일컫음</li>
-  <li>만약 cpu가 계산을 할때 data가 page에 있다면 <code class="highlighter-rouge">cache hit</code>, 없을 경우 보조기억장치로부터 data를 page로 옮겨온 후에 계산 하는데 이때를 <code class="highlighter-rouge">cache miss</code>라고 일컫음. hit일떄가 miss일떄보다 시간 단축</li>
-  <li>hit와 miss의 시간 차이로 인해 보다 빠른 연산을 위해 page에 여러 정보 중 어떤 정보를 오래 저장해 놓아야 하는지가 매우 중요한 문제. 이때문에 관련 알고리즘들이 존재</li>
-  <li>page-replacement 알고리즘 종류
-    <ul>
-      <li>FIFO(First In First Out)</li>
-      <li>LIFO(Last In First Out)</li>
-      <li>FILO(First In Last Out)</li>
-      <li>OPT(OPTimal Page Replacement)</li>
-      <li>LRU(Leastly Recently Used)</li>
-      <li>Coundt-Based</li>
-      <li>LFU(Leastly Frequently Used)</li>
-      <li>MFU(Most Frequently Used)
-        <h4 id="lrucache">LRUCache</h4>
-      </li>
-    </ul>
-  </li>
-  <li>LRU란 Least Recently Used Algorithm의 약자로 Cache에서 memory를 다루기 위한 알고리즘</li>
-  <li>cache가 사용하는 리소스는 제한되어 있고, 제한된 리소스 내에서 데이터를 빠르게 저장하고 접근할 수 있어야한다</li>
-  <li>이를 위해 LRU알고리즘은 메모리 상에서 가장 최근에 사용된 적이 없은 cache의 메모리부터 대체하여 데이터를 갱신</li>
-  <li>이 이론의 가설은 제일 오랫동안 참조되지 않은 데이터를 제거하는 방법
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Lruexample.png" alt="LRUCache" /></li>
-</ul>
-
-
-    <p class="read-more"><a class="heading" href="/leetcode/2021/03/17/leetcode-146-lrucache/" data-flip="title">Continue reading </a></p>
-  
-
-</article>
-
-
-
-  
-
-<article id="post-leetcode/2021/03/17/leetcode-104-maximum_depth_of_binary_tree" class="post mb6" role="article">
-  <header>
-    <h1 class="post-title">
-      <a href="/leetcode/2021/03/17/leetcode-104-maximum_depth_of_binary_tree/" data-flip="title">
-        [Leetcode] 104.Maximm depth of binary tree
-      </a>
-    </h1>
-
-    <p class="post-date heading">
-      <time datetime="2021-03-17T00:00:00+09:00">17 Mar 2021</time>
-      
-
-
-
-
-
-
-
-
-
-in <a href="/category/leetcode/" data-flip="title">Leetcode</a>
-
-      
-
-
-
-
-
-
-
-
-
-on <span>Leetcode</span>, <span>Binary-tree</span>
-
-    </p>
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-  </header>
-  
-
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  
-    <h3 id="problem">Problem</h3>
-<p><a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/">leetcode</a></p>
-
-
-    <p class="read-more"><a class="heading" href="/leetcode/2021/03/17/leetcode-104-maximum_depth_of_binary_tree/" data-flip="title">Continue reading </a></p>
-  
-
-</article>
-
-
-
-  
-
-<article id="post-gcp/2021/03/15/gcp-bigquery-ml" class="post mb6" role="article">
-  <header>
-    <h1 class="post-title">
-      <a href="/gcp/2021/03/15/gcp-bigquery-ml/" data-flip="title">
-        [BigQuery]Apply ML using SQL with BigQuery ML
-      </a>
-    </h1>
-
-    <p class="post-date heading">
-      <time datetime="2021-03-15T00:00:00+09:00">15 Mar 2021</time>
-      
-
-
-
-
-
-
-
-
-
-in <a href="/category/gcp/" data-flip="title">Google Cloud Platform</a>
-
-      
-
-
-
-
-
-
-
-
-
-on <a href="/tag/gcp-bigquery/" data-flip="title">BigQuery</a>, <a href="/tag/dev-ml/" data-flip="title">ML</a>
-
-    </p>
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-  </header>
-  
-
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  
-    <!--more-->
-
-
-    <p class="read-more"><a class="heading" href="/gcp/2021/03/15/gcp-bigquery-ml/" data-flip="title">Continue reading </a></p>
-  
-
-</article>
-
-
-
-  
-
-<article id="post-gcp/2021/03/14/gcp-bigquery" class="post mb6" role="article">
-  <header>
-    <h1 class="post-title">
-      <a href="/gcp/2021/03/14/gcp-bigquery/" data-flip="title">
-        [BigQuery]How does BigQuery work
-      </a>
-    </h1>
-
-    <p class="post-date heading">
-      <time datetime="2021-03-14T00:00:00+09:00">14 Mar 2021</time>
-      
-
-
-
-
-
-
-
-
-
-in <a href="/category/gcp/" data-flip="title">Google Cloud Platform</a>
-
-      
-
-
-
-
-
-
-
-
-
-on <a href="/tag/gcp-bigquery/" data-flip="title">BigQuery</a>, <span>Work</span>
-
-    </p>
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-  </header>
-  
-
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  
-    <h3 id="bigquery-is-two-services-in--one">BigQuery is two services in  one</h3>
-<ol>
-  <li>Fast SQL Engine</li>
-  <li>Managed storage for datasets
-    <ul>
-      <li>serverless service</li>
-      <li>fully managed</li>
-    </ul>
-  </li>
-</ol>
-
-
-    <p class="read-more"><a class="heading" href="/gcp/2021/03/14/gcp-bigquery/" data-flip="title">Continue reading </a></p>
-  
-
-</article>
-
-
-
-  
-
-<article id="post-k8s/2021/03/12/k8s-components" class="post mb6" role="article">
-  <header>
-    <h1 class="post-title">
-      <a href="/k8s/2021/03/12/k8s-components/" data-flip="title">
-        [k8s] Components
-      </a>
-    </h1>
-
-    <p class="post-date heading">
-      <time datetime="2021-03-12T00:00:00+09:00">12 Mar 2021</time>
-      
-
-
-
-
-
-
-
-
-
-in <a href="/category/kubernetes/" data-flip="title">Kubernetes</a>
-
-      
-
-
-
-
-
-
-
-
-
-on <span>K8s</span>, <span>Components</span>
-
-    </p>
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-  </header>
-  
-
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  
-    <!--more-->
-<h2 id="kubernetes-components">Kubernetes Components</h2>
-<h3 id="kubernetes란">Kubernetes란</h3>
-<p>Kubernetes(약어 k8s)란 Container Orchestration 플랫폼이다. container화 된 워크로드/서비스/애플리케이션을 관리하기 이식성 있고, 확장 가능한 오픈 소스 플랫폼. 시스템에 배포 가능한 애플리케이션의 구성 요소가 많아짐에 따라 모든 구성의 요소를 관리를 용이하기 위해 사용.</p>
-
-
-    <p class="read-more"><a class="heading" href="/k8s/2021/03/12/k8s-components/" data-flip="title">Continue reading </a></p>
-  
-
-</article>
-
-
-
-  
-
-<article id="post-k8s/2021/02/06/k8s-pod-lifecycle" class="post mb6" role="article">
-  <header>
-    <h1 class="post-title">
-      <a href="/k8s/2021/02/06/k8s-pod-lifecycle/" data-flip="title">
-        [k8s] Pod Lifecycle
-      </a>
-    </h1>
-
-    <p class="post-date heading">
-      <time datetime="2021-02-06T00:00:00+09:00">06 Feb 2021</time>
-      
-
-
-
-
-
-
-
-
-
-in <a href="/category/kubernetes/" data-flip="title">Kubernetes</a>
-
-      
-
-
-
-
-
-
-
-
-
-on <span>K8s</span>, <span>Pod</span>, <span>Lifecycle</span>
-
-    </p>
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-  </header>
-  
-
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  
-    <!--more-->
-<h2 id="pod-lifecycle">Pod Lifecycle</h2>
-
-
-    <p class="read-more"><a class="heading" href="/k8s/2021/02/06/k8s-pod-lifecycle/" data-flip="title">Continue reading </a></p>
-  
-
-</article>
-
-
-
 
 <h2 class="sr-only">Pagination</h2>
 <nav class="pagination heading" role="navigation">
@@ -1727,7 +1696,7 @@ on <span>K8s</span>, <span>Pod</span>, <span>Lifecycle</span>
     <li>
       <input type="checkbox" id="list-item-9"/>
       <div  class="list-wrapper">
-      <a class="sidebar-nav-item" href="/category">Archive</a>
+      <a class="sidebar-nav-item" href="/category/ai/">AI</a>
        
     </div>
      <ul class="list-body">
@@ -1759,6 +1728,39 @@ on <span>K8s</span>, <span>Pod</span>, <span>Lifecycle</span>
   
     <li>
       <input type="checkbox" id="list-item-10"/>
+      <div  class="list-wrapper">
+      <a class="sidebar-nav-item" href="/category">Archive</a>
+       
+    </div>
+     <ul class="list-body">
+       
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+           
+         
+     </ul>
+    </li>
+
+  
+  
+    <li>
+      <input type="checkbox" id="list-item-11"/>
       <div  class="list-wrapper">
       <a class="sidebar-nav-item" href="/about/">About</a>
        
