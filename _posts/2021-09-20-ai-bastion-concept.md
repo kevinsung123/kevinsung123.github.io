@@ -39,5 +39,42 @@ comments: true
     - `learn multiple levels of representations` that correspond to differenct levels of abstraction; the levels form a hierarchy of concepts 
     - 다양한 레벨의 표현(feautre)을 학습하는데, 이 표현들은 서로 다른 추사황 레벨과 상응한다. 이는 레벨은 개념의 계층을 이룬다.
 
+---
+
+### Multi Layrer Perceptron
+- 여러층의 neuron들을 쌓아 구성한 신경망
+- 각 layers는 모든 node끼리 서로 연결되어 weight를 가지는 것이 특징
+- 가장 간단한 형태의 신경망으로, 학습 파라미터 수에 비해 성능이 높지는 않아 효율적이지는 않지만 간단한 실습에 사용
+- Tensorflow Developer Certificate에서도 관련 문제가 나옴
+
+--- 
+
+### Loss Function
+loss function은 값을 예측하려할 때 데이터에대한 예측값과 실제의 값을 비교하는 함수로 모델을 훈련시킬 때 오류를 최소화 시키기 위해 사용되며, 주로 regression(회귀)에서 사용한다.
+모델의 성능을 올리기 위해 loss함수를 임의적으로 변형 가능
+
+#### Loss Function 종류
+##### MSE(Mean_Squared_error)
+- 예측한 값과 실제 값 사이의 평균 제곱 오차를 정의. 차가 커질수록 제곱 연산으로 인해서 값이 더욱 뚜렷해짐
+
+##### RMSE(Root Mean Squared Error)
+- MSE에 root를 씌운 것으로 MSE와 기본적으로 동일. `MSE값은 오류의 제곱을 구하기 떄문에 실제 오류 평균보다 더 커지`는 특성이 있어 왜곡을 줄여준다
+
+##### Binary Crossentropy
+- 실제 label과 예측 label간의 교차 엔트로피 손실을 계산. label class(0,1)가 2개만 존재할때 사용
+
+##### Categorical Crossentropy
+- 다중 분류 손실함수로 출력값이 one-hot encoding된 결과로 나오고 실측 결과와의 비교시에도 실측 결과는 one-hot encoding형태로 구성된다.
+- 출력 값이 one-hot encoding된 결과로 나온다. -> label(y)을 one-hot encoding해서 넣어줘야 함
+- sample이 여러개의 class에 속함
+
+##### Sparse_Categorical_Crossentropy
+- 위와 같은 다중 분류 손실함수이지만, 샘플값은 `정수형 자료`이다
+    - e.g. [0,1,2] -> Dense(3, activation='softmax')로 하고 출력값도 3개가 나오게 된다
+    - 즉 샘플 값을 입력하는 부분에서 별도 one-hot encoding하지 않고 정수값 그래도 줄 수 있다. compile단계에서 loss func만 바꿔주면 된다.
+- integer type 클래스 -> one-hot encoding하지 않고 정수 형태로 label(y)을 넣어줌
+- sample이 오직 하나의 class
+
+
 ### 참고
 - [wiserloner-tistory](https://wiserloner.tistory.com/239)
