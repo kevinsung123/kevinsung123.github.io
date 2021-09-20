@@ -6,29 +6,58 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Sep 2021 19:39:10 +0900</pubDate>
-    <lastBuildDate>Mon, 20 Sep 2021 19:39:10 +0900</lastBuildDate>
+    <pubDate>Mon, 20 Sep 2021 19:53:44 +0900</pubDate>
+    <lastBuildDate>Mon, 20 Sep 2021 19:53:44 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
         <title>[AI] Concept</title>
-        <description>&lt;h3 id=&quot;ai-conecpt&quot;&gt;AI Conecpt&lt;/h3&gt;
+        <description>&lt;h2 id=&quot;ai-conecpt&quot;&gt;AI Conecpt&lt;/h2&gt;
 
-&lt;h4 id=&quot;시그모이드-뉴런sigmoid-neuron&quot;&gt;시그모이드 뉴런(Sigmoid Neuron)&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;시그모이드-뉴런sigmoid-neuron&quot;&gt;시그모이드 뉴런(Sigmoid Neuron)&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;가중치의 합을 0과 1사이의 실수로 변환&lt;/li&gt;
   &lt;li&gt;sigmoid function을 사용&lt;/li&gt;
   &lt;li&gt;양의 값이 크면 클수록 로, 작으면 작을수록 0으로 변환해주는 S자모형의 함수&lt;/li&gt;
   &lt;li&gt;logistic함수라고도 함&lt;/li&gt;
   &lt;li&gt;neural network에서 활성함수(activation func)이란 입력층에서 얻은 Xn와 해당 자극들에게 대한 Wn의 가중치를 곱하여 모두 더한 값을 다른 신경망에게 전달하기 위하여 어떻게 처리할까의 문제&lt;/li&gt;
-  &lt;li&gt;Sigmoid함수의 겨우는 보단 자연스러운 자극 gradient를 만들수 있는 자연상수를 이용하여 입력값을 처리하여 출력값을 만들어냄
-&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcVhzmw%2Fbtqw9NPffnW%2FhFtbnE8GK5MzhVkrb7gWQk%2Fimg.png&quot; alt=&quot;sigmoid&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sigmoid함수의 겨우는 보단 자연스러운 자극 gradient를 만들수 있는 자연상수를 이용하여 입력값을 처리하여 출력값을 만들어냄
+&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcVhzmw%2Fbtqw9NPffnW%2FhFtbnE8GK5MzhVkrb7gWQk%2Fimg.png&quot; alt=&quot;sigmoid&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;퍼센트론(perceptron)&lt;/strong&gt; : 가중합한 결과에 커트라인을 두는 방식으로 1이나 0이냐를 가르는 방식의 뉴런을 일컫음&lt;/li&gt;
+  &lt;li&gt;sigmoid를 쓰는 가장 큰 이유? 미분이 가능하다(differentiable) 그래서 미분가능한 sigmoid 함수를 쓴곤함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;deep-learning&quot;&gt;Deep Learning&lt;/h3&gt;
+
+&lt;h4 id=&quot;deep-neural-network&quot;&gt;Deep Neural Network&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;sigmoid 뉴런과 같은 형태의 인공뉴런을 여러 층 연결하면 인공 신경망이 된다. 일반적으로 &lt;code class=&quot;highlighter-rouge&quot;&gt;두 층 이상의 뉴런을 쌓게 되면 Deep&lt;/code&gt;하다고 말한다&lt;/li&gt;
+  &lt;li&gt;input layer : 데이터가 들어오는 layer&lt;/li&gt;
+  &lt;li&gt;output layer : 결과를 출력하는 마지막 layer&lt;/li&gt;
+  &lt;li&gt;hidden layer : 이 두 레이어 사이에 있는 레이어는 몇 개가 있든지간에 모두 hidden layer라고 부름&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;deep-learning-정의&quot;&gt;Deep learning 정의&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;기계학습 알고리즘의 종류
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;use a cascade of multiple layers&lt;/code&gt; of nonlinear processing units for feature extraction and transformation. each successvie layers uses the output from the previous layers as input&lt;/li&gt;
+      &lt;li&gt;특징을 추출하거나 변형하기 위해 &lt;code class=&quot;highlighter-rouge&quot;&gt;비서현 처리유닛(시그모이드 뉴런)&lt;/code&gt;을 순차적으로 연결되는 여러 레이어를 사요. 각각의 이어지는 레이어는 이전 레이어의 출력을 입력으로 받아들임&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;learn multiple levels of representations&lt;/code&gt; that correspond to differenct levels of abstraction; the levels form a hierarchy of concepts&lt;/li&gt;
+      &lt;li&gt;다양한 레벨의 표현(feautre)을 학습하는데, 이 표현들은 서로 다른 추사황 레벨과 상응한다. 이는 레벨은 개념의 계층을 이룬다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://rekt77.tistory.com/102&quot;&gt;rekt77&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.tensorflow.org/guide/tensor?hl=ko&quot;&gt;tensorflow-tensor&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wiserloner.tistory.com/239&quot;&gt;wiserloner-tistory&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 20 Sep 2021 00:00:00 +0900</pubDate>
