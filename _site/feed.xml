@@ -6,9 +6,43 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 19 Sep 2021 19:30:22 +0900</pubDate>
-    <lastBuildDate>Sun, 19 Sep 2021 19:30:22 +0900</lastBuildDate>
+    <pubDate>Mon, 20 Sep 2021 19:39:10 +0900</pubDate>
+    <lastBuildDate>Mon, 20 Sep 2021 19:39:10 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[AI] Concept</title>
+        <description>&lt;h3 id=&quot;ai-conecpt&quot;&gt;AI Conecpt&lt;/h3&gt;
+
+&lt;h4 id=&quot;시그모이드-뉴런sigmoid-neuron&quot;&gt;시그모이드 뉴런(Sigmoid Neuron)&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;가중치의 합을 0과 1사이의 실수로 변환&lt;/li&gt;
+  &lt;li&gt;sigmoid function을 사용&lt;/li&gt;
+  &lt;li&gt;양의 값이 크면 클수록 로, 작으면 작을수록 0으로 변환해주는 S자모형의 함수&lt;/li&gt;
+  &lt;li&gt;logistic함수라고도 함&lt;/li&gt;
+  &lt;li&gt;neural network에서 활성함수(activation func)이란 입력층에서 얻은 Xn와 해당 자극들에게 대한 Wn의 가중치를 곱하여 모두 더한 값을 다른 신경망에게 전달하기 위하여 어떻게 처리할까의 문제&lt;/li&gt;
+  &lt;li&gt;Sigmoid함수의 겨우는 보단 자연스러운 자극 gradient를 만들수 있는 자연상수를 이용하여 입력값을 처리하여 출력값을 만들어냄
+&lt;img src=&quot;https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&amp;amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcVhzmw%2Fbtqw9NPffnW%2FhFtbnE8GK5MzhVkrb7gWQk%2Fimg.png&quot; alt=&quot;sigmoid&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://rekt77.tistory.com/102&quot;&gt;rekt77&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.tensorflow.org/guide/tensor?hl=ko&quot;&gt;tensorflow-tensor&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 20 Sep 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/ai/2021/09/20/ai-bastion-concept/</link>
+        <guid isPermaLink="true">http://localhost:4000/ai/2021/09/20/ai-bastion-concept/</guid>
+        
+        <category>ai</category>
+        
+        <category>term</category>
+        
+        
+        <category>ai</category>
+        
+      </item>
     
       <item>
         <title>[Devops] git push with existsing project</title>
@@ -138,9 +172,9 @@ git push -u -f origin masater
       </item>
     
       <item>
-        <title>[AI] Term</title>
-        <description>&lt;h3 id=&quot;ai용어&quot;&gt;AI용어&lt;/h3&gt;
-&lt;h6 id=&quot;fnnfully-connected-neural-network&quot;&gt;FNN(Fully-connected Neural Network)&lt;/h6&gt;
+        <title>[AI] Tensor term</title>
+        <description>&lt;h3 id=&quot;tensor-basic&quot;&gt;Tensor Basic&lt;/h3&gt;
+&lt;h5 id=&quot;fnnfully-connected-neural-network&quot;&gt;FNN(Fully-connected Neural Network)&lt;/h5&gt;
 &lt;ul&gt;
   &lt;li&gt;뉴런을 단계별로 층층히 연결하여 데이터를 흘려보내는 방식의 인공신경망&lt;/li&gt;
   &lt;li&gt;Input.Hidden/Output layer들로 구성&lt;/li&gt;
@@ -148,12 +182,16 @@ git push -u -f origin masater
   &lt;li&gt;뉴런끼리 레이어간 빽빽하게 연결되어 있어서 이러한 형태의 layer를 &lt;strong&gt;Dense layer&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h6 id=&quot;tensor&quot;&gt;Tensor&lt;/h6&gt;
+&lt;h5 id=&quot;tensor&quot;&gt;Tensor&lt;/h5&gt;
 &lt;ul&gt;
   &lt;li&gt;tensor란 수학적인 개념으로 데이터의 배열&lt;/li&gt;
   &lt;li&gt;tensor의 Rank는 간단히 말해서 몇 차원 배열인가를 의미&lt;/li&gt;
   &lt;li&gt;차원의 수는 Rank와 같은말&lt;/li&gt;
   &lt;li&gt;matrix의 집합인 tensor는 당연히 3차원 부터 시작하니 최소 3이상의 수&lt;/li&gt;
+  &lt;li&gt;tensor는 일관된 유형(&lt;strong&gt;dtype&lt;/strong&gt;이라고불림)을 가진 다차원 배열. 지원되는 모든 &lt;strong&gt;dtypes&lt;/strong&gt;은 &lt;strong&gt;tf.dtypes.DType&lt;/strong&gt;에서 볼수 있음&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Numpy&lt;/strong&gt;에 익숙하다면, tensor는 일종의 &lt;strong&gt;np.arrays&lt;/strong&gt;와 같음&lt;/li&gt;
+  &lt;li&gt;모든 tensor는 python숫자 및 문자열과 같이 변경 불가능&lt;/li&gt;
+  &lt;li&gt;tensor 내용은 업데이트 불가능하며 새로운 tensor만 생성가능&lt;/li&gt;
   &lt;li&gt;Rank/Type
     &lt;ul&gt;
       &lt;li&gt;0/scalar : [1]&lt;/li&gt;
@@ -163,20 +201,68 @@ git push -u -f origin masater
       &lt;li&gt;n/n-tensor : etc&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;tensor 생성방법 : &lt;strong&gt;np.array&lt;/strong&gt; 또는 &lt;strong&gt;tensor.numpy&lt;/strong&gt; 메서드를 이용하여 tensor를 numpy배열로변환&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h5 id=&quot;tensor-shapes-형상정보&quot;&gt;Tensor Shapes (형상정보)&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;shape :  tensor의 각 차원의 길이. the length of each the axes of a tensor&lt;/li&gt;
+  &lt;li&gt;rank : tensor 축의 수. number of tensor axes. a scalar has rank 0, a vector has rank 1, a matrix is rank2&lt;/li&gt;
+  &lt;li&gt;Axis or Dimension : a particular dimentsion of a tensor&lt;/li&gt;
+  &lt;li&gt;size : the total number of items in tensor.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ex) 
+ rank_4_tensor = tf.zeros([3,2,4,5])
+ 3 2 4 5 
+ -&amp;gt; rank 4
+ -&amp;gt; 3 : axis 0 
+ -&amp;gt; 5 : axis -1
+print(&quot;Type of every element:&quot;, rank_4_tensor.dtype)
+print(&quot;Number of dimensions:&quot;, rank_4_tensor.ndim)
+print(&quot;Shape of tensor:&quot;, rank_4_tensor.shape)
+print(&quot;Elements along axis 0 of tensor:&quot;, rank_4_tensor.shape[0])
+print(&quot;Elements along the last axis of tensor:&quot;, rank_4_tensor.shape[-1])
+print(&quot;Total number of elements (3*2*4*5): &quot;, tf.size(rank_4_tensor).numpy())
+*********************************************
+Type of every element: &amp;lt;dtype: 'float32'&amp;gt;
+Number of dimensions: 4
+Shape of tensor: (3, 2, 4, 5)
+Elements along axis 0 of tensor: 3
+Elements along the last axis of tensor: 5
+Total number of elements (3*2*4*5):  120
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;axes 때때로 그들의 indices를 표현&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;manipulating-shapes&quot;&gt;Manipulating Shapes&lt;/h5&gt;
+&lt;p&gt;Reshaping a tensor is of a great utility&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;x = tf.constant([[1],[2],[3]])
+print(x.shape)
+*******output********
+(3,1)
+
+# you can convert this object into a Python list, too
+print(x.shape.as_list())
+
+# you can reshape a tensor to a new shape
+reshaped = tf.reshape(x,[1,3])
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://rekt77.tistory.com/102&quot;&gt;rekt77&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.tensorflow.org/guide/tensor?hl=ko&quot;&gt;tensorflow-tensor&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Thu, 09 Sep 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/ai/2021/09/09/ai/</link>
-        <guid isPermaLink="true">http://localhost:4000/ai/2021/09/09/ai/</guid>
+        <link>http://localhost:4000/ai/2021/09/09/ai-tensor-basic/</link>
+        <guid isPermaLink="true">http://localhost:4000/ai/2021/09/09/ai-tensor-basic/</guid>
         
         <category>ai</category>
         
-        <category>term</category>
+        <category>tensor</category>
         
         
         <category>ai</category>
@@ -2614,53 +2700,6 @@ kube-proxy는 OS에 가용한 packet filtering이 있을경우 이를사용, 그
         
         
         <category>k8s</category>
-        
-      </item>
-    
-      <item>
-        <title>[Shell] df </title>
-        <description>&lt;h3 id=&quot;dfdisk-free&quot;&gt;DF(Disk Free)&lt;/h3&gt;
-&lt;h4 id=&quot;name&quot;&gt;Name&lt;/h4&gt;
-&lt;p&gt;df - report file system disk space usage
-&lt;!--more--&gt;&lt;/p&gt;
-&lt;h4 id=&quot;synopsis&quot;&gt;Synopsis&lt;/h4&gt;
-&lt;p&gt;df [OPTION]…[FILE]&lt;/p&gt;
-
-&lt;h4 id=&quot;description&quot;&gt;Description&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;df : displays the amount of disk space availabe on the file system containing each file name argument&lt;/li&gt;
-  &lt;li&gt;Disk space is shown in 1K blocks by default&lt;/li&gt;
-  &lt;li&gt;df shows the space available on tht file system rather than on the file system containg the device node(which is always the root file system)&lt;/li&gt;
-  &lt;li&gt;disk의 남은 용량을 확인&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;options&quot;&gt;Options&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;-a,–al :  include dummy file systems&lt;/li&gt;
-  &lt;li&gt;-B,–block-size=SIZE : user SIZE-byte blocks&lt;/li&gt;
-  &lt;li&gt;–direct :  show statistics for a file instead of mount point&lt;/li&gt;
-  &lt;li&gt;-h,–human-readable :  print size in human readable format(e.g , 1K 234M 2G)&lt;/li&gt;
-  &lt;li&gt;-i,–inodes :  list inode information instead of block usage&lt;/li&gt;
-  &lt;li&gt;-T,–print-type :  print file system type&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;example&quot;&gt;Example&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;df -TH&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;df -T /home/bastion&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Sun, 17 Jan 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/os/2021/01/17/os-shell-df/</link>
-        <guid isPermaLink="true">http://localhost:4000/os/2021/01/17/os-shell-df/</guid>
-        
-        <category>shell</category>
-        
-        <category>df</category>
-        
-        
-        <category>os</category>
         
       </item>
     
