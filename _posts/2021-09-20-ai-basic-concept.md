@@ -1,9 +1,9 @@
 ---  
 layout: post  
 title: "[AI] Concept"  
-subtitle: "AI Term "  
+subtitle: "AI Basic Concept "  
 categories: ai
-tags: ai term
+tags: ai conecpt
 comments: true  
 ---  
 ## AI Conecpt
@@ -38,8 +38,6 @@ comments: true
     - 특징을 추출하거나 변형하기 위해 `비서현 처리유닛(시그모이드 뉴런)`을 순차적으로 연결되는 여러 레이어를 사요. 각각의 이어지는 레이어는 이전 레이어의 출력을 입력으로 받아들임
     - `learn multiple levels of representations` that correspond to differenct levels of abstraction; the levels form a hierarchy of concepts 
     - 다양한 레벨의 표현(feautre)을 학습하는데, 이 표현들은 서로 다른 추사황 레벨과 상응한다. 이는 레벨은 개념의 계층을 이룬다.
-
----
 
 ### Multi Layrer Perceptron
 - 여러층의 neuron들을 쌓아 구성한 신경망
