@@ -58,6 +58,16 @@ Total number of elements (3*2*4*5):  120
 ```
 - axes 때때로 그들의 indices를 표현 
 
+#### Shape
+- tensor가 어떻게 생겼는지를 표현하는 방식
+- 대괄호 안에 각 차원의 길이(element)를 표기하면 됨
+- mnist는 가로 세로 28픽셀을 갖는 행렬데이터이므로 [28,28]고 같이 shape를 표헌 
+- color 이미지의 경우 RGB의 세개의 값을 표현해야하므로 3Rank tensor
+- 관례적으로 데이터 수는 shape의 맨앞에 써주는 것이 일반적
+    - ex) shape[4,100,150,3]
+
+
+
 ##### Manipulating Shapes
 Reshaping a tensor is of a great utility
 
