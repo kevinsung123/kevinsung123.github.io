@@ -1,9 +1,9 @@
 ﻿---  
 layout: post  
-title: "[python] Python - Naming Tips"  
-subtitle: "Python Naming Tips"  
+title: "[python] Python - List"  
+subtitle: "Python List"  
 categories: python  
-tags: python naming tips
+tags: python list
 comments: true  
 ---  
 <!--more-->
