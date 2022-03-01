@@ -27,6 +27,7 @@ comments: true
      ※Notes : list에서 처음 만난 object를 지운다 
     ```
 - code#1
+
 ```
 # Python3 program to demonstrate the use of  
 # remove() method  
@@ -42,12 +43,16 @@ list2 = [ 'a', 'b', 'c', 'd' ]
 list2.remove('a')  
 print(list2) 
 ```
+
 - output
+
 ```
 [2, 1, 1, 4, 5]
 ['b', 'c', 'd']
 ```
+
 - code 3 : 주어진 리스트에서 모든 1을 제거하는 프로그램
+
 ```
 # Python3 program for practical application 
 # of removing 1 untill all 1 are removed from the list  
@@ -61,11 +66,15 @@ while (list1.count(1)):
       
 print(list1)  
 ```
+
 - output
+
 ```
 [2, 3, 4, 4, 5]
 ```
+
 - 예외처리하기 
+
 ```
 def remove(node):  
     global child  
@@ -89,6 +98,7 @@ print(["re"] * 3)
 
 ### insert
 - 한개의 item을 원하는 위치에 넣거나 multiple items를 넣는경우
+
 ```
 # Demonstration of list insert() method
 odd = [1, 9]
