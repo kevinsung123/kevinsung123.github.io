@@ -27,7 +27,7 @@ comments: true
      ※Notes : list에서 처음 만난 object를 지운다 
     ```
 - code#1
-
+remove 기본 사용법
 ```
 # Python3 program to demonstrate the use of  
 # remove() method  
@@ -51,7 +51,8 @@ print(list2)
 ['b', 'c', 'd']
 ```
 
-- code 3 : 주어진 리스트에서 모든 1을 제거하는 프로그램
+- code#3 
+주어진 리스트에서 모든 1을 제거하는 프로그램
 
 ```
 # Python3 program for practical application 
@@ -85,7 +86,7 @@ def remove(node):
 ```
 
 ### * operator 
-- *연산자는 반복연산자
+*연산자는 반복연산자
 
 ```
 Concatenating and repeating lists
