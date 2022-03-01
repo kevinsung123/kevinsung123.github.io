@@ -1,9 +1,9 @@
 ﻿---  
 layout: post  
-title: "[python] Python - List"  
-subtitle: "Python List"  
+title: "[python] Python - Two dimensions List"  
+subtitle: "Python Two dimensions List"  
 categories: python  
-tags: python list
+tags: python twodimension list
 comments: true  
 ---  
 <!--more-->
