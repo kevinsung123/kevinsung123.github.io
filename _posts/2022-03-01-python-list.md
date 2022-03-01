@@ -8,81 +8,163 @@ comments: true
 ---  
 <!--more-->
 
-### 1. Don't use save/load without to/from
-- `save_user_to_mongo` (O)
-- `save_user`(X)
-- `load_categories_from_cache` (O)
-- `load_categories`(x)
+## list 연산 
+
+### append 와 extend 차이점
+- append : list 끝에 1개 원소를 넣음
+- extend : list 끝에 iterable의 각 항목을 넣음
 
 
-### 2. Use test_<entity>_<behavior> template for test names
-- `validate_user_from`이라 불리는 func을 위한 unit test를 작성한다고 가정하자
-- bad example
-    - `test_validation_ok`
-    - `test_user_can_submit_profile_data`
-    - `test_test_test`
-    - `test_asfqerfjeghmnsa`
-- good example
-    - `test_validate_user_from_raises_no_errors_on_correct_data`
-    - `test_validate_user_from_raises_an_error_on_empty_eamil`
-- `behaviour part`가 중요함(우리가 무엇을 테스트하는지 정확히 명시해야함)
-- 예를들어 `works_fine`그리고 `is_ok`라는 behaviour part를 사용한다고 할때, 실패시 다시 한번 무엇을 테스트 하는지 확인이 필요하다
-- 위와 같은 이름은 테스트에 오랜 시간이 필요하다 
+### remove 
+-  list에서 주어진 object를 지우는 remove() built함수이다 
+-  return 값이 없음
+- syntax 
+    - `list_name.remove(ojb)`
 
-### 3. Beware of using and
-- bad example
-    - `processes_and_save_profile_info` 는 읽기에는 좋지만 여전히 나쁨
-- 그러나 성격에 의해 위의 example은  아래와 같이 되어야함
-    - `clean_profile_info`
-    - `save_profile_info_to_db`
-- 위의 규칙은 `single-reponsibility principle(단일 책임 원칙)`과 `command-query separation pattern(명령 쿼리 분리 패턴)`에 관련이 있음
+- parameter
+    - parameter - object to be removed from the list
+    
+     ※Notes : list에서 처음 만난 object를 지운다 
+    ```
+- code#1
+```
+# Python3 program to demonstrate the use of  
+# remove() method  
+  
+  
+# the first occurrence of 1 is removed from the list  
+list1 = [ 1, 2, 1, 1, 4, 5 ]  
+list1.remove(1)  
+print(list1)  
+  
+# removes 'a' from list2  
+list2 = [ 'a', 'b', 'c', 'd' ]  
+list2.remove('a')  
+print(list2) 
+```
+- output
+```
+[2, 1, 1, 4, 5]
+['b', 'c', 'd']
+```
+- code 3 : 주어진 리스트에서 모든 1을 제거하는 프로그램
+```
+# Python3 program for practical application 
+# of removing 1 untill all 1 are removed from the list  
+   
+   
+list1 = [1, 2, 3, 4, 1, 1, 1, 4, 5] 
+  
+# looping till all 1's are removed 
+while (list1.count(1)): 
+    list1.remove(1)  
+      
+print(list1)  
+```
+- output
+```
+[2, 3, 4, 4, 5]
+```
+- 예외처리하기 
+```
+def remove(node):  
+    global child  
+    try :  
+        child[parent[node]].remove(node)  
+    except ValueError :  
+        pass
+```
 
-### 4. Make a function name readable with its argumnets 
--  bad example
-    - `list_item_to_marketplace(marketplace,item)`
-- good example
-    - `list_item_to(marketplace, item)`
-- 위의 rule은 function name을 좀더 간략하고 이해하기 쉽게 만들어줌 
-- 이러한 예들은 가끔 preposition(전치사)로 끝남 `_at`, `_to`, `_in` 등등
+### * operator 
+- *연산자는 반복연산자
 
-### 5. Think of repeating entity type in a function name
-- `parsers=[integer, string]`
+```
+Concatenating and repeating lists
+odd = [1, 3, 5]
 
-### 6. Keep function names as short as possible (without hurt to a context)
-- bad example
-    - `save_full_user_profile_to_postgresql_storage_sync` 
-- goode example
-    - `save_full_profile_data_to_postgresql_sync` 
-    - postgrelsql은 storage알고 있으므로 생략
-- 프로젝트에서 모든 func이 synchronous하다면 `_sync`부분을 제거히야함  `save_user_profile_to_postgresql`
-- 마지막으로 `postgresql`을 `db`로 치환
-- 마지막 결과는 `save_user_profile_to_db`
-- func의 이름은 의미있는 context와 length 최적화를 생갹해야함
+print(odd + [9, 7, 5])
 
-### 7. Use subject area vocabulary
-- 프로젝트에서  찾을 수 있는 모든 영역별 의미와 함께 어휘를 기록하는 것이 좋음
+print(["re"] * 3)
+```
 
-### 8. Forbid typos
-- automation을 설정하여 code 내부에서 이름 오류 체크를 설정
-- 만약 발견되면, build에 오류를 내뱉음
-- `scspell` (python library)를 사용
-    - 여러 특정 단어를 한 공간에 모는 장점이 있음
-    - 이전 article의 단어를 체크함
+### insert
+- 한개의 item을 원하는 위치에 넣거나 multiple items를 넣는경우
+```
+# Demonstration of list insert() method
+odd = [1, 9]
+odd.insert(1,3)
+print(odd)
+odd[2:2] = [5, 7]
+print(odd)
 
-### 9. Don't forget about grammar
-- bad 
-    - `are_user_active`
-- good
-    - `is_user_active`
-- 보통 func이름은 기본 문법을 사용 
-    - is/are, have/has, present/ast, simple/perfact 
+####
+[1, 3, 9]
+[1, 3, 5, 7, 9]
+```
+### 이차원 리스트 복사
+1.  slice 사용하기
+```
+arr=[ row[:] for  row in copy] 
+```
+2. list()
+```
+arr= list(copy)
+```
+3. copy
+```
+import copy
+arr = copy.copy(tmp)
+```
+4. deepcopy
+```
+import copy
+arr=copy.deepcopy(tmp)
+```
 
-### 10. Check if a function call is readable
-- func을 작서할때 어떻게 그리고 어디서 func이 호출되는지 생각
-- 거기에 적합한지 읽을만한지 생각
-- good name은 2군데에서 읽을만해야함
-    - where the function is defined and called
-- all you need is to thinks aboud a second case : will the nmae look readbale when fucntion is called
+### 이차원 리스트 회전
+
+```
+(r,s,c)=(r,s)좌표에서 c 길이부터 시작해서 외부에서 안쪽으로 시계방향으로 회전
+1. 가장 왼쪽 값은 tmp 로저장
+2. 반시계방향으로 회전 시작점 : (r-s+1 ,c-s)  종료점 : (r-s,c-s)
+3. 좌 
+- y좌표 : r-s+1 <=  y <= r+s (증가)
+- x좌표는 고정: c-s 
+4. 하
+- y좌표 고정 : r+s
+- x좌표 : c-s+1<= x <= c+s (증가)
+5. 우
+- y좌표 : r+s-1 >= y >= r-s  (감소)
+- x좌표 고정 : c+s
+6. 상
+- y좌표 고정 : r-s
+- x좌표 : c+s-1>= x >= c-s  (감소!!)
+7. 마지막 처음 값을 저장 arr[r-s][c-s+1]=arr[r-s][c-s]
+
+def rotate(r, c, s):  
+    global arr, N, M  
+    # print(r, c, s)  
+ # s번만큼 회전함  
+ while s > 0:  
+     # 가장 처음값  
+	 tmp = arr[r - s][c - s]  
+     for y in range(r - s + 1, r + s + 1):  # 좌 : x좌표는 고정  
+       arr[y - 1][c - s] = arr[y][c - s]
+ 
+     for x in range(c - s + 1, c + s + 1):  # 하 : y좌표는 고정  
+       arr[r + s][x - 1] = arr[r + s][x]
+       
+     for y in range(r + s - 1, r - s - 1, -1):  # 우 x좌표는 고정  
+        arr[y + 1][c + s] = arr[y][c + s]  
+       
+     for x in range(c + s - 1, c - s - 1, -1):  # 상 : y좌표는 고정  
+       arr[r - s][x + 1] = arr[r - s][x]  
+     # 가장 처음값음 바로 오른쪽에 저장  
+     arr[r - s][c - s + 1] = tmp  
+     s -= 1  
+
+```
+
 
 ### 참고
 - [medium - Python functions naming: 10 tips](https://melevir.medium.com/python-functions-naming-tips-376f12549f9)
