@@ -1,7 +1,7 @@
 ---
 layout: list
 title: IT Interview
-slug: devops
+slug: it
 menu: true
 submenu: false
 order: 8
