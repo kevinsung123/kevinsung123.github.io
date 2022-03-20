@@ -1,10 +1,10 @@
 ---
 layout: tag-blog
-title: BigQuery
-slug: bigquery
+title: Database
+slug: database
 category: gcp
 menu: false
 order: 1
 description: >
-  GCP - BigQuery 
+  GCP - Database
 ---
