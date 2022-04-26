@@ -6,9 +6,729 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 21 Sep 2021 17:57:31 +0900</pubDate>
-    <lastBuildDate>Tue, 21 Sep 2021 17:57:31 +0900</lastBuildDate>
+    <pubDate>Mon, 21 Mar 2022 01:33:30 +0900</pubDate>
+    <lastBuildDate>Mon, 21 Mar 2022 01:33:30 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[BigQuery]Chatper 1. What is Google BigQuery</title>
+        <description>&lt;h3 id=&quot;chatper-1-what-is-google-bigquery&quot;&gt;Chatper 1. What is Google BigQuery&lt;/h3&gt;
+
+&lt;!--more--&gt;
+
+&lt;h4 id=&quot;data-processing-architectures&quot;&gt;Data Processing Architectures&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;serverless, highly scalable data wareshouse (query engine이 built-in)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;참조&quot;&gt;참조&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Google BigQuery The Definite Guide p1-p22&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.coursera.org/learn/gcp-big-data-ml-fundamentals/lecture/H1irf/bigquery-fast-sql-engine&quot;&gt;coursera : bigquery-fast-sql-engine&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 20 Mar 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/gcp/2022/03/20/gcp-bigquery-ch1/</link>
+        <guid isPermaLink="true">http://localhost:4000/gcp/2022/03/20/gcp-bigquery-ch1/</guid>
+        
+        <category>bigquery</category>
+        
+        <category>work</category>
+        
+        
+        <category>gcp</category>
+        
+      </item>
+    
+      <item>
+        <title>[IT] IT Term </title>
+        <description>&lt;h2 id=&quot;it용어&quot;&gt;IT용어&lt;/h2&gt;
+&lt;!--more--&gt;
+&lt;h3 id=&quot;capex란&quot;&gt;CAPEX란&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Capital Expenditure&lt;/code&gt;의 약자&lt;/li&gt;
+  &lt;li&gt;정의
+    &lt;ul&gt;
+      &lt;li&gt;미래의 이윤을 창출하기 위해 지출된 비용. 즉 돈을 벌기 위해 투자한 투자비용&lt;/li&gt;
+      &lt;li&gt;자본적 지출 &lt;code class=&quot;highlighter-rouge&quot;&gt;설비투자비용&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;자산이므로 자산계정에 추가
+        &lt;h3 id=&quot;opex&quot;&gt;OPEX&lt;/h3&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Operating Expenditure&lt;/code&gt;의 약자&lt;/li&gt;
+  &lt;li&gt;정의
+    &lt;ul&gt;
+      &lt;li&gt;영업비용(운영 지출)&lt;/li&gt;
+      &lt;li&gt;CAPEX를 통해 취득한 자산을 유지/보수 하거나 운영하는데 들어가는 비용&lt;/li&gt;
+      &lt;li&gt;판관비 등
+        &lt;h3 id=&quot;tca&quot;&gt;TCA&lt;/h3&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Total Cost Acquisition&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;초기 도입비용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;tco&quot;&gt;TCO&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Total Cost of Ownership&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;특정 공급자와 특정 품목을 거래함에 있어서 발생하는 모든 공급체인 관련 비용을 파악하여 관리한느것 (3-5년 단위 측정)&lt;/li&gt;
+  &lt;li&gt;구성
+    &lt;ul&gt;
+      &lt;li&gt;획득비용(Acquision Costs) : 물품구매 전 제반기획, 분석에 소요되는 비용도 포함&lt;/li&gt;
+      &lt;li&gt;소유비용(Ownerships Costs) : 환경비용, 고객불만족 비용포함&lt;/li&gt;
+      &lt;li&gt;사후적비용(Post-Ownership Costs)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 11 Mar 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/it/2022/03/11/it-term/</link>
+        <guid isPermaLink="true">http://localhost:4000/it/2022/03/11/it-term/</guid>
+        
+        <category>it</category>
+        
+        <category>term</category>
+        
+        
+        <category>it</category>
+        
+      </item>
+    
+      <item>
+        <title>[python] Python - Two dimensions List</title>
+        <description>&lt;!--more--&gt;
+
+&lt;h3 id=&quot;이차원-리스트-복사&quot;&gt;이차원 리스트 복사&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;slice 사용하기
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;arr=[ row[:] for  row in copy] 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;list()
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; arr= list(copy)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;copy
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; import copy
+ arr = copy.copy(tmp)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;deepcopy
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; import copy
+ arr=copy.deepcopy(tmp)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;이차원-리스트-회전&quot;&gt;이차원 리스트 회전&lt;/h3&gt;
+
+&lt;p&gt;(r,s,c)=(r,s)좌표에서 c 길이부터 시작해서 외부에서 안쪽으로 시계방향으로 회전&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;가장 왼쪽 값은 tmp 로저장&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;반시계방향으로 회전 시작점 : (r-s+1 ,c-s)  종료점 : (r-s,c-s)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;좌
+    &lt;ul&gt;
+      &lt;li&gt;y좌표 : r-s+1 &amp;lt;=  y &amp;lt;= r+s (증가)&lt;/li&gt;
+      &lt;li&gt;x좌표는 고정: c-s&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;하
+    &lt;ul&gt;
+      &lt;li&gt;y좌표 고정 : r+s&lt;/li&gt;
+      &lt;li&gt;x좌표 : c-s+1&amp;lt;= x &amp;lt;= c+s (증가)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;우
+    &lt;ul&gt;
+      &lt;li&gt;y좌표 : r+s-1 &amp;gt;= y &amp;gt;= r-s  (감소)&lt;/li&gt;
+      &lt;li&gt;x좌표 고정 : c+s&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;상
+    &lt;ul&gt;
+      &lt;li&gt;y좌표 고정 : r-s&lt;/li&gt;
+      &lt;li&gt;x좌표 : c+s-1&amp;gt;= x &amp;gt;= c-s  (감소!!)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;마지막 처음 값을 저장
+    &lt;ul&gt;
+      &lt;li&gt;arr[r-s][c-s+1]=arr[r-s][c-s]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;script src=&quot;https://gist.github.com/kevinsung123/47b9b9073f44b34e4f6eab5223b1e52f.js&quot;&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://melevir.medium.com/python-functions-naming-tips-376f12549f9&quot;&gt;medium - Python functions naming: 10 tips&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 01 Mar 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/python/2022/03/01/python-two_dimensions_list/</link>
+        <guid isPermaLink="true">http://localhost:4000/python/2022/03/01/python-two_dimensions_list/</guid>
+        
+        <category>python</category>
+        
+        <category>twodimension</category>
+        
+        <category>list</category>
+        
+        
+        <category>python</category>
+        
+      </item>
+    
+      <item>
+        <title>[python] Python - List</title>
+        <description>&lt;!--more--&gt;
+
+&lt;h2 id=&quot;list-연산&quot;&gt;list 연산&lt;/h2&gt;
+
+&lt;h3 id=&quot;append-와-extend-차이점&quot;&gt;append 와 extend 차이점&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;append : list 끝에 1개 원소를 넣음&lt;/li&gt;
+  &lt;li&gt;extend : list 끝에 iterable의 각 항목을 넣음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;remove&quot;&gt;remove&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;list에서 주어진 object를 지우는 remove() built함수이다&lt;/li&gt;
+  &lt;li&gt;return 값이 없음&lt;/li&gt;
+  &lt;li&gt;syntax
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;list_name.remove(ojb)&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;parameter
+    &lt;ul&gt;
+      &lt;li&gt;parameter - object to be removed from the list&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;※Notes : list에서 처음 만난 object를 지운다
+  ```&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;code#1
+remove 기본 사용법
+```
+    &lt;h1 id=&quot;python3-program-to-demonstrate-the-use-of&quot;&gt;Python3 program to demonstrate the use of&lt;/h1&gt;
+    &lt;h1 id=&quot;remove-method&quot;&gt;remove() method&lt;/h1&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;the-first-occurrence-of-1-is-removed-from-the-list&quot;&gt;the first occurrence of 1 is removed from the list&lt;/h1&gt;
+&lt;p&gt;list1 = [ 1, 2, 1, 1, 4, 5 ]&lt;br /&gt;
+list1.remove(1)&lt;br /&gt;
+print(list1)&lt;/p&gt;
+
+&lt;h1 id=&quot;removes-a-from-list2&quot;&gt;removes ‘a’ from list2&lt;/h1&gt;
+&lt;p&gt;list2 = [ ‘a’, ‘b’, ‘c’, ‘d’ ]&lt;br /&gt;
+list2.remove(‘a’)&lt;br /&gt;
+print(list2)&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+- output
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;[2, 1, 1, 4, 5]
+[‘b’, ‘c’, ‘d’]&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+- code#3 
+주어진 리스트에서 모든 1을 제거하는 프로그램
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;python3-program-for-practical-application&quot;&gt;Python3 program for practical application&lt;/h1&gt;
+&lt;h1 id=&quot;of-removing-1-untill-all-1-are-removed-from-the-list&quot;&gt;of removing 1 untill all 1 are removed from the list&lt;/h1&gt;
+
+&lt;p&gt;list1 = [1, 2, 3, 4, 1, 1, 1, 4, 5]&lt;/p&gt;
+
+&lt;h1 id=&quot;looping-till-all-1s-are-removed&quot;&gt;looping till all 1’s are removed&lt;/h1&gt;
+&lt;p&gt;while (list1.count(1)): 
+    list1.remove(1)&lt;/p&gt;
+
+&lt;p&gt;print(list1)&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+- output
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;[2, 3, 4, 4, 5]&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+- 예외처리하기 
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;def remove(node):&lt;br /&gt;
+    global child&lt;br /&gt;
+    try :&lt;br /&gt;
+        child[parent[node]].remove(node)&lt;br /&gt;
+    except ValueError :&lt;br /&gt;
+        pass&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+### * operator 
+*연산자는 반복연산자
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Concatenating and repeating lists
+odd = [1, 3, 5]&lt;/p&gt;
+
+&lt;p&gt;print(odd + [9, 7, 5])&lt;/p&gt;
+
+&lt;p&gt;print([“re”] * 3)&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+### insert
+- 한개의 item을 원하는 위치에 넣거나 multiple items를 넣는경우
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;demonstration-of-list-insert-method&quot;&gt;Demonstration of list insert() method&lt;/h1&gt;
+&lt;p&gt;odd = [1, 9]
+odd.insert(1,3)
+print(odd)
+odd[2:2] = [5, 7]
+print(odd)&lt;/p&gt;
+
+&lt;p&gt;####
+[1, 3, 9]
+[1, 3, 5, 7, 9]
+```&lt;/p&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://melevir.medium.com/python-functions-naming-tips-376f12549f9&quot;&gt;medium - Python functions naming: 10 tips&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 01 Mar 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/python/2022/03/01/python-list/</link>
+        <guid isPermaLink="true">http://localhost:4000/python/2022/03/01/python-list/</guid>
+        
+        <category>python</category>
+        
+        <category>list</category>
+        
+        
+        <category>python</category>
+        
+      </item>
+    
+      <item>
+        <title>[Leetcode] 412. FizzBuzz </title>
+        <description>&lt;h3 id=&quot;problem&quot;&gt;Problem&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://leetcode.com/problems/fizz-buzz/&quot; alt=&quot;leetcode&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;주어진 문자열에서 반복하지않은 문자를 반환 없으면 -1을 리턴&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;approach-1--naive&quot;&gt;Approach 1 : Naive&lt;/h4&gt;
+
+&lt;h5 id=&quot;intuition&quot;&gt;Intuition&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;주어진문자열의 {문자:개수}를 가지는 dictionary를 구현&lt;/li&gt;
+  &lt;li&gt;주어진 문자열의 반복하여 개수가 1인 문자를 처음 발견 시 리턴
+    &lt;h5 id=&quot;algorithm&quot;&gt;Algorithm&lt;/h5&gt;
+    &lt;p&gt;Initialize an empty answer list.
+Iterate on the numbers from 1 … N1…N.
+For every number, if it is divisible by both 3 and 5, add FizzBuzz to the answer list.
+Else, Check if the number is divisible by 3, add Fizz.
+Else, Check if the number is divisible by 5, add Buzz.
+Else, add the number.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;approach-2--hash-it&quot;&gt;Approach 2 : Hash it!&lt;/h4&gt;
+&lt;h5 id=&quot;intuition-1&quot;&gt;Intuition&lt;/h5&gt;
+
+&lt;p&gt;This approach is an optimization over approach 2. When the number of mappings are limited, approach 2 looks good. But what if you face a tricky interviewer and he decides to add too many mappings?&lt;/p&gt;
+
+&lt;p&gt;Having a condition for every mapping is not feasible or may be we can say the code might get ugly and tough to maintain.&lt;/p&gt;
+
+&lt;p&gt;What if tomorrow we have to change a mapping or may be delete a mapping? Are we going to change the code every time we have a modification in the mappings?&lt;/p&gt;
+
+&lt;p&gt;We don’t have to. We can put all these mappings in a Hash Table.&lt;/p&gt;
+
+&lt;h5 id=&quot;algorithm-1&quot;&gt;Algorithm&lt;/h5&gt;
+
+&lt;p&gt;Put all the mappings in a hash table. The hash table fizzBuzzHash would look something like { 3: ‘Fizz’, 5: ‘Buzz’ }
+Iterate on the numbers from 1 … N1…N.
+For every number, iterate over the fizzBuzzHash keys and check for divisibility.
+If the number is divisible by the key, concatenate the corresponding hash value to the answer string for current number. We do this for every entry in the hash table.
+Add the answer string to the answer list.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://leetcode.com/problems/fizz-buzz/solution/&quot; alt=&quot;solutions&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://leetcode.com/problems/fizz-buzz/discuss/&quot; alt=&quot;discussion&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
+&lt;script src=&quot;https://gist.github.com/kevinsung123/ce7869eb3f4be8ac2847e2badb4f534c.js&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Tue, 01 Mar 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/leetcode/2022/03/01/leetcode-412-fizzbuzz/</link>
+        <guid isPermaLink="true">http://localhost:4000/leetcode/2022/03/01/leetcode-412-fizzbuzz/</guid>
+        
+        <category>leetcode</category>
+        
+        <category>412</category>
+        
+        
+        <category>leetcode</category>
+        
+      </item>
+    
+      <item>
+        <title>[Python] The Battle for Programming Language is Not Over Yet</title>
+        <description>&lt;!--more--&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;the-battle-for-programming-language-is-not-over-yet&quot;&gt;The Battle for Programming Language is Not Over Yet&lt;/h2&gt;
+
+&lt;p&gt;기술이 빠르게 발전하고 많은 프레임워크가 등장함에따라  올바른 작업에 적절한 Programming Language를 선택하는 것은 어려울 수 있다&lt;/p&gt;
+
+&lt;h3 id=&quot;pythons-regioon-of-dominance&quot;&gt;Python’s Regioon of Dominance&lt;/h3&gt;
+&lt;p&gt;오늘날 데이터 엔지니어의 작업은 SQL database를 상호 작용하고 쿼리를 실행하는 것뿐만 아니라  아래와 같은 작업도 실행 시킬 수 있어야 한다&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Managing infrastructure(through infrastructure as a code with frameworks with Terraform/Pulumi)&lt;/li&gt;
+  &lt;li&gt;Developing data pipelines&lt;/li&gt;
+  &lt;li&gt;Developing microservices/API/data frameworks&lt;/li&gt;
+  &lt;li&gt;Interacting with cloud services SDKs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Python has massive adoption today, and here’s why:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;The learning curve for new programmer folks is pretty easy (notebook helps a lot)&lt;/li&gt;
+  &lt;li&gt;The data science ecosystem : machine leraning, visualization, deep learning&lt;/li&gt;
+  &lt;li&gt;Cloud adoption : all major cloud providers have a well-supported Python SDK&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;the-brighter-future-and-rusts-potential&quot;&gt;The Brighter Future and Rust’s Potential&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Golang seemed to be a good competitor. Terraform and Kubernetes have massive adoption, and both are written in Golang. It’s also be desgined and supported by a major cloud Provider : google&lt;/li&gt;
+  &lt;li&gt;That being said, there aren’t that many data frameworks built aroud Golang. The learning curve is also a siginificant barrierr to catch-up for Python’s data average users.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Who would be next candidate then? Rust Here are four non-exhausitive reasons.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;General popularity
+    &lt;ul&gt;
+      &lt;li&gt;according to stack overflow study, Rust has benn most loved Programming language for four years in a Row&lt;/li&gt;
+      &lt;li&gt;Google trends also show a steady growth of Rust and &lt;code class=&quot;highlighter-rouge&quot;&gt;general fatigur for Python&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Another big news is that &lt;code class=&quot;highlighter-rouge&quot;&gt;Rust will be second language of the official Linux Kernel&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Performance and low-memory footprint
+    &lt;ul&gt;
+      &lt;li&gt;Rust’s performance is at another level because it’s compiled directly into machine code. No virtual machine, no interpreter sitting between your code and the computer&lt;/li&gt;
+      &lt;li&gt;In our cloud computing era, the footpring of your program on you compute system is driectly impacting your costs, but also the electrictiy usage and there the impact on the environment&lt;/li&gt;
+      &lt;li&gt;An interesting study by the New Stack revealed which programming language consumes the least electrictiy. Rust is at the top of that lists, while Python at the bottom&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Interoperability with Python
+    &lt;ul&gt;
+      &lt;li&gt;What if you could rewrite some part of your existing Python code base and still use it through your main Python program? That’s combining the best of the two worlds.&lt;/li&gt;
+      &lt;li&gt;A concrete use case would be to perform specific actions against s3 files, which can be pretty slow in Python. With AWS annoucning recently their AWS SDK ins Rust in developer preview, this is something you could perform in Ruut. Using a Rust binding for a Python library like &lt;code class=&quot;highlighter-rouge&quot;&gt;PyO3&lt;/code&gt; enables you to quickly do a simple interface to call your Rust program within Python&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;A lot of data projects are being rebuilt in Rust
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Apache Arrow&lt;/code&gt; is key common interface to build data processing frameworks. It has a great Rust implementation, and it’s pubshing other data projects to rise:&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Spark’s Rust equivalent called &lt;code class=&quot;highlighter-rouge&quot;&gt;data fusion&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Apache Delta Lake&lt;/code&gt; has a native Rust interface with binding in Python and Ruby&lt;/li&gt;
+      &lt;li&gt;Confluent kafka offer now a Rust binding&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;is-is-worth-it-through&quot;&gt;Is is Worth it? Through?&lt;/h3&gt;
+&lt;p&gt;Initially both Rust and python were built with differnet goals. The learning curve is steeper for Rust, and it will be difficult for some data citizens(Data scientists, data analysts) to jump on the boat. you are making a trade-off between performance and simplicity&lt;/p&gt;
+
+&lt;p&gt;The data enginner role evolves more strongly as devpos/backend engineer rather than just the SQL Person. t makes sense to try out Rust for some use cases in that context. Rust’s mindset is also valuable for any future programming language you would learn next.&lt;/p&gt;
+
+&lt;p&gt;In the very end, programming languages are just part of your toolbelt, and it doesn’t hurt to have more than one, especially when you see that the data engineer scope is expanding exponentially lately&lt;/p&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://betterprogramming.pub/the-battle-for-data-engineers-favorite-programming-language-is-not-over-yet-bb3cd07b14a0&quot;&gt;medium&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 31 Jan 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/python/2022/01/31/python-dataengineer-programming-language/</link>
+        <guid isPermaLink="true">http://localhost:4000/python/2022/01/31/python-dataengineer-programming-language/</guid>
+        
+        <category>medium</category>
+        
+        <category>module</category>
+        
+        
+        <category>python</category>
+        
+      </item>
+    
+      <item>
+        <title>[Leetcode] 136. Single Number </title>
+        <description>&lt;h3 id=&quot;problem&quot;&gt;Problem&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://leetcode.com/problems/single-number/&quot; alt=&quot;leetcode&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;주어진 문자열에서 반복하지않은 문자를 반환 없으면 -1을 리턴&lt;/li&gt;
+  &lt;li&gt;Sol1
+    &lt;ul&gt;
+      &lt;li&gt;주어진문자열의 {문자:개수}를 가지는 dictionary를 구현&lt;/li&gt;
+      &lt;li&gt;주어진 문자열의 반복하여 개수가 1인 문자를 처음 발견 시 리턴&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
+&lt;script src=&quot;https://gist.github.com/kevinsung123/18db2dd4017080bdf8121bc57eccdf36.js&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Mon, 08 Nov 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/leetcode/2021/11/08/leetcode-136-single_number/</link>
+        <guid isPermaLink="true">http://localhost:4000/leetcode/2021/11/08/leetcode-136-single_number/</guid>
+        
+        <category>leetcode</category>
+        
+        <category>136</category>
+        
+        
+        <category>leetcode</category>
+        
+      </item>
+    
+      <item>
+        <title>[Issue] too many files issue</title>
+        <description>&lt;h3 id=&quot;issue&quot;&gt;Issue&lt;/h3&gt;
+&lt;h4 id=&quot;dockerd--http--accept-error--accept-unix-varrundockersock--accepty4--too-many-open-files&quot;&gt;dockerd : http : Accept error : accept unix /var/run/docker.sock : accepty4 : too many open files&lt;/h4&gt;
+
+&lt;h4 id=&quot;문제&quot;&gt;문제&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;too many files 라는 메시지를 보내며 dockerd가 정상적인 상황이 아님&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;해결&quot;&gt;해결&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;docker daemon이 어떻게 시작되었는지 확인이 필요. 만약 &lt;code class=&quot;highlighter-rouge&quot;&gt;systemd&lt;/code&gt; 서비스로 되어있다면 limits을 set to &lt;code class=&quot;highlighter-rouge&quot;&gt;infinity&lt;/code&gt;로 설정 변경 필요(아래 명령어로 확인 필요)
+    &lt;blockquote&gt;
+      &lt;p&gt;cat /proc/$(pidof dockerd)/limits&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;docker 서비스 위치 파일 확인
+    &lt;blockquote&gt;
+      &lt;p&gt;sudo systemctl status docker&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위의 명령어를 통해 /usr/lib/systemd/system/docker.service 위치 확인&lt;/li&gt;
+  &lt;li&gt;위의 daemon 파일을 수정
+    &lt;blockquote&gt;
+      &lt;p&gt;LimitNOFILE=infinity&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;open file 확인
+    &lt;blockquote&gt;
+      &lt;p&gt;ulimit -a&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;system 전체의 limit 확인하기
+    &lt;blockquote&gt;
+      &lt;p&gt;open files와 같은 수치 변경 시 시스템 limit보다 작아야 함
+cat /proc/sys/fs/file-max&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;참조&quot;&gt;참조&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/moby/moby/issues/35961&quot;&gt;github-issue&lt;/a&gt;
+&lt;a href=&quot;https://devbrain.tistory.com/53&quot;&gt;blog&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 27 Oct 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/docker/2021/10/27/docker_too_many_file_issue/</link>
+        <guid isPermaLink="true">http://localhost:4000/docker/2021/10/27/docker_too_many_file_issue/</guid>
+        
+        <category>docekr</category>
+        
+        <category>issue</category>
+        
+        
+        <category>docker</category>
+        
+      </item>
+    
+      <item>
+        <title>[Quiz] GCP Bigdata and ML Quiz</title>
+        <description>&lt;h2 id=&quot;moduel-review2--google-cloud-platform-big-data-and-machine-learning-fundamental-quiz-answers&quot;&gt;Moduel Review2 : Google Cloud Platform Big Data and Machine Learning Fundamental Quiz Answers&lt;/h2&gt;
+
+&lt;h3 id=&quot;question-1--complete-the-following&quot;&gt;Question 1 : Complete the following&lt;/h3&gt;
+&lt;h5 id=&quot;you-shoule-feed-your-machine-learning-model-your-__-and-not-your-__-it-will-learn-those-for-itself&quot;&gt;You shoule feed your machine learning model your &lt;em&gt;__ and not your __&lt;/em&gt;. it will learn those for itself!&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;data, rules&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;question-2--true-of-flase--cloud-sql-is-a-big-data-analytics-warehouse&quot;&gt;Question 2 : True of Flase : Cloud SQL is a big data analytics warehouse&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;False&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;question-3--true-or-false--if-you-are-migrating-your-hadoop-workload-to-the-cloud-you-must-first-rewrite-all-your-spark-jobs-to-be-compliant-with-the-cloud&quot;&gt;Question 3 : True or False : If you are migrating your Hadoop workload to the cloud, you must first rewrite all your Spark jobs to be compliant with the cloud.&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;False&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;question-4-you-are-thinking-about-migrating-your-hadoop-workloads-to-the-cloud-and-you-have-a-few-workloads-that-are-fault-tolerant-they-can-handle-interruptions-of-individual-vms-gracefully-what-are-some-architecture-considerations-you-should-explore-in-the-cloud-choose-all-that-apply&quot;&gt;Question 4: You are thinking about migrating your Hadoop workloads to the cloud and you have a few workloads that are fault-tolerant (they can handle interruptions of individual VMs gracefully). What are some architecture considerations you should explore in the cloud? choose all that apply&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Use PVMS or Preemptible Virtual Machines&lt;/li&gt;
+  &lt;li&gt;Migrate your storage from on-cluster HDFS to off-cluster Google Cloud Storage(GCS)&lt;/li&gt;
+  &lt;li&gt;Consider having multiple Cloud Dataproc instances for each priority workload and then turning them down when not in use&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;question-5-google-cloud-storage-is-a-good-options-for-stroing-data-that-&quot;&gt;Question 5: Google Cloud Storage is a good options for stroing data that :&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;May be required to be read at some later time (i.e. load a csv file into BigQuery)&lt;/li&gt;
+  &lt;li&gt;Mau be imported from a bucket into a Hadoop cluster for analysis&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;question-6--relational-databases-are-a-good-choice-when-you-need-&quot;&gt;Question 6 : Relational databases are a good choice when you need :&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Transactional updates on relatively small datasets&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;question-7--cloud-sql-and-cloud-dataproc-offer-familiar-toolsmysql-and-hadooppighivespark-what-is-the-value-add-provided-by-google-cloud-platform&quot;&gt;Question 7 : Cloud SQL and Cloud Dataproc offer familiar tools(MySQL and Hadoop/Pig/Hive/Spark). What is the value-add provided by Google Cloud Platform?&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Running it on Google infrastructure offers reliability and cost savings&lt;/li&gt;
+  &lt;li&gt;Fully-managed versions of the software offer no-ops&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;참조&quot;&gt;참조&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://priyadogra.com/google-cloud-platform-big-data-and-machine-learning-fundamentals-quiz-answers/&quot;&gt;coursera-quiz answer&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 17 Oct 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/gcp/2021/10/17/gcp-cousera-de-quiz/</link>
+        <guid isPermaLink="true">http://localhost:4000/gcp/2021/10/17/gcp-cousera-de-quiz/</guid>
+        
+        <category>cousera</category>
+        
+        
+        <category>gcp</category>
+        
+      </item>
+    
+      <item>
+        <title>[AI] CNN</title>
+        <description>&lt;h2 id=&quot;ai-cnn&quot;&gt;AI CNN&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;입력-tensor의-공간정보를-무시하는-flatten-later&quot;&gt;입력 tensor의 공간정보를 무시하는 Flatten Later&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;fnn(feedforward neural network)로 학습할떄는 입력데이터가 1차원의 벡터로 변환&lt;/li&gt;
+  &lt;li&gt;그래서 이미지의 가로세로 공간적인 정보를 무시하고 무조건 납작하게 하는 Flatten 레이어를 사용&lt;/li&gt;
+  &lt;li&gt;28X28의 흑백이미지는 flatten layer를 통과하면 784길이의 벡터가 된다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;cnnconvolutional-neural-network&quot;&gt;CNN(Convolutional Neural Network)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;이미지 처리에 특환된 신경망&lt;/li&gt;
+  &lt;li&gt;Flatten layer를 사용하지 않고 이미지의 정보 그대로 활용&lt;/li&gt;
+  &lt;li&gt;데이터 처리는 fnn에서와 마찬가지로 가중합을 한 뒤 비선형 함수(relu)활용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUTExMVFhUVFxgbGBYVGBcYFxwXGBgYHhUbFhgcIishGBwnHBYYIjIiJissLy8vFyA0OTQuOCsuLy4BCgoKDg0OHBAQHC8mISYwLi4uLi4wNi4uLjAuMDAuLi4uLi4wLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4vLv/AABEIAIIBgwMBIgACEQEDEQH/xAAbAAEBAAMBAQEAAAAAAAAAAAAABAIDBQEGB//EAEcQAAIBAgQCBgYHBQUIAwEAAAECEQADBBIhMUFRBRMiMmFxI3KBkbHSBhVCUpOhshQzgpKzU2JjwfAHJENzosLh8aPR0xb/xAAZAQEBAQEBAQAAAAAAAAAAAAAAAQIDBAX/xAAmEQEBAAICAgICAgIDAAAAAAAAAQIREjEhQQNhBFET4aGxIjJx/9oADAMBAAIRAxEAPwD9xpSlB5SpcXjEt7nXgo1J9lc701/+5bPuI+LD3CDzFXTNyUYnpRR2U7bbaaifZ3jodByImalbC3SDduOysqkgKdo1jlGm3ERMGunhcGlvYa8WO5/1HCssd+7f1W+FXf6Sy3tTSlKy2UpUlzESSqDMw3+6vrHn4CTttvQVUrnvhQXTOSxIbwA27oG3nv41uGCA7rXF/jZvyeR+VVN1XSubeZ00W7mY7KyKxPj2SsDxOlUYJ2ZZcANLA5ZjRiNJ8qaNqqUpUUpSlApSlApSlApSlApSlApSlApSlApSlApSlApSlApSlApSlApSlApSlApSlApSlApSlBqu3AokkAeNcu70g9w5bI/iPx5Aee+o0IrThLBvkvcYkAxlHkJA5DWOe3ESe3atBRAAA8KvTHnJz8L0Wq9p+23jqPz7x21PIGJrp0Fcjpj6QYfCj0twBuCDVz/CNh4mBSS26i244zd8OvU+O/dv6rfCub9H/pBaxYfIHUoRKuAGhu62hOhg108b+7f1T8KWWXVJlMpuKK0XryqJJ8uJJ5ADUnwFb65ljCli1wXGDFnGyEABiABKyBoNAai1Rkd+9KL90HtH1mG3kPfwreiBQAAABsBoK0Zbw+1bbwysv55m+FYPfuKJa2NwOy86kgCcwGkkc6ptniGAdCTAhpJ8v/FedYz9zsr98jU+op+J08CK0tYJe2bhBMmFHdBiRHM6bnloBW3HXHGUIASxMydQACTl4FuU6URutWFXbjuTqSfE7mvMHsfXf9bVy8PiCJl2Rszdm+JU9owA40B20ViB92qMLjMoPWDJ2n7W6d4/b4fxBaaJY6lKxBmsqjRSlKBSlKBSlKBSlKBSlKBSlKBSlKBSlKBSlKBSlKBXlK4mExDFLb9czMeqzLCZfSZZGizs07ztNEt07dK5uC6TN1Qy2n8QSgYHkwnQ1R+0XP7Fv5k/+6ujcV0rmNfZ3VQxtgi4TGQmUZBEkEfaPurdgGbtqWLZXgE5ZjIja5QBux4U0bW0pSopXlchMRc6u3cLg5jalco2d1B8dA1dHrWzRkMfelY90zV0krfSuPi72KDnJbDLnSO6B1cS8EtJcnTUACRvrVHRT3ih65QrZjAEd3SNifH/AFqWvG05edOhSlKjTlfR/uN63/atdWuT9H+43rf5CrsTiktiWMfE+Qq3tnHpwumulLz3DhcIB1oA6y63ctA7ebkbD/zGzob6L2LBzsOtvHVrt3tMTzAPd+Piax+j+ICIQyOLju9xyFLAszSYKgzllVjhA4a1h0z9McNh5Es9z+zAII9bMBl+PhXScr/xxn9uN4/9s7/SrFIEx1lx/wAW1dRvEoUdPcOs99dTG/u39U/Cvy/G/Tq7cu2rgtW1FpywEsSZVlILacGPDcDyr9Ku3g9guuzJI8mEj41fk+LLDXI+L5sM98V1T4Lun17n9RqoqfBd0+vc/qNXF6G+p8b3R69v9a1RU+O7o9e3/UWkS9Pb/ft+Z/Sa045Lhym3lkEzJjQj7OhE+enwrbf71v1j+hqpoduOUyzpfSdzpdBnfs9uJ8FFSYUhZCOinM3ZVuqbvH/hPKknyFfRVLhkBVgRIzvodR32q7ZuLlF2t65SnE5RlX+JSTa14nOpravTarAYZi3d6sHM0Dgh1jhKll5mt2PwShYtAW2LKJXMu51MIRJjn+e1Rt0OwzHKDm7xzAs3rHKjHyLxV8e0vKdK8Pirtx2ytaChVIABfcuCCwYCeyOGk8arzXh9lD4hiPyyn418u+DvpdYoXVgibgnSbkDLbzdnTYmK3YfpvGLKvhjcCwOst8J+/b3JjWB4aCavHfTMz13t3r2PyCXtuo59hteAAVixJ5ATVdq4GAYaggEHwO1cvo6+rvPaZoPacFCCMuZVtnVNHG4k6STvV3Rf7m1/y0/SKzY6S7VVNexAU5QCzHZRvHM8APE1qxr3JVLeXUMSSYIC5R2dCJ7XHlWNpymgsv4kFGk8yS2Zj7KaXbK3dumTFswSIlhEf3oM+4Vmb9wb2ifUZSP+orWnD45BmnMO02rI6jfmRFbT0haiesU+CkMZ5ADUnwFE39n7ao3W4PNHI94BH51ssYhHnKytBgwQYO8HkYI08a0Zblzebacge2fMjuDy121G1e4K0qtcCgAAroPVFDdXUpSo0UpSgUpSgUpSgUpSgnxV7IpO50AHNiYUe0kCuB0baAsWPQEGbRNz0cSWUkghs0GdNNorsL6S5P2beg8bhHaP8IMebNyrk4O6htWAMRmM2fRza5rIgLm08+Fajnl26C2IdwpyupzKeBVyTD8xn6zxHDx3jGjK5IIZBLLx2MRzBjQ8fMED3EHK9t+BJQ+TRlP8ygD1zWjpK1na2oMPJbNxCpBMj7Sl+rBXx4EAidtddNNyxla0rILh6u4WHZjMWtlm7Wm5PvqnopY60ZcnpO6I09Hb5aePtqbF3O3bNx+pOS4CQyQTmt6AuCIO+wOlUdEsD1pD5x1nf7Jn0dv7oA8NOVX0zO3SpSlZdHzVlF6mz/u5U5rHpItf2ia6Nm18uNdfrLfWR1van93mHL7u+2tcmy69TZ9OWOax6ObX9ommi5tPPhX0dWsR8tdwlhbpPWlXDhcuQwHe8biTA5sBvBVSeEjZgOjrN0KbV0sENtpy6nIuUK5MSvZPZ4Ga7N/o+05Ja2jEwSSATIBAPmASAeE1sw+ES3ORVWYmBE5RCz5AAeyry8Jw8qaUpWXRyuge43mPgKnfCi5iWBJELOkaxAEyDpBOlUdA9xvMfpFTXcbbtYi41xwii3JLaaSu078tOOlanfhy8am3E+n2PvYZbQtXGGcXFJhQQoyd0gCD41+bE19T9POnVxDoioyi1m7T6FswX7O4EAHXnsK+Vr6v42HH45ueXyPy8+XyXV8O3a6EBwL4sscwuBVXSCshTPjJP8tfcdG20GCteltKTYtmACrdxd8rgsfGvzgY+61kYcapnzAAEsWOkDwnWAN6/VujejFTB21dO2LKBg8tD5RMAyF15V5/ytyTlff+Hp/E1beM9f5amxsaW7zseSWbtw+92IFYYK5jiPRhYzPriEVZ7bTHVuSD5ivplUDQaVpwXdPr3P6jV4uX09/H7aOjlv8AaN4qdoCd0RMxOvLcnY1Rje6PXt/1FrfU+N7o9e3/AFFrPtvWo9xHet+sf0PVFTYnvW/XP9N6poR5U+D2Prv+s1RU+D2Prv8ArNU9mM+z66/Gomx+YkAm2oJBuMpEkGDkkZYn7R5bbGrcZ9n11+NS4TEdnKgzNmeeCjtt3m4eWp12p6S9ouijnaVvMSbNkmCjanrJmQT/AO6sw63Q12GQ9saFSCfR2+IJj3VosYRg5Rkt3Mtq0JbTY3BsQ3KpruGUsym04U3gCEbKpHVKYKqwkSJ2qs9RVZxnpCRZzFp7dtww0AkAvl5DuyNOdb+i8bbNu0uaGyLAYFSeyNg0T7KmvsA9sC5dEE6FJgZTrqkkTA34ivMHeJsoCysuRey1m5r2RuZj8qWEvl1H/ep6j/qt1RXzpcrcXKGTstpbLkbpsj28qjyjzrK99Ieq/eoY55YbyCgtJ9opxq85O3Zwv2vXb41hi+/Z9c/07lc/ojpy1eOVM0szbqVjciSd9jtO1dDFEZ7X/MP9K5UssvlZZZ4V1Jhu/d9Zf0LVdSYbv3fWX9C1FqfH9KpakEwQJJIOUe4dpoBOUa6axvU+ExysCf2g95u8qhNCY3UHbxr3pHDm5mAQOJg90kAoO0oYgE+3j7KiTBKQSybM2nV3PvHjaYqPdW5rTnblt2bV64dVe1cHhK/mC3wrM37g3tT6jqf1Za+fu4O3MsYjZTcAP8lxF+NabttxMu7JA0JOQS256tmU6DYiOYpxOdj6bBYxboJWdDBkcYB0OzCDuCRVVfNdD9NJnNu68XGCEZxkZtAO797yERrpBA+lqWareOUyjm3MeCxUMFgkF30EjcIDGYjadvPUUwDO9tWF7MSoJkIRMa92K3YIgISTAD3f6j1rwOGtvatkojdhdSAeA40Tyo9KPuN/MnzVLjsa9tNU7R0UhlKzEycxUwACT4A1T+xJwzDydwPdMflUeHwk3nZ2LhCotho7JKgswgDUyBJ1EeJqTS3anox0NsZM0CR2gQ0gnMWniTJnjM1zsM9zqLEogX0Gock7pHZyj411MDs3rv8AqNcTB3UNqwBiMxmz6PNb5rIgDNp58KsS+ndxlnOjKDBI0PJhqp9hg+ypujbvWlrsQIVQORAl/bmbKfG3Vd+6ERmOygk+wTUXRKG3mttuO37bkl//AJOsPkRU9Le2WLLC7byBSclzRmKiM1riAawwllna6WJU9ZqEYx+7t8YE+6vOkXUXbea51YyXO1KDja07QI/9Vn0SwPWkPnHWd6VM+jt8VAHhpyp6T23/ALH/AIlz+asreGgznc+BaR7qopTbWo4FvP1FmUQLmsahiW/eJGmX/Ou/XzVm6htWQMRmOax6ObX9okiAubTz4a19LSs4vaVLYuEtcB+ywA7v3FPAk7k94A+EQTVUbKUpQcroHuN5j9Ir5j/aBcUYrAl+4rktOwGe1mJ8IFfTdA91vMfAV8n/ALTMM929hktqXYrchVEne37h413+DX8k39/6eX59/wAXj6fM/THGJexd10IZeyoYag5VAJB4iZ18Kw6B+jl/FmUXLb43G7vjH3j4D2kV9b9G/oIixcxJDt/ZKZQHk5+0fDbzr7m3bCgAAADQAaADkBwr0Z/lTDHhh69vN8f4l+TLn8njfp+ZdJXrfRrixh7YN4hc1+5BYBuFtdl/1vvX6Tiz2G/1xr4T6SfR6/iukCUWEC25uNoojcD7x8B7Yr7rF9w/64iuHy2WY337en4JlLlNePSqp8F3T69z+o1UVPgu6fXuf1GrzvS31Lj2AWTpD2/6i1m17WFGY8eQ8z/lvWjFWtAWMnPb8h6Rdhw896sL0yuh3KlYUKZGYHXskbSIHa3PLas+sujdFI/uvr7ioH51VWm5cA8TwA3P+uZ0oaa/2uO9buL7A36Cax6OcMhImCzkSCNMx4Gs+rLd7b7o29v3vh8apqCbGfZ9dfjUhtqxPVKBqZdZVZO/dILmfZvrOlWYrDLcXK4kaGJI2Mjasf2Yja44HLsn4ifzqpYnHRY3zvm07RILaf3iJA30EDU86jHR9ws+W8Vy3AZK5z+6X7zcjXVyXfvKfNTPvDf5Vot4ZyXzMFDNMITJ7Kr3tCO7w18asqXGI/2e6pKpdzN9qEWSebuZjygmNhGlWYfo4Kiqz3DlUDR2XYRssVZbthRCgADgK2VLVmLmXMFa6xcyhhkfvkvxt8WmsrSA/ulVF++FA/kHHzOm29bcZghcKklhlmIiNY3DAg7A6jhXotXRtcU+skn/AKSvwps0mxWAUKzL1mfKdVd8x4mADEnwr5+70fclMqPBdiquLXFXOua1M7/aI+NfUlr33UPiHZT7sp+NT4m5dZky2WlWJlmQL3HG4JMSw4VZlYzljK4pw+IQEsmVRxR7Vr3kCvMLg8YQzrKFjMPfaYAA19GeXEA19DawmoZznYbGIVfUXhx11Ou9WVeR/H9vkjZ6SVz6RQpglsouDlEBFbSOXEb61sw1m+vfxKL4taxCSeJ7V0L7hX1MUipyOE/dc+wCwlb+fnojL7lAP51Fi8KBcLXEsOAgPbXIJzaanNrNde9hbb95Fb1lB+Na0wFpWDBBI28PVGw9lJVuLn4XBK2ZzYVSCGRe7JUGCeyCAZ2I9ldFHuTqihddQxJ2WNMo4lhv9kc9Ka9qbak05AV4ZHVlQtc1UZiwZmO6yUEHz8uOs2Lafu3KD+zd7iL/AAzqvuI02rtUptOLm4a+HMC4wb7rhD7iB2h4gmsEvOjXCSh7YEQyknIugAzEnwjhVl/BW37yKfEgT5g7g+NS2sGbRLIucHeT6QDkrHvDQaGNtzTwmqowCsFOYZSWYxMxJJGvlUdi1c6u1aKgFOqk5gdEI1iJ1ymK6GHxKvMHUbgyGHmp1FYpbPWs3Aog+zuC88M3EbkjkBrJdMcb2iifeaT6qa/qyD+Kp+kb3VvbYQWYlMsxo0QTyAfIJ/v8yAfXvxcZgMx0RF5mMzmeA1UE8MnsrP8AYpR8xm441fkR3co4Kp1A9u5JodsLlq4pR5RyquGLnqx2ihkQpgDLEHhGprfg7bjOXCgu0wpLADKq7kD7vKtdwm7YMDtMh7PZkNEEdoFZB01BGm1XihJ5e0pSo05CWrnV27RUShtEnMNkdSTG+uU116l6s9YWjTIBPZ3k+GbjzjwqmrUjwKNTz3rKlKilKUoOT0D3W/h+Fcf/AGi4+7Zwym05QvcCFh3spRyQDuNVGorsdBbN5r+mpvpX0GcZbt2w4QLdDMYk5QriFHOWG9dMLjM5b04fJMr8dmPaf/Z0f9xT1rn62r6U1D0V0fbwtlbSSESTLGTqSWJPmTWzrWfuaD75H6Bx8zptvWc7LlbG/jnHGS/psvXgsDcnZRqT5D/PYVgLTPq+g3CA+7MePkNPOs7OHCzG53Y6k+Z/y2HCqKy2VzVFwSpViuZiChXUMxOpJBG+w5b8K6Ne0LEiYpBpBUDmjKB7YisMRiUZey6mHtzDAx213ira1vZVolQYMiQDB8OVU1WAYt3dB94/9o/zP51nbtBduO5OpPma20qKUpSgUpSgUpSgUpSgUpSgUpSgUpSgUpSgUpSgUpSgUpSgUpSgmv4ZXgnRhsw0YeR5eGx41xcCexbJuO10m3Iz3Z1K5wyE5efADwFfR15V2zcduRgcLetySttmJJLZ2G7FiFGQwJJO9WdZf/s7f4jf/nVde02smnEupldRcJRSLrQlxwuYtbPeUKTu5g8zVnRZlDBJGdspYsxidNW1NXUoSeXtKUqK+fssuS2Q9w3S1rMC9w7uvWSpMbZuGldiLmacyZeWU5tvvZo38K30q7Zk04VixjIGe4p7QmCASsmQDk04eYHAmsxh8UI9IGidyokZ9J7GsoANIgk76R2qVdpx+3Owtq9l7ZUtLctsxy/9MUro17U2vFyegtn8x8KsuYkA5QMzfdHDxY7KPPlpNSYTBXEzLnGUmZAh45ch5/Der7VkKIUR/meZPE+JpTHek729C90zlE5R3RGu32j4nloBUg6fsSFBaS+SI1mW/LsNtvHOus6g6HUHhWkYVAQQigjYhRI32P8AE38x50mvZZfSbCdL27rKqZjmXMDGkZbba+y8nv8ACulU1rCovdRV32AHeILbcyBPkKpqXXpZv2nxWIFtSzTAgaakkkBQBzJIHtqC907ZTvFhqRJUxK5s2vIFSCeHlrWzG3YuKlyDauKV7QBXrJEK0/eBMTp2Y3Iqj9it6nq0k79ldYBUTz7JI8iRWpr2zd3pGenbOurdnvdk6ASST5KM3kyniK2XumrSie0ezmgDWIuH4Wn91Utg7Z3RTqG1Ud4ABT5gACfAV5+w2h/w02I7q7MZYbbE6mng1kjudO2Vmc+hIMKT2gTK6bmATA4VXYx9twhDrFwkJqO1lmcvPYnThWX7Gk5siTtOUTE5t/W189a2LZUQAoAGogDQmZjluffUulnL256dO2S2UEyGddhuhQNx11daswmMW4SFns7z5kfFTWLdH2jM20MzMqv2ozcOMCfIVus2FScqqsmTAAk8zG5pdeib9t1clenbJJEto7IdNAVZVJJHDM6j211qnbCoYJReySV7I0J3I5HxpNe1u/SG305ZImW+zupGjFAp9vWIfb4Uw3Ttm5lyse0QNREEhYBnYy4EbzPKql6Psja0mkkdldyQTw4kA+wVkMHbkHIkgyDlEgwBI5GAB7BV8M6yU1PicSEyzJLNlUASSYJ+Ck+yqK1XrKsIZQwkGCARIMg68Qay25g6fs9nVhn7sqRIOXKfI51ifjpWS9O2SJlo55TpMDXl2my+BBHA1YuCtDa2m5PdXckEnzJVT5qOVenB2zBKIYLEdkaFu8RyJkzzmteGNZftO/S9sGO0TIGg55InX/EX31pb6QWQASWAOxKmP72vIaSeFXJgrS7W0G2yqO73fdw5V4MDaknq0kxPZXWAQJ9hI8jTwayepjEMDMJZM4WRmy843jWosL09ZuZcpPaEjQbEuOf+G2u1dIWxyGggacOXlWgdH2tPRW9IjsrwJIjTmSfbU8Lds8Hi1uDMsx4+QPwIqW90vbV2tnMWUgQBMkrmgfw668jyq2xZVBlRQo5KAB46CsL2FRgQyKwYyQVBBIiCQdzoPcKeC70iXpyydi0HNBymDlDFiPLIw86x/wD6Gx2u0eySDIiIzSTPCEYz4c9KtbA2iSTbQkkEkqNSBAJ01IBocFaO9tP5V5k/Ek+ZNXwmslQNe0pWWylKUHlaMXiVtoXbZd/fHHzqe3iS98qplLakPy6xipUA81UGR/iLXlu/N25auRrD2wQNUhQ0cyrgk8sy8xV0ztrv9N2UiSZIuEADX0RIf4MRzCmsX6ctLObMuU6yB98JMAkkZjv4VZ+w2tfRprJPZXUmZJ017ze886yOFSZyLPPKJ3zb+sJ89avhNZM8LiFuIrqZVgCD4Hatta7VsKAqgAAQABAA4ADhXKxvRL3C5F4rmYEaNIhSpEhxtOZdBB1Oap42ttkYP0jiB/wp3Oit3QbvInXs2tNznOmmlOExV13gplQZ9SGBlXITfQgplafMeUVz6Puc0Yi4JkjfsljdnjqvpNjy0jTLtPQrGQbsg591OmZywKw24kAkzOVdq1dMTk7dQ4npJLbZWmSARA3lgoC8yWYeU6xUuE6JZLgc3SQCxywROY3CATmgjtjhrkXaK6N3Co3eRWkZTIB7J3GvDwrPjbe7Y546es6kZiAYJgaHqzcMiZ7gPDhFe2+nrLEBWJLZ8ojfqwC2/gZHODV37JbiMixyyiO7l29Xs+WleNgbRmbaGd+yuuka89NKvhNZfswWKW6i3E7riVJ0kHYx4jWqa127YUQAANTAHEmT+ZmpL+JPXW7aHUS1zjCZWCg8iXIjmEbkan/jW9Ty6FKUqKUpSgUpSgUpSg03rKupVlDKRBDAEEeIO9SDom3w6weAvXgPYA0CuhSqmog+qbfO7+Ne+en1Tb53fxr3z1fSm6cYg+qbfO7+Ne+en1Tb53fxr3z1fSm6aiD6pt87v41756fVNvnd/GvfPV9KbpqIPqm3zu/jXvnp9U2+d38a989X0punGIPqq3zu/jXvnp9VW+d38a989bekcatm21xgSFiQsTqQNJIHHnXNufSO2q3WZLgFooG0UklwCAoDEkgGTw3iasmV6Ztxna36qt87v41756Hoq3zu+y9e+epvr1M7KUcQ+TN2CpPVNdlYaYyLOoHeHjE7fSizFzsXD1YtyAEk9aUCDvad8d6NjEwaayS5Ys3uXxc/Z851GcX4XMLYMMsRlNzMQAYiGmCRrcOirfO6fE3r3zVhjukbdoszKSUtNcJAWcgIkAk7zGm2lT3PpBaWQQ4K2TeIgHsgSVkGC8axPtpq3qG8Z3Vf1Vb53fxr3z0+qrfO7+Ne+eoE+k9klRDguFKyBBzXDbABBgmVLaGCoJE1mn0jslgvbBOSJA1ztl0M8DqRvBnWnHI54fSz6qt87v417569+qbfO7+Ne+esOjOlUvzkkQFMNlnK4lGgEkAjXtQfCujUu521NXzEH1Tb53fxr3z0+qbfO7+Ne+er6VN1dRB9U2+d38a989Pqm3zu/jXvnq+lXdNRB9U2+d38a989Pqm3zu/jXvnq+lN01EH1Vb53fxr3z14eiLX+IfO9eI92fWuhSm6cY1WLCooVFCqNgoAA8gKxxOFS4IdQYMidweancHxFb6VFQfVNvne/Hv8Az0+qbfO9+Pf+er6U3U1EH1Tb53vx7/z0+qbfO9+Pf+eteI6XVGcZXItgF2AGUExC6kEsQZ0EeNYXunLavdtwxa0oYhRM7SF11IzITMAZxrWvLO8W89E2/vXvx7/z1Dcu30uDDhyS4LLeIBZbawLgIiGcFkCkj7ckHKc2z6/tSBDai0QRkIIuuirlhu0AbiyyyviTpWq39ILLBbgtvmIIQQhYy6LlWG0zMV3I7usRSS+4luPqrR0UnFrxPPr7wn2BgB7ABWX1Tb53vx7/AM9SYv6QW7ZdSrlrdvrGUBZy6ZhqwGZQysROxETS99ILazKXJTMXACkoqBS7NDQQM42k7wDTWRyxV/VNvne/Hv8Az0+qbfO9+Pf+etGF6btXLptLmzg3AQQB+7IBO+oJOhHI7EV1hUu52s1ekH1Tb53vx7/z1vw2FS2CEULJk8yebHcnxNU15U3WpJHtKUopSlKBSlKBSlKBSlKBSlKBSlKBSlKBSlKCTHKDbMidV31+0K5i4S2918yI0uhOZQZPUtqZ3Ne0rcc8u2NzCWzYIKIRmt6FRHcRf06eWlauksMnpewu68Bwazl90UpW525ZdKOmbCMyyqnsXRqAdMp08q1XMFaIk20JMgnKskdREExqI0pSs/ovbP8AZbevYXvWvsjhfcj8yT7a9GFtyOwuj2iOyNCC0EcjqfeaUrRFfReHRC+VVXWOyANBMbV0qUrle3fHopSlRopSlApSlApSlApSlApSlBxOksMjMxKKSbUEkAkidieIrWmCtQG6tMxV5OVZOg3Ma7D3UpXWdPPe2SYO2G0tpotkDsjQZl0HIdlf5Ryrx8LbKKCikdQBBURGZTt5ge6lKiMXwVqCerSSGBOVZI6kCDpqIA08K3X8FaY9q2jelO6g7hZ38h7hSlVfTPCYdBdVgqgziNYE63ROvjXWpSuddsXtKUqNFKUoP//Z&quot; alt=&quot;cnn&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;2가지 처리영역이 존재
+    &lt;ol&gt;
+      &lt;li&gt;feature extraction 영역
+        &lt;ul&gt;
+          &lt;li&gt;convolution과 pooling라는 2가지 연산을 통해 수행&lt;/li&gt;
+          &lt;li&gt;이미지 형태로 그대로 네트워크가 받아 들임&lt;/li&gt;
+          &lt;li&gt;그 위를 어떤 작은 네모 필터가 돌아다니면서 정보를 추출하여 다음으로 넘기고 추출된 정보(feature)중 핵심적인 것만을 남기고 불필요한 정보는 버리는 샘플링 작업이 있음&lt;/li&gt;
+          &lt;li&gt;추출 및 샘플링 이 두 과정을 여러번 반복하다 보면 이미지에서 주요한 특징만 남음&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;task 수행 영역
+        &lt;ul&gt;
+          &lt;li&gt;추출된 정보를 다시 1차원으로 누르고 Dense레이어 원하는 대로 연결 다음 softmax로 원하는 수만큼 분류를 한다든지 하는 역할을 수행&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;–&lt;/p&gt;
+
+&lt;h2 id=&quot;convolution&quot;&gt;Convolution&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;이미지로부터 feature를 추출하는 연산&lt;/li&gt;
+  &lt;li&gt;conv필터가 입력 image를 상화좌우로 훑으며 주요한 특징이 있는지 찾아내는 과정&lt;/li&gt;
+  &lt;li&gt;conv 필터가 여러개 설정하면 그만큼 이미지로부터 다양한 특징을 추출 가능&lt;/li&gt;
+  &lt;li&gt;convolved feature라고 부름&lt;/li&gt;
+  &lt;li&gt;이미지를 pixel단위 훑을때 겹쳐지는 pixel과 가중치를 곱해서 그 가중합의 결과를 다음을 ㅗ넘김&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;convolution연산이 이미지로부터 특징을 추출하는 역할&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;입력 tesnor와 convolution필터가 가중합을 한 뒤 , relu와 같은 activation function을 취해주면 됩니다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;color-image&quot;&gt;Color image&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;컬러이미지는 3차원 텐서이므로 conv를 적용하기 위해 conv 필터 또한 3차원으로 생겨야함&lt;/li&gt;
+  &lt;li&gt;FNN에서 Dense layer에 노드를 여러 개 두어 서로 다른 가중합 및 feature 추출을 진행하듯이, CNN에서도 서로 다른 필터를 여러 개 두어 입력 이미지로부터 여러 feautre를 추출 가능&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;conv필터를 많이 두면 둘수록 더 다양한 feature를 꺼낼 수 있음&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;–&lt;/p&gt;
+
+&lt;h2 id=&quot;pooling&quot;&gt;Pooling&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;conv필터가 연산이 끝난 뒤, 결과로부터 정보를 추리하는 Pooling 연산이 이어짐&lt;/li&gt;
+  &lt;li&gt;pooling 진행하면 가로세로 차원크기가 축소되는 subsampling 효과&lt;/li&gt;
+  &lt;li&gt;pooling연산은 &lt;code class=&quot;highlighter-rouge&quot;&gt;feature map(pooling 대상영역)을 역시 상하좌우를 훑으며 핵심적인 정보만을 영역별로 샘플링&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;주로 영역 내 가장 큰 값만을 나머지 값을 버리는 maxpooling 방식을 적용(강력한 특징만 남김)&lt;/li&gt;
+  &lt;li&gt;conv 연산이 추출한 feature 정보를 단순화하면서 차원을 줄이지만 공간위치정보는 그대로 유지한다는 특징&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;–&lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+&lt;h4 id=&quot;feature-learning&quot;&gt;Feature Learning&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;이미지로부터 convolution연산을 통해 특징을 학습&lt;/li&gt;
+  &lt;li&gt;Activation function을 거쳐 non-linearity 적용&lt;/li&gt;
+  &lt;li&gt;Pooling으로 공간정보를 유지하면서도 차원을 축소&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;task수행&quot;&gt;Task수행&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;conv와 pooling으로 도출된 고차원의 feature를 분류를 하기 위해 납잡하게 1차원으로 펼침&lt;/li&gt;
+  &lt;li&gt;Class수만큼 분류되도록 Dense로 연결&lt;/li&gt;
+  &lt;li&gt;Class수만큼 probability로 표현&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wiserloner.tistory.com/239&quot;&gt;wiserloner-tistory&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 22 Sep 2021 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/ai/2021/09/22/ai-cnn/</link>
+        <guid isPermaLink="true">http://localhost:4000/ai/2021/09/22/ai-cnn/</guid>
+        
+        <category>ai</category>
+        
+        <category>cnn</category>
+        
+        
+        <category>ai</category>
+        
+      </item>
     
       <item>
         <title>[AI] Concept</title>
@@ -102,6 +822,119 @@
   &lt;/li&gt;
   &lt;li&gt;integer type 클래스 -&amp;gt; one-hot encoding하지 않고 정수 형태로 label(y)을 넣어줌&lt;/li&gt;
   &lt;li&gt;sample이 오직 하나의 class&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;loss&quot;&gt;Loss&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;학습할 대상인 weight와 bias등을 묶어서 &lt;code class=&quot;highlighter-rouge&quot;&gt;parmeter&lt;/code&gt;라고 부름&lt;/li&gt;
+  &lt;li&gt;performance measure : 인공신경말 모델이 얼마나 좋은지를 평가 하는 기준. 모델이 예측한 예측값과 맞추어야하는 모범답안 y의 차이를 정량화해주는 함수&lt;/li&gt;
+  &lt;li&gt;이러한 차이 &lt;code class=&quot;highlighter-rouge&quot;&gt;d(y,y')&lt;/code&gt;를 우리가 가진 모든 데이터에 대해 구하여 더한 것을 Loss 또는 Cost라고 부름&lt;/li&gt;
+  &lt;li&gt;둘다 모델이 정답을 얼마나 못맞췄느냐를 정량화해주는 값
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;학습의 목적은 d(y,y')가 차이를 나타내는 0이상의 값이라면 학습의 목적은 L(w,b)=0 or minimize L(w,b)이 되도록 하는 w,b 찾기이다
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;경사하강법stochastic-gradient-descent&quot;&gt;경사하강법(Stochastic Gradient Descent)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;학습의 목적은 모델의 예측값과 실제 정답값의 차이를 최소화하는 파라미터(w,b) 구하기!&lt;/li&gt;
+  &lt;li&gt;loss가 작아질 수 있도록 파라미터를 조금씩 개선된 방향으로 업데이트해주는 녀석이 바로 “경사하강법”&lt;/li&gt;
+  &lt;li&gt;임의로 초기화된 weight를 어떻게 바꾸어야 loss를 줄일까?
+    &lt;ol&gt;
+      &lt;li&gt;현재 weight값에서 loss에대한 (편)미분을 구함&lt;/li&gt;
+      &lt;li&gt;미분의 기울기를 체크해서 기울기가 +라면 weight가 작아져야 loss도 줄어들것이니 weight값을 약간 줄여서 업데이트&lt;/li&gt;
+      &lt;li&gt;미분의 기울기를 체크해서 기울기가 -라면 weight가 커져야 loss도 줄어들것이니 weight값을 약간 키우도록 업데이트 하면 됩니다.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;경사(미분 기울기)내려가는 방향으로 파라미터 업데이트를 진행하기 떄문에 이런 이름이&lt;/li&gt;
+  &lt;li&gt;SGD(Stochastic Gradient Descent)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;loss함수란 모범다운과 예측값의 차이를 정량화하는 함수&lt;/li&gt;
+  &lt;li&gt;학습의 목적은 loss가 가능한 작아지도록 하는 모델의 파라미터(weight, bias)를 찾는 것&lt;/li&gt;
+  &lt;li&gt;경사하강법을 통해서 loss가 작아지도록 하는 파라미터의 업데이트 방향을 찾고, 파라미터를 해당 방향으로 약간 업데이트 하는 방법&lt;/li&gt;
+  &lt;li&gt;경사하강법을 통해 파라미터를 업데이트를 반복하다 보면, 최적의 파라미터를 찾음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;softmax&quot;&gt;softmax&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;softmax는 output layer에 적용되는 함수로 output뉴런의 결과값을 각 클래스가 정답일 확률로 변환해주는 역할을 함&lt;/li&gt;
+  &lt;li&gt;score에 대한 총합을 1로 맞추어서, class간 상대적인 비교가 가능하게 하는 softmax&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;epoch&quot;&gt;Epoch&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;모든 training데이터를 한번씩 업데이트를 진행하면 한 epoch이 끝난 것&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;iteration&quot;&gt;Iteration&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;한번의 업데이트 진행 단위&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;mini-batch&quot;&gt;Mini-batch&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;한 iteration을 진행할 training data의 예제의 묶음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;하이퍼파라미터hyperparameter&quot;&gt;하이퍼파라미터(Hyperparameter)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;파라미터는 모델의 학습데이터를 보면서 데이터를 더 잘 맞출 수 있도록 최적화해나갈 weight나 bias와 같은것
+    &lt;ul&gt;
+      &lt;li&gt;우리가 조절하는 것이 아니라 loss값을 줄이기 위해 SGD를 통해 조금씩 고쳐 나감&lt;/li&gt;
+      &lt;li&gt;사람이 설정하는 것이 아니라 데이터를 통해 자동 업데이트&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;하이퍼파라미터는 그 이외의 모든 사람이 설정하는 옵션값들
+    &lt;ul&gt;
+      &lt;li&gt;neuron network 아키텍처는 어떻게 구성할지, layer는 몇개나 쌓을 것 이며, 한 later당 node수는 얼마나 많이 할 것인지.&lt;/li&gt;
+      &lt;li&gt;나의 설정에 따라 인공신경망 구조가 깊고 뚱뚱하게, 아주 복잡해지거나 얇고 날씬해서 단순해짐&lt;/li&gt;
+      &lt;li&gt;모델의 capacity(complexity)를 결정&lt;/li&gt;
+      &lt;li&gt;training동안 학습됮 ㅣ않음&lt;/li&gt;
+      &lt;li&gt;e.g  learning rate, hidden size, layer수 mini-batch size, feautre수&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;learning-rate학습률&quot;&gt;learning rate(학습률)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;weight를 더 나은 방향으로 업데이트하려 한다면, 미분을 통해 기울기를 구하고, 그 기울기의 반대 방향으로 조금 이동시킨다면 loss가 더 낮아질 수 있음&lt;/li&gt;
+  &lt;li&gt;a : 업데이트의 크기, 폭을 결정, 양의 실수값&lt;/li&gt;
+  &lt;li&gt;크게 설정할 수록 나는 파라미터를 크게 업데이트&lt;/li&gt;
+  &lt;li&gt;작은 값으로 설정한다면, 조금씩 업데이트&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;activation-function&quot;&gt;Activation function&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;활성화 함수란? 인공신경망의 각 뉴런에 데이터를 가중합하고 난 뒤 취하는 함수를 의미&lt;/li&gt;
+  &lt;li&gt;neuron이 가중합을 하고 난 결과를 부드런 S자모양의 함수를 적용하여 0-1로 변환하는 sigmoide함수를 activation func으로 채택&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Relu(Reactified Linear Unit)&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;비선형함수. 음수값은 0으로 변환하고 양수값으 그대로 returb&lt;/li&gt;
+      &lt;li&gt;sigmoid의 단점을 개선
+        &lt;ul&gt;
+          &lt;li&gt;입력값을 0-1로 변환하는 계산하는 과정 복잡&lt;/li&gt;
+          &lt;li&gt;가장 큰 문제는 `neuron의 가중치 결과가 몹시 크거나 작을경우 sigmoid의 gradient(기울기)가 거의 0에 가까워짐&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;relus는 계산이 간편 가중합의 결과가 몸시 크거나 작아도 기울기가 0,1로 고정&lt;/li&gt;
+      &lt;li&gt;sigmoid를 쓰는 경우보다 6배정도 모델을 빠르게 수렴시키는 효과&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
@@ -229,14 +1062,223 @@ git push -u -f origin masater
   &lt;li&gt;It trains the neural network to fit one set of values to another&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h2 id=&quot;what-is-a-convolution&quot;&gt;What is a Convolution?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;A technique to isolate features in images&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-is-a-pooling&quot;&gt;What is a Pooling?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;A technique to reduce the information in an image while maintaining features&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;how-do-convolutions-improve-image-recognition&quot;&gt;How do Convolutions improve image recognition?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;They isolate features in images&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;after-passing-a-3x3-filter-over-a-28x28-image-how-big-will-the-output-be&quot;&gt;After passing a 3x3 filter over a 28x28 image, how big will the output be?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;26X26&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;after-max-pooling-a-26x26-image-with-a-2x2-filter-how-big-will-the-output-be&quot;&gt;After max pooling a 26x26 image with a 2x2 filter, how big will the output be?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;13X13&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;applying-convolutions-on-top-of-our-deep-neural-network-will-make-training&quot;&gt;Applying Convolutions on top of our Deep neural network will make training:&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;It depends on many factors. It might make your training faster or slower, and a poorly designed Convolutional layer may even be less efficient than a plain DNN!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;using-image-generator-how-do-you-label-images&quot;&gt;Using Image Generator, how do you label images?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;It’s based on the directory the image is contained in&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-method-on-the-image-generator-is-used-to-normalize-the-image&quot;&gt;What method on the Image Generator is used to normalize the image?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;rescale&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;how-did-we-specify-the-training-size-for-the-images&quot;&gt;How did we specify the training size for the images?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;the target_size parameter on the training generator&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;when-we-specify-the-input_shape-to-be-300-300-3-what-does-that-mean&quot;&gt;When we specify the input_shape to be (300, 300, 3), what does that mean?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Every Image will be 300x300 pixels, with 3 bytes to define color&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;f-your-training-data-is-close-to-1000-accuracy-but-your-validation-data-isnt-whats-the-risk-here&quot;&gt;f your training data is close to 1.000 accuracy, but your validation data isn’t, what’s the risk here?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;You’re overfitting on your training data&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;convolutional-neural-networks-are-better-for-classifying-images-like-horses-and-humans-because&quot;&gt;Convolutional Neural Networks are better for classifying images like horses and humans because:&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;All of the above&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;after-reducing-the-size-of-the-images-the-training-results-were-different-why&quot;&gt;After reducing the size of the images, the training results were different. Why?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;We removed some convolutions to handle the smaller images&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-is-the-name-of-the-object-used-to-tokenize-sentences&quot;&gt;What is the name of the object used to tokenize sentences?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Tokenizer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-is-the-name-of-the-method-used-to-tokenize-a-list-of-sentences&quot;&gt;What is the name of the method used to tokenize a list of sentences?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;fit_on_texts(sentences)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;once-you-have-the-corpus-tokenized-whats-the-method-used-to-encode-a-list-of-sentences-to-use-those-tokens&quot;&gt;Once you have the corpus tokenized, what’s the method used to encode a list of sentences to use those tokens?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;texts_to_sequences(sentences)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;when-initializing-the-tokenizer-how-to-you-specify-a-token-to-use-for-unknown-words&quot;&gt;When initializing the tokenizer, how to you specify a token to use for unknown words?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;oov_token=&lt;Token&gt;&lt;/Token&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;if-you-dont-use-a-token-for-out-of-vocabulary-words-what-happens-at-encoding&quot;&gt;If you don’t use a token for out of vocabulary words, what happens at encoding?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;The word isn’t encoded, and is skipped in the sequence&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;if-you-have-a-number-of-sequences-of-different-lengths-how-do-you-ensure-that-they-are-understood-when-fed-into-a-neural-network&quot;&gt;If you have a number of sequences of different lengths, how do you ensure that they are understood when fed into a neural network?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;They’ll get padded to the length of the longest sequence by adding zeros to the beginning of shorter ones&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;when-padding-sequences-if-you-want-the-padding-to-be-at-the-end-of-the-sequence-how-do-you-do-it&quot;&gt;When padding sequences, if you want the padding to be at the end of the sequence, how do you do it?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Pass padding=’post’ to pad_sequences when initializing it&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-is-the-name-of-the-tensorflow-library-containing-common-data-that-you-can-use-to-train-and-test-neural-networks&quot;&gt;What is the name of the TensorFlow library containing common data that you can use to train and test neural networks?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Tensorflow Datasets&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;how-many-reviews-are-there-in-the-imdb-dataset-and-how-are-they-split&quot;&gt;How many reviews are there in the IMDB dataset and how are they split?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;50,000 records, 50/50 train/test split&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;how-are-the-labels-for-the-imdb-dataset-encoded&quot;&gt;How are the labels for the IMDB dataset encoded?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Reviews encoded as a number 0-1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-is-the-purpose-of-the-embedding-dimension&quot;&gt;What is the purpose of the embedding dimension?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;It is the number of dimensions for the vector representing the word encoding&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;when-tokenizing-a-corpus-what-does-the-num_wordsn-parameter-do&quot;&gt;When tokenizing a corpus, what does the num_words=n parameter do?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;It specifies the maximum number of words to be tokenized, and picks the most common ‘n’ words&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;to-use-word-embeddings-in-tensorflow-in-a-sequential-layer-what-is-the-name-of-the-class&quot;&gt;To use word embeddings in TensorFlow, in a sequential layer, what is the name of the class?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;tf.keras.layers.Embedding&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;imdb-reviews-are-either-positive-or-negative-what-type-of-loss-function-should-be-used-in-this-scenario&quot;&gt;IMDB Reviews are either positive or negative. What type of loss function should be used in this scenario?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Binary crossentropy&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;when-using-imdb-sub-words-dataset-our-results-in-classification-were-poor-why&quot;&gt;When using IMDB Sub Words dataset, our results in classification were poor. Why?&lt;/h2&gt;
+
+&lt;h2 id=&quot;why-does-sequence-make-a-large-difference-when-determining-semantics-of-language&quot;&gt;Why does sequence make a large difference when determining semantics of language?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Because the order in which words appear dictate their impact on the meaning of the sentence&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;how-do-recurrent-neural-networks-help-you-understand-the-impact-of-sequence-on-meaning&quot;&gt;How do Recurrent Neural Networks help you understand the impact of sequence on meaning?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;They carry meaning from one cell to the next&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;how-does-an-lstm-help-understand-meaning-when-words-that-qualify-each-other-arent-necessarily-beside-each-other-in-a-sentence&quot;&gt;How does an LSTM help understand meaning when words that qualify each other aren’t necessarily beside each other in a sentence?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Values from earlier words can be carried to later ones via a cell state&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-keras-layer-type-allows-lstms-to-look-forward-and-backward-in-a-sentence&quot;&gt;What keras layer type allows LSTMs to look forward and backward in a sentence?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Bidirectional&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;whats-the-output-shape-of-a-bidirectional-lstm-layer-with-64-units&quot;&gt;What’s the output shape of a bidirectional LSTM layer with 64 units?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;(None, 128)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;when-stacking-lstms-how-do-you-instruct-an-lstm-to-feed-the-next-one-in-the-sequence&quot;&gt;When stacking LSTMs, how do you instruct an LSTM to feed the next one in the sequence?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Ensure that return_sequences is set to True only on units that feed to another LSTM&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;if-a-sentence-has-120-tokens-in-it-and-a-conv1d-with-128-filters-with-a-kernal-size-of-5-is-passed-over-it-whats-the-output-shape&quot;&gt;If a sentence has 120 tokens in it, and a Conv1D with 128 filters with a Kernal size of 5 is passed over it, what’s the output shape?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;(None, 116, 128)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-is-the-name-of-the-method-used-to-tokenize-a-list-of-sentences-1&quot;&gt;What is the name of the method used to tokenize a list of sentences?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;fit_to_text(sentences)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;if-a-sentence-has-120-tokens-in-it-and-a-conv1d-with-128-filters-with-a-kernal-size-of-5-is-passed-over-it-whats-the-output-shape-1&quot;&gt;If a sentence has 120 tokens in it, and a Conv1D with 128 filters with a Kernal size of 5 is passed over it, what’s the output shape?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;(None, 116, 128)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-is-the-purpose-of-the-embedding-dimension-1&quot;&gt;What is the purpose of the embedding dimension?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;It is the number of dimensions for the vector representing the word encoding&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;imdb-reviews-are-either-positive-or-negative-what-type-of-loss-function-should-be-used-in-this-scenario-1&quot;&gt;IMDB Reviews are either positive or negative. What type of loss function should be used in this scenario?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Binary crossentropy&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;if-you-have-a-number-of-sequences-of-different-lengths-how-do-you-ensure-that-they-are-understood-when-fed-into-a-neural-network-1&quot;&gt;If you have a number of sequences of different lengths, how do you ensure that they are understood when fed into a neural network?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Use the pad_sequences object from the tensorflow.keras.preprocessing.sequence namespace&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;when-predicting-words-to-generate-poetry-the-more-words-predicted-the-more-likely-it-will-end-up-gibberish-why&quot;&gt;When predicting words to generate poetry, the more words predicted the more likely it will end up gibberish. Why?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Because the probability that each word matches an existing phrase goes down the more words you create&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-is-a-major-drawback-of-word-based-training-for-text-generation-instead-of-character-based-generation&quot;&gt;What is a major drawback of word-based training for text generation instead of character-based generation?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Because there are far more words in a typical corpus than characters, it is much more memory intensive&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;##&lt;/p&gt;
+
 &lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://medium.com/james-reads-public-cloud-technology-blog/linux-tools-that-i-learned-10-years-ago-which-i-still-use-every-day-9289f952f169&quot;&gt;medium - Linux tools tips&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Wed, 15 Sep 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/ai/2021/09/15/cousera-week1-quiz/</link>
-        <guid isPermaLink="true">http://localhost:4000/ai/2021/09/15/cousera-week1-quiz/</guid>
+        <link>http://localhost:4000/ai/2021/09/15/cousera-quiz/</link>
+        <guid isPermaLink="true">http://localhost:4000/ai/2021/09/15/cousera-quiz/</guid>
         
         <category>ai</category>
         
@@ -310,6 +1352,19 @@ Total number of elements (3*2*4*5):  120
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;axes 때때로 그들의 indices를 표현&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;shape&quot;&gt;Shape&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;tensor가 어떻게 생겼는지를 표현하는 방식&lt;/li&gt;
+  &lt;li&gt;대괄호 안에 각 차원의 길이(element)를 표기하면 됨&lt;/li&gt;
+  &lt;li&gt;mnist는 가로 세로 28픽셀을 갖는 행렬데이터이므로 [28,28]고 같이 shape를 표헌&lt;/li&gt;
+  &lt;li&gt;color 이미지의 경우 RGB의 세개의 값을 표현해야하므로 3Rank tensor&lt;/li&gt;
+  &lt;li&gt;관례적으로 데이터 수는 shape의 맨앞에 써주는 것이 일반적
+    &lt;ul&gt;
+      &lt;li&gt;ex) shape[4,100,150,3]&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h5 id=&quot;manipulating-shapes&quot;&gt;Manipulating Shapes&lt;/h5&gt;
@@ -578,9 +1633,10 @@ Note the parent process ID (ppid) is 27229
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;save_user&lt;/code&gt;(X)&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;load_categories_from_cache&lt;/code&gt; (O)&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;load_categories&lt;/code&gt;(x)&lt;/li&gt;
-  &lt;li&gt;
-    &lt;h3 id=&quot;2-use-test__-template-for-test-names&quot;&gt;2. Use test_&lt;entity&gt;_&lt;behavior&gt; template for test names&lt;/behavior&gt;&lt;/entity&gt;&lt;/h3&gt;
-  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-use-test__-template-for-test-names&quot;&gt;2. Use test_&lt;entity&gt;_&lt;behavior&gt; template for test names&lt;/behavior&gt;&lt;/entity&gt;&lt;/h3&gt;
+&lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;validate_user_from&lt;/code&gt;이라 불리는 func을 위한 unit test를 작성한다고 가정하자&lt;/li&gt;
   &lt;li&gt;bad example
     &lt;ul&gt;
@@ -1835,949 +2891,6 @@ CMD [&quot;hello&quot;]
         
         
         <category>docker</category>
-        
-      </item>
-    
-      <item>
-        <title>[Python] Collection모듈 - namedTuples</title>
-        <description>&lt;h3 id=&quot;namedtuple&quot;&gt;namedtuple&lt;/h3&gt;
-&lt;p&gt;dicionary와 같은 container을 지원. 특정 값에 hash를 적용한 key를 포함. key, idex 둘다 접근 가능. tuple의 성질을 가졌고, tuple은 일반적으로 index로 접근하므로 직관적이지 않음. namedtuple은 field의 key(이름)을 붙여 사용 가능&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;access-options&quot;&gt;Access options&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Access by index : The attribute values of namedtuple() are ordered and can be accessed using the index number unlike dictionaries which are not accessible by index.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Access by keyname : Access by keyname is also allowed as in dictionaries.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;using getattr() :- This is yet another way to access the value by giving namedtuple and key value as its argument.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;conversion-operations&quot;&gt;Conversion Operations&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;_make()&lt;/strong&gt; : iterable객체를 argument로 넘겨  namedtuple()로 return&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;_asdict()&lt;/strong&gt; : OrderDict()로 return ( namedtupel()의 mapping된 value로 구성)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;**(double start) operator&lt;/strong&gt; : dictionary를 namedtuple()로 변환&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;additional-operations&quot;&gt;Additional Operations&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;_fields&lt;/strong&gt; : namespace의 모든 keyname을 return&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;_replace()&lt;/strong&gt; : keyname을 넘겨 value값을 변환&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;example&quot;&gt;Example&lt;/h3&gt;
-&lt;script src=&quot;https://gist.github.com/kevinsung123/7385f076603c1bd5bbd13f2998ead973.js&quot;&gt;&lt;/script&gt;
-
-&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/namedtuple-in-python/&quot;&gt;geeks&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/collections.html#collections.namedtuple&quot;&gt;docs-python&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 21 Mar 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/python/2021/03/21/python-collections-namedtuples/</link>
-        <guid isPermaLink="true">http://localhost:4000/python/2021/03/21/python-collections-namedtuples/</guid>
-        
-        <category>collections</category>
-        
-        <category>namedtuple</category>
-        
-        
-        <category>python</category>
-        
-      </item>
-    
-      <item>
-        <title>[k8s] Container - images</title>
-        <description>&lt;!--more--&gt;
-
-&lt;h2 id=&quot;images&quot;&gt;Images&lt;/h2&gt;
-&lt;p&gt;container iamge는 &lt;code class=&quot;highlighter-rouge&quot;&gt;application과 모든 sw dependency을 encapsulate(캡슐화)하는 binary data&lt;/code&gt;를 나타낸다
-container iamge는 독릭적으로 실행할 수 있고 &lt;code class=&quot;highlighter-rouge&quot;&gt;runtime 환경에 대해 잘 정의된 가정을 만드는 실행 가능한 bundle&lt;/code&gt;이다&lt;/p&gt;
-
-&lt;p&gt;일반적으로 application의 container iamge는 pod에서 참조하기 전에 registry로 push한다&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;image-names&quot;&gt;Image Names&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;container image는 보통 &lt;code class=&quot;highlighter-rouge&quot;&gt;pause&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;example/mycontainer&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;kube-apiserver&lt;/code&gt;와 같은 이름을부여
-image는 registry hostname을 포함할 수 있다. 예를들어 &lt;code class=&quot;highlighter-rouge&quot;&gt;fictional.registry.example/imagename&lt;/code&gt;과 같음
-port 번호도 포함 가능&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;registry hostname을 지정하지 않으면, kubernetes는 docker public registry를 의미한다고 가정&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;image 이름을 부여한 후 tag를 추가할 수있다.(&lt;code class=&quot;highlighter-rouge&quot;&gt;docker&lt;/code&gt;와 &lt;code class=&quot;highlighter-rouge&quot;&gt;podman&lt;/code&gt; 명령과 함계 사용)
-tag를 사용하여 같은 image의 version 관리가능&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;image tag는 lowercase, uppercase 문자, 숫자, underscore(_), periods(.), dashes(-)로 구성
-tag가 없으면 &lt;code class=&quot;highlighter-rouge&quot;&gt;latest&lt;/code&gt;를 의미한다고 가정&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Caution
- production환경에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;latest&lt;/code&gt; tag를 사용하지 않아야함. 실행 중인 image version을 추적하기 어렵고, 이전에 잘 작동하는 rollback하기가 어려움&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;updating-images&quot;&gt;Updating Images&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;pod template를 포함하는 deployment, statefulset, pod 그리고 다른 object를 처음 만들때, 기본적으로 명시적으로 특정하지 않으면, 기본적으로 모든 container의 &lt;code class=&quot;highlighter-rouge&quot;&gt;pull policy&lt;/code&gt;는 &lt;code class=&quot;highlighter-rouge&quot;&gt;IfNotPresent&lt;/code&gt;로 셋팅. 이 policy는 &lt;code class=&quot;highlighter-rouge&quot;&gt;kubelet&lt;/code&gt;이 이미 존재하면 pulling을 생략함&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;강제적으로 pull하고 싶으면 아래 중 한가지를 &lt;code class=&quot;highlighter-rouge&quot;&gt;imagePullPolicy&lt;/code&gt; field에 설정&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Always&lt;/code&gt; 설정&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;imagePullPolicy&lt;/code&gt;를 생략하고 &lt;code class=&quot;highlighter-rouge&quot;&gt;:latest&lt;/code&gt;를 사용할 image의 tag로 사용&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AlwaysPullImages&lt;/code&gt; admission controller를 설정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Note
-The value of imagePullPolicy of the container is always set when the object is first created, and is not updated if the image’s tag later changes.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;For example, if you create a Deployment with an image whose tag is not :latest, and later update that Deployment’s image to a :latest tag, the imagePullPolicy field will not change to Always. You must manually change the pull policy of any object after its initial creation.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;imagepullPolicy&lt;/code&gt;의 특정값이 없으면 기본적으로 &lt;code class=&quot;highlighter-rouge&quot;&gt;Always&lt;/code&gt;를 설정&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;multi-architecture-images-with-indexes&quot;&gt;Multi-architecture images with indexes&lt;/h3&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;using-a-private-registry&quot;&gt;Using a private registry&lt;/h3&gt;
-</description>
-        <pubDate>Sat, 20 Mar 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/k8s/2021/03/20/k8s-container-image/</link>
-        <guid isPermaLink="true">http://localhost:4000/k8s/2021/03/20/k8s-container-image/</guid>
-        
-        <category>k8s</category>
-        
-        <category>container</category>
-        
-        <category>image</category>
-        
-        
-        <category>k8s</category>
-        
-      </item>
-    
-      <item>
-        <title>[k8s] DNS for Service and Pods</title>
-        <description>&lt;!--more--&gt;
-
-&lt;h2 id=&quot;services-load-balancing-and-networking&quot;&gt;Services, Load Balancing and Networking&lt;/h2&gt;
-
-&lt;p&gt;Kubernetes networking은 4가지 문제를 해결&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Pod 내의 Container들은 loopback을 통한 networking을 사용하여 통신
-    &lt;ul&gt;
-      &lt;li&gt;LoopBack?
-        &lt;ul&gt;
-          &lt;li&gt;거의 coding없이 &lt;code class=&quot;highlighter-rouge&quot;&gt;dynamic end-to-end REST API&lt;/code&gt;를 생성가능한 고확장가능한, 오픈소스 Node.js Framework&lt;/li&gt;
-          &lt;li&gt;가상의 인터페이스. 물리 인터페이스인 경우 serial일때 clock rate, WAN encapsulation등 부여 및 외부 간섭이 필요&lt;/li&gt;
-          &lt;li&gt;비교적 안전한 인터페이스&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Cluster Networking은 &lt;code class=&quot;highlighter-rouge&quot;&gt;다른 Pod 간의 communication&lt;/code&gt;을 제공&lt;/li&gt;
-  &lt;li&gt;Service resource는 Pod안에 실행 중인 application을 &lt;code class=&quot;highlighter-rouge&quot;&gt;cluster 바깥에서 접근하기 위해 외부로 노출&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Service를 활용하여 cluster 내부에서 사용할 수 있는 서비스만 게시 가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;dns-for-service-and-pods&quot;&gt;DNS for Service and Pods&lt;/h2&gt;
-
-&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
-&lt;p&gt;Kubernetes DNS은 DNS Pod와 Service 를 Cluster에 스케쥴링 함. 
-개별 container들이 DNS Name을 해석할때 DNS servier의 IP를 사용하도록 kubeletes를 구성&lt;/p&gt;
-
-&lt;p&gt;Cluster에 정의된 모든 Service들은 DNS Name에 할당. 기본적으로 client Pod의 DNS 검색은 Pod의 namespace와 cluster의 기본 domain을 포함하여 검색&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;namespaces-of-services&quot;&gt;Namespaces of Services&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;DNS query는 pod의 namespace에 따라서 다른 결과를 return한다
-namespace를 특정하는 DNS query들은 pods의 namespace에 제한된다
-DNS query에서 지정하여 다른 namespace의 서비스에 접근한다&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;example&lt;/strong&gt;
-        &lt;blockquote&gt;
-          &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;test&lt;/code&gt;라는 namespace가 있다고 가정. &lt;code class=&quot;highlighter-rouge&quot;&gt;prod&lt;/code&gt;라는 namespace에 있는 &lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt; service 안에 존재.
- &lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt;를 위한 query는 결과를 얻을 수 없음. 왜냐하면 그것은 pod의  &lt;code class=&quot;highlighter-rouge&quot;&gt;test&lt;/code&gt; namespace를 사용하기 떄문이다
-&lt;code class=&quot;highlighter-rouge&quot;&gt;data.prod&lt;/code&gt;의 query는 원하는 결과를 얻을 수 있음. 왜냐하면 특정한 namespace를 지정하였기 떄문이다&lt;/p&gt;
-        &lt;/blockquote&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;DNS query들은 pod의 &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/resolvconf&lt;/code&gt;를 활용하여 확장된다. Kubelet은 이 file을 각각의 pod에 설정.
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;example&lt;/strong&gt;
-        &lt;blockquote&gt;
-          &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt;를 위한 query는 &lt;code class=&quot;highlighter-rouge&quot;&gt;data.test.cluster.local&lt;/code&gt;로 확장된다
-&lt;code class=&quot;highlighter-rouge&quot;&gt;search&lt;/code&gt; option의 값은 query들은 확장한다.&lt;/p&gt;
-        &lt;/blockquote&gt;
-      &lt;/li&gt;
-      &lt;li&gt;상세 : &lt;a href=&quot;https://www.man7.org/linux/man-pages/man5/resolv.conf.5.html&quot;&gt;resolv.conf&lt;/a&gt;
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  nameserver 10.32.0.10
-  search &amp;lt;namespace&amp;gt;.svc.cluster.local svc.cluster.local cluster.local
-  options ndots:5
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;요약하면, &lt;code class=&quot;highlighter-rouge&quot;&gt;test&lt;/code&gt;의 namespace에 있는 pod는 &lt;code class=&quot;highlighter-rouge&quot;&gt;data.prod&lt;/code&gt; 또는 &lt;code class=&quot;highlighter-rouge&quot;&gt;data.prod.cluster.local&lt;/code&gt;로 성공적으로 접근 가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;dns-records&quot;&gt;DNS Records&lt;/h3&gt;
-&lt;p&gt;DNS record를 찾은 object들은 아래와 같음&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. services
-2. pods
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;상세 &lt;a href=&quot;https://github.com/kubernetes/dns/blob/master/docs/specification.md&quot;&gt;DNS-Based Service Discovery &lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;services&quot;&gt;Services&lt;/h3&gt;
-&lt;h4 id=&quot;aaaaa-records&quot;&gt;A/AAAA records&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Normal&quot; service&lt;/code&gt;들은 service ip계열에 따라 &lt;code class=&quot;highlighter-rouge&quot;&gt;my-svc.my-namespace.svc.cluster-domain.example&lt;/code&gt;형식의 이름을 가진 DNS A또는 AAAA record에 할당. 이는 service의 cluster ip로 해석&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Headless(cluster ip가 없는)&lt;/code&gt;는 service들은 또한 service ip계열에 따라 
-&lt;code class=&quot;highlighter-rouge&quot;&gt;my-svc.my-namespace.svc.cluster-domain.example&lt;/code&gt;형식의 이름을 가진 DNS A또는 AAAA record에 할당. &lt;code class=&quot;highlighter-rouge&quot;&gt;Normal&lt;/code&gt; service와 달리, 이것은 service에 의해 선택된 Pod의 ip집합으로 해석.&lt;/li&gt;
-  &lt;li&gt;client들은 set를 사용하거나 set에서 표준 round-robin 선택을 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;srv-records&quot;&gt;SRV records&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;SRV 레코드는 &lt;code class=&quot;highlighter-rouge&quot;&gt;Normal service&lt;/code&gt; 또는 &lt;code class=&quot;highlighter-rouge&quot;&gt;Headless service&lt;/code&gt;에 속하는 네임드 port 를 위해 만들어졌다.&lt;/li&gt;
-  &lt;li&gt;각각의 네임드 port에 대해서 SRV 레코드는 다음과 같은 형식을 가질 수 있다. &lt;code class=&quot;highlighter-rouge&quot;&gt;_my-port-name._my-port-protocol.my-svc.my-namespace.svc.cluster-domain.example.&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Normal service&lt;/code&gt;의 경우, 이는 포트 번호와 도메인 네임으로 해석된다. &lt;code class=&quot;highlighter-rouge&quot;&gt;my-svc.my-namespace.svc.cluster-domain.example.&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Headless service&lt;/code&gt;의 경우, 서비스를 지원하는 각 파드에 대해 하나씩 복수 응답으로 해석되며 이 응답은 &lt;code class=&quot;highlighter-rouge&quot;&gt;pod의 포트 번호&lt;/code&gt;와 &lt;code class=&quot;highlighter-rouge&quot;&gt;domain 이름&lt;/code&gt;을 포함한다. &lt;code class=&quot;highlighter-rouge&quot;&gt;auto-generated-name.my-svc.my-namespace.svc.cluster-domain.example&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;pods&quot;&gt;Pods&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;일반적으로 파드에는 다음과 같은 DNS 주소를 갖는다.
-    &lt;blockquote&gt;
-      &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pod-ip-address.my-namespace.pod.cluster-domain.example.&lt;/code&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;예를 들어, default 네임스페이스의 파드에 IP 주소 172.17.0.3이 있고, 클러스터의 도메인 이름이 cluster.local 이면, 파드는 다음과 같은 DNS 주소를 갖는다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;172-17-0-3.default.pod.cluster.local.&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;서비스에 의해 노출된 디플로이먼트(Deployment)나 데몬셋(DaemonSet)에 의해 생성된 모든 파드는 다음과 같은 DNS 주소를 갖는다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pod-ip-address.deployment-name.my-namespace.svc.cluster-domain.example&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;pods-hostname-and-subdomain-fields&quot;&gt;Pod’s Hostname and subdomain fields&lt;/h3&gt;
-
-&lt;h3 id=&quot;pods-dns-policy&quot;&gt;Pod’s DNS Policy&lt;/h3&gt;
-&lt;p&gt;DNS 정책은 파드별로 설정할 수 있다. 현재 k8s는 다음과 같은 pod별 DNS 정책을 지원한다. 이 정책들은 pod spec dnsPolicy 필드에서 지정할 수 있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Default&lt;/strong&gt;: 파드는 파드가 실행되고 있는 노드로부터 네임 해석 설정(the name resolution configuration)을 상속받는다. 자세한 내용은 관련 논의에서 확인할 수 있다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;ClusterFirst&lt;/strong&gt;: “www.kubernetes.io”와 같이 클러스터 도메인 suffix 구성과 일치하지 않는 DNS 쿼리는 노드에서 상속된 업스트림 네임서버로 전달된다. 클러스터 관리자는 추가 스텁-도메인(stub-domain)과 업스트림 DNS 서버를 구축할 수 있다. 그러한 경우 DNS 쿼리를 어떻게 처리하는지에 대한 자세한 내용은 관련 논의에서 확인할 수 있다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;ClusterFirstWithHostNet&lt;/strong&gt;: hostNetwork에서 running 상태인 파드의 경우 DNS 정책인 “ClusterFirstWithHostNet”을 명시적으로 설정해야 한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;None&lt;/strong&gt;: 이 정책은 파드가 쿠버네티스 환경의 DNS 설정을 무시하도록 한다. 모든 DNS 설정은 파드 스펙 내에 dnsConfig필드를 사용하여 제공해야 한다. 아래 절인 파드의 DNS 설정에서 자세한 내용을 확인할 수 있다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Note: &lt;code class=&quot;highlighter-rouge&quot;&gt;Default&lt;/code&gt; is not the default DNS policy. If dnsPolicy is not explicitly specified, then &lt;code class=&quot;highlighter-rouge&quot;&gt;ClusterFirst&lt;/code&gt; is used.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;podss-dns-config&quot;&gt;Pods’s DNS Config&lt;/h3&gt;
-&lt;p&gt;사용자가 Pod의 DNS setting을 직접 설정 가능&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dnsConfig&lt;/code&gt; field는 optional이고, &lt;code class=&quot;highlighter-rouge&quot;&gt;dnsPolicy&lt;/code&gt; setting과 함께 동작
-&lt;code class=&quot;highlighter-rouge&quot;&gt;dnsPolicy&lt;/code&gt;값이 &lt;code class=&quot;highlighter-rouge&quot;&gt;None&lt;/code&gt;으로 설정되어 있어야 &lt;code class=&quot;highlighter-rouge&quot;&gt;dnsConfig&lt;/code&gt; field를 지정가능&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;nameservers&lt;/code&gt; : pod의 dns서버가 사용할 IP주소의 목록. &lt;code class=&quot;highlighter-rouge&quot;&gt;dnsPolicy&lt;/code&gt;가 &lt;code class=&quot;highlighter-rouge&quot;&gt;None&lt;/code&gt;으로 설정된 경우 적어도 하나의 IP주소가 포함되어야함. 그렇지 않으면 이 속성은 생략 가능. &lt;code class=&quot;highlighter-rouge&quot;&gt;nameservers&lt;/code&gt;에 나열된 서버는 지정된 dns policy를 통해 생성된 기본 nameserver와 합쳐지며 중복되는 주소는 제거&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;searches&lt;/code&gt; : pod의 hostname을 찾기 위한 dns search domain. 이 속성은 생략가능. 값을 지정한 경우 나열된 검색 domain은 지정된 dns policyy를 통해 기본 search domain과 합쳐진다. 병합 시 중복되는 domain은 제거되며, kubernetes는 최대&lt;code class=&quot;highlighter-rouge&quot;&gt;6개의 search domains&lt;/code&gt;을 허용&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;options&lt;/code&gt; : &lt;code class=&quot;highlighter-rouge&quot;&gt;name 속성(필수)과 value 속성(선택)&lt;/code&gt;을 가질 수 있는 오브젝트들의 선택적 목록이다. 이 속성의 내용은 지정된 DNS 정책에서 생성된 옵션으로 병합된다. 이 속성의 내용은 지정된 DNS 정책을 통해 생성된 옵션으로 합쳐지며, 병합 시 중복되는 항목은 제거된다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;custom dns setting의 예시
-&lt;script src=&quot;https://gist.github.com/kevinsung123/985f811c84e60417cf9fd3ac2e3b66d7.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;위에서 pod가 생성되면, container의 &lt;code class=&quot;highlighter-rouge&quot;&gt;test&lt;/code&gt;의 &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/resolv.conf&lt;/code&gt; 파일에는 다음과 같은 내용이 검색
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  nameserver 1.2.3.4
-  search ns1.svc.cluster-domain.example my.dns.search.suffix
-  options ndots:2 edns0
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://kubernetes.io/ko/docs/concepts/services-networking/dns-pod-service/&quot;&gt;kubernetes - dns&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 18 Mar 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/k8s/2021/03/18/k8s-dns/</link>
-        <guid isPermaLink="true">http://localhost:4000/k8s/2021/03/18/k8s-dns/</guid>
-        
-        <category>k8s</category>
-        
-        <category>dns</category>
-        
-        
-        <category>k8s</category>
-        
-      </item>
-    
-      <item>
-        <title>[Python] Collection모듈 - OrderedDict</title>
-        <description>&lt;h3 id=&quot;ordereddict&quot;&gt;OrderedDict&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;python의 collections 모듈에 존재하는 자료구조인 OrderedDict는 기본 dictionary와 거의 비슷하지만, 입력된 item의 순서를 기억하는 &lt;code class=&quot;highlighter-rouge&quot;&gt;Dictionary class&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;iterating을 할때, 먼저 추가된 key의 item을 반환&lt;/li&gt;
-  &lt;li&gt;정렬된 dictionary를 만들떄 유용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;script src=&quot;https://gist.github.com/kevinsung123/62224fee00d06ae72097e3a163f8577e.js&quot;&gt;&lt;/script&gt;
-
-&lt;h3 id=&quot;method&quot;&gt;Method&lt;/h3&gt;
-&lt;h4 id=&quot;popitemlasttrue&quot;&gt;popitem(last=True)&lt;/h4&gt;
-
-&lt;p&gt;item을 반환 및 삭제하는 method. popitme()인자인 last=은 &lt;code class=&quot;highlighter-rouge&quot;&gt;True일 경우 LIFO방식&lt;/code&gt;으로 값을 반환 및 삭제, &lt;code class=&quot;highlighter-rouge&quot;&gt;False일 경우 FIFO방식&lt;/code&gt;으로 값을 반환 &amp;amp; 삭제&lt;/p&gt;
-
-&lt;h4 id=&quot;move_to_endkeylasttrue&quot;&gt;move_to_end(key,last=True)&lt;/h4&gt;
-
-&lt;p&gt;맨 오른쪽(뒤) 또는 맨 왼쪽(앞)으로 이동해주는 메소드. &lt;code class=&quot;highlighter-rouge&quot;&gt;last=True&lt;/code&gt; 일 경우 맨오른쪽(뒤) 이동하고 ,&lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt;인 경우 맨 앞으로 이동&lt;/p&gt;
-
-&lt;script src=&quot;https://gist.github.com/kevinsung123/20418c8bef6366232e5a81f6ea1de4dd.js&quot;&gt;&lt;/script&gt;
-
-&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://excelsior-cjh.tistory.com/98&quot;&gt;blog&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.python.org/3.3/library/collections.html#collections.OrderedDict&quot;&gt;docs-python&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 17 Mar 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/python/2021/03/17/python-collections-ordereddict/</link>
-        <guid isPermaLink="true">http://localhost:4000/python/2021/03/17/python-collections-ordereddict/</guid>
-        
-        <category>collections</category>
-        
-        <category>ordereddict</category>
-        
-        
-        <category>python</category>
-        
-      </item>
-    
-      <item>
-        <title>[Leetcode] 146.LRUCache</title>
-        <description>&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
-&lt;h4 id=&quot;페이지-교체-알고리즘page-replacement-algorithm-or-cache-replacemnt&quot;&gt;페이지 교체 알고리즘(page-replacement algorithm or cache replacemnt)&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;컴퓨터는 보통 주기억 장치인 ram과 보조기억 장치인 hard나 ssd의 대용량 기억장치를 가지고 있음&lt;/li&gt;
-  &lt;li&gt;ram이 속도가 빠르기 때문에 보조기억장치로 부터 data를 ram에 저장해놓고 ram에 있는 data를 가지고 빠르게 cpu가 연산을 함&lt;/li&gt;
-  &lt;li&gt;ram을 같은 크기의 block으로 구성해서 운용하는데 이 block를 &lt;code class=&quot;highlighter-rouge&quot;&gt;page&lt;/code&gt;라고 일컫음&lt;/li&gt;
-  &lt;li&gt;만약 cpu가 계산을 할때 data가 page에 있다면 &lt;code class=&quot;highlighter-rouge&quot;&gt;cache hit&lt;/code&gt;, 없을 경우 보조기억장치로부터 data를 page로 옮겨온 후에 계산 하는데 이때를 &lt;code class=&quot;highlighter-rouge&quot;&gt;cache miss&lt;/code&gt;라고 일컫음. hit일떄가 miss일떄보다 시간 단축&lt;/li&gt;
-  &lt;li&gt;hit와 miss의 시간 차이로 인해 보다 빠른 연산을 위해 page에 여러 정보 중 어떤 정보를 오래 저장해 놓아야 하는지가 매우 중요한 문제. 이때문에 관련 알고리즘들이 존재&lt;/li&gt;
-  &lt;li&gt;page-replacement 알고리즘 종류
-    &lt;ul&gt;
-      &lt;li&gt;FIFO(First In First Out)&lt;/li&gt;
-      &lt;li&gt;LIFO(Last In First Out)&lt;/li&gt;
-      &lt;li&gt;FILO(First In Last Out)&lt;/li&gt;
-      &lt;li&gt;OPT(OPTimal Page Replacement)&lt;/li&gt;
-      &lt;li&gt;LRU(Leastly Recently Used)&lt;/li&gt;
-      &lt;li&gt;Coundt-Based&lt;/li&gt;
-      &lt;li&gt;LFU(Leastly Frequently Used)&lt;/li&gt;
-      &lt;li&gt;MFU(Most Frequently Used)
-        &lt;h4 id=&quot;lrucache&quot;&gt;LRUCache&lt;/h4&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;LRU란 Least Recently Used Algorithm의 약자로 Cache에서 memory를 다루기 위한 알고리즘&lt;/li&gt;
-  &lt;li&gt;cache가 사용하는 리소스는 제한되어 있고, 제한된 리소스 내에서 데이터를 빠르게 저장하고 접근할 수 있어야한다&lt;/li&gt;
-  &lt;li&gt;이를 위해 LRU알고리즘은 메모리 상에서 가장 최근에 사용된 적이 없은 cache의 메모리부터 대체하여 데이터를 갱신&lt;/li&gt;
-  &lt;li&gt;이 이론의 가설은 제일 오랫동안 참조되지 않은 데이터를 제거하는 방법
-&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/8/88/Lruexample.png&quot; alt=&quot;LRUCache&quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;위의 예시는 A-B-C-D-E-D-F를 접근 할때의 알고리즘&lt;/p&gt;
-
-&lt;h3 id=&quot;problem&quot;&gt;Problem&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/lru-cache/&quot;&gt;leetcode&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Design a data structure that follows the constraints of a Least Recently Used (LRU) cache.&lt;/p&gt;
-
-&lt;p&gt;Implement the LRUCache class:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;LRUCache(int capacity) Initialize the LRU cache with positive size capacity.&lt;/li&gt;
-  &lt;li&gt;int get(int key) Return the value of the key if the key exists, otherwise return -1.&lt;/li&gt;
-  &lt;li&gt;void put(int key, int value) Update the value of the key if the key exists. Otherwise, add the key-value pair to the cache. If the number of keys exceeds the capacity from this operation, evict the least recently used key.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Follow up:
-Could you do get and put in O(1) time complexity?&lt;/p&gt;
-
-&lt;h3 id=&quot;solving&quot;&gt;Solving&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;LRUCache를 구현하는데 O(1) Time Complexity로 구현&lt;/li&gt;
-  &lt;li&gt;순서가 있는 OrderedDict로 구현&lt;/li&gt;
-  &lt;li&gt;cache를 조회 시 (get)
-    &lt;ul&gt;
-      &lt;li&gt;key 존재 시 : 조회한 값을 맨 오른쪽으로 이동 및 값을 return&lt;/li&gt;
-      &lt;li&gt;key 미존재 시 : -1를 return&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;cache에 data를 입력 시(put)
-    &lt;ul&gt;
-      &lt;li&gt;key 존재 시 : data를 맨 오른쪽 이동(조회 하였으므로)&lt;/li&gt;
-      &lt;li&gt;key 미존재 시 :
-        &lt;ul&gt;
-          &lt;li&gt;capacity 미만 : 값을 추가&lt;/li&gt;
-          &lt;li&gt;capacity 초과 : LRU(Least Recently Used)값을 삭제 및 신규 값 추가&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
-&lt;script src=&quot;https://gist.github.com/kevinsung123/332aff480d516faa34f5fca0151e5cbb.js&quot;&gt;&lt;/script&gt;
-
-&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)&quot;&gt;wikipedia&lt;/a&gt;
-&lt;a href=&quot;https://gomguard.tistory.com/115&quot;&gt;page-blog&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 17 Mar 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/leetcode/2021/03/17/leetcode-146-lrucache/</link>
-        <guid isPermaLink="true">http://localhost:4000/leetcode/2021/03/17/leetcode-146-lrucache/</guid>
-        
-        <category>leetcode</category>
-        
-        <category>lru-cache</category>
-        
-        
-        <category>leetcode</category>
-        
-      </item>
-    
-      <item>
-        <title>[Leetcode] 104.Maximm depth of binary tree</title>
-        <description>&lt;h3 id=&quot;problem&quot;&gt;Problem&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/maximum-depth-of-binary-tree/&quot;&gt;leetcode&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Given the root of a binary tree, return its maximum depth.&lt;/p&gt;
-
-&lt;p&gt;A binary tree’s maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.&lt;/p&gt;
-
-&lt;h3 id=&quot;solving&quot;&gt;Solving&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;BT의 depth를 구하기 위해서 DFS/BFS방법으로 구현&lt;/li&gt;
-  &lt;li&gt;BT의 DFS 조회 : node를 방문하는 기준으로 방법이 달라짐
-    &lt;ul&gt;
-      &lt;li&gt;전위 순회(preorder)
-        &lt;ul&gt;
-          &lt;li&gt;node -&amp;gt; 왼쪽 -&amp;gt; 오른쪽&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;중위 순회(inorder)
-        &lt;ul&gt;
-          &lt;li&gt;왼쪽 서브트리 -&amp;gt; node -&amp;gt; 오르쪽 서브 트리&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;후위 순회(postorder)
-        &lt;ul&gt;
-          &lt;li&gt;왼쪽 서브트리 - &amp;gt; 오른쪽 서브 트리 - &amp;gt; node&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;BT의 BFS 조회
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;from collections import deque&lt;/code&gt;를 활용&lt;/li&gt;
-      &lt;li&gt;root를 맨처음 queue에 넣고 아래 서브트리를 계속 넣고 조회&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
-&lt;script src=&quot;https://gist.github.com/kevinsung123/8c890ac90ab3d16630a9304b1b488263.js&quot;&gt;&lt;/script&gt;
-
-&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
-</description>
-        <pubDate>Wed, 17 Mar 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/leetcode/2021/03/17/leetcode-104-maximum_depth_of_binary_tree/</link>
-        <guid isPermaLink="true">http://localhost:4000/leetcode/2021/03/17/leetcode-104-maximum_depth_of_binary_tree/</guid>
-        
-        <category>leetcode</category>
-        
-        <category>binary-tree</category>
-        
-        
-        <category>leetcode</category>
-        
-      </item>
-    
-      <item>
-        <title>[BigQuery]Apply ML using SQL with BigQuery ML</title>
-        <description>&lt;!--more--&gt;
-
-&lt;h2 id=&quot;choose-the-right-model-type-for-your-structed-data-use-case&quot;&gt;Choose the right model type for your structed data use case&lt;/h2&gt;
-&lt;h3 id=&quot;bigquery-ml-decision-tree&quot;&gt;BigQuery ML Decision Tree&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;\assets\img\post_img\2021-03-14-bigquery-ml.PNG&quot; alt=&quot;bigquery-ml&quot; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;structured data를 활용하여 ML을 할떄 적절한 model type을 찾아야함&lt;/li&gt;
-  &lt;li&gt;어떤 activity를 할 것이느냐에 따라 다름&lt;/li&gt;
-  &lt;li&gt;Supervised ML는 아래 3종류로 분류
-    &lt;ol&gt;
-      &lt;li&gt;forecaset
-        &lt;ul&gt;
-          &lt;li&gt;linear regression&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;classify
-        &lt;ul&gt;
-          &lt;li&gt;logistic regression (binary or multi-class)&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;recommend
-        &lt;ul&gt;
-          &lt;li&gt;matrixx factorization&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;더 복잡한 model도 가능
-    &lt;ul&gt;
-      &lt;li&gt;deep neural network&lt;/li&gt;
-      &lt;li&gt;decision tree&lt;/li&gt;
-      &lt;li&gt;random forests&lt;/li&gt;
-      &lt;li&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;적절한 model을 선택 한 후, 학습을 위한 &lt;code class=&quot;highlighter-rouge&quot;&gt;high-quality training data&lt;/code&gt;가 필요&lt;/li&gt;
-  &lt;li&gt;Machine Learning
-    &lt;ul&gt;
-      &lt;li&gt;Machine : linear regression과 같은 알고리즘 혹은 tool&lt;/li&gt;
-      &lt;li&gt;Learning : &lt;code class=&quot;highlighter-rouge&quot;&gt;Insights&lt;/code&gt; 즉 ,model은 known과 unknown data사이 관계에대한 통찰력(우리가 modeling라고 부른는 것)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;scenario--predicting-customer-lifetime-value&quot;&gt;Scenario : Predicting customer lifetime value&lt;/h3&gt;
-&lt;h4 id=&quot;raw-data&quot;&gt;raw data&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;\assets\img\post_img\2021-03-14-bigquery-ml-2.PNG&quot; alt=&quot;biguerty-ml-2&quot; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;record or row는 1개의 instance or observation&lt;/li&gt;
-  &lt;li&gt;위의 예시는 8개의 instance가 존재&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;label&lt;/code&gt;은 역사적으로 알려진 답
-    &lt;ul&gt;
-      &lt;li&gt;ex) 이 특정한 고개들이 얼마나 소비하였는지&lt;/li&gt;
-      &lt;li&gt;미래의 데이터는 &lt;code class=&quot;highlighter-rouge&quot;&gt;unknown&lt;/code&gt; 이거나 &lt;code class=&quot;highlighter-rouge&quot;&gt;missing&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;model, traning 그리고 prediction이 필요&lt;/li&gt;
-  &lt;li&gt;가령, website에서 많은 시간을 소비한 트랜잭션을 만든 고객을 알고 있다면, 그 고객들이 매출을 위한 high LTV라고 밝혀졌다면, 우리는 이 데이터를 활용하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;prediction&lt;/code&gt;이 가능
-    &lt;ul&gt;
-      &lt;li&gt;예측을 위해서 &lt;code class=&quot;highlighter-rouge&quot;&gt;linear regression&lt;/code&gt;을 활용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;label은 또한 &lt;code class=&quot;highlighter-rouge&quot;&gt;binary value&lt;/code&gt;가 될 수도 있음
-    &lt;ul&gt;
-      &lt;li&gt;ex) high-value customer or not&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;table의 columns들은 &lt;code class=&quot;highlighter-rouge&quot;&gt;features&lt;/code&gt;라고 부름 또는 &lt;code class=&quot;highlighter-rouge&quot;&gt;potential features&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;model의 &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;table의 각각의 column의 quality를 이해하고, 다른 팀들과 더 많은 &lt;code class=&quot;highlighter-rouge&quot;&gt;features&lt;/code&gt;를 찾는것은 ML 프로젝트에서 가장 어려운 파트 중 하나&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Feature Engineering&lt;/code&gt; : combine or transform features과정을 일컫음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;create-models-with-sql&quot;&gt;Create models with SQL&lt;/h3&gt;
-&lt;h4 id=&quot;common-creating-model&quot;&gt;Common Creating model&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;ML model을 작업하기 위해서는 보통 data scientists들은 datalake로부터 조금씩 data를  IPython Notebook으로 추출하여 pandas같은 data handling framework를 활용 매우 많은 시간이 소모&lt;/li&gt;
-  &lt;li&gt;custome model을 만들기 위해서 모든 데이터를 전처리/변형을 하고 모든 feature engineering이 필요&lt;/li&gt;
-  &lt;li&gt;model을 만들고 tnesorflow 같은 라이브러리를 활용하여 traning을 함&lt;/li&gt;
-  &lt;li&gt;더 많은 feature가 필요하거나 performance를 향상 시키기 위해서 위의 과정을 계속 반복해야함&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;bigquery-ml-in-2-steps&quot;&gt;BigQuery ML in 2 steps&lt;/h4&gt;
-&lt;ol&gt;
-  &lt;li&gt;Create Model with SQL&lt;/li&gt;
-  &lt;li&gt;Predict Model
-    &lt;ul&gt;
-      &lt;li&gt;learning rate 또는 training/test data를 BigQuery ML은 자동 수행&lt;/li&gt;
-      &lt;li&gt;옵션을 사용하여 해당 데이터를 분할 또는 테스트하고 학습률 및 기타 다른 hyperparamter를 수동으로 설정하기위한 정규화 또는 다른 전략을 직접 설정가능&lt;/li&gt;
-      &lt;li&gt;hyperparamter? ML을 학습을 할 때에 더 효과가 좋도록 하는 주 변수가 아닌 자동 설정되는 변수를 의미
-        &lt;ol&gt;
-          &lt;li&gt;learning rate - gradient를 할때에 iteration을 얼마나 gap으로 빠르게/느리게 결정 계수&lt;/li&gt;
-          &lt;li&gt;error function - 실제 output/계산한 output사이의 차이&lt;/li&gt;
-          &lt;li&gt;batch size - data를 어떻게 그룹지어 학습 시킬지&lt;/li&gt;
-          &lt;li&gt;epoch - training 반복횟수&lt;/li&gt;
-          &lt;li&gt;hidden layer의 개수&lt;/li&gt;
-          &lt;li&gt;각 parameter의 초깃값&lt;/li&gt;
-          &lt;li&gt;regulzarizaion term parameter - ML을 통해 결국 하고싶은것은 error function을 최소화 시키는 Weight를 찾아내느것. 이를 찾는 과정에서 overfitting문제가 자주 등장. 이를 해결하기 위해 regularization term을 error-function에 더하여 추가항을 만들우점&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;profit, review the results&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;supported-features&quot;&gt;Supported Features&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;Standard SQL and UDFS within the ML queries&lt;/li&gt;
-  &lt;li&gt;Linear Regression(Forecasting)&lt;/li&gt;
-  &lt;li&gt;Binary and Multi-class Logistics Regression(Classficiation)&lt;/li&gt;
-  &lt;li&gt;Model evalutaion functions for stadard metrics, including ROC and precision-recall curves&lt;/li&gt;
-  &lt;li&gt;Model weight inspection&lt;/li&gt;
-  &lt;li&gt;Feature distribution analysis through statndard fucntions&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;phases-in-ml-model-lifecycle&quot;&gt;Phases in ML model lifecycle&lt;/h3&gt;
-&lt;h4 id=&quot;the-end-to-end-bqml-process&quot;&gt;The End-to-End BQML Process&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;\assets\img\post_img\2021-03-14-bigquery-ml-process.PNG&quot; alt=&quot;bigquery-ml-process&quot; /&gt;&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;ETL into BigQuery&lt;/li&gt;
-  &lt;li&gt;Preprocess Features&lt;/li&gt;
-  &lt;li&gt;Create Model&lt;/li&gt;
-  &lt;li&gt;Trainig Model&lt;/li&gt;
-  &lt;li&gt;Predict&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;bigquery-ml-cheatsheet&quot;&gt;BigQuery ML Cheatsheet&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;\assets\img\post_img\2021-03-14-bigquery-ml-workflow.PNG&quot; alt=&quot;bigquery-ml-process&quot; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Label&lt;/strong&gt; : alias a column ‘label’ or 특정 column in OPTIONS using &lt;code class=&quot;highlighter-rouge&quot;&gt;input_label_cols&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Feature&lt;/strong&gt; : passed through to the model as part of your SQL SELECT statement
-    &lt;ul&gt;
-      &lt;li&gt;SELECT * FROM ML.FEATURE_INFO(MODEL &lt;code class=&quot;highlighter-rouge&quot;&gt;mydataset.mymodel&lt;/code&gt;)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Model&lt;/strong&gt; : an object created in BigQuery&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Model Types&lt;/strong&gt; : Linear Regression, Logistic Regression&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CREATE OR REPLACE MODEL &amp;lt;dataset&amp;gt;.&amp;lt;name&amp;gt;
-OPTIONS (model_type='&amp;lt;type&amp;gt;') AS
-&amp;lt;training dataset&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Traning Progress&lt;/strong&gt; : SELECT * FROM ML.TRAINING_INFO(MODEL &lt;code class=&quot;highlighter-rouge&quot;&gt;mydataset.mymodel&lt;/code&gt;)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Inspect Weigths&lt;/strong&gt; : SELECT * FROM ML.WEIGHTS(MODEL &lt;code class=&quot;highlighter-rouge&quot;&gt;mydataset.mymodel&lt;/code&gt;), &lt;query&gt;)&lt;/query&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Evaluation&lt;/strong&gt; : SELECT * FROM ML.EVALUATE((MODEL &lt;code class=&quot;highlighter-rouge&quot;&gt;mydataset.mymodel&lt;/code&gt;)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Prediction&lt;/strong&gt; : SELECT * FROM ML.PREDICT((MODEL &lt;code class=&quot;highlighter-rouge&quot;&gt;mydataset.mymodel&lt;/code&gt;, &lt;query&gt;)&lt;/query&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.coursera.org/learn/gcp-big-data-ml-fundamentals/lecture/o0sgc/bigquery-ml-create-models-with-sql&quot;&gt;cousera : bigquery-ml-create-models-with-sql&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 15 Mar 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/gcp/2021/03/15/gcp-bigquery-ml/</link>
-        <guid isPermaLink="true">http://localhost:4000/gcp/2021/03/15/gcp-bigquery-ml/</guid>
-        
-        <category>bigquery</category>
-        
-        <category>ml</category>
-        
-        
-        <category>gcp</category>
-        
-      </item>
-    
-      <item>
-        <title>[BigQuery]How does BigQuery work</title>
-        <description>&lt;h3 id=&quot;bigquery-is-two-services-in--one&quot;&gt;BigQuery is two services in  one&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;Fast SQL Engine&lt;/li&gt;
-  &lt;li&gt;Managed storage for datasets
-    &lt;ul&gt;
-      &lt;li&gt;serverless service&lt;/li&gt;
-      &lt;li&gt;fully managed&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-&lt;!--more--&gt;
-
-&lt;h3 id=&quot;how-does-bigquery-work&quot;&gt;How does BigQuery work?&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/assets\img\post_img\2021-03-14-bigquery.PNG&quot; alt=&quot;bigquery&quot; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;user는 BigQuery가 어덯게 data를 disk에 저장하는지 걱정 할 필요 없음&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;large queries들에 대해 어떻게 machine들을 autoscale하는지 걱정 할 필요 없음&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;data 관리는 project &amp;gt; dataset &amp;gt; table로 관리&lt;/li&gt;
-  &lt;li&gt;table들은 &lt;code class=&quot;highlighter-rouge&quot;&gt;highly-compressed columns&lt;/code&gt;으로 저장&lt;/li&gt;
-  &lt;li&gt;Goole의 내부적인 file-system인 &lt;code class=&quot;highlighter-rouge&quot;&gt;Colossus&lt;/code&gt;는 아래 2가지 특성을 제공
-    &lt;ul&gt;
-      &lt;li&gt;durablity&lt;/li&gt;
-      &lt;li&gt;global availability&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;모든 data는 project team에 의해서만 접근 가능&lt;/li&gt;
-  &lt;li&gt;storage서비스는 &lt;code class=&quot;highlighter-rouge&quot;&gt;bulk data ingestion&lt;/code&gt; 그리고 &lt;code class=&quot;highlighter-rouge&quot;&gt;streaming data ingestion&lt;/code&gt;을 제공&lt;/li&gt;
-  &lt;li&gt;Query서비스 아래 방법을 제공
-    &lt;ul&gt;
-      &lt;li&gt;interactive(상호작용) 작동(Console,bq cli)&lt;/li&gt;
-      &lt;li&gt;batch queries(Console,bq cli)&lt;/li&gt;
-      &lt;li&gt;REST API - 7 languaged supported&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;BigQuery Connector를 제공하여 BigQUery와 아래 GCP 데이터 처리 서비스간 복잡한 workflow를 간단하게 해줌
-    &lt;ul&gt;
-      &lt;li&gt;DataProc&lt;/li&gt;
-      &lt;li&gt;Cloud Dataflow&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Storage서비스&lt;/code&gt;와 &lt;code class=&quot;highlighter-rouge&quot;&gt;Query서비스&lt;/code&gt;는 내부적으로 쿼리를 생성하고 terabytes, petabytes의 데이터를 효율적으로 처리하도록 작동&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;bigquery-manged-storage&quot;&gt;BigQuery Manged Storage&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;dataset의 metadata와 storage를 BigQuery는 관리&lt;/li&gt;
-  &lt;li&gt;다양한 다른 format들로부터 dataset을 ingest 가능&lt;/li&gt;
-  &lt;li&gt;BigQuery native storage 내부에서는, data들은 Google BigQuery Team에 의해 관리
-    &lt;ul&gt;
-      &lt;li&gt;automatically replicated&lt;/li&gt;
-      &lt;li&gt;autoscale for your query needs&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Querying external source directly(bypass BigQuery’s managed storage)
-    &lt;ul&gt;
-      &lt;li&gt;일반적으로 사용 사례는 다른팀이 유지관리하고 지속적으로 업데이트하는 상품의 가격표와 같이 상대적으로 작지만 지속적으로 변경되는 외부데이터소스 를 사용&lt;/li&gt;
-      &lt;li&gt;보통 사용하지 않은 이유?
-        &lt;ul&gt;
-          &lt;li&gt;data consistency(데이터 일관성)가 보장되지 않음&lt;/li&gt;
-          &lt;li&gt;외부 data source가 진행중에 update가 되는 경우 BigQuery가 보장하지 않음&lt;/li&gt;
-          &lt;li&gt;이에대해서는 Cloud Dataflow를 사용하여 BigQuery에 streaming data pipeline을 구축하는 것이 좋음&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;참조&quot;&gt;참조&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.coursera.org/learn/gcp-big-data-ml-fundamentals/lecture/H1irf/bigquery-fast-sql-engine&quot;&gt;coursera : bigquery-fast-sql-engine&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 14 Mar 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/gcp/2021/03/14/gcp-bigquery/</link>
-        <guid isPermaLink="true">http://localhost:4000/gcp/2021/03/14/gcp-bigquery/</guid>
-        
-        <category>bigquery</category>
-        
-        <category>work</category>
-        
-        
-        <category>gcp</category>
-        
-      </item>
-    
-      <item>
-        <title>[k8s] Components</title>
-        <description>&lt;!--more--&gt;
-&lt;h2 id=&quot;kubernetes-components&quot;&gt;Kubernetes Components&lt;/h2&gt;
-&lt;h3 id=&quot;kubernetes란&quot;&gt;Kubernetes란&lt;/h3&gt;
-&lt;p&gt;Kubernetes(약어 k8s)란 Container Orchestration 플랫폼이다. container화 된 워크로드/서비스/애플리케이션을 관리하기 이식성 있고, 확장 가능한 오픈 소스 플랫폼. 시스템에 배포 가능한 애플리케이션의 구성 요소가 많아짐에 따라 모든 구성의 요소를 관리를 용이하기 위해 사용.&lt;/p&gt;
-
-&lt;p&gt;개발과 관리를 단순화할 뿐만 아니라 인프라 활용률을 크게 높일 수 있음 linux의 container의 기능에 의존해 애플리케이션의 내부 세부 사항을 알 필요 없이 각 Host에 애플리케이션을 수동으로 배포하지 않고도 이기종 애플리케이션을 배포. 모든 node가 하나의 Cluster로 구성하여 수천 대의 컴퓨터에서 애플리케이션을 배포/관리 가능. 기본 인프라를 추상화 하고 개발/배포/관리 단순화&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;control-plane-componentsmaster-node&quot;&gt;Control Plane Components(Master Node)&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://d33wubrfki0l68.cloudfront.net/2475489eaf20163ec0f54ddc1d92aa8d4c87c96b/e7c81/images/docs/components-of-kubernetes.svg&quot; alt=&quot;kubernetes architecture&quot; /&gt;
-k8s 구성요소는 크게 Control-Plane(Master Node)과 Worker Node로 구성
-Control-Plane은 k8s cluster의 전반적인 결정을 수행하고 cluster 이벤트에 충족되지 않을 경우 새로운 Pod를 감지하고 반응. 실질적으로 Cluster를 전체적인 관리를 담당Control-Plane 구성요소는 아래와 같음 구성 요소는 아래와 같음&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;API Server&lt;/li&gt;
-  &lt;li&gt;etcd&lt;/li&gt;
-  &lt;li&gt;kube-scheduler&lt;/li&gt;
-  &lt;li&gt;controller-manager&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;kube-apiserver-api-server&quot;&gt;kube-apiserver (API Server)&lt;/h4&gt;
-&lt;p&gt;API서버는 k8s  API를 노출하는 Control-Plane 컴포넌트의 프론트 엔드. k8s cluster에서 API를 사용할 수 있게 해줌. cluster로 요청이 왔을떄 그 요청이 유효한지 검증. 모든 요청을 API Server를 통해서 다른곳으로 전달되도록 구성.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/&quot;&gt;kube-apiserver상세&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;etcd&quot;&gt;etcd&lt;/h4&gt;
-&lt;p&gt;모든 Cluster의 데이터를 담는 k8s의 Backing store로 사용되는 consistent &amp;amp; high-available key값을 저장. k8s cluster에서 etcd를 backing store로 사용 시 이 데이터를 백업계획이 필요&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://etcd.io/docs/current/&quot;&gt;etcd상세&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;kube-scheduler&quot;&gt;kube-scheduler&lt;/h4&gt;
-&lt;p&gt;Node가 배정되지 않은 새로 생성된 Pod를 감지하고, 실행할 Node를 선택하는 Control-Plane 컴포넌트&lt;/p&gt;
-
-&lt;p&gt;스케쥴링 결정을 위해서 고려되는 요소는 아래와 같음&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;리소스에대한 개별 및 총체적인 요구사항&lt;/li&gt;
-  &lt;li&gt;HW/SW/정책적 제약&lt;/li&gt;
-  &lt;li&gt;affinity / anti-affinity 명세
-    &lt;ul&gt;
-      &lt;li&gt;affinity? popd를 특정 node에 배포되는 정책&lt;/li&gt;
-      &lt;li&gt;Node affinity : pod가 특정 Node에 배포 되도록 하는 기능&lt;/li&gt;
-      &lt;li&gt;Pod affinity : 기존에 배포된 Pod를 기준으로 해서 배포될 Node를 결정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;data locality&lt;/li&gt;
-  &lt;li&gt;workload 간섭&lt;/li&gt;
-  &lt;li&gt;dead line&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;kube-controller-manager&quot;&gt;kube-controller-manager&lt;/h4&gt;
-&lt;p&gt;Controller를 구성하는 Master Node의 Component 중 하나. 논리적으로 각 Controller는 개별 프로세스이지만, 복잡성을 낮추기 위해 모두 단일 binary파일로 compile되고 단일 프로세스 내에서 실행된다. Controller는 아래 구성요소를 포함&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Node Controller : Node가 다운되었을 때 통지와 대응에 관한 기능을 담당&lt;/li&gt;
-  &lt;li&gt;Replication Controller : 시스템의 모든 Replication Controller의 Object에대해 알맞은 수의 pod들을 유지시켜 주는 기능 담당&lt;/li&gt;
-  &lt;li&gt;Endpoint Controller : EndPoint Object를 채운다 service 와 pod를 연결&lt;/li&gt;
-  &lt;li&gt;Service Account &amp;amp; Token Controller : 새로운 Namespace에대한 기본 계정과 API 접근 Token을 생성&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;node-components&quot;&gt;Node Components&lt;/h3&gt;
-&lt;p&gt;Node Components들은 모든 Node에서 실행, 실행 중인 pods들은 유지관리 및 Kubernetes runtime 환경을 제공&lt;/p&gt;
-
-&lt;h4 id=&quot;kubelet&quot;&gt;Kubelet&lt;/h4&gt;
-&lt;p&gt;cluster의 모든Node위에서 실행되는 agent. kubelet은 pod에서 container가 확실하게 작동되로고 관리
-kubelet은 다양한 메커니즘을 통해 제공된 podSpec의 집합을 받아서 container가 해당 pod의 spec에 따라 동작하는 것을 확실히 함
-Kubelet은 kubernetes를 통해 생성되지 않은 container는 관리하지 않음&lt;/p&gt;
-
-&lt;h4 id=&quot;kube-proxy&quot;&gt;Kube-proxy&lt;/h4&gt;
-&lt;p&gt;kube-proxy는 Cluster의 각 Node에서 실행되는 network-proxy로 k8s의 서비스개념의 구현부 
-Node의 network 규칙을 관리. 이 network 규칙이 내부 network session이나 cluster 외부에서 pod로 network 통신이 가능하게 해줌
-kube-proxy는 OS에 가용한 packet filtering이 있을경우 이를사용, 그렇지 않으면 traffic 자체를 forwarding함&lt;/p&gt;
-
-&lt;h4 id=&quot;container-runtime&quot;&gt;Container-runtime&lt;/h4&gt;
-&lt;p&gt;Container-runtime은 container 실행을 담당하는 소프트웨어. k8s는 여러 container runtime을 지원. docker, containerd, CRI-O 그리고 kubernetes CRI를 구현한 모든 소프트웨어를 지원&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md&quot;&gt;Kubernetes CRI&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;addons&quot;&gt;Addons&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;k8s의 리소스(DaemonSet, Deployment, etc)을 이용하여 cluster 기능을 구현. 이들은 cluster단위의 기능을 제공하기 때문에 addon에대한 namespace 리소스는 &lt;code class=&quot;highlighter-rouge&quot;&gt;kube-system&lt;/code&gt; namespace에 속함&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;dns&quot;&gt;DNS&lt;/h4&gt;
-
-&lt;h4 id=&quot;dashboard&quot;&gt;Dashboard&lt;/h4&gt;
-
-&lt;h4 id=&quot;container-resource-monitoring&quot;&gt;Container resource Monitoring&lt;/h4&gt;
-
-&lt;h4 id=&quot;cluster-level-logging&quot;&gt;Cluster-Level Logging&lt;/h4&gt;
-</description>
-        <pubDate>Fri, 12 Mar 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/k8s/2021/03/12/k8s-components/</link>
-        <guid isPermaLink="true">http://localhost:4000/k8s/2021/03/12/k8s-components/</guid>
-        
-        <category>k8s</category>
-        
-        <category>components</category>
-        
-        
-        <category>k8s</category>
-        
-      </item>
-    
-      <item>
-        <title>[k8s] Pod Lifecycle</title>
-        <description>&lt;!--more--&gt;
-&lt;h2 id=&quot;pod-lifecycle&quot;&gt;Pod Lifecycle&lt;/h2&gt;
-
-</description>
-        <pubDate>Sat, 06 Feb 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/k8s/2021/02/06/k8s-pod-lifecycle/</link>
-        <guid isPermaLink="true">http://localhost:4000/k8s/2021/02/06/k8s-pod-lifecycle/</guid>
-        
-        <category>k8s</category>
-        
-        <category>pod</category>
-        
-        <category>lifecycle</category>
-        
-        
-        <category>k8s</category>
         
       </item>
     

@@ -2,7 +2,7 @@
 layout: post  
 title: "[BigQuery]How does BigQuery work"  
 subtitle: "BigQuery - How does BigQuery work"  
-categories: gcp  
+categories: gcp
 tags: bigquery work 
 comments: true  
 ---  

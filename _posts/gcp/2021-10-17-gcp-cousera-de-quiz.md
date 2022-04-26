@@ -2,8 +2,8 @@
 layout: post  
 title: "[Quiz] GCP Bigdata and ML Quiz"  
 subtitle: "GCP Bigdata and ML quiz "  
-categories: gcp  
-tags: bigdata ml 
+categories: gcp
+tags: cousera  
 comments: true  
 ---  
 

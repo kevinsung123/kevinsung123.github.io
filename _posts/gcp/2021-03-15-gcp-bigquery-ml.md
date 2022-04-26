@@ -2,7 +2,7 @@
 layout: post  
 title: "[BigQuery]Apply ML using SQL with BigQuery ML"  
 subtitle: "Apply ML using SQL with BigQuery ML"  
-categories: gcp  
+categories: gcp
 tags: bigquery ml 
 comments: true  
 ---  
