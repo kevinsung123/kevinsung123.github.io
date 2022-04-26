@@ -1,4 +1,4 @@
-
+#!/bin/bash
 # Initialization
 #jekyll new kevinsung123.github.io
 

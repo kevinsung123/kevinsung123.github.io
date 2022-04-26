@@ -6,9 +6,193 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 21 Mar 2022 01:33:30 +0900</pubDate>
-    <lastBuildDate>Mon, 21 Mar 2022 01:33:30 +0900</lastBuildDate>
+    <pubDate>Wed, 27 Apr 2022 01:08:53 +0900</pubDate>
+    <lastBuildDate>Wed, 27 Apr 2022 01:08:53 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[BigQuery]Functions - Date</title>
+        <description>&lt;h3 id=&quot;chatper-1-what-is-google-bigquery&quot;&gt;Chatper 1. What is Google BigQuery&lt;/h3&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;날짜함수&quot;&gt;날짜함수&lt;/h2&gt;
+
+&lt;h3 id=&quot;extract&quot;&gt;EXtract&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt; Extract (part FROM date_expression)&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&quot;설명&quot;&gt;설명&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;지정된 날짜 부분에 해당하는 값을 반환 &lt;code class=&quot;highlighter-rouge&quot;&gt;part&lt;/code&gt;는 다음 중 하나
+    &lt;ul&gt;
+      &lt;li&gt;DAYOFWEEK : 한주의 첫날이 일요일인 [1,7] 범위 값 반환&lt;/li&gt;
+      &lt;li&gt;DAY&lt;/li&gt;
+      &lt;li&gt;DAYOFYEAR&lt;/li&gt;
+      &lt;li&gt;WEEK : [0,53] 범위에서 날짜의 주 번호를 반환. 주는 일요일부터 시작되며 그 해의 첫 번째 일요일 이전 날짜는 0번쨰&lt;/li&gt;
+      &lt;li&gt;WEEKDAY&lt;/li&gt;
+      &lt;li&gt;ISOWEEK&lt;/li&gt;
+      &lt;li&gt;MONTH&lt;/li&gt;
+      &lt;li&gt;QUARTER&lt;/li&gt;
+      &lt;li&gt;YEAR&lt;/li&gt;
+      &lt;li&gt;ISYEAR
+        &lt;h5 id=&quot;반환&quot;&gt;반환&lt;/h5&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;INT64&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;참조&quot;&gt;참조&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://cloud.google.com/bigquery/docs/reference/standard-sql/date_functions?hl=ko&quot;&gt;GCP Document - BigQuery &amp;gt; Funtions &amp;gt; Date&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 27 Apr 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/gcp/2022/04/27/gcp-bigquery-function/</link>
+        <guid isPermaLink="true">http://localhost:4000/gcp/2022/04/27/gcp-bigquery-function/</guid>
+        
+        <category>bigquery</category>
+        
+        <category>work</category>
+        
+        
+        <category>gcp</category>
+        
+      </item>
+    
+      <item>
+        <title>[Devops]CICD(1) 개요</title>
+        <description>&lt;h3 id=&quot;modul1-cicd개요&quot;&gt;Modul1. CI/CD개요&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;index&quot;&gt;INDEX&lt;/h3&gt;
+&lt;h4 id=&quot;11-cicd정의&quot;&gt;1.1 CI/CD정의&lt;/h4&gt;
+&lt;h4 id=&quot;12-환경의-번화&quot;&gt;1.2 환경의 번화&lt;/h4&gt;
+&lt;h4 id=&quot;13-문화의-변화&quot;&gt;1.3 문화의 변화&lt;/h4&gt;
+&lt;h4 id=&quot;14-cicd-패러다임-변화&quot;&gt;1.4 CI/CD 패러다임 변화&lt;/h4&gt;
+&lt;h4 id=&quot;15-cicd-목표&quot;&gt;1.5 CI/CD 목표&lt;/h4&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;11-cicd정의-1&quot;&gt;1.1 CI/CD정의&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;CI(Continuous Integration), 지속적인 통합 + CD(Continuous Devlivery,지속적인 배포 )&lt;/li&gt;
+  &lt;li&gt;어플리케이션 빌드 및 배포와 인프라 Provisioning을 &lt;code class=&quot;highlighter-rouge&quot;&gt;자동화&lt;/code&gt;하여 산출물을 짧은 주기로 고객에게 제공하는 방법&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets\img\devops\2022-04-10-devops-cicd-1-1.png&quot; alt=&quot;ciccd-1&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;12-환경의-번화-1&quot;&gt;1.2 환경의 번화&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Business Agility(민첩성)
+    &lt;ul&gt;
+      &lt;li&gt;빠른 개발, 적용, 검증 확대&lt;/li&gt;
+      &lt;li&gt;MSA 구조가 확대&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Cloud-native platforms
+    &lt;ul&gt;
+      &lt;li&gt;on-demand 방식으로 자원 이용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;DevOps processes
+    &lt;ul&gt;
+      &lt;li&gt;운영하면서 지속적으로 개발, 개발과 운영을 결합한 합성어&lt;/li&gt;
+      &lt;li&gt;개발, 빌드, 테스트 및 운영이 용이하도록 사고방식의 변화, 협업 향상 및 긴밀한 통합을 강조&lt;/li&gt;
+      &lt;li&gt;깅버이 조직과 문화 등 기술 외적인 변화도 수반되어야함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets\img\devops\2022-04-10-devops-cicd-1-2.png&quot; alt=&quot;ciccd-2&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;13-문화의-번화&quot;&gt;1.3 문화의 번화&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;환경적인 변화로 잦은 출시 요구가 잦음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets\img\devops\2022-04-10-devops-cicd-1-3.png&quot; alt=&quot;ciccd-3&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Agile이란?
+    &lt;ul&gt;
+      &lt;li&gt;고객 가치 극대화를 위해 최선의 의사결정을 내리는데 도움이 되는 가치와 원칙이며 소프트웨어의 불확실성이 증가됨에 따라 개발 방식을 프로토타입과 학습에 초점을 맞춘 방법론&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;기존 Waterfall과 차이?
+    &lt;ul&gt;
+      &lt;li&gt;분석/설계 -&amp;gt; 개발 - &amp;gt; 테스트 -&amp;gt; 베포&lt;/li&gt;
+      &lt;li&gt;위의 과정을 자주자주 빠르게 반복&lt;/li&gt;
+      &lt;li&gt;민첩하게 대응&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;DevOps란?
+    &lt;ul&gt;
+      &lt;li&gt;소프트웨어 개발자들과 IT종사자들 사이의 의사소통, 협업, 융합을 강조한 소프트웨어 개발방법론&lt;/li&gt;
+      &lt;li&gt;아래 무한 loop를 돌며 개발을 운영에 배포&lt;/li&gt;
+      &lt;li&gt;CAMLS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;문화의 변화
+    &lt;ul&gt;
+      &lt;li&gt;Agile
+        &lt;ul&gt;
+          &lt;li&gt;프로세스 문화에 초점&lt;/li&gt;
+          &lt;li&gt;변화를 강조&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;CI/CD
+        &lt;ul&gt;
+          &lt;li&gt;소프트웨어 라이프 사이클에 초점&lt;/li&gt;
+          &lt;li&gt;도구를 강조&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;DevOPS
+        &lt;ul&gt;
+          &lt;li&gt;개발 문화에 초점&lt;/li&gt;
+          &lt;li&gt;역할을 강조
+&lt;img src=&quot;https://www.youtube.com/watch?v=5Eqz8hm3SVQ&quot; alt=&quot;youtube 참조&quot; /&gt;
+ &lt;img src=&quot;../assets\img\devops\2022-04-10-devops-cicd-1-4.png&quot; alt=&quot;ciccd-4&quot; /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;14-cicd-패러다임의-변화&quot;&gt;1.4 CI/CD 패러다임의 변화&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets\img\devops\2022-04-10-devops-cicd-1-5.png&quot; alt=&quot;ciccd-5&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;15-cicd-목표-1&quot;&gt;1.5 CI/CD 목표&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;CI/CD는 파이프라이능ㄹ 구축하여 어플리케이션 개발단계를 자동화하여 배포 프로세스를 여러 단계로 나누고, 각 단게마다 어플리케이션에 추가 혹은 변경된 기능의 유효성을 검사하고 품질을 다각도로 확인하여 짧은 주기로 지속적으로 제품(release)을 출시하는것&lt;/li&gt;
+  &lt;li&gt;파이프라인 단계를 모두 자동화 되어있음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;summary&quot;&gt;Summary&lt;/h4&gt;
+&lt;p&gt;IT환경과 개발 방법론의 변화로 인하여 Business Agility를 확보하기 위해서는 Monolith 환경에 비해 복잡한 아키텍처를 구성하여야 하므로 자동확 고려된 아키텍처 설계 필수&lt;/p&gt;
+
+&lt;p&gt;CI/CD는 DevOps와 Agile을 구현하기 위한 자동화의 핵심요소이며 프로젝트 환경의 Outer Architecture 구성에대한 고민과 이를 자동화 하기 위한 CI/CD에 대한 고민이 필요함&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 10 Apr 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/devops/2022/04/10/devops-cicd-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/devops/2022/04/10/devops-cicd-1/</guid>
+        
+        <category>devops</category>
+        
+        <category>cicd</category>
+        
+        <category>overview</category>
+        
+        
+        <category>devops</category>
+        
+      </item>
     
       <item>
         <title>[BigQuery]Chatper 1. What is Google BigQuery</title>
@@ -16,9 +200,38 @@
 
 &lt;!--more--&gt;
 
-&lt;h4 id=&quot;data-processing-architectures&quot;&gt;Data Processing Architectures&lt;/h4&gt;
+&lt;h3 id=&quot;data-processing-architectures&quot;&gt;Data Processing Architectures&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;serverless, highly scalable data wareshouse (query engine이 built-in)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;bigquery--a-serverless-distributed-sql-engine&quot;&gt;BigQuery : A Serverless, Distributed SQL Engine&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;BigQuery is serverless&lt;/li&gt;
+  &lt;li&gt;Can run queries without the need to manage infrastructure&lt;/li&gt;
+  &lt;li&gt;Scalability is possible because the service distributes the query processing among thousands of workers almost instantaneously&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;working-with-bigquery&quot;&gt;Working with BigQuery&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;BigQuery is datawarehouse, implying a degree of &lt;code class=&quot;highlighter-rouge&quot;&gt;centralization and ubiquity&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;The benefits of BigQuery
+    &lt;ul&gt;
+      &lt;li&gt;when we do joins of datasets from completely differenct sources (조인할때)&lt;/li&gt;
+      &lt;li&gt;when we query against data that is sotred outside BigQuery(Federation Query)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;The serverless nature of BQ provides the technological means to &lt;code class=&quot;highlighter-rouge&quot;&gt;break down department silos&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;streamline collaboration&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;부서간 사일로 : 부서 이기주의&lt;/li&gt;
+      &lt;li&gt;협업 최소화&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;etl-el-and-elt&quot;&gt;ETL, EL and ELT&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;참조&quot;&gt;참조&lt;/h3&gt;
@@ -2663,234 +2876,6 @@ Given a string s, return the first non-repeating character in it and return its 
         
         
         <category>python</category>
-        
-      </item>
-    
-      <item>
-        <title>[Python] 3 Key Skills for Handling Modules in Python</title>
-        <description>&lt;!--more--&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;3-key-skills-for-handling-modules-in-python&quot;&gt;3 Key Skills for Handling Modules in Python&lt;/h2&gt;
-
-&lt;p&gt;Python에서 module은 python code를 포함하는 파일 그것의 &lt;code class=&quot;highlighter-rouge&quot;&gt;.py&lt;/code&gt;라는 suffix가 붙음
-일반적으로 관련 class또는 function을 모듈에 넣고 전체프로그램을 다른 module로 분리하는것이 좋은 programming practice이다&lt;/p&gt;
-
-&lt;p&gt;아래에는 module을 잘 사용하고 관리하기 위한 좋은 3가지 skill에대한 소개&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;1-import-python-modules-skillfully&quot;&gt;1. Import Python Modules Skillfully&lt;/h3&gt;
-
-&lt;h5 id=&quot;1-dont-use-an-asterisk-to-import-all-things-at-once&quot;&gt;(1) Don’t use an asterisk to import all things at once&lt;/h5&gt;
-&lt;ul&gt;
-  &lt;li&gt;모든 모듈을 import할떄 가장 기본적인 방법은 asterisk를 사용하는 것
-  &lt;code class=&quot;highlighter-rouge&quot;&gt;from module_a import *&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;그러나 위의 방법은 무엇을 import했는지 불명료하고 bug를 일으킬 가능성이 있음
-    &lt;ul&gt;
-      &lt;li&gt;현재 파일의 name이 다른 imported name과 총동 가능성&lt;/li&gt;
-      &lt;li&gt;imported module에 새로운것을 추가하면, 모든 new names은 또한 import된다. name conflict를 일으킬 가능성이 높음&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;필요한 모듈부분만 import 하는것은 좋은 습관이다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;2-give-it-a-nickname-for-convenience&quot;&gt;(2) Give it a nickname for convenience&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;datascientist라면 아래코드가 친숙할 것이다
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;as&lt;/code&gt; keyword를 alias를 줌으로써 긴이름의 module을 더 짧게사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;2-use-relative-imports-smartly&quot;&gt;(2) Use relative imports smartly&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;dots&lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt;를 사용함으로써 현재 파일의 상대 경로 모듈을 더 효과적으로 가져옴
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;from . import module_a
-from .. import module_b
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;single dot은 &lt;code class=&quot;highlighter-rouge&quot;&gt;module_a&lt;/code&gt;는 현재 파일의 위치에서 같은 directory에서 import(its’s siblings)&lt;/li&gt;
-  &lt;li&gt;two dots은 &lt;code class=&quot;highlighter-rouge&quot;&gt;module_b&lt;/code&gt; 현재 파일의 위에서 상대적으로 위의 directory에서 import(it’s parent)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;2-execute-python-moduels-as-scripts&quot;&gt;2. Execute Python Moduels as Scripts&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;importing module에다가 또한 우리는 module을 개별적으로 script같이 실행가능&lt;/li&gt;
-  &lt;li&gt;아래는 예시
-&lt;code class=&quot;highlighter-rouge&quot;&gt;test.py&lt;/code&gt;라는 모듈이 있고 아래 code가 포함
-&lt;code class=&quot;highlighter-rouge&quot;&gt;print(&quot;Yang Zhou&quot;)&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;terminal에서 module을 실행 시킬때, 아래와 같은 command를 입력
-&lt;img src=&quot;https://miro.medium.com/max/6000/1*Hf2a0I3GU_z88Ri30MqMTg.png&quot; alt=&quot;sample&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;위에 예와 같은이 &lt;code class=&quot;highlighter-rouge&quot;&gt;python&lt;/code&gt;을 module이름 앞에 붙여서 실행&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;text.py&lt;/code&gt;가 function or class를 포함시 우리는 &lt;code class=&quot;highlighter-rouge&quot;&gt;main&lt;/code&gt;function을 포함하여 실행&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def output_author(name):
-    print(name)
-
-if __name__ == &quot;__main__&quot;:
-    import sys
-    output_author(name=sys.argv[1])
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;module이 다른 module에 import 되면 main function은 실행하지 않으므로 유연성을 제공&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;2-manage-python-modules-by-packages&quot;&gt;2. Manage Python Modules by Packages&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;python package는 다른 module들을 grouping시킴. logically related module들을 package에 넣는것은 좋은 습관
-!(blog)[https://miro.medium.com/max/568/1*iy9OaOsJ9nU9OL2r702aBw.png]&lt;/li&gt;
-  &lt;li&gt;위의 예시에서는 blog 그리고 mysite라는 2개의 python package그리고 migration이라는 blog의 sub package가 존재
-package를 사용함으로써 프로젝트를 좀더 논리적으로 명확하게 관리가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://medium.com/techtofreedom/3-key-skills-for-handling-modules-in-python-d644c5e5682&quot;&gt;medium&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/collections.html#collections.namedtuple&quot;&gt;docs-python&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 27 Mar 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/python/2021/03/27/python-skills-handling-modules-copy/</link>
-        <guid isPermaLink="true">http://localhost:4000/python/2021/03/27/python-skills-handling-modules-copy/</guid>
-        
-        <category>skills</category>
-        
-        <category>module</category>
-        
-        
-        <category>python</category>
-        
-      </item>
-    
-      <item>
-        <title>[Docker] Dockerfile 작성</title>
-        <description>&lt;!--more--&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;dockerfile-작성&quot;&gt;Dockerfile 작성&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Dockerfile 명령은 항상 &lt;code class=&quot;highlighter-rouge&quot;&gt;FROM&lt;/code&gt;으로 시작. 없으면 이미지가 생성되지 않음&lt;/li&gt;
-  &lt;li&gt;이미지를 생성할때에는 Dockerfile이 있는 딩렉터리에서 docker build명령을사용
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo docker build --tag example .
-$ sudo docker build --tag pyrasis/example .
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--tag&lt;/code&gt; 또는 &lt;code class=&quot;highlighter-rouge&quot;&gt;-t&lt;/code&gt; 옵션으로 이미지 이름을 설정 가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;dockerignore&quot;&gt;dockerignore&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;dockerfile과 같은 directory에 있는 모든파일을 context라고 함. 이미지 생성시 context를 모두 docker deamon에 전송하므로 필요없는 파일이 포함되지않도록 함&lt;/li&gt;
-  &lt;li&gt;context에서 파일이나 directory를 제외하고 싶을떄 &lt;code class=&quot;highlighter-rouge&quot;&gt;.dockerignore&lt;/code&gt;파일을 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;from&quot;&gt;FROM&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;어떤 이미지를 기반으로 이미지를 생성할지 결정&lt;/li&gt;
-  &lt;li&gt;맨앞에 항상설정&lt;/li&gt;
-  &lt;li&gt;image가 local에 있으면 바로 사용하고 없으면, Docker Hub에서 다운로드&lt;/li&gt;
-  &lt;li&gt;FROM이 2개이면 2개의 image가 생성&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;maintainer&quot;&gt;MAINTAINER&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;이미지를 생성한 사람의 정보를 설정&lt;/li&gt;
-  &lt;li&gt;MAINTAINER &lt;작성자 정보=&quot;&quot;&gt;
-` MAINTAINER Hong, Gildong &amp;lt;gd@yuldo.com&amp;gt;`&lt;/작성자&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;run&quot;&gt;RUN&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;FROM에서 설정한 이미지 위에서 스크립트 혹은 명령을 실행&lt;/li&gt;
-  &lt;li&gt;FROM으로 설정한 이미지에서 포함된 /bin/sh 실행 파일을 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;cmd&quot;&gt;CMD&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;container가 시작되었을때&lt;/code&gt; 스크립트 혹은 명령을 실행 &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run&lt;/code&gt;명령으로 container 생성하거나 docker start명령으로 정지된 container를 시작할때 실행&lt;/li&gt;
-  &lt;li&gt;CMD는 Dockerfile에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;한번만 실행&lt;/code&gt;
-    &lt;h5 id=&quot;entrypoint를-사용할때&quot;&gt;ENTRYPOINT를 사용할때&lt;/h5&gt;
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ENTRYPOINT [&quot;echo&quot;]
-CMD [&quot;hello&quot;]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;CMD [ “ARG1”, “ARG2]는 ENTRYPOING에 설정한 명령에 매개변수를 전달하여 실행&lt;/li&gt;
-  &lt;li&gt;Dockerfile에 ENTRYPOINT가 있으면 CMD는 매개변수만 전달. 그래서 CMD는 독자적으로 파일 실행 불가&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;entrypoint&quot;&gt;ENTRYPOINT&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;container가 시작되었을때&lt;/code&gt; 스크립트 혹은 명령을 실행 &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run&lt;/code&gt;명령으로 container 생성하거나 docker start명령으로 정지된 container를 시작할때 실행&lt;/li&gt;
-  &lt;li&gt;ENTRYPOINT Dockerfile에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;한번만 실행&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;cmd-와-entrypoint-차이점&quot;&gt;CMD 와 ENTRYPOINT 차이점&lt;/h5&gt;
-&lt;ul&gt;
-  &lt;li&gt;CMD/ENTRYPOINT는 container가 생성될 때 명령이 실행되는것은 동일하지만, &lt;code class=&quot;highlighter-rouge&quot;&gt;docker run&lt;/code&gt;명령에서 동작방식이 다름&lt;/li&gt;
-  &lt;li&gt;docker run명령어시 CMD는 무시&lt;/li&gt;
-  &lt;li&gt;ENTRYPOINT는 docker run 명령에서 실행할 파일을 설정하면 &lt;code class=&quot;highlighter-rouge&quot;&gt;무시되지 않고&lt;/code&gt;, 실행할 파일 설정 자체를 매개변수로 받아서 처리&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;expose&quot;&gt;EXPOSE&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;host와 연결할 포트번호를 설정&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&quot;env&quot;&gt;ENV&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;환경변수를 설정&lt;/li&gt;
-  &lt;li&gt;설정한 환경변수는 RUN,CMD,ENTRYPOING에서 적용
-` ENV &lt;환경변수&gt; &lt;값&gt;`&lt;/값&gt;&lt;/환경변수&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;add&quot;&gt;ADD&lt;/h4&gt;
-
-&lt;h4 id=&quot;copy&quot;&gt;COPY&lt;/h4&gt;
-&lt;h4 id=&quot;volumne&quot;&gt;VOLUMNE&lt;/h4&gt;
-&lt;h4 id=&quot;user&quot;&gt;USER&lt;/h4&gt;
-&lt;h4 id=&quot;workdir&quot;&gt;WORKDIR&lt;/h4&gt;
-
-</description>
-        <pubDate>Sat, 27 Mar 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/docker/2021/03/27/docker-dockerfile/</link>
-        <guid isPermaLink="true">http://localhost:4000/docker/2021/03/27/docker-dockerfile/</guid>
-        
-        <category>skills</category>
-        
-        <category>module</category>
-        
-        
-        <category>docker</category>
         
       </item>
     
