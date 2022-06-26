@@ -58,5 +58,5 @@ comments: true
 
 
 ### 참고
-- ![DataOps](https://blog.naver.com/PostView.nhn?blogId=smartnari&logNo=222110346637&from=search&redirect=Log&widgetTypeCall=true&directAccess=false)
+- ![DataFabric](https://www.tibco.com/ko/reference-center/what-is-data-fabric)
 - ![hitchivantara](https://www.hitachivantara.com/ko-kr/insights/dataops-insights/dataops/what-is-dataops.html)
