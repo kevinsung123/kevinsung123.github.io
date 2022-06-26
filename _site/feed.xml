@@ -6,9 +6,52 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 27 Apr 2022 01:08:53 +0900</pubDate>
-    <lastBuildDate>Wed, 27 Apr 2022 01:08:53 +0900</lastBuildDate>
+    <pubDate>Fri, 06 May 2022 16:21:24 +0900</pubDate>
+    <lastBuildDate>Fri, 06 May 2022 16:21:24 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[Shell] Find </title>
+        <description>&lt;h3 id=&quot;find-it-and-do-what-you-want&quot;&gt;Find it and do what you want&lt;/h3&gt;
+&lt;p&gt;It’s safe to say that the &lt;code class=&quot;highlighter-rouge&quot;&gt;find&lt;/code&gt; command in Linux is one of the must-know operations for backend developers, unless you are using a Windows-server&lt;/p&gt;
+
+&lt;p&gt;For technical interviews, it’s also a popular topic. Let’s see a real questions&lt;/p&gt;
+
+&lt;h4 id=&quot;scenario&quot;&gt;Scenario&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;If there is a directory called &quot;logs&quot; on you Linux server, how to delete the log files under it whose last access times was over one year ago?
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;answer&quot;&gt;Answer&lt;/h4&gt;
+&lt;p&gt;First of all, we need to use the &lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt; command to enter the corresponding directory, and then, the command is as follows:
+` find . -type f -atime +365 -exec rm -rf {} 
+;`&lt;/p&gt;
+
+&lt;h4 id=&quot;0-find-files-by-names-or-regular-expressions&quot;&gt;0. Find Files by Names or Regular Expressions&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Let’s start from the simples usage. TO search files by a specific name, the command is like the following :&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;find . -name test.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/techtofreedom/7-uses-of-find-command-in-linux-c45f70d7351a&quot;&gt;medium&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Fri, 06 May 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/os/2022/05/06/os-shell-find/</link>
+        <guid isPermaLink="true">http://localhost:4000/os/2022/05/06/os-shell-find/</guid>
+        
+        <category>shell</category>
+        
+        <category>find</category>
+        
+        
+        <category>os</category>
+        
+      </item>
     
       <item>
         <title>[BigQuery]Functions - Date</title>
@@ -2809,66 +2852,6 @@ Given a string s, return the first non-repeating character in it and return its 
         <pubDate>Sun, 11 Apr 2021 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/python/2021/04/11/python-pandas/</link>
         <guid isPermaLink="true">http://localhost:4000/python/2021/04/11/python-pandas/</guid>
-        
-        <category>pandas</category>
-        
-        <category>chunksize</category>
-        
-        
-        <category>python</category>
-        
-      </item>
-    
-      <item>
-        <title>[Python] Pandas - Chunksize</title>
-        <description>&lt;h3 id=&quot;namedtuple&quot;&gt;namedtuple&lt;/h3&gt;
-&lt;p&gt;dicionary와 같은 container을 지원. 특정 값에 hash를 적용한 key를 포함. key, idex 둘다 접근 가능. tuple의 성질을 가졌고, tuple은 일반적으로 index로 접근하므로 직관적이지 않음. namedtuple은 field의 key(이름)을 붙여 사용 가능&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;access-options&quot;&gt;Access options&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Access by index : The attribute values of namedtuple() are ordered and can be accessed using the index number unlike dictionaries which are not accessible by index.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Access by keyname : Access by keyname is also allowed as in dictionaries.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;using getattr() :- This is yet another way to access the value by giving namedtuple and key value as its argument.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;conversion-operations&quot;&gt;Conversion Operations&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;_make()&lt;/strong&gt; : iterable객체를 argument로 넘겨  namedtuple()로 return&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;_asdict()&lt;/strong&gt; : OrderDict()로 return ( namedtupel()의 mapping된 value로 구성)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;**(double start) operator&lt;/strong&gt; : dictionary를 namedtuple()로 변환&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;additional-operations&quot;&gt;Additional Operations&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;_fields&lt;/strong&gt; : namespace의 모든 keyname을 return&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;_replace()&lt;/strong&gt; : keyname을 넘겨 value값을 변환&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;example&quot;&gt;Example&lt;/h3&gt;
-&lt;script src=&quot;https://gist.github.com/kevinsung123/7385f076603c1bd5bbd13f2998ead973.js&quot;&gt;&lt;/script&gt;
-
-&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/namedtuple-in-python/&quot;&gt;geeks&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/collections.html#collections.namedtuple&quot;&gt;docs-python&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 11 Apr 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/python/2021/04/11/python-pandas-chunksize/</link>
-        <guid isPermaLink="true">http://localhost:4000/python/2021/04/11/python-pandas-chunksize/</guid>
         
         <category>pandas</category>
         
