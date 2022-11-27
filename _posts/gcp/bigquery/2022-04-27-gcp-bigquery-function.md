@@ -8,8 +8,6 @@ comments: true
 ---  
 
 
-### Chatper 1. What is Google BigQuery
-
 <!--more-->
 
 ## 날짜함수

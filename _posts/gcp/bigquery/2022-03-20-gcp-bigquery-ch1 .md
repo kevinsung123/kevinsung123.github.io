@@ -36,5 +36,4 @@ comments: true
 
 ### 참조
 - Google BigQuery The Definite Guide p1-p22
-
-[coursera : bigquery-fast-sql-engine](https://www.coursera.org/learn/gcp-big-data-ml-fundamentals/lecture/H1irf/bigquery-fast-sql-engine)
+- [coursera : bigquery-fast-sql-engine](https://www.coursera.org/learn/gcp-big-data-ml-fundamentals/lecture/H1irf/bigquery-fast-sql-engine)
