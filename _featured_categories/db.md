@@ -1,7 +1,7 @@
 ---
 layout: list
-title: DB
-slug: DB
+title: db
+slug: db
 menu: true
 submenu: false
 order: 10
