@@ -1,10 +1,10 @@
 ---
 layout: list
-title: db
-slug: db
+title: Plan
+slug: plan
 menu: true
 submenu: false
-order: 10
+order: 12
 description: >
-  Database
+  계획 및 할일 정리
 ---

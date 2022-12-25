@@ -1,10 +1,10 @@
 ---
 layout: list
-title: Docker
-slug: docker
+title: Python
+slug: python
 menu: true
 submenu: false
 order: 3
 description: >
-  Concept and Pratice of Docker
+  Python Concept & Usage
 ---

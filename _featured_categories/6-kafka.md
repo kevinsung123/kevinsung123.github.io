@@ -1,10 +1,10 @@
 ---
 layout: list
-title: Plan
-slug: plan
+title: Kafka
+slug: Kafka
 menu: true
 submenu: false
-order: 0
+order: 6
 description: >
-  계획 및 할일 정리
+  Kafka Concept & Usage
 ---

@@ -1,10 +1,10 @@
 ---
 layout: list
-title: Python
-slug: python
+title: Leetcode
+slug: leetcode
 menu: true
 submenu: false
-order: 1
+order: 11
 description: >
-  Python Concept & Usage
+  Leetcode Algorithm
 ---

@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 17 Aug 2022 22:50:15 +0900</pubDate>
-    <lastBuildDate>Wed, 17 Aug 2022 22:50:15 +0900</lastBuildDate>
+    <pubDate>Sun, 25 Dec 2022 16:27:51 +0900</pubDate>
+    <lastBuildDate>Sun, 25 Dec 2022 16:27:51 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -453,9 +453,7 @@
     
       <item>
         <title>[BigQuery]Functions - Date</title>
-        <description>&lt;h3 id=&quot;chatper-1-what-is-google-bigquery&quot;&gt;Chatper 1. What is Google BigQuery&lt;/h3&gt;
-
-&lt;!--more--&gt;
+        <description>&lt;!--more--&gt;
 
 &lt;h2 id=&quot;날짜함수&quot;&gt;날짜함수&lt;/h2&gt;
 
@@ -678,9 +676,8 @@
 &lt;h3 id=&quot;참조&quot;&gt;참조&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;Google BigQuery The Definite Guide p1-p22&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/gcp-big-data-ml-fundamentals/lecture/H1irf/bigquery-fast-sql-engine&quot;&gt;coursera : bigquery-fast-sql-engine&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.coursera.org/learn/gcp-big-data-ml-fundamentals/lecture/H1irf/bigquery-fast-sql-engine&quot;&gt;coursera : bigquery-fast-sql-engine&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 20 Mar 2022 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/gcp/2022/03/20/gcp-bigquery-ch1/</link>
