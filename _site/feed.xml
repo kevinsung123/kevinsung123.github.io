@@ -6,9 +6,157 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 25 Dec 2022 16:29:19 +0900</pubDate>
-    <lastBuildDate>Sun, 25 Dec 2022 16:29:19 +0900</lastBuildDate>
+    <pubDate>Thu, 29 Dec 2022 17:51:03 +0900</pubDate>
+    <lastBuildDate>Thu, 29 Dec 2022 17:51:03 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[DB] 4UUID </title>
+        <description>&lt;h2 id=&quot;database---4uuid-primary-key&quot;&gt;Database - 4UUID (Primary key)&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;abstract&quot;&gt;Abstract&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  This specification defines a Uniform Resource Name namespace for
+   UUIDs (Universally Unique IDentifier), also known as GUIDs (Globally
+   Unique IDentifier).  A UUID is 128 bits long, and can guarantee
+   uniqueness across space and time.  UUIDs were originally used in the
+   Apollo Network Computing System and later in the Open Software
+   Foundation's (OSF) Distributed Computing Environment (DCE), and then
+   in Microsoft Windows platforms.
+
+   This specification is derived from the DCE specification with the
+   kind permission of the OSF (now known as The Open Group).
+   Information from earlier versions of the DCE specification have been
+   incorporated into this document.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;uuid&quot;&gt;UUID?&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;UUID(A Universally Unique Identifier URN Namespace)&lt;/li&gt;
+  &lt;li&gt;정보식별을 위하여 사용되는 식별자&lt;/li&gt;
+  &lt;li&gt;128bit의 숫자로 이루어져 있음&lt;/li&gt;
+  &lt;li&gt;UUID 장점 중 데이터들이 나중에 단일 DB로 통합되거나, 같은 채널에서 전송되더라도 식별자가 중복될 확률이 매우 낮음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;use-case---cloud-spanner&quot;&gt;Use case - Cloud Spanner&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Cloud SPanner 분산 아키텍처를 사용하면 &lt;code class=&quot;highlighter-rouge&quot;&gt;핫스팟&lt;/code&gt;을 방지하기 위해 스키마를 설계&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;핫스팟&lt;/code&gt;은 기본서버가 여러 유사 요청을 여러서버에 동시에 배포하는 대신 의도치 않게 여러 유사 요청만 처리하도록 강제는 테이블의 구조 결함&lt;/li&gt;
+  &lt;li&gt;핫스팍 방지 대책( UUID 사용)
+    &lt;ul&gt;
+      &lt;li&gt;UUID를 기본키로 저장하는 방법
+        &lt;ul&gt;
+          &lt;li&gt;STRING(36)열에서 저장&lt;/li&gt;
+          &lt;li&gt;INT64열의 쌍에서 저장&lt;/li&gt;
+          &lt;li&gt;BYTES(16) 열에서 저장&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;UUID 사용할 경우 단점
+        &lt;ul&gt;
+          &lt;li&gt;16바이트 이상을 사용하므로 크기가 약간 큼. 기본키를 지정하는 다른방법은 이렇게 많은 스토리지를 사용 X&lt;/li&gt;
+          &lt;li&gt;레코드에관한 정보를 담고 있지 않음. 예를들어 SingleId와 AlbumId라는 기본 키는 이름에 의미가 담겨있지만 UUID는 그렇지 않음&lt;/li&gt;
+          &lt;li&gt;연관된 레코드 사이의 지역성이 사라짐(UUID 사용 시 핫스팟이 제거되는 이유도 이 떄문)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;database-primary-key-and-id-column&quot;&gt;Database Primary key and ID Column&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Primary key성능적 이점을 위해 사용&lt;/li&gt;
+  &lt;li&gt;RFC4122 에서 정의하는 범용고유 식별자를 키로 사용&lt;/li&gt;
+  &lt;li&gt;임의의 값을 비트 순서로 사용하는 버전4 UUID가 권장&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;버전1 UUID는 타임스탬프를 고차비트에 저장하므로 권장하지 않음&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;UUID를 기본키로 저장하는 방법
+    &lt;ul&gt;
+      &lt;li&gt;STRING(36)열에서&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.rfc-editor.org/rfc/rfc4122&quot;&gt;참고1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;https://cloud.google.com/spanner/docs/schema-design?hl=ko&quot; alt=&quot;Cloud Spanner&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;http://www.dator.co.kr/dataworld/textyle/42729&quot; alt=&quot;참고3&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;https://codelib.tistory.com/23&quot; alt=&quot;참고3&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Thu, 29 Dec 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/db/2022/12/29/db-4uuid/</link>
+        <guid isPermaLink="true">http://localhost:4000/db/2022/12/29/db-4uuid/</guid>
+        
+        <category>db</category>
+        
+        
+        <category>db</category>
+        
+      </item>
+    
+      <item>
+        <title>[DB] HA/RAC 구성 </title>
+        <description>&lt;h2 id=&quot;database---oggorgalce-golden-gate&quot;&gt;Database - OGG(Orgalce Golden Gate)&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;ogg&quot;&gt;OGG&lt;/h2&gt;
+
+&lt;h3 id=&quot;ha와-rac&quot;&gt;HA와 RAC?&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;모두 DB서버의 구성에 관한 것 이고, 고가용성을 위해 만들어진 구성&lt;/li&gt;
+  &lt;li&gt;HA구성이 먼저 나왔고, 몇가지 보완한것이 RAC구성&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ha&quot;&gt;HA&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HA(High Availability)는 2개의 서버를 이용하여 하나는 Active 상태, 나머지 하나는 Standby 상태로 정해놓는다. 거의 모든 부하는 Active에서 부담하고 Standby 상태의 서버는 Active 서버가 장애가 발생하지 않는 이상, 거의 가동하지 않는다. 실제 서비스를 운영하는 Active 서버가 어떠한 장애로 정상적인 작동이 불가능해진다면, 곧바로 Standby 서버가 Active 되면서 다시 서비스를 정상 작동할 수 있게 하는 구성이다. 이해하기 쉬운만큼 구조도 단순하고 따라서 구축 비용도 저렴하다. 또한, 서버 하나만 가동되면 되므로 유지비 역시 저렴하다는 장점이 있다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;하지만, 몇가지 문제점이 있다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;각 서버 별로 별도의 storage를 가지고 있기 때문에 수시로 동기화가 이루어져야 하고, 따라서 성능 저하를 야기할 수 있다.&lt;/li&gt;
+  &lt;li&gt;또한 이런 특성 때문에 각 서버간 데이터 싱크가 맞지 않는 상황도 존재할 수 있다.&lt;/li&gt;
+  &lt;li&gt;마지막으로 굉장히 큰 문제인데, Active 서버가 동작을 멈추면 Standby 서버가 활성화 될 때까지의 트랜잭션을 모두 유실하게 된다는 것이다. 이는 실시간 트랜잭션량이 많은 서비스에서는 치명적인 문제이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;rac&quot;&gt;RAC&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;RAC(Real Application Cluster)는 2개, 혹은 그 이상의 인스턴스가 하나의 storage를 바라보고 있는 구성이다. 각각의 인스턴스를 서버라고 생각하고 HA와 비교한다면 Active, Standby가 아닌 모두 Active 상태라고 할 수 있다. 그리고 모두 하나의 storage를 바라보는 상황이므로 별도의 동기화로 인한 성능 저하는 없다. 또, 하나의 인스턴스에서 장애가 발생해도 곧바로 다음 인스턴스에서 처리해줄 수 있으므로 데이터 유실에 대한 우려도 없다. HA에서는 하나의 서버가 모든 처리를 해야했으므로 상대적으로 큰 부하가 발생하지만, RAC 구성에서는 균형있게 분산되어 처리할 수 있다.
+
+하지만, 이 역시도 단점이 존재한다. 우선 Oracle RAC가 매우 고가의 제품이라는 것이다. 또한 매우 복잡한 환경 구성으로 인해 유지보수 절차 역시도 복잡하며, 운영 인력은 RAC에 대한 충분한 이해도 필수이다. HA구조보다 빠른 복구 시간을 보장하지만, 실제로는 RAC 구조를 다루는데 미숙해서 복구시간을 연장시킬 가능성도 있다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;oracle-asm-oracle-automatic-storagae-management&quot;&gt;Oracle ASM (Oracle Automatic Storagae Management)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;중개자 구성파일을 별도의 디스크 그룹에 배치&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;oracle-rac-oracle-real-application-clusters&quot;&gt;Oracle RAC (Oracle Real Application Clusters)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;중개자 구성 파일이 공유 저장영약에 있음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;img src=&quot;https://greatepig.tistory.com/14&quot; alt=&quot;RAC,HA가뭐지&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;https://sksstar.tistory.com/63&quot; alt=&quot;참고1&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;http://blog.naver.com/PostView.nhn?blogId=dark009&amp;amp;logNo=150171352412&quot; alt=&quot;참고2&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;http://www.dator.co.kr/dataworld/textyle/42729&quot; alt=&quot;참고3&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;https://codelib.tistory.com/23&quot; alt=&quot;참고3&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Tue, 27 Dec 2022 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/db/2022/12/27/db-ogg/</link>
+        <guid isPermaLink="true">http://localhost:4000/db/2022/12/27/db-ogg/</guid>
+        
+        <category>db</category>
+        
+        
+        <category>db</category>
+        
+      </item>
     
       <item>
         <title>[Plan] 2022년 IT공부계획</title>
@@ -2460,224 +2608,6 @@ Note the parent process ID (ppid) is 27229
         
         
         <category>k8s</category>
-        
-      </item>
-    
-      <item>
-        <title>[k8s] Kubectl - Cheatsheet</title>
-        <description>&lt;!--more--&gt;
-
-&lt;h2 id=&quot;overview-of-kubectl&quot;&gt;Overview of kubectl&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;kubectl은 k8s cluster를 제어하기 위한 cli(command line tool)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;kubectl&lt;/code&gt;은 &lt;code class=&quot;highlighter-rouge&quot;&gt;$HOME/.kube&lt;/code&gt; directory안에 &lt;code class=&quot;highlighter-rouge&quot;&gt;config&lt;/code&gt;파일을 참조한다&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;KUBECONFIG&lt;/code&gt; 환경변수를 setting함으로써 kubeconfig file 수정이 가능 (–kubeconfig  flag 사용)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;syntax&quot;&gt;Syntax&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;kubectl [command] [TYPE] [NAME] [flags]&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;command&lt;/code&gt; : resource에 수행할 operation 종류
-    &lt;ul&gt;
-      &lt;li&gt;ex) create, get ,describe, delete&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;TYPE&lt;/code&gt; : resource type의 종류를 명시 (case-sensitive, singular, plural, abrreviated 형태로 작성필요)
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  kubectl get pod1 
-  kubectl get pods pod1
-  kubectl get po pod1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;NAME&lt;/code&gt; : 특정한 resource의 이름을 작성. case-sensitive(대소문자 구분) 이름이 생략시, 모든 resource의 detail이 display됨. &lt;code class=&quot;highlighter-rouge&quot;&gt;ex) kubectl get pods&lt;/code&gt;
-다수의 resource에 작동 시 , type그리고 name으로 특정 resource를 상세화 그리고 다수의 파일 기입 가능
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;type 그리고 name&lt;/code&gt;으로 resource를 지정방법
-        &lt;ul&gt;
-          &lt;li&gt;같은 type이라면 resource들을 group화
-            &lt;blockquote&gt;
-              &lt;p&gt;example : kubectl get pod ex-pod1 ex-pod2&lt;/p&gt;
-            &lt;/blockquote&gt;
-          &lt;/li&gt;
-          &lt;li&gt;여러개의 다른 type의 resource들을 지정시
-            &lt;ul&gt;
-              &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;TYPE1/NAME1 TYPE2/NAME&lt;/code&gt;
-                &lt;blockquote&gt;
-                  &lt;p&gt;kubectl get pod/ex-pod1 replicationcontroller/ex-rc1&lt;/p&gt;
-                &lt;/blockquote&gt;
-              &lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;file&lt;/code&gt;로 resource를 지정하는 방법
-        &lt;ul&gt;
-          &lt;li&gt;JSON보다 YAML을 사용하여 특정파일을 지정
-            &lt;blockquote&gt;
-              &lt;p&gt;kubectl get -f ./pod.yaml&lt;/p&gt;
-            &lt;/blockquote&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;operations&quot;&gt;Operations&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;api-resources : 가능한 API resource들을 리스트
-    &lt;blockquote&gt;
-      &lt;p&gt;kubectl api-resources [flags]&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;apply : file or stdin으로부터 configuration 변화를 resource에 적용
-    &lt;blockquote&gt;
-      &lt;p&gt;kubectl apply -f FILENAME [flags]&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;attach : 실행중인 container에 연결 또는 상호작용
-    &lt;blockquote&gt;
-      &lt;p&gt;kubectl attach POD -c CONTAINER [-i] [-t] [flags]&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;autoscale : replication controller에 의해 관리되는 pod들을 자동으로 scale 설정
-    &lt;blockquote&gt;
-      &lt;table&gt;
-        &lt;tbody&gt;
-          &lt;tr&gt;
-            &lt;td&gt;kubectl autoscale (-f FILENAME&lt;/td&gt;
-            &lt;td&gt;TYPE NMAE&lt;/td&gt;
-            &lt;td&gt;TYPE/NAME) [ – min=MINPODS ] – max=MAXPODS –cpu-percent=CPU [flags]&lt;/td&gt;
-          &lt;/tr&gt;
-        &lt;/tbody&gt;
-      &lt;/table&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;completion : Output Shell 자동완성
-    &lt;blockquote&gt;
-      &lt;p&gt;kubectl completion SHELL [options]&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;config : kubconfig file을 수정
-    &lt;blockquote&gt;
-      &lt;p&gt;kubectl config SUBCOMMAND [flags]&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;cordon : node를 unschedulable하게 지정
-    &lt;blockquote&gt;
-      &lt;p&gt;kubectl cordon NODE [options]&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;cp : file 또는 directories들을 container로부터 복사
-    &lt;blockquote&gt;
-      &lt;p&gt;kubectl cp &lt;src&gt; &lt;dest&gt; [options]&lt;/dest&gt;&lt;/src&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;create : file또는 stdin으로부터 resource들을 생성
-    &lt;blockquote&gt;
-      &lt;p&gt;kubectl create -f FILENAME [flags]&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;delete : file또는 stdin으로부터 resource들을 삭제(label selector, name, reousrce selector, resource 포함)
-    &lt;blockquote&gt;
-      &lt;p&gt;kubectl delete -f FILENAME&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;diff&lt;/li&gt;
-  &lt;li&gt;describe&lt;/li&gt;
-  &lt;li&gt;drain&lt;/li&gt;
-  &lt;li&gt;edit&lt;/li&gt;
-  &lt;li&gt;exec&lt;/li&gt;
-  &lt;li&gt;explain&lt;/li&gt;
-  &lt;li&gt;expose&lt;/li&gt;
-  &lt;li&gt;get&lt;/li&gt;
-  &lt;li&gt;logs&lt;/li&gt;
-  &lt;li&gt;labels&lt;/li&gt;
-  &lt;li&gt;options&lt;/li&gt;
-  &lt;li&gt;patch&lt;/li&gt;
-  &lt;li&gt;run&lt;/li&gt;
-  &lt;li&gt;scale&lt;/li&gt;
-  &lt;li&gt;set&lt;/li&gt;
-  &lt;li&gt;taint&lt;/li&gt;
-  &lt;li&gt;top&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;printing-containers-log&quot;&gt;Printing Containers log&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;pod안의 container의 log를 프린트 하기위한 command&lt;/li&gt;
-  &lt;li&gt;log print
-    &lt;blockquote&gt;
-      &lt;p&gt;kubectl logs [pod-name]&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;pod의 log를 streaming
-    &lt;blockquote&gt;
-      &lt;p&gt;kubectl logs -f [pod-name]&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;formatting-output&quot;&gt;Formatting output&lt;/h2&gt;
-
-&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://kubernetes.io/docs/reference/kubectl/overview/&quot;&gt;k8s공식doc&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 02 Jul 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/k8s/2021/07/02/k8s-kubectl/</link>
-        <guid isPermaLink="true">http://localhost:4000/k8s/2021/07/02/k8s-kubectl/</guid>
-        
-        <category>k8s</category>
-        
-        <category>kubectl</category>
-        
-        <category>cheatsheet</category>
-        
-        
-        <category>k8s</category>
-        
-      </item>
-    
-      <item>
-        <title>[Leetcode] 121. Best Time to Buy and Sell Stock </title>
-        <description>&lt;h3 id=&quot;problem&quot;&gt;Problem&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://leetcode.com/problems/best-time-to-buy-and-sell-stock/&quot; alt=&quot;leetcode&quot; /&gt;
-You are given an array prices where prices[i] is the price of a given stock on the ith day.&lt;/p&gt;
-
-&lt;p&gt;You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.&lt;/p&gt;
-
-&lt;p&gt;Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.&lt;/p&gt;
-
-&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;첫번쨰날의 주식가격을 buy&lt;/li&gt;
-  &lt;li&gt;항상 i번쨰 날에 주식을 sell하여 maxprofit 값을 계속 추적&lt;/li&gt;
-  &lt;li&gt;buy 값을 항상 비교하여 min값으로 갱신&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
-&lt;script src=&quot;https://gist.github.com/kevinsung123/2bf42753aab32013509df408c32aed4e.js&quot;&gt;&lt;/script&gt;
-
-</description>
-        <pubDate>Sun, 06 Jun 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/leetcode/2021/06/06/leetcode-121-best_time_to_buy_and_sell_stock/</link>
-        <guid isPermaLink="true">http://localhost:4000/leetcode/2021/06/06/leetcode-121-best_time_to_buy_and_sell_stock/</guid>
-        
-        <category>leetcode</category>
-        
-        <category>121</category>
-        
-        
-        <category>leetcode</category>
         
       </item>
     
