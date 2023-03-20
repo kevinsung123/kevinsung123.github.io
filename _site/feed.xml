@@ -6,9 +6,292 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 29 Dec 2022 17:51:03 +0900</pubDate>
-    <lastBuildDate>Thu, 29 Dec 2022 17:51:03 +0900</lastBuildDate>
+    <pubDate>Mon, 23 Jan 2023 17:10:59 +0900</pubDate>
+    <lastBuildDate>Mon, 23 Jan 2023 17:10:59 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[BigQuery] BigQuery 개요</title>
+        <description>&lt;h2 id=&quot;bigquery란&quot;&gt;BigQuery란&lt;/h2&gt;
+
+&lt;!--more--&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;BigQuery란 2011년 일반 안정화버전으로 출시되었으며 비지니스 민첩성을 위해 설계된 Google Cloud의 엔터프라이즈 데이터웨어하우스. 서버리스 아키텍를 통해 규모와 속도로 작동하고 대규모 데이터세트에 대해 매우 빠른 SQL분석으로 제공할 수 있음. 표준 SQL 지원등 확장 가능한 분석엔진을 통해 테라바이크급 쿼리를 초 단위 수행 및 페타바이트급 쿼리를 분단위로 쿼리가능. 처음부터 성능, 보안, 안정성을 개선하고 사용자가 인사이트를 더 쉽게 발견 할 수 있도록 수많은 기능과 개선사항이 적용.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-does-a-data-warehouse-drive-business-decisions&quot;&gt;How does a Data Warehouse drive business decisions?&lt;/h3&gt;
+
+&lt;p&gt;데이터 웨어하우스는 서로 다른 소스의 데이터를 통합하고 집계된 데이터에 대한 분석을 수행하여 통찰력 제고하여 비즈니스 운영에 가치를 추가. 데이터웨어하우스는 지난 20년 도앙ㄴ 기업에서 가장 중요한 비즈니스 데이터의 관리자. Gartner에 따르면 데이터웨어하우스는 종종 기업의 분석 전략의 기반을 형성. 오늘날 기업은 다음을 수행해야함&lt;/p&gt;
+
+&lt;h4 id=&quot;1-비지니스에대한-360-view&quot;&gt;1. 비지니스에대한 360 view&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;데이터는 가치가 있음&lt;/li&gt;
+  &lt;li&gt;스토리지 및 데이터 처리 비용이 감소함에 따라 기업은 조직 내부 및 외부의 모든 관련데이터세트를 처리, 저장 및 분석하기를 원함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2-실시간-비즈니스-이벤트에-대한-상황-인식-및-대응&quot;&gt;2. 실시간 비즈니스 이벤트에 대한 상황 인식 및 대응&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;기업은 데이터 분석을 위해 며칠 또는 몇 주를 기다리지 않고 실시간 이벤트에서 통찰력을 얻어야함. 데이터웨어하우스는 항상 비즈니스의 현재 상태를 반영해야함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;3-인사이트-확보시간-단축&quot;&gt;3. 인사이트 확보시간 단축&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;기업은 며칠 또는 몇달을 기다리지 않고 빠르게 시작하고 실행&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;4-비즈니스-사용자에게-통찰력을-제공하여-기업-전체에서-데이터-기반의-의사결정을-가능하게함&quot;&gt;4. 비즈니스 사용자에게 통찰력을 제공하여 기업 전체에서 데이터 기반의 의사결정을 가능하게함&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;데이터 기반 문화를 수용하기 위해 기업은 데이터에 대한 엑세스를 민주화 해야함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;5-데이터-보호-및-사용관리&quot;&gt;5. 데이터 보호 및 사용관리&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;데이터는 기업 내부 및 외부의 올바른 이해 관계자가 안전하게 엑세스 해야함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;기존-데이터웨어하우스-문제점&quot;&gt;기존 데이터웨어하우스 문제점&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;기업이 증가하는 데이터 볼륨으로 기존 데이터하우스의 사용을 확장하려고 함에 따라 높은 TCO(Total Cost of Ownership)로 인해 비용이 통제 할 수 없이 계속 증가함에 따라 문제점 직면&lt;/li&gt;
+  &lt;li&gt;기존 데이터 웨어하우스는 데이터의 폭발적인 증가를 처리하도록 설계되지 않으며 확실히 새로운 데이터 처리 패턴을 위해 구축되지 않음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;bigquery---cloud-data-waehouse&quot;&gt;BigQuery - Cloud Data Waehouse&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Google BigQUery는 “클라우드 네이티브” 데이터 웨어하우스으로 설계&lt;/li&gt;
+  &lt;li&gt;클라우드 우선세계에서 데이터 기반조직의 요구 사항을 해결하기 위해 구축&lt;/li&gt;
+  &lt;li&gt;확장성이 뛰어나고 비용 효율적인 서버리스 클라우드 데이터 웨어하우스&lt;/li&gt;
+  &lt;li&gt;Google 인프라의 처리 능력을 사용하여 페타바이트 규모의 초고속 쿼리를 허용&lt;/li&gt;
+  &lt;li&gt;고객이 관리할 인프라가 없기 떄문에 데이터베이스 관리자 없이 친숙한 SQL을 사용하여 의미있는 통찰력 발견하는데 집중&lt;/li&gt;
+  &lt;li&gt;처리 및 저장에대해서만 비용을 지불하기때문에 경제적&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;where-does-bigquery-fit-in-the-data-lifecycle&quot;&gt;Where does BigQuery fit in the data lifecycle?&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;BigQuery는 데이터 수집, 처리, 저장, 고급 분석 및 공동작업을 포함한 전체 분석 가치 사슬을 포괄하는 Google Cloud의 포괄적인 데이터 분석 플랫폼의 일부&lt;/li&gt;
+  &lt;li&gt;BigQuery는 GCP분석 및 데이터 처리 제품과 긴밀하게 통합되어 고객이 엔터프라이즈용 클라우드 기반 데이터 웨어하우스를 설정 하도록 가능&lt;/li&gt;
+  &lt;li&gt;데이터 lifecycle의 각단계에서 gcp는 데이터 관리를 위해 여러 서비스를 제공. 고객이 자신의 워크플로우에 맞는 일련의 서비스를 선택 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\img\bigquery\BQ_Explained_1.max-900x900.png&quot; alt=&quot;Figure 1&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ingestion-data-into-bigquery&quot;&gt;Ingestion data into BigQuery&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;BigQuery는 데이터를 관리형 스토리지(managed storage)로 수집하는 여러가지 방법을 지원&lt;/li&gt;
+  &lt;li&gt;데이터 출처에 따라 다름
+    &lt;ul&gt;
+      &lt;li&gt;Cloud logging 및 Google Analytics와같은 GCP 일부 데이터소스는 BigQuery로의 직접 보내기를 지원&lt;/li&gt;
+      &lt;li&gt;BigQuery Data Transfer Service를 사용하여 Google Saas앱(Google Ads, Cloud Storage), Amazon S3 및 기타 웨어 하우스 (Teradata, Redshift)에서 BigQuery로 데이터를 전송 가능&lt;/li&gt;
+      &lt;li&gt;로그 또는 IoT 기기 데이터와 같은 스트리밍 데이터는 &lt;code class=&quot;highlighter-rouge&quot;&gt;Cloud Dataflow 파이프라인, &lt;/code&gt;Cloud DataProc&lt;code class=&quot;highlighter-rouge&quot;&gt; 작업을 사용하거나 &lt;/code&gt;BigQuery Streaming API`를 직접 사용하여 저장 가능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;bigquery-architecture&quot;&gt;BigQuery Architecture&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;BiQuery의 서버리스 아키텍처는 storage와 computing을 분리하고 필요에 따라 독립적으로 확장 가능&lt;/li&gt;
+  &lt;li&gt;이 구조는 값비싼 컴퓨팅 리소스를 항상 가동하고 실행할 필요가 없기 떄문에 고객에게 엄청난 유연성과 비용제어를 제공&lt;/li&gt;
+  &lt;li&gt;내부적으로 BigQuery &lt;code class=&quot;highlighter-rouge&quot;&gt;Dremel, Colossus, Jupiter 및 Borg&lt;/code&gt;와 같은 low-level의 Google 인프라 기술로 구동되는 방대한 다중 테넌드 서비스 집합을 사용
+&lt;img src=&quot;\assets\img\bigquery\BQ_Explained_3.max-500x500.jpg&quot; alt=&quot;Figure 2&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;compute는-sql쿼리를-실행하는-대규모-다중-테넌스-클러스터인-dremel&quot;&gt;Compute는 SQL쿼리를 실행하는 대규모 다중 테넌스 클러스터인 Dremel&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Dremel는 SQL쿼리를 실행 트리로 변환. 트리의 리프는 &lt;code class=&quot;highlighter-rouge&quot;&gt;slot&lt;/code&gt;이라고 하며 저장소에서 데이터를 읽고 필요한 계산을 수행하는 무거운 작업을 수행. 트리의 branch의 집계를 수행하는 &lt;code class=&quot;highlighter-rouge&quot;&gt;mixer&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Dremel은 필요에 따라 &lt;code class=&quot;highlighter-rouge&quot;&gt;slot&lt;/code&gt;을 쿼리에 동적으로 할당하여 여러 사용자의 동시 쿼리에 대한 공정성을 유지. 단일 사용자는 수천개의 &lt;code class=&quot;highlighter-rouge&quot;&gt;slot&lt;/code&gt;을 확보하여 쿼리를 수행 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;storage는-google의-global-storage-system인-colossus&quot;&gt;Storage는 Google의 Global Storage system인 Colossus&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;BigQuery는 &lt;code class=&quot;highlighter-rouge&quot;&gt;columnar storage format&lt;/code&gt;그리고 `compression algorithm을 활용하여 대량의 구조화된 데이터를 읽는데 최적화된 colossus에 데이터를 저장&lt;/li&gt;
+  &lt;li&gt;Colossus는 또한 Disaster, Recovery(디스크 충동 시) 및 분산관리 (no single point of failure) 처리&lt;/li&gt;
+  &lt;li&gt;기존 데이터 웨어하우스와 같이 훨씬 더 비싼 컴퓨팅 리소스를 연결하는데 따른 penalty를 지불하지 않고 원할하게 저장된 수십 페바바이트 데이터로 확장 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;compute-and-storage-petabit-jupiter-네트워크를-통해서-서로-통신&quot;&gt;Compute and Storage Petabit Jupiter 네트워크를 통해서 서로 통신&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Storage와 Computing사이에는 Google &lt;code class=&quot;highlighter-rouge&quot;&gt;Jupiter 네트워크&lt;/code&gt; 활용하여 데이터를 한 곳에서 다른 곳으로 매우 빠르게 이동시키는 &lt;code class=&quot;highlighter-rouge&quot;&gt;shuffle&lt;/code&gt;이 존재&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Google은 이러한 기술을 지속적으로 개선하는 wndwja&lt;/li&gt;
+  &lt;li&gt;BigQuery 사용자는 기존 기술과 관련된 다운타임 및 업그레이드 없이 성능, 내구성, 효율성, 확장성을 지속적으로 개선하는 이점을 얻음&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.google.com/blog/products/data-analytics/new-blog-series-bigquery-explained-overview?hl=en&quot;&gt;gcp-blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 23 Jan 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/gcp/2023/01/23/gcp-bigquery-overview/</link>
+        <guid isPermaLink="true">http://localhost:4000/gcp/2023/01/23/gcp-bigquery-overview/</guid>
+        
+        <category>bigquery</category>
+        
+        <category>work</category>
+        
+        
+        <category>gcp</category>
+        
+      </item>
+    
+      <item>
+        <title>[BigQuery]Chatper 6. Architecture of BigQuery</title>
+        <description>&lt;h2 id=&quot;chatper-6-architecture-of-bigquery&quot;&gt;Chatper 6. Architecture of BigQuery&lt;/h2&gt;
+
+&lt;!--more--&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;high-level-architecture&quot;&gt;High Level Architecture&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Bigquery 수십만개의 실행task의 상호연결된 마이크로 서비스로 이루어진 대규모 분산시스템이다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;life-of-a-query-reqeust&quot;&gt;Life of a Query Reqeust&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;BigQuery가 결합되는 방식을 위해 query를 요청할때 어떤일이 일어나는지 살펴보자&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;\assets\img\bigquery\2020-04-20-envops-blog-how-to-register-google-adsense-1.png&quot; alt=&quot;Figure 6.1&quot; /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;step-1-http-post&quot;&gt;STEP 1. HTTP POST&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;client는 HTTP POST 요청을 BigQuery endpoint에 요청&lt;/li&gt;
+  &lt;li&gt;보통 이 요청은 라이브러리 혹은 JDBC(Java Database Connectivity 드라이버)로 구성되지만, 기본적으로 누구든지 &lt;code class=&quot;highlighter-rouge&quot;&gt;curl&lt;/code&gt; 또는 다른 tool로 raw HTTP request 보낼 수 이다
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Here is what the query request looks like on the wire:
+POST /bigquery/v2/projects/bigquery-e2e/jobs HTTP/1.1
+User-Agent: curl/7.30.0
+Host: www.googleapis.com
+Accept: */*
+Authorization: Bearer &amp;lt;redacted&amp;gt;
+Content-Type: application/json
+Content-Length: 126
+{'configuration': {'query': {'query': 'SELECT 17'}}}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;ol&gt;
+      &lt;li&gt;HTTP vereb는 POST&lt;/li&gt;
+      &lt;li&gt;Authorization Token : OAuth2 token으로 식별&lt;/li&gt;
+      &lt;li&gt;JSON Payload : 실행시키려는 쿼리가 포함
+&lt;img src=&quot;\assets\img\bigquery\figure6-2.png&quot; alt=&quot;Figure 6.1&quot; /&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;step2-rounting&quot;&gt;STEP2. Rounting&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;HTTP POST요청은 REST endpoint (http://www.googleapis.com/bigquery/v2/projects/bigquery-e2e/jobs) 라우팅 된다.&lt;/li&gt;
+  &lt;li&gt;위의 endpoint는 GFE(Google Front End Server)서버이다(Google Search 또는 Product와 같은 서비스)&lt;/li&gt;
+  &lt;li&gt;어떤 region에서 요청되는지 어떻게 알 수 있을까?
+    &lt;ul&gt;
+      &lt;li&gt;url의 일부는 어떤 cloud project인지 가르킴&lt;/li&gt;
+      &lt;li&gt;특정 지역의 reservation이 있다면 그 request는 그쪽으로 전달&lt;/li&gt;
+      &lt;li&gt;reservation이나 특정 region이 없다면  –&amp;gt; router는 query를 parsing한다. (데이터셋이 어디서 포함되는 확인 하기 위해 )&lt;/li&gt;
+      &lt;li&gt;performance에 의심이 가거나 output결과의 위치를 제어하고 싶다면, 특정 region을 지정하는게 낫다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;router는 JSON HTTP requests를 Protocol Buffers(모든 구글 서비스들간 커뮤니케이션하기위해 platform 그리고 language neutral serialization format)로 변환 한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;step3-job-server&quot;&gt;STEP3. Job Server&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Bigquery Job Server는 request의 상태를 추적하며 담당&lt;/li&gt;
+  &lt;li&gt;client와 BigQuery 서버는 fallible상태를 고려 그리고 query는 수분 수시간 걸릴 수 있으므로, 비동기적으로 작동으로 하도록 디자인되었다&lt;/li&gt;
+  &lt;li&gt;caller가 query를 실행하는데 허요되었는지 확인하기 위해 authorization를 수행&lt;/li&gt;
+  &lt;li&gt;각 프로젝트는 기본적으로 primary그리고 secondary 가용가능존이 있음. primary zone이 가용 불가능하면, secondary로 routing을 함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;projects-and-data-rebalnacing&quot;&gt;Projects and Data Rebalnacing&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;BigQuery는 동일한 region에 있는 2개의 테이블은 사용자는 두 테이블에 모두 엑세스 가능
+이것은 Backend에 challenge를 제공. 2개의 테이블은 동일한 물리적 위치에 있지않으채로 쿼리를 시랭하면 많은데이터를 이동해야하므로 느리고 비용이 많이듬. BigQuery는 Backend에서 복작한 최적화 문제를 지속저긍로 해결
+
+Rebalancer가 프로젝트를 이동해야한다면 결정하면 복제를 시작. 데이터를 다른 가용영역으로 전송. 이러한 방식으로 데이터는 항상 결합 가능함. 용량이 한정된 cluster는 용량이 크게 증가하더라도 공간이 부족핮 ㅣ않음
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;step4-query-engine&quot;&gt;STEP4. Query Engine&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Query실행은 나중에 section 다룸&lt;/li&gt;
+  &lt;li&gt;Query들은 Query master(모든 쿼리실행을 담당)로 routing&lt;/li&gt;
+  &lt;li&gt;Query 마스터는 metadata서버와 연결
+    &lt;ol&gt;
+      &lt;li&gt;physical 데이터가 어디있는지&lt;/li&gt;
+      &lt;li&gt;어떻게 파티셔닝 되어있는지&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Query마스터가 얼마나 데이터각 포함되었는지 알고 예비쿼리 계획을 세울 수 있는 기회가 있으면, 스케줄러에게 slot을 요청한다&lt;/li&gt;
+  &lt;li&gt;slot은 쿼리 작업자 샤드의 실행 스레드이다. ( 1slot = 0.5cpu, 1GB RAM)&lt;/li&gt;
+  &lt;li&gt;query를 수행 할 수 있는 샤드의 주소를 리턴 받음&lt;/li&gt;
+  &lt;li&gt;Query마스터는 쿼리요청을 각 Dremel 샤드에게 병렬적으로 욫어 함.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;step5-returning-the-query-results&quot;&gt;STEP5. Returning the query results&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Query워커 샤드가 쿼리실행을 완료하면, 결과를 2개의 부분에 나누어서 저장&lt;/li&gt;
+  &lt;li&gt;Spanner(분산 RDBS)- 쿼리와 쿼리메타데이터 저장, 쿼리 실행하는 같은 region에 위치&lt;/li&gt;
+  &lt;li&gt;Colosuss (구글 분산 파일시스템)&lt;/li&gt;
+  &lt;li&gt;BigQuery 결과는 24시간 동안 저아&lt;/li&gt;
+  &lt;li&gt;결과는 일반적은 Select 쿼리는 10GB까지 제한&lt;/li&gt;
+  &lt;li&gt;그 이상의 결과르 저장하기 위해서는 CTAS(Create table as select) 또는 INSERT 구문으로 저장해야함( 용량 제한 없음 )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;bigquery-upgrades&quot;&gt;BigQuery Upgrades&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;BigQuery는 downtime없이 업그레이드 가능&lt;/li&gt;
+  &lt;li&gt;1주일에 한번식 일어남&lt;/li&gt;
+  &lt;li&gt;BigQuery는 실패하는 쿼리없이 업그레이드 가능
+    &lt;ul&gt;
+      &lt;li&gt;업그레이드를 위해 shard의 일부를 drain이후 진행&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Query마스터는 쿼리 실행 완료 후 업그레이드 가능 (Query마스터 실패는 query 재수행을 일으킴)&lt;/li&gt;
+  &lt;li&gt;Job서버는 상대적으로 더 쉽게 업그레이드 가능 (그들의 상태는 Spanner에 저장되기 때문 재수행 시 그 상태값을 가져옴)&lt;/li&gt;
+  &lt;li&gt;Router는 거의 상태가 없기때문에 거의 마음대로 업그레이드 가능&lt;/li&gt;
+  &lt;li&gt;스케줄러는 Dremel 클러스터당 하느이 master를 가지고 있기때문에, standby먼저 업그레이드 이후 failover 모드로 변환&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;query-engine-dremel&quot;&gt;Query Engine (Dremel)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Dremel는 2006년 MapReduce작업을 기다리는데 싫증난 엔지니어가 만듬&lt;/li&gt;
+  &lt;li&gt;Google임직원 직간적접으로 80%이상이 사용할정도로 인기&lt;/li&gt;
+  &lt;li&gt;초창기의 Dremel topology는 &lt;code class=&quot;highlighter-rouge&quot;&gt;tree구조&lt;/code&gt;이다&lt;/li&gt;
+  &lt;li&gt;Query들은 root로 진입하고, 가지치기 이후 leaves(query의 일부를 실행)에 도달&lt;/li&gt;
+  &lt;li&gt;결과 그리고 취합이 root까지 거슬러 올라감&lt;/li&gt;
+  &lt;li&gt;2010년 Dremel 아키텍처는 single static topoloy를 가지는것보다 실행계획를 dynamic하게 수행하는 것으로 변환&lt;/li&gt;
+  &lt;li&gt;현재 Dremel 아키텍처 (Dremel-X,이번 버전이 10번쨰 업그레이드)&lt;/li&gt;
+  &lt;li&gt;어떤 level이든지 dynamic query plan을 만들고 변경가능하다(쿼리 실행 중 이더라도)&lt;/li&gt;
+  &lt;li&gt;execution은 여전히 tree와 같이 보인다, 각 query stage마다 shuffle 단계 떄문에, 어떤 level이든지 추가 가능
+&lt;img src=&quot;\assets\img\bigquery\figure6-3.png&quot; alt=&quot;Figure 6.3&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;dremel-architecture&quot;&gt;Dremel Architecture&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;쿼리엔진은 3개의 파트로 구성 : Query마스터, 스케줄러, Worker Shard&lt;/li&gt;
+  &lt;li&gt;Query 마스터  - query planning을담당 (작업을 어떻게 할지)&lt;/li&gt;
+  &lt;li&gt;스케줄러 - slot 할당을 담당 (누가 일이 가능하지&lt;/li&gt;
+  &lt;li&gt;
+    &lt;h2 id=&quot;작업자-shard---실제로-쿼리를-수행&quot;&gt;작업자 shard - 실제로 쿼리를 수행&lt;/h2&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;query-마스터&quot;&gt;Query 마스터&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;참조&quot;&gt;참조&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Google BigQuery The Definite Guide p1-p22&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/gcp-big-data-ml-fundamentals/lecture/H1irf/bigquery-fast-sql-engine&quot;&gt;coursera : bigquery-fast-sql-engine&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 15 Jan 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/gcp/2023/01/15/gcp-bigquery-ch6/</link>
+        <guid isPermaLink="true">http://localhost:4000/gcp/2023/01/15/gcp-bigquery-ch6/</guid>
+        
+        <category>bigquery</category>
+        
+        <category>work</category>
+        
+        
+        <category>gcp</category>
+        
+      </item>
     
       <item>
         <title>[DB] 4UUID </title>
@@ -78,10 +361,8 @@
 &lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.rfc-editor.org/rfc/rfc4122&quot;&gt;참고1&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://cloud.google.com/spanner/docs/schema-design?hl=ko&quot; alt=&quot;Cloud Spanner&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;http://www.dator.co.kr/dataworld/textyle/42729&quot; alt=&quot;참고3&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://codelib.tistory.com/23&quot; alt=&quot;참고3&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.rfc-editor.org/rfc/rfc4122&quot;&gt;RFC4122&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.google.com/spanner/docs/schema-design?hl=ko&quot;&gt;Cloud Spanner&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
@@ -139,11 +420,11 @@
 
 &lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;img src=&quot;https://greatepig.tistory.com/14&quot; alt=&quot;RAC,HA가뭐지&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://sksstar.tistory.com/63&quot; alt=&quot;참고1&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;http://blog.naver.com/PostView.nhn?blogId=dark009&amp;amp;logNo=150171352412&quot; alt=&quot;참고2&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;http://www.dator.co.kr/dataworld/textyle/42729&quot; alt=&quot;참고3&quot; /&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;img src=&quot;https://codelib.tistory.com/23&quot; alt=&quot;참고3&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://greatepig.tistory.com/14&quot;&gt;RAC,HA가뭐지&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://sksstar.tistory.com/63&quot;&gt;참고1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.naver.com/PostView.nhn?blogId=dark009&amp;amp;logNo=150171352412&quot;&gt;참고2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.dator.co.kr/dataworld/textyle/42729&quot;&gt;참고3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://codelib.tistory.com/23&quot;&gt;참고3&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
@@ -783,7 +1064,7 @@
     
       <item>
         <title>[BigQuery]Chatper 1. What is Google BigQuery</title>
-        <description>&lt;h3 id=&quot;chatper-1-what-is-google-bigquery&quot;&gt;Chatper 1. What is Google BigQuery&lt;/h3&gt;
+        <description>&lt;h2 id=&quot;chatper-1-what-is-google-bigquery&quot;&gt;Chatper 1. What is Google BigQuery&lt;/h2&gt;
 
 &lt;!--more--&gt;
 
@@ -2419,195 +2700,6 @@ Note the parent process ID (ppid) is 27229
         
         
         <category>os</category>
-        
-      </item>
-    
-      <item>
-        <title>[python] Python - Naming Tips</title>
-        <description>&lt;!--more--&gt;
-
-&lt;h3 id=&quot;1-dont-use-saveload-without-tofrom&quot;&gt;1. Don’t use save/load without to/from&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;save_user_to_mongo&lt;/code&gt; (O)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;save_user&lt;/code&gt;(X)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;load_categories_from_cache&lt;/code&gt; (O)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;load_categories&lt;/code&gt;(x)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;2-use-test__-template-for-test-names&quot;&gt;2. Use test_&lt;entity&gt;_&lt;behavior&gt; template for test names&lt;/behavior&gt;&lt;/entity&gt;&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;validate_user_from&lt;/code&gt;이라 불리는 func을 위한 unit test를 작성한다고 가정하자&lt;/li&gt;
-  &lt;li&gt;bad example
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;test_validation_ok&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;test_user_can_submit_profile_data&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;test_test_test&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;test_asfqerfjeghmnsa&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;good example
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;test_validate_user_from_raises_no_errors_on_correct_data&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;test_validate_user_from_raises_an_error_on_empty_eamil&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;behaviour part&lt;/code&gt;가 중요함(우리가 무엇을 테스트하는지 정확히 명시해야함)&lt;/li&gt;
-  &lt;li&gt;예를들어 &lt;code class=&quot;highlighter-rouge&quot;&gt;works_fine&lt;/code&gt;그리고 &lt;code class=&quot;highlighter-rouge&quot;&gt;is_ok&lt;/code&gt;라는 behaviour part를 사용한다고 할때, 실패시 다시 한번 무엇을 테스트 하는지 확인이 필요하다&lt;/li&gt;
-  &lt;li&gt;위와 같은 이름은 테스트에 오랜 시간이 필요하다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;3-beware-of-using-and&quot;&gt;3. Beware of using and&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;bad example
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;processes_and_save_profile_info&lt;/code&gt; 는 읽기에는 좋지만 여전히 나쁨&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;그러나 성격에 의해 위의 example은  아래와 같이 되어야함
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;clean_profile_info&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;save_profile_info_to_db&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;위의 규칙은 &lt;code class=&quot;highlighter-rouge&quot;&gt;single-reponsibility principle(단일 책임 원칙)&lt;/code&gt;과 &lt;code class=&quot;highlighter-rouge&quot;&gt;command-query separation pattern(명령 쿼리 분리 패턴)&lt;/code&gt;에 관련이 있음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;4-make-a-function-name-readable-with-its-argumnets&quot;&gt;4. Make a function name readable with its argumnets&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;bad example
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;list_item_to_marketplace(marketplace,item)&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;good example
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;list_item_to(marketplace, item)&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;위의 rule은 function name을 좀더 간략하고 이해하기 쉽게 만들어줌&lt;/li&gt;
-  &lt;li&gt;이러한 예들은 가끔 preposition(전치사)로 끝남 &lt;code class=&quot;highlighter-rouge&quot;&gt;_at&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;_to&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;_in&lt;/code&gt; 등등&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;5-think-of-repeating-entity-type-in-a-function-name&quot;&gt;5. Think of repeating entity type in a function name&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;parsers=[integer, string]&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;6-keep-function-names-as-short-as-possible-without-hurt-to-a-context&quot;&gt;6. Keep function names as short as possible (without hurt to a context)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;bad example
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;save_full_user_profile_to_postgresql_storage_sync&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;goode example
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;save_full_profile_data_to_postgresql_sync&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;postgrelsql은 storage알고 있으므로 생략&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;프로젝트에서 모든 func이 synchronous하다면 &lt;code class=&quot;highlighter-rouge&quot;&gt;_sync&lt;/code&gt;부분을 제거히야함  &lt;code class=&quot;highlighter-rouge&quot;&gt;save_user_profile_to_postgresql&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;마지막으로 &lt;code class=&quot;highlighter-rouge&quot;&gt;postgresql&lt;/code&gt;을 &lt;code class=&quot;highlighter-rouge&quot;&gt;db&lt;/code&gt;로 치환&lt;/li&gt;
-  &lt;li&gt;마지막 결과는 &lt;code class=&quot;highlighter-rouge&quot;&gt;save_user_profile_to_db&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;func의 이름은 의미있는 context와 length 최적화를 생갹해야함&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;7-use-subject-area-vocabulary&quot;&gt;7. Use subject area vocabulary&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;프로젝트에서  찾을 수 있는 모든 영역별 의미와 함께 어휘를 기록하는 것이 좋음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;8-forbid-typos&quot;&gt;8. Forbid typos&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;automation을 설정하여 code 내부에서 이름 오류 체크를 설정&lt;/li&gt;
-  &lt;li&gt;만약 발견되면, build에 오류를 내뱉음&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scspell&lt;/code&gt; (python library)를 사용
-    &lt;ul&gt;
-      &lt;li&gt;여러 특정 단어를 한 공간에 모는 장점이 있음&lt;/li&gt;
-      &lt;li&gt;이전 article의 단어를 체크함&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;9-dont-forget-about-grammar&quot;&gt;9. Don’t forget about grammar&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;bad
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;are_user_active&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;good
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;is_user_active&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;보통 func이름은 기본 문법을 사용
-    &lt;ul&gt;
-      &lt;li&gt;is/are, have/has, present/ast, simple/perfact&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;10-check-if-a-function-call-is-readable&quot;&gt;10. Check if a function call is readable&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;func을 작서할때 어떻게 그리고 어디서 func이 호출되는지 생각&lt;/li&gt;
-  &lt;li&gt;거기에 적합한지 읽을만한지 생각&lt;/li&gt;
-  &lt;li&gt;good name은 2군데에서 읽을만해야함
-    &lt;ul&gt;
-      &lt;li&gt;where the function is defined and called&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;all you need is to thinks aboud a second case : will the nmae look readbale when fucntion is called&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://melevir.medium.com/python-functions-naming-tips-376f12549f9&quot;&gt;medium - Python functions naming: 10 tips&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 12 Jul 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/python/2021/07/12/python-naming-tips/</link>
-        <guid isPermaLink="true">http://localhost:4000/python/2021/07/12/python-naming-tips/</guid>
-        
-        <category>python</category>
-        
-        <category>naming</category>
-        
-        <category>tips</category>
-        
-        
-        <category>python</category>
-        
-      </item>
-    
-      <item>
-        <title>[k8s] Kubectl - Resource</title>
-        <description>&lt;!--more--&gt;
-
-&lt;h2 id=&quot;overview-of-kubectl&quot;&gt;Overview of kubectl&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;kubectl은 k8s cluster를 제어하기 위한 cli(command line tool)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;kubectl&lt;/code&gt;은 &lt;code class=&quot;highlighter-rouge&quot;&gt;$HOME/.kube&lt;/code&gt; directory안에 &lt;code class=&quot;highlighter-rouge&quot;&gt;config&lt;/code&gt;파일을 참조한다&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;KUBECONFIG&lt;/code&gt; 환경변수를 setting함으로써 kubeconfig file 수정이 가능 (–kubeconfig  flag 사용)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://kubernetes.io/docs/reference/kubectl/overview/&quot;&gt;k8s공식doc&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 07 Jul 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/k8s/2021/07/07/k8s-resource/</link>
-        <guid isPermaLink="true">http://localhost:4000/k8s/2021/07/07/k8s-resource/</guid>
-        
-        <category>k8s</category>
-        
-        <category>resource</category>
-        
-        
-        <category>k8s</category>
         
       </item>
     
