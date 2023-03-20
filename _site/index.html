@@ -157,6 +157,82 @@ Powered by Hydejack v6.4.0 (https://qwtel.com/hydejack/)
       
   
 
+<article id="post-gcp/2023/03/20/gcp-cloud-function-1" class="post mb6" role="article">
+  <header>
+    <h1 class="post-title">
+      <a href="/gcp/2023/03/20/gcp-cloud-function-1/" data-flip="title">
+        [Cloud Function]How does BigQuery work
+      </a>
+    </h1>
+
+    <p class="post-date heading">
+      <time datetime="2023-03-20T00:00:00+09:00">20 Mar 2023</time>
+      
+
+
+
+
+
+
+
+
+
+in <a href="/category/1-gcp/" data-flip="title">Google Cloud Platform</a>
+
+      
+
+
+
+
+
+
+
+
+
+on <a href="/tag/00-bigquery/" data-flip="title">Cloud Function</a>
+
+    </p>
+
+    
+  <div class="hr" style="padding-bottom:0"></div>
+
+
+  </header>
+  
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  
+    <h3 id="calling-a-private-google-cloud-function-from-on-prem">Calling a private Google Cloud Function from on-prem</h3>
+<p><img src="/assets\img\cloudfunction\on-prem-archi.png" alt="cloudfunction" /></p>
+<ul>
+  <li>요건 :
+    <ul>
+      <li>많은 enterprise고객들이 Google Professional Service에게 어떻게 on-prem 서버에서 비공개적인 방법으로 (인터넷에 노출시키지 않고) Cloud Function을 호출하는지 문의</li>
+      <li>보안상 이유로 그들은 Cloud Function의 endpoint를 Public 인터넷에 노출을 꺼림</li>
+      <li>고객의 on-prem의 망과 GCP Private network에서 네트워크 트래픽이 흐르도록 원함</li>
+    </ul>
+  </li>
+  <li>개요 :
+    <ul>
+      <li>새로운 Cloud Function을 생성 시 ingress setting을 <code class="highlighter-rouge">allow internfal traffic</code>으로 설정 가능하지만, documnet를 자세히 읽으면 <code class="highlighter-rouge">Only requests from VPC network in the same project or VPC Service Controls Perimeter are allowed. All other request are denied with 403 error</code>라고 적혀있음
+        <ul>
+          <li>이 의미는 deploye되는 같은 프로젝트가 아닌 이상 function 호출이 불가능</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+    <p class="read-more"><a class="heading" href="/gcp/2023/03/20/gcp-cloud-function-1/" data-flip="title">Continue reading </a></p>
+  
+
+</article>
+
+
+
+  
+
 <article id="post-gcp/2023/01/23/gcp-bigquery-overview" class="post mb6" role="article">
   <header>
     <h1 class="post-title">
@@ -189,7 +265,7 @@ in <a href="/category/1-gcp/" data-flip="title">Google Cloud Platform</a>
 
 
 
-on <a href="/tag/bigquery/" data-flip="title">BigQuery</a>, <span>Work</span>
+on <a href="/tag/02-cloud-function/" data-flip="title">BigQuery</a>, <span>Work</span>
 
     </p>
 
@@ -246,7 +322,7 @@ in <a href="/category/1-gcp/" data-flip="title">Google Cloud Platform</a>
 
 
 
-on <a href="/tag/bigquery/" data-flip="title">BigQuery</a>, <span>Work</span>
+on <a href="/tag/02-cloud-function/" data-flip="title">BigQuery</a>, <span>Work</span>
 
     </p>
 
@@ -760,7 +836,7 @@ in <a href="/category/1-gcp/" data-flip="title">Google Cloud Platform</a>
 
 
 
-on <a href="/tag/bigquery/" data-flip="title">BigQuery</a>, <span>Work</span>
+on <a href="/tag/02-cloud-function/" data-flip="title">BigQuery</a>, <span>Work</span>
 
     </p>
 
@@ -875,7 +951,7 @@ in <a href="/category/1-gcp/" data-flip="title">Google Cloud Platform</a>
 
 
 
-on <a href="/tag/bigquery/" data-flip="title">BigQuery</a>, <span>Work</span>
+on <a href="/tag/02-cloud-function/" data-flip="title">BigQuery</a>, <span>Work</span>
 
     </p>
 
@@ -1268,64 +1344,6 @@ on <span>Leetcode</span>, <span>136</span>
 
 
 
-  
-
-<article id="post-docker/2021/10/27/docker_too_many_file_issue" class="post mb6" role="article">
-  <header>
-    <h1 class="post-title">
-      <a href="/docker/2021/10/27/docker_too_many_file_issue/" data-flip="title">
-        [Issue] too many files issue
-      </a>
-    </h1>
-
-    <p class="post-date heading">
-      <time datetime="2021-10-27T00:00:00+09:00">27 Oct 2021</time>
-      
-
-
-
-
-
-
-
-
-
-in <a href="/category/7-docker/" data-flip="title">Docker</a>
-
-      
-
-
-
-
-
-
-
-
-
-on <span>Docekr</span>, <span>Issue</span>
-
-    </p>
-
-    
-  <div class="hr" style="padding-bottom:0"></div>
-
-
-  </header>
-  
-
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  
-    <h3 id="issue">Issue</h3>
-<h4 id="dockerd--http--accept-error--accept-unix-varrundockersock--accepty4--too-many-open-files">dockerd : http : Accept error : accept unix /var/run/docker.sock : accepty4 : too many open files</h4>
-
-
-    <p class="read-more"><a class="heading" href="/docker/2021/10/27/docker_too_many_file_issue/" data-flip="title">Continue reading </a></p>
-  
-
-</article>
-
-
-
 
 <h2 class="sr-only">Pagination</h2>
 <nav class="pagination heading" role="navigation">
@@ -1442,6 +1460,8 @@ on <span>Docekr</span>, <span>Issue</span>
          
            
          
+           
+         
      </ul>
     </li>
 
@@ -1461,12 +1481,16 @@ on <span>Docekr</span>, <span>Issue</span>
          
            
              <li>
-               <a class="sidebar-nav-subitem" href="/tag/bigquery/">BigQuery</a>
+               <a class="sidebar-nav-subitem" href="/tag/02-cloud-function/">BigQuery</a>
              </li>
            
          
            
          
+           
+             <li>
+               <a class="sidebar-nav-subitem" href="/tag/00-bigquery/">Cloud Function</a>
+             </li>
            
          
            
@@ -1475,8 +1499,10 @@ on <span>Docekr</span>, <span>Issue</span>
          
            
              <li>
-               <a class="sidebar-nav-subitem" href="/tag/cousera/">Cousera</a>
+               <a class="sidebar-nav-subitem" href="/tag/01-cousera/">Cousera</a>
              </li>
+           
+         
            
          
            
@@ -1506,6 +1532,8 @@ on <span>Docekr</span>, <span>Issue</span>
              <li>
                <a class="sidebar-nav-subitem" href="/tag/os-os/">Shell</a>
              </li>
+           
+         
            
          
            
@@ -1569,6 +1597,8 @@ on <span>Docekr</span>, <span>Issue</span>
          
            
          
+           
+         
      </ul>
     </li>
 
@@ -1582,6 +1612,8 @@ on <span>Docekr</span>, <span>Issue</span>
     </div>
      <ul class="list-body">
        
+           
+         
            
          
            
@@ -1643,6 +1675,8 @@ on <span>Docekr</span>, <span>Issue</span>
          
            
          
+           
+         
      </ul>
     </li>
 
@@ -1656,6 +1690,8 @@ on <span>Docekr</span>, <span>Issue</span>
     </div>
      <ul class="list-body">
        
+           
+         
            
          
            
@@ -1717,6 +1753,8 @@ on <span>Docekr</span>, <span>Issue</span>
          
            
          
+           
+         
      </ul>
     </li>
 
@@ -1730,6 +1768,8 @@ on <span>Docekr</span>, <span>Issue</span>
     </div>
      <ul class="list-body">
        
+           
+         
            
          
            
@@ -1791,6 +1831,8 @@ on <span>Docekr</span>, <span>Issue</span>
          
            
          
+           
+         
      </ul>
     </li>
 
@@ -1804,6 +1846,8 @@ on <span>Docekr</span>, <span>Issue</span>
     </div>
      <ul class="list-body">
        
+           
+         
            
          
            
@@ -1865,6 +1909,8 @@ on <span>Docekr</span>, <span>Issue</span>
          
            
          
+           
+         
      </ul>
     </li>
 
@@ -1878,6 +1924,8 @@ on <span>Docekr</span>, <span>Issue</span>
     </div>
      <ul class="list-body">
        
+           
+         
            
          
            
@@ -1939,6 +1987,8 @@ on <span>Docekr</span>, <span>Issue</span>
          
            
          
+           
+         
      </ul>
     </li>
 
@@ -1952,6 +2002,8 @@ on <span>Docekr</span>, <span>Issue</span>
     </div>
      <ul class="list-body">
        
+           
+         
            
          
            

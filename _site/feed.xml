@@ -6,9 +6,73 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 23 Jan 2023 17:10:59 +0900</pubDate>
-    <lastBuildDate>Mon, 23 Jan 2023 17:10:59 +0900</lastBuildDate>
+    <pubDate>Tue, 21 Mar 2023 00:36:24 +0900</pubDate>
+    <lastBuildDate>Tue, 21 Mar 2023 00:36:24 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[Cloud Function]How does BigQuery work</title>
+        <description>&lt;h3 id=&quot;calling-a-private-google-cloud-function-from-on-prem&quot;&gt;Calling a private Google Cloud Function from on-prem&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets\img\cloudfunction\on-prem-archi.png&quot; alt=&quot;cloudfunction&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;요건 :
+    &lt;ul&gt;
+      &lt;li&gt;많은 enterprise고객들이 Google Professional Service에게 어떻게 on-prem 서버에서 비공개적인 방법으로 (인터넷에 노출시키지 않고) Cloud Function을 호출하는지 문의&lt;/li&gt;
+      &lt;li&gt;보안상 이유로 그들은 Cloud Function의 endpoint를 Public 인터넷에 노출을 꺼림&lt;/li&gt;
+      &lt;li&gt;고객의 on-prem의 망과 GCP Private network에서 네트워크 트래픽이 흐르도록 원함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;개요 :
+    &lt;ul&gt;
+      &lt;li&gt;새로운 Cloud Function을 생성 시 ingress setting을 &lt;code class=&quot;highlighter-rouge&quot;&gt;allow internfal traffic&lt;/code&gt;으로 설정 가능하지만, documnet를 자세히 읽으면 &lt;code class=&quot;highlighter-rouge&quot;&gt;Only requests from VPC network in the same project or VPC Service Controls Perimeter are allowed. All other request are denied with 403 error&lt;/code&gt;라고 적혀있음
+        &lt;ul&gt;
+          &lt;li&gt;이 의미는 deploye되는 같은 프로젝트가 아닌 이상 function 호출이 불가능&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;private-service-connect-to-the-rescue&quot;&gt;Private Service Connect to the rescue&lt;/h4&gt;
+&lt;p&gt;PSC(Prviate Service Connect)는 당신의 프로젝트의 VPC Network(Cloud Function을 포함)내부에서 생성한 end-point를 통해 Google Cloud Service 접근가능 하도록함&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://miro.medium.com/v2/resize:fit:750/format:webp/1*6ZQY0yrS8raNPJtUbZkaGA.png&quot; alt=&quot;Private Service Connect endpoint&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;storage.googleapis.com와 같이 서비스 endpoint API 요청을 publicl 가능한 IP에 보내는 대신에, 요청을 Private Service Connect endpoint를 통해 internal 호출이 가능&lt;/li&gt;
+  &lt;li&gt;이 end-point로 호출되는 모든 call들은 같은 프로젝트에서 생성된 것 같이 취급됨&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;complete-the-design-with-some-dns-and-routing&quot;&gt;Complete the design with some DNS and routing&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;PSC이 준비 된 후 해야할일은 on-prem DNS에서 특정 프로젝트에서 Cloud Function의 subdomain을 각각 부를 수 있도록  endpoint를 생성해야됨&lt;/li&gt;
+  &lt;li&gt;각각의 Function은 URL format &lt;code class=&quot;highlighter-rouge&quot;&gt;https://YOUR_REGION-YOUR_PROJECT_ID.cloudfunctions.net/FUNCTION_NAME&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;on-prem DNS에서 위의 URL을 translate 할 수있어야함&lt;/li&gt;
+  &lt;li&gt;마지막 할일은 on-prem에서 PSC로 routing 되도록 설정 (HA VPN or CLoud Interconnect)&lt;/li&gt;
+  &lt;li&gt;Cloud Router를 활용해서 BGP세션을 맺어야함 (Google Cloud 와 on-prem환경)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;h2 id=&quot;bgp-세션을-통해-psc의-ip를-on-prem에-광고-시킬-수-있음&quot;&gt;BGP 세션을 통해 PSC의 IP를 on-prem에 광고 시킬 수 있음&lt;/h2&gt;
+    &lt;!--more--&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;참조&quot;&gt;참조&lt;/h3&gt;
+&lt;p&gt;= &lt;a href=&quot;https://medium.com/google-cloud/calling-a-private-google-cloud-function-from-on-prem-91eb628c85ac&quot;&gt;medium : calling-private-google-cloud-from-on-prem&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.google.com/functions/docs/networking/network-settings?hl=ko#ingress_settings&quot;&gt;cloud function network setting&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coursera.org/learn/gcp-big-data-ml-fundamentals/lecture/H1irf/bigquery-fast-sql-engine&quot;&gt;coursera : bigquery-fast-sql-engine&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 20 Mar 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/gcp/2023/03/20/gcp-cloud-function-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/gcp/2023/03/20/gcp-cloud-function-1/</guid>
+        
+        <category>cf</category>
+        
+        
+        <category>gcp</category>
+        
+      </item>
     
       <item>
         <title>[BigQuery] BigQuery 개요</title>
@@ -2645,58 +2709,6 @@ Note the parent process ID (ppid) is 27229
         <category>shell</category>
         
         <category>zombie</category>
-        
-        
-        <category>os</category>
-        
-      </item>
-    
-      <item>
-        <title>[Shell] Linux tools </title>
-        <description>&lt;h3 id=&quot;linux-tools-that-i-learned-10-years-ago-which-i-still-use-every-day&quot;&gt;Linux tools that I learned 10 years ago, which I still use every day&lt;/h3&gt;
-
-&lt;!--more--&gt;
-&lt;h3 id=&quot;ps-and-htop---listeing-and-finding-proceess&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ps&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;htop&lt;/code&gt; - listeing and finding proceess&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;htop&lt;/code&gt; 프로그램은 더 유연하고 사용하기 쉬움&lt;/li&gt;
-  &lt;li&gt;terminal에서 sorting column을 mouse로 지원
-&lt;img src=&quot;https://miro.medium.com/max/1575/1*0WsxoUIZsK4wvTskHFhv_w.png&quot; alt=&quot;htop&quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;ss-and-netstat---what-ports-is-that-process-using&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ss&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;netstat&lt;/code&gt; - what ports is that process using&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;netstat&lt;/code&gt;은 old way이고 요즘 배포판은 &lt;code class=&quot;highlighter-rouge&quot;&gt;ss&lt;/code&gt;가 많이 적용&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ss -ntaupe&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ss -ntpl&lt;/code&gt; : listening port만 찾기 위함
-    &lt;h4 id=&quot;options&quot;&gt;options&lt;/h4&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-n&lt;/code&gt; : lists processing using numeric address&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-t&lt;/code&gt; : list TCP connections&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-a&lt;/code&gt; : list all connections  listening and establised&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-u&lt;/code&gt; : lists UDP connections&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-p&lt;/code&gt; : shows the process using the socket - probably the most useful&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;-e&lt;/code&gt; : shows some extened information like the uid&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;shell-job-control---fgbgjobs&quot;&gt;Shell job control - fg/bg/jobs&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;fg &lt;jobnumber&gt;&lt;/jobnumber&gt;&lt;/li&gt;
-  &lt;li&gt;bg &lt;jobnumber&gt;&lt;/jobnumber&gt;&lt;/li&gt;
-  &lt;li&gt;ds
-    &lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/james-reads-public-cloud-technology-blog/linux-tools-that-i-learned-10-years-ago-which-i-still-use-every-day-9289f952f169&quot;&gt;medium - Linux tools tips&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 16 Jul 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/os/2021/07/16/os-shell-tools/</link>
-        <guid isPermaLink="true">http://localhost:4000/os/2021/07/16/os-shell-tools/</guid>
-        
-        <category>shell</category>
-        
-        <category>tools</category>
         
         
         <category>os</category>
