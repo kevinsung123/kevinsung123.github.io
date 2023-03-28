@@ -1,6 +1,6 @@
 ---  
 layout: post  
-title: "[Devops] Jenkins  
+title: "[Devops] Jenkins"
 subtitle: "Jenkins 개요"  
 categories: devops
 tags: devops cicd jenkins
@@ -33,7 +33,40 @@ comments: true
 - Docker Plugin and Dodcker pipeline 
     - Docker agent를 사용하여 jenkins에서 docker를 활용가히 위한 plugin
 
-### 3. Jnekin의 Pipeline
+### 3. Jnekins의 Pipeline
+#### 3.1  Pipeline
+- pipeline이란 CI/CD의 pipeline을 jenkins에 구현하기 위한 `일련의 plugin들을 집합이자 구성`
+- 즉, 여러 plugin들을 pipeline에 용도에 맞게 사용하고 정의함으로써 pipeline을 통한 서비스가 배포
+- pipeline dsl(domain specific language)로 구성됨
+- jenkins가 동작되기 위해서는 여러 plugin들을 pipeline을 통하여 흘러가는 과정
+
+#### 3.2 Component 구성요소
+- 2가지 형태의 pipeline syntax가 존재
+    - declartive (더 최신이고 가독성이 좋음)
+    - scripted pipeline
+
+#### 3.3 Section의 구성
+- Sections(가장 큰 개념)
+    - agent section
+    - post section
+    - state section
+    - steps section
+
+### 4. Section 깊게 살펴보기
+#### 4.1 Agnet section
+- jenkins는 많은 일으 하기때문에 혼자 하기 버거움
+- 여러 slave node들을 두고 일을 시키는데, 이처럼 어던 jenkins가 일을 하게 하는지 지정
+- jenkins node 관리에서 새로 node를 띄우거나 혹은 docker image를 통해 처리 
+- 예를들어, jenkins instance가 서버 2대에 각각 떠 있는경우, master or slave 어떤 곳에서 시킬지 결정
+- Jenkins node안에서만 넣을 수 있는 것이 아니라 jenkins 안에 있는 docker continaer에 들어가서 일을 시킬 수 있음
+- `node js`안에서 뭔가를 지시 가능
+#### 4.2 Post Section
+- stage가 끝난 이후 결과에 따라 후속 조치 가능
+- 성공시 -> 이메일
+- 실패시 -> 중단 혹은 건너뛰기
+- 작업결과에 따른 행동 취함
+
 
 --- 
+- [velog-jenkins](https://velog.io/@bbkyoo/Jenkins)
 
