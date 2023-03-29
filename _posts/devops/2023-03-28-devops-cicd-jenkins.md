@@ -7,7 +7,7 @@ tags: devops cicd jenkins
 comments: true  
 ---  
 
-### Jenkins를 통한 Pipeline 
+## Jenkins를 통한 Pipeline 
 ---
 
 ### 1. Jenkins란 ?
@@ -33,7 +33,7 @@ comments: true
 - Docker Plugin and Dodcker pipeline 
     - Docker agent를 사용하여 jenkins에서 docker를 활용가히 위한 plugin
 
-### 3. Jnekins의 Pipeline
+### 3. Jenkins의 Pipeline
 #### 3.1  Pipeline
 - pipeline이란 CI/CD의 pipeline을 jenkins에 구현하기 위한 `일련의 plugin들을 집합이자 구성`
 - 즉, 여러 plugin들을 pipeline에 용도에 맞게 사용하고 정의함으로써 pipeline을 통한 서비스가 배포
@@ -66,6 +66,38 @@ comments: true
 - 실패시 -> 중단 혹은 건너뛰기
 - 작업결과에 따른 행동 취함
 
+#### 4.3 Stage Section
+- 어떤 일들을 처리할 것 인지 일련의 stage를 정의
+- 일종의 카테고리라고 보면 됨
+- 예를들어 FE배포를 위한 stage
+
+#### 4.4 Steps Section
+- 한 Stage안에서 단계의 일련의 step을 보여줌
+- steps내부는 여러가지 스텝들로 구성되며 여러작업들을 실행 가능
+- `plugin`을 설치하면 사용할 수 있는 step들이 생겨남
+- build를 할때 directory를 옮겨서 build를 하거나, 다른 plugin을 설치하여 해당 plugin을 method를 활용해서 일을 처리하던지 작업 가능 
+- `plugin`을 설치하면 쓸 수 있는 step들이 많아짐
+![jenkins](https://velog.velcdn.com/images/bbkyoo/post/e4985c98-a232-4157-9dce-2e02501bbfc3/image.png)
+
+### 5. Declarative 문법 알아보기
+#### 5.1 Declaratives
+- environment, stage, options, parameters, triggers, when 등의 Declarative가 있음
+- 각 stage안에서 어떤 일들을 할 것인지 정의하는 게 Declarative임
+
+#### 5.2 Declaratives의 단계
+- environment
+![env-dec](https://velog.velcdn.com/images/bbkyoo/post/55febdb1-5bc9-4173-83f5-103156d46fdc/image.png)
+- parameter 
+    - pipeline 실행 시 받음
+- triggers
+    - 어떤 형태로 trigger가 되는가?
+    - 이 pipeline이 어떤 주기로 실행이 되는가?
+    ![trigger](https://velog.velcdn.com/images/bbkyoo/post/b42fb608-31ea-41e4-a837-2d37a1e6dd86/image.png)
+- when
+!(when)[https://velog.velcdn.com/images/bbkyoo/post/fc8f853b-a860-4948-b674-5349c51b376f/image.png]
+
+### 6.Jenkins Pipeline 구성예시
+![example](https://velog.velcdn.com/images/bbkyoo/post/850f79f2-e615-428c-8f4c-730138289892/image.png)
 
 --- 
 - [velog-jenkins](https://velog.io/@bbkyoo/Jenkins)
