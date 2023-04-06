@@ -53,7 +53,7 @@ comments: true
     - steps section
 
 ### 4. Section 깊게 살펴보기
-#### 4.1 Agnet section
+#### 4.1 Agent section
 - jenkins는 많은 일으 하기때문에 혼자 하기 버거움
 - 여러 slave node들을 두고 일을 시키는데, 이처럼 어던 jenkins가 일을 하게 하는지 지정
 - jenkins node 관리에서 새로 node를 띄우거나 혹은 docker image를 통해 처리 
