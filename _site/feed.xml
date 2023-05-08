@@ -6,9 +6,181 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 21 Mar 2023 00:36:24 +0900</pubDate>
-    <lastBuildDate>Tue, 21 Mar 2023 00:36:24 +0900</lastBuildDate>
+    <pubDate>Fri, 24 Mar 2023 14:50:29 +0900</pubDate>
+    <lastBuildDate>Fri, 24 Mar 2023 14:50:29 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>[Network] Shared VPC </title>
+        <description>&lt;h2 id=&quot;vpc-및-shared-vpc&quot;&gt;VPC 및 Shared VPC&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;참조&quot;&gt;참조&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://priyadogra.com/google-cloud-platform-big-data-and-machine-learning-fundamentals-quiz-answers/&quot;&gt;coursera-quiz answer&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 23 Mar 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/gcp/2023/03/23/gcp-network-vpc/</link>
+        <guid isPermaLink="true">http://localhost:4000/gcp/2023/03/23/gcp-network-vpc/</guid>
+        
+        <category>nw</category>
+        
+        
+        <category>gcp</category>
+        
+      </item>
+    
+      <item>
+        <title>[Network] VPC Peering</title>
+        <description>&lt;h2 id=&quot;vpc-peering-vs-vpnvirtual-private-network&quot;&gt;VPC Peering vs VPN(Virtual Private Network)&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;참조&quot;&gt;참조&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://tudip.com/blog-post/difference-between-vpc-peering-and-vpn/&quot;&gt;Tudip&lt;/a&gt;
+&lt;a href=&quot;https://cloud.google.com/network-connectivity/docs/how-to/choose-product&quot;&gt;Google Doc - Choosing a Network Connectivity product&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 23 Mar 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/gcp/2023/03/23/gcp-network-vpc-peering_vs_vpn/</link>
+        <guid isPermaLink="true">http://localhost:4000/gcp/2023/03/23/gcp-network-vpc-peering_vs_vpn/</guid>
+        
+        <category>nw</category>
+        
+        
+        <category>gcp</category>
+        
+      </item>
+    
+      <item>
+        <title>[Network] VPC Peering</title>
+        <description>&lt;h2 id=&quot;vpc-peering&quot;&gt;VPC Peering&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;vpc-network-peering&quot;&gt;VPC Network Peering&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Google Cloud VPC 네트워크 피어링은 &lt;code class=&quot;highlighter-rouge&quot;&gt;2개의 VPC(Virtual Private Cloud) 네트워크를 연결하여 각 네트워크 리소스가 서로 통신 가능 하도록 함&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;모든 subnet은 내부 IPv4주소를 사용하여 통신 가능&lt;/li&gt;
+      &lt;li&gt;이중 스택 subnet 또한 Ipv6주소 이용하여 통신 가능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;peering된 vpc 네트워크는 동일 프로젝트, 동일 조직의 프로젝트, 다른 조직의 프로젝트에 설정 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;vpc-network-peering의-이점benefit&quot;&gt;VPC Network Peering의 이점(Benefit)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;하나의 VPC NW에서 다른 VPC NW로 &lt;code class=&quot;highlighter-rouge&quot;&gt;Private SaaS 서비스 게시 가능&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;VPC NW Peering은 &lt;code class=&quot;highlighter-rouge&quot;&gt;GCE, GKE, App Engine 가변형 환경&lt;/code&gt;에서 작동&lt;/li&gt;
+  &lt;li&gt;Peering 연결을 사용하여 제공되는 패킷은 &lt;code class=&quot;highlighter-rouge&quot;&gt;Google Production network 유지&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Network Latency&lt;/code&gt; : 내부 주소로만 연결은 외부 주소 사용 연결보다 latency가 짧다&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Network Security&lt;/code&gt; : 서비스 소유자는 Public 환경에 서비스 노출하여 위험을 감수 할 필요가 없음&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Network Cost&lt;/code&gt; : Google Cloud는 트래픽이 같은 영역내에 있더라도 외부IP주소를 사용하여 통신하는 network에 대해서 &lt;code class=&quot;highlighter-rouge&quot;&gt;이그레이드 대역폭 가격(charging egress bandwidth pricing)&lt;/code&gt;을 청구. 그러나 Peering된 NW경우 내부 IP 주소 사용하여 통신하면 이러한 이그레스 비용을 절약.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;specifications&quot;&gt;Specifications&lt;/h3&gt;
+&lt;h4 id=&quot;general-specifications&quot;&gt;General specifications&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;VPC NW Perring은 GCE,GKE,App Engine등 가변환경에서 작동
+    &lt;ul&gt;
+      &lt;li&gt;기본적으로 GKE를 사용한 VPC NW Peering &lt;code class=&quot;highlighter-rouge&quot;&gt;IP aliases&lt;/code&gt;함께 사용할 경우 지원. 이를 사용하지 않으면 Peering된 NW에서 GKE컨테이너에 엑세스 할 수 있도록 커스텀 경로를 내보낼 수 있음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;VPC NW Peering은 VPC NW만 지원. legacy NW는 지원 불가능&lt;/li&gt;
+  &lt;li&gt;IPv4,IPv6 모두 지원&lt;/li&gt;
+  &lt;li&gt;1개의 VPC NW엣 여러개의 VPC NW 할 수 있지만 제한이 있음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;administrative-specifications&quot;&gt;Administrative specifications&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Peered VPC NW는 관리 측면에서 분리된 상태로 유지
+    &lt;ul&gt;
+      &lt;li&gt;Route, Firewall, VPN, 기타 traffic 관리도구는 각 VPC NW에서 개별적으로 관리&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Peering 연결 설정을 위하여 &lt;code class=&quot;highlighter-rouge&quot;&gt;각 VPC 네트워크에 대한 관리자가 다른 VPC 네트워크에대해 피어링 연결을 만들어야함&lt;/code&gt;. 해제는 어느 한쪽이라도 가능&lt;/li&gt;
+  &lt;li&gt;Peering 연결의 각 측은 독립적으로 설정. 양 측의 구성이 일치하는 경우메나 활성화 됨.&lt;/li&gt;
+  &lt;li&gt;Peering 연결을 만들어도 다른 VPC NW에대해 IAM역할이 부여되지 않음.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;vpc-nw-peering-구성하기&quot;&gt;VPC NW Peering 구성하기&lt;/h3&gt;
+&lt;p&gt;Google Cloud VPC NW Peering은 동일한 프로젝트에 속하는지 또는 동일한 조직에 속하는지 상관 없이 VPC NW에서 private IP주소를 연결가능&lt;/p&gt;
+
+&lt;h4 id=&quot;1-vpc-nw이름-설정&quot;&gt;1. VPC NW이름 설정&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;해당 NW가 다른 프로젝트에 있는 경우 프로젝트ID도 필요&lt;/li&gt;
+  &lt;li&gt;다른 VPC NW에 연결할 &lt;code class=&quot;highlighter-rouge&quot;&gt;인텐트&lt;/code&gt;설정&lt;/li&gt;
+  &lt;li&gt;두 피어링구성 상태가 &lt;code class=&quot;highlighter-rouge&quot;&gt;ACTIVE&lt;/code&gt;로 변경되어야함. 다른 피어링 구성이 없으면 피어링 사태가 &lt;code class=&quot;highlighter-rouge&quot;&gt;INACTIVE&lt;/code&gt;가됨&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2-서브넷-경로-교환&quot;&gt;2. 서브넷 경로 교환&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;두 네트워크가 연결되면 항상 서브넷 경로를 교환&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gcloud compute networks peerings create PEERING_NAME \
+    --network=NETWORK \
+    --peer-project=PEER_PROJECT_ID \
+    --peer-network=PEER_NETWORK_NAME \
+    [--stack-type=STACK_TYPE] \
+    [--import-custom-routes] \
+    [--export-custom-routes] \
+    [--import-subnet-routes-with-public-ip] \
+    [--export-subnet-routes-with-public-ip]
+● PEERING_NAME: 피어링 구성의 이름
+● NETWORK: 피어링할 프로젝트의 네트워크 이름
+● PEER_PROJECT_ID: 피어링할 네트워크가 포함된 프로젝트의 ID
+● PEER_NETWORK_NAME: 피어링할 네트워크의 이름
+● STACK_TYPE: 피어링 연결의 스택 유형입니다. IPv4 경로만 교환하려면 IPV4_ONLY를 지정합니다. 또는 IPv4 경로와 IPv6 경로를 모두 교환하도록 IPV4_IPV6를 지정합니다. IPV4_ONLY가 기본값입니다.
+● --import-custom-routes는 피어링된 네트워크의 커스텀 경로를 수락하도록 네트워크에 지시합니다. 피어링된 네트워크는 먼저 경로를 내보내야 합니다.
+● --export-custom-routes는 커스텀 경로를 피어링된 네트워크로 내보내도록 네트워크에 지시합니다. 피어링된 네트워크는 경로를 가져오도록 설정되어야 합니다.
+● --import-subnet-routes-with-public-ip는 네트워크가 서브넷에서 비공개로 사용되는 공개 IPv4 주소를 사용하는 경우 피어링된 네트워크의 서브넷 경로를 수락하도록 네트워크에 지시합니다. 피어링된 네트워크는 먼저 경로를 내보내야 합니다.
+● --export-subnet-routes-with-public-ip는 비공개로 사용되는 공개 IP 주소가 포함된 서브넷 경로를 내보내도록 네트워크에 지시합니다. 피어링된 네트워크는 경로를 가져오도록 설정되어야 합니다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;vpc-peering-목록-표시&quot;&gt;VPC Peering 목록 표시&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;기존 Peering 연결목록을 표히사여 해당 상태와 커스컴 경로를 가져오는지 또는 내보내는지 여부를 확인
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gcloud compute networks peerings list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;vpc-peering-연결-목록-표시&quot;&gt;VPC Peering 연결 목록 표시&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;내 VPC NW가 Peered NW에서 가져오거나 내보내는 동적경로를 나열&lt;/li&gt;
+  &lt;li&gt;내보낸 경우 Peerd NW가 커스텀 경로를 수락 또는 거부 확인 가능&lt;/li&gt;
+  &lt;li&gt;가져온 경우 Peered NW가 Peer NW에서 커스텀 경로를 수락 또는 거부 확인&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gcloud compute networks peerings list-routes PEERING_NAME \
+    --network=NETWORK \
+    --region=REGION \
+    --direction=DIRECTION
+    PEERING_NAME: 기존 피어링 연결의 이름입니다.
+● NETWORK: 피어링된 프로젝트의 네트워크 이름입니다.
+● REGION: 모든 동적 경로를 나열하려는 리전입니다. 서브넷 및 정적 경로는 전역 경로이며 모든 리전에 표시됩니다.
+● DIRECTION: 가져온(incoming) 경로나 내보낸(outgoing) 경로를 나열할지 여부를 지정합니다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;vpc-peering-예시&quot;&gt;VPC Peering 예시&lt;/h3&gt;
+
+&lt;h3 id=&quot;참조&quot;&gt;참조&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://cloud.google.com/vpc/docs/vpc-peering?hl=ko&quot;&gt;Google Doc - VPC Network Peering&lt;/a&gt;
+&lt;a href=&quot;https://cloud.google.com/vpc/docs/using-vpc-peering?hl=ko&quot;&gt;Google Doc - VPC Network Peering 구성 만들기&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 23 Mar 2023 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/gcp/2023/03/23/gcp-network-vpc-peering/</link>
+        <guid isPermaLink="true">http://localhost:4000/gcp/2023/03/23/gcp-network-vpc-peering/</guid>
+        
+        <category>nw</category>
+        
+        
+        <category>gcp</category>
+        
+      </item>
     
       <item>
         <title>[Cloud Function]How does BigQuery work</title>
@@ -2543,175 +2715,6 @@ reshaped = tf.reshape(x,[1,3])
         
         
         <category>ai</category>
-        
-      </item>
-    
-      <item>
-        <title>[k8s] Cluster Initialzation</title>
-        <description>&lt;h3 id=&quot;k8s-reset하기&quot;&gt;k8s reset하기&lt;/h3&gt;
-
-&lt;h4 id=&quot;docker-reset&quot;&gt;Docker Reset&lt;/h4&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Docker 초기화
-$ docker rm -f `docker ps -aq`
-$ docker volume rm `docker volume ls -q`
-$ sudo umount /var/lib/docker/volumes
-$ sudo rm -rf /var/lib/docker/
-$ sudo systemctl restart docker
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;kubeadm-reset&quot;&gt;kubeadm Reset&lt;/h4&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# kubeadm 초기화
-$ sudo kubeadm reset
-$ sudo systemctl restart kubelet
-$ sudo reboot
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=b457Nrk9GKk&quot;&gt;youtube&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Tue, 31 Aug 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/k8s/2021/08/31/k8s-init/</link>
-        <guid isPermaLink="true">http://localhost:4000/k8s/2021/08/31/k8s-init/</guid>
-        
-        <category>k8s</category>
-        
-        <category>cluster</category>
-        
-        <category>init</category>
-        
-        
-        <category>k8s</category>
-        
-      </item>
-    
-      <item>
-        <title>[k8s] HA Configuration </title>
-        <description>&lt;h3 id=&quot;k8s-multi-master-ha-구성&quot;&gt;k8s multi-master HA 구성&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;컨테이너 runtime 설치
-    &lt;ul&gt;
-      &lt;li&gt;k8s는 기본적으로 CRI(Container Runtime Interface)를 사용하여 컨테이너 런타임과 연동&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=b457Nrk9GKk&quot;&gt;youtube&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Mon, 30 Aug 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/k8s/2021/08/30/k8s-ha-config/</link>
-        <guid isPermaLink="true">http://localhost:4000/k8s/2021/08/30/k8s-ha-config/</guid>
-        
-        <category>k8s</category>
-        
-        <category>ha</category>
-        
-        
-        <category>k8s</category>
-        
-      </item>
-    
-      <item>
-        <title>[Shell] df </title>
-        <description>&lt;h3 id=&quot;how-to-identify-and-kill-zombiedefunct-processes-in-linux-without-reboot&quot;&gt;How to identify and kill zombie/defunct processes in Linux without reboot&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Linux에서는 maximum process 개수가 잇고 그리고 process id가 존재&lt;/li&gt;
-  &lt;li&gt;maximum에 다다르면, 새로운 process를 시작이 불가능&lt;/li&gt;
-  &lt;li&gt;zombie process는 &lt;code class=&quot;highlighter-rouge&quot;&gt;그들이 parent process로부터 적절하게 정리되지 않은 dead process&lt;/code&gt;이다&lt;/li&gt;
-  &lt;li&gt;process가 linux에 죽을때, 메모리로부터 모든것을 즉시 제거한다.
-    &lt;ol&gt;
-      &lt;li&gt;process status는 EXIT ZOMBIE로 변하고 parent process는 child process로부터 &lt;code class=&quot;highlighter-rouge&quot;&gt;SIGCHLD&lt;/code&gt; signal을 받는다&lt;/li&gt;
-      &lt;li&gt;parent process는 dead process의 exit status를 읽기 위해 &lt;code class=&quot;highlighter-rouge&quot;&gt;wait() 시스템 콜&lt;/code&gt;을 호출&lt;/li&gt;
-      &lt;li&gt;parent process는 dead process로부터 정보를 얻는다&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wait()&lt;/code&gt;이 호출 된 후, zombie process는 완전히 메모리부터 제거&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;위의 과정은 보통 굉장히 빨리 발생하고 system에 zombie process로부터 쌓이는 것을 보지 못함&lt;/li&gt;
-  &lt;li&gt;parent process가 적절히 프로그래밍 되지 않고, wait() 시스템 호출을 절대로 하지 않으면, 그것의 zombie children은 계속 메모리에 남는다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;steps-to-attempt-killing-processes-without-system-reboot&quot;&gt;Steps to attempt killing processes without system reboot&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;identify the zombie processes
-    &lt;blockquote&gt;
-      &lt;table&gt;
-        &lt;tbody&gt;
-          &lt;tr&gt;
-            &lt;td&gt;top -b1 -n1&lt;/td&gt;
-            &lt;td&gt;grep Z&lt;/td&gt;
-          &lt;/tr&gt;
-        &lt;/tbody&gt;
-      &lt;/table&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;27230 root   20  0   0  0  0 Z 0.0 0.0  0:00.00 java &amp;lt;defunct&amp;gt;
-27231 root   20  0   0  0  0 Z 0.0 0.0  0:00.00 java &amp;lt;defunct&amp;gt;
-27264 root   20  0   0  0  0 Z 0.0 0.0  0:00.00 java &amp;lt;defunct&amp;gt;
-27265 root   20  0   0  0  0 Z 0.0 0.0  0:00.00 java &amp;lt;defunct&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Find the parent of zombie processes
-    &lt;blockquote&gt;
-      &lt;table&gt;
-        &lt;tbody&gt;
-          &lt;tr&gt;
-            &lt;td&gt;ps -A -ostat,ppid&lt;/td&gt;
-            &lt;td&gt;grep -e ‘[zZ]’&lt;/td&gt;
-            &lt;td&gt;awk ‘{ print $2 }’&lt;/td&gt;
-            &lt;td&gt;uniq&lt;/td&gt;
-            &lt;td&gt;xargs ps -p&lt;/td&gt;
-          &lt;/tr&gt;
-        &lt;/tbody&gt;
-      &lt;/table&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;PID TTY     TIME CMD
-27229 pts/0  00:00:00 example_Java_program.jar
-Note the parent process ID (ppid) is 27229
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Send SIGCHLD signal to the parent process. This signal tells the parent process to execute the wait() system call and clean up its zombie children
-    &lt;blockquote&gt;
-      &lt;p&gt;kill -s SIGCHLD ppid&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Identify if the zombie processes have been killed
-    &lt;ul&gt;
-      &lt;li&gt;If there are still zombie processes then the parent process isn’t programmed properly and is ignoring SIGCHLD signals.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;참고&quot;&gt;참고&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/pulse/how-identify-kill-zombiedefunct-processes-linux-without-george-gabra&quot;&gt;linkedin&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Wed, 11 Aug 2021 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/os/2021/08/11/os-shell-kill-zombie/</link>
-        <guid isPermaLink="true">http://localhost:4000/os/2021/08/11/os-shell-kill-zombie/</guid>
-        
-        <category>shell</category>
-        
-        <category>zombie</category>
-        
-        
-        <category>os</category>
         
       </item>
     
