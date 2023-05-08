@@ -43,6 +43,89 @@ comments: true
 
 ### Piepeline Concepts
 
+#### Pipeline
+- Pipeline은 CD Pipeline은 user-defined model
+- Pipeline의 code는 building application, test 및 delivering을 위한 stage들을 위한 전체 build 프로세스를 정의
+[Declarative pipeline syntax](https://www.jenkins.io/doc/book/pipeline/#declarative-pipeline-fundamentals)
+#### Node
+- node는 Jenkins의 env의 일부 그리고 pipeline을 실행시킬 수 있음
+[Scripted pipeline syntax](https://www.jenkins.io/doc/book/pipeline/#declarative-pipeline-fundamentals)
+ 
+#### Stage
+- stage block은 현재 Jenkins pipeline의 status/progress를 visualiza할 수 있는 많은 plugin들을 사용하는 전체 Pipeline을 통하여 수행되는 task들의 유일한 subset (ex Build,Test,Deploy stages)
+
+#### Step
+- 특정 time(또는 프로세스 step)에서 특별한 무엇을해야하는지 jenkins에 알려주는 `single task`
+- ex) `sh` step을 통하여 make shell command를 실행. 
+- pugin이 Pipelien DSL(Domain Specific Language)을 확장할때, 그 대표적인 의미는 plugin은 새로 구현된 step이을 의미
+
+### Declarative Pipeline fundamentals
+- pipeline block을 전체의 pipeline을 통하여 무엇을 해야되는지 정의
+
+```
+Jenkinsfile (Declarative Pipeline)
+pipeline {
+    agent any             -- 1
+    stages {
+        stage('Build') {  -- 2 
+            steps {
+                //        -- 3
+            }
+        }
+        stage('Test') {   -- 4
+            steps {
+                //        -- 5
+            }
+        }
+        stage('Deploy') { -- 6
+            steps {       -- 7
+                // 
+            }
+        }
+    }
+}
+```
+#### 1 Execute this Pipeline or any of its stages, on any available agent.
+#### 2 Defines the "Build" stage
+#### 3 	Perform some steps related to the "Build" stage
+#### 4 Defines the "Test" stage.
+
+```
+Jenkinsfile (Declarative Pipeline)
+pipeline {      1
+    agent any 2
+    options {
+        skipStagesAfterUnstable()
+    }
+    stages {
+        stage('Build') {  3
+            steps {  4
+                sh 'make'  5
+            }
+        }
+        stage('Test'){
+            steps {
+                sh 'make check'
+                junit 'reports/**/*.xml' 6
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'make publish'
+            }
+        }
+    }
+}
+```
+#### 1 pipeline is Declarative Pipeline-specific syntax that defines a "block" containing all content and instructions for executing the entire Pipeline.
+#### 2 agent is Declarative Pipeline-specific syntax that instructs Jenkins to allocate an executor (on a node) and workspace for the entire Pipeline.
+#### 3stage is a syntax block that describes a stage of this Pipeline. Read more about stage blocks in Declarative Pipeline syntax on the Pipeline syntax page. As mentioned above, stage blocks are optional in Scripted Pipeline syntax.
+#### 4 steps is Declarative Pipeline-specific syntax that describes the steps to be run in this stage.
+#### 5 sh is a Pipeline step (provided by the Pipeline: [Nodes and Processes plugin](https://plugins.jenkins.io/workflow-durable-task-step/)) that executes the given shell command.  
+#### 6 junit is another Pipeline step (provided by the [JUnit plugin](https://plugins.jenkins.io/junit/)) for aggregating test reports.
+#### 7 sh is a Pipeline step (provided by the Pipeline: Nodes and Processes plugin) that executes the given shell command.
+
+
 --- 
 - [Jenkins pipeline](https://www.jenkins.io/doc/book/pipeline/#declarative-pipeline-fundamentals)
 - [Jenkins pipeline syntax](https://www.jenkins.io/doc/book/pipeline/syntax/)
