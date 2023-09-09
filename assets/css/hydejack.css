@@ -72,7 +72,7 @@
 
 
 .markdown-body code {
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace,'Dongle', sans-serif;;
+  font-family: 'Dongle', sans-serif,Consolas, "Liberation Mono", Menlo, Courier, monospace,'Dongle', sans-serif;;
   font-size: 12px;
 }
 
