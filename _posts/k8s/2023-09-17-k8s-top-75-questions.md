@@ -23,7 +23,12 @@ k8s는 `container orchestration 그리고 management`의 사실상 표준이 되
 - 주요 구성요소는 `control plane, worker nodes 그리고 k8s api` 이다
 
 #### 4. What is control palne?
-- API서버 등 etcd데이터스토어, controller manager 및 kube-scheduler등 클러스터 전반적인 상태를 관리하는 구성 요소의 집합
+- API서버 등 etcd데이터스토어, controller manager 및 kube-scheduler등 클러스터 전반적인 상태를 관리하는 구성 요소의 집합이다
+
+
+#### 5. What are worker nodes?
+
+#### 
 
 ### 참고
 - [medium](https://medium.com/@bubu.tripathy/top-75-kubernetes-questions-and-answers-d677a0b87d79)
