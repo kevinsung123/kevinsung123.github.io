@@ -72,6 +72,16 @@ A window function performs a calculation across a set of table rows that are som
 윈도우 함수는 현재 행과 어떤 식으로든 관련이 있는 테이블 행 집합에 대해 계산을 수행합니다. 이는 집계 함수로 수행할 수 있는 계산 유형과 유사합니다. 그러나 일반 집계 함수와 달리 윈도우 함수를 사용하면 행이 하나의 출력 행으로 그룹화되지 않으므로 행은 별도의 ID를 유지합니다. 화면 뒤에서 윈도우 함수는 쿼리 결과의 현재 행 이상에 액세스할 수 있습니다.
 ```
 - 위의 핵심은 2가지 문장
+    1. 행을 그룹화 하지 않은것
+    2. window function은 현재의 행 뒤에 있는 행보다 더 많이 엑세스 한다
+- 인터뷰 질문은 "어떤 유형의 window function을 사용하였나?와 같은 이론적인 질문부터 window function의 사용이 필요한 coding까지 다양하다
+- 예시
+    - 각 부서내에서 가장 수입이 높은 직원3명과 함께 보여주세요
+    - 각 고객이 가장 최근에 구매한 3가지 품목을 보여주세요
+- 가장 일반적인 window funciont은 `rank(), row_number() 그리고 dense_rank()를 over()`구문과 함꼐 사용 
+- 
+
+
 
 ### 참고
 - ![SQL Skils](https://towardsdatascience.com/the-top-3-sql-skills-needed-to-get-to-the-next-round-51ad1699a213)

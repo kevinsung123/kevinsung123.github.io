@@ -2,8 +2,8 @@
 layout: post  
 title: "[DB] 4UUID "  
 subtitle: "4UUID"  
-categories: db
-tags: db 
+categories: datalakehouse
+tags: datalakehouse 
 comments: true  
 ---  
 ## Database - 4UUID (Primary key)
