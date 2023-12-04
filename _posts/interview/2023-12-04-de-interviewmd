@@ -1,0 +1,97 @@
+---  
+layout: post  
+title: "[DE] Data Engineering Interview Questions"  
+subtitle: "Tips for prepare for a job interview "  
+categories: it
+tags: it Interview
+comments: true  
+---  
+## Data Engineering Interview Questions
+
+
+
+### Q1) What is your DE like on a day-to-day basis?
+### A1)
+- DE툴과 framework 에대한 풍부한 열정과 경험을 보여주고자함
+- 몇가지 데이터파이프라인 예시를 제공해주면서 답변을 장식함
+- `tutorial`이라는 말을 언급을 안하는게 좋고 
+```
+… a full-lifecycle project from requirements gathering to data pipeline design and go live.
+(요구사항 수집부터 데이터파이프라인 설계, 실시간 운영에 이르기까지 lifecycle 프로젝트..)
+```
+- 예시답변
+   - 현재 데이터 품질업무가 주이며, 데이터플랫폼에 데이터를 load하기 전에 행조건을 사용하여 데이터를 확인할 수 있는 데이터파이프라인을 설계하고 구축했다.
+   - SDK와 함께 작업하여 데이터를 DW에 로드하는 방법을 알고있다고 언급 등
+- 참고 : ![Python for Data Engineers]https://towardsdatascience.com/python-for-data-engineers-f3d5db59b6dd?
+
+### Q2) How do you create data pipelins?
+### A2)
+- third-party ETL tools(fivetran,stich)등 직접 작성할 수 있는 맞춤형 데이터 커넥를 모두 사용할 자신이 있음을 분염히 얘기한다
+- 데이터 파이프라인은 A지점에서 B지점의 목적지로 데이터를 추출, 변환 및 로드 하는 것 
+- 따라서 batch(chunk단위로 aggregate and process), streaming(process and load record by record), cdc(A지점에서 변경사항을 식별 및 캡처하여 B에 로드)등 주요 3가지 데이터 파이프라인 설계 패턴을 따르는 방법을 알고 설명하는게 좋음
+   1. batch 
+   2. streaming
+   3. cdc
+- 예시
+   1. MySQL binary log file을 사용하여 실시간 데이터를 DataWareHouse 솔루션으로 이동 가능 
+      - 주의애헛 사용해야 하며 항상 데이터 파이프라인에 가장 비용 효율적인 도구는 아니지만 언급할 가치가 있음)
+      - 개념 설계도를 따라 모든것을 정리. 많은 ETL을 설명하는데 도움이 됨
+
+### Q3) What do you know about data platform design?
+### A3)
+- 한마디로(In a nutshell), 파이프라인을 구축할 떄 사용할 수 있는 도구를 선택할 수 있는 데이터플랫폼 아키텍처 유형은 4가지입니다.
+- `이 질문의 핵심은 바로 적절한 DE도구와 기법을 선택하는데 도움이 된다`
+- Data Lake, Data Warehouse, Lake houses는 각각의 장점이 있고, 각각의 목적에 부합
+- 4번쨰 아키텍처 유형은 분산된 Data Meseh : `데이터 관리가 분산된 Data Mesh`
+- Data Mesh는 서로다른 데이터 도메인(기업부서)을 보유하고 있고, 각자의 팀과 공유 데이터 리소스가 있을때의 상태를 정의
+- 좀더 혼란스러울 수 있지만, 많은 기업이 데이터 관료주의(Data bureaucracy)를 줄이기 위해 이 모델을 선택 
+- 대표적으로 데이터 웨어하우스는 데이터 레이크에 비해 더 나은 데이터 거버넌스를 제공. 
+- ANSI-SQL기능이 내장되엉 ㅣㅆ어 데이터 스택이 좀더 현대적이고 유연해보임
+- 레이크 또는 웨어하우스로 전화하는 과정은 주로 사용자의 기술에따라 달라짐
+- DW솔루션은 더 많은 상호 작용성을 지원하는 SQL우선제품(Snowflake, BigQuery)등 선택의 폭을 좁힘
+` 데이터레이크는 프로그래밍 기술을 가진 사용자를 위한 것이며, Databricks,Galaxy,DataProc,EMR과 같은 Python 우선 제품을 사용하고자 함 `
+* 참고 ( 데이터 관료주의(Data Bureaucracy ))
+   - 조직이나 기업 내에서 데이터에 대한 중앙 집중적이고 체계적인 통제 및 관리를 강조하는 접근 방식을 나타냅니다. 이 개념은 기업이나 조직에서 데이터를 중앙에서 통제하고 정규화하여 효율적인 데이터 활용과 안전성을 확보하려는 의도를 반영합니다.
+##### 주요 특징 
+   1. 중앙화된 데이터 관리 : 데이터 관리가 중앙 집중화 (통제와 책임이 특정한 관리부서나 팀에게 위임 이를 통해 일관성 있는 데이터 정책 시행 )
+   2. 데이터 표준화 : 데이터 일관성과 표준화를 강조. 표준 데이터 정의, 용어, 및 데이터 모델이 정의되고 준수. 이는 데이터 품질과 해석의 일관성을 유지하는데 도움 
+   3. 보안과 규제준수 : 중앙화된 데이터 관리는 규제를 준수하고, 데이터를 보호하기 위해 필요한 정책 및 절차를 관리하기 위해 용이
+   4. 일관된 데이터 접근 권한 : 중앙에서 통제되며 필요에 따라 사용자나 팀에게 일관된 방식으로 부여. 데이터의 무단사용을 방지하고 비즈니스 목표에 따라 데이터를 효과적으로 활용 
+   5. 데이터 품질관리 : 데이터 품질을 중요하게 여김. 데이터의 정확성,일관서으,완전성을 유지하기 위한 일련의 품질관리 프로세스가 중앙에서 관리 
+- 데이터 관료주의가 모든 상황에 적합한것은 아니며, 떄로는 빠르게 변화하는 비즈니스 환경에 따라 더 유연하고 탄력적인 데이터 관리가 필요. 이에 대한 대안으로 데이터 민주주의 (Data Democracy)등이 제시. 이는 데이터에 대한 분산된 접근을 허용하고 조직내 다양한 팀이나 개인이 보다 쉽게 데이터를 활용가능 
+. 그런다음 프로토타입인 funciontal model이 뒤따르며, 이 작업에 우리의 개념적 모델이 작동한한다는 것을 증명하는 것을 목표로 함
+
+### Q4) What is data modeling?
+### A4)
+- 데이터 모데릴은 entity(tables,views,silos,data lakes)간의 관계를 사용하여 데이터를 변화하기 때문에 데이터 엔지니어링의 필수적인 부분.
+- 이 프로세스가 개념적(Conceptual)이고 물리적은(Physical)측면에서 어떻게 작동하는지 이해하고 있음을 보여주고 있음 
+- 항상 비즈니스 프로세스 또는 데이터 변환작업에 대해 모델을 만드는 개념에서 시작
+- 결국 필요한 모든 물리적 개체와 개체를 포함하는 최종 인프라를 포함하는 물리적 모델을 만들 것입니다
+- 개념적 데이터 모델링에는 클라우드 저장소에 반구조화된 데이터 파일이 포함된 모든 유형의 데이터 플랫폼이 포함될 수 있습니다
+![Orchestrate Machine Learning Pipelines with AWS Step Functions](https://pub.towardsai.net/orchestrate-machine-learning-pipelines-with-aws-step-functions-d8216a899bd5)
+- `DBT 및 Dataform`
+ - 이 작업에 사용할 수 있는 템플릿 엔지에 대해 잘알고 있다는점을 어필하는것이 좋음.
+ - 데이터 변환 unit test그리고 데이터 환경에 많은 도움을 되고, human error 그리고 배포 workflow를 개선하는 데 도움이 됨.
+ - ![Continuous Integartion and Deployment for Data Platforms](https://towardsdatascience.com/continuous-integration-and-deployment-for-data-platforms-817bf1b6bed1?)
+
+### Q5) What is the difference between Star and Snowflake schema?
+
+### Q6) On a scale from 1 to 10 how good are your SQL skills?
+
+### Q7) How do I get 10 out of 10 in SQL?
+What is the difference between OLAP and OLTP?
+What data engineering frameworks do you know?
+What would you use to orchestrate your data pipelines?
+What is your programming language?
+What is *args and **kwargs?
+How good are you with CLI tools and shell scripting?
+How do you deploy your data pipelines?
+How good are you with Data Science?
+What do you know about data quality and data reliability?
+What algorithm would you use to extract or process a very large dataset?
+When would you use Hadoop in your pipelines?
+How would you approach a big data migration project?
+Which ETL tools do you know and how is it different from ELT?
+
+### 참고
+- ![medium](https://towardsdatascience.com/data-engineering-interview-questions-fdef62e46505)

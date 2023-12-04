@@ -36,6 +36,22 @@ Also, functions:
 8. lazy evaluations
 
 #### 1. monoids
+- closure : input/output type은 같다 
+- identity : empty 또는 string을 입력값을 넣으면 결과가 그대로 유지
+- associativity : 원하는대로 값을 순서대로 지정할 수 있지만, 여전히 동일한 답을 얻을 수 있음
+
+#### 2. Immutability
+- object는 immutable 
+- functional programming에서  object가 생성되거나 초기화되면 상태를 변경할 수 없는 경우
+##### Mutable data structure
+- lists
+- dictionaries
+- sets
+
+##### Immutable data structure
+- strings
+- tuples
+- frozensets
 
 
 ### 참고
