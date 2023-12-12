@@ -75,23 +75,255 @@ comments: true
  - ![Continuous Integartion and Deployment for Data Platforms](https://towardsdatascience.com/continuous-integration-and-deployment-for-data-platforms-817bf1b6bed1?)
 
 ### Q5) What is the difference between Star and Snowflake schema?
+### A5)
+-  면접관이 데이터엔지니어링 설계 스미카에 대한 지식을 테스트하는 경우가 많음
+- 간결하게 설명하고 `start schema는 하나의 fact table에 연결된 초대형 비정규화 데이터셋을 활용하는 설계`
+- start schema는 OLAP 스타일의 분석 파이프라인에 더 적합
+- 해당 데이터셋의 데이터는 항상 최신은 아니지만, 이런한 방식으로 구체화 해야하고 필요한 경우 필요한 필드를 업데이트 할 수 있어야함
+- `snowflake schema`는 중앙에 동일한 fact table이 있지만, 많은 다른 fact 및 dimension 테이블과 연결 됨
+- 이 테이블들은 일반적으로 비정규화되어있음
+- 이 스키마 디자인은 데이터가 항상 최선이어야하는 `OLTP`데이터 처리에 더 적합
+- 응용 프로그램에서 빠르게 개별행을 검색해야하는 경우 강점을 보임
 
 ### Q6) On a scale from 1 to 10 how good are your SQL skills?
+### A6)
+- 아래는 merge 구문을 사용하여 증분 테이블을 생성 
+```
+reate temp table last_online as (
+    select 1 as user_id
+    , timestamp('2000-10-01 00:00:01') as last_online
+)
+;
+create temp table connection_data  (
+  user_id int64
+  ,timestamp timestamp
+)
+PARTITION BY DATE(_PARTITIONTIME)
+;
+insert connection_data (user_id, timestamp)
+    select 2 as user_id
+    , timestamp_sub(current_timestamp(),interval 28 hour) as timestamp
+union all
+    select 1 as user_id
+        , timestamp_sub(current_timestamp(),interval 28 hour) as timestamp
+union all
+    select 1 as user_id
+        , timestamp_sub(current_timestamp(),interval 20 hour) as timestamp
+union all
+    select 1 as user_id
+    , timestamp_sub(current_timestamp(),interval 1 hour) as timestamp
+;
+
+merge last_online t
+using (
+  select
+      user_id
+    , last_online
+  from
+    (
+        select
+            user_id
+        ,   max(timestamp) as last_online
+
+        from 
+            connection_data
+        where
+            date(_partitiontime) >= date_sub(current_date(), interval 1 day)
+        group by
+            user_id
+
+    ) y
+
+) s
+on t.user_id = s.user_id
+when matched then
+  update set last_online = s.last_online, user_id = s.user_id
+when not matched then
+  insert (last_online, user_id) values (last_online, user_id)
+;
+select * from last_online
+;
+```
 
 ### Q7) How do I get 10 out of 10 in SQL?
-What is the difference between OLAP and OLTP?
-What data engineering frameworks do you know?
-What would you use to orchestrate your data pipelines?
-What is your programming language?
-What is *args and **kwargs?
-How good are you with CLI tools and shell scripting?
-How do you deploy your data pipelines?
-How good are you with Data Science?
-What do you know about data quality and data reliability?
-What algorithm would you use to extract or process a very large dataset?
-When would you use Hadoop in your pipelines?
-How would you approach a big data migration project?
-Which ETL tools do you know and how is it different from ELT?
+### A7)
+- 테이블을 구조 배열로 변환하여 UDF로 전달하는 것과 같은 특정 도구에 대한 전문 지식과 매우 까다롭고 명확한 관련이 있을 것입니다.
+
+- 이것은 각 행 또는 테이블에 복잡한 논리를 가진 사용자 정의 함수(UDF)를 적용해야 할 때 유용합니다.
+
+- 테이블을 항상 TYPE STRUCT 객체들의 배열로 간주하고 그 각각을 UDF에 전달할 수 있습니다. 논리에 따라 다릅니다. 예를 들어, 저는 구매 스태킹에서 만료 시간을 계산할 때 이 테이블을 사용합니다:
+```
+select 
+     target_id
+    ,product_id
+    ,product_type_id
+    ,production.purchase_summary_udf()(
+        ARRAY_AGG(
+            STRUCT(
+                target_id
+                , user_id
+                , product_type_id
+                , product_id
+                , item_count
+                , days
+                , expire_time_after_purchase
+                , transaction_id 
+                , purchase_created_at 
+                , updated_at
+            ) 
+            order by purchase_created_at
+        )
+    ) AS processed
+
+from new_batch
+;
+
+```
+
+### Q8) What is the difference between OLAP and OLTP?
+### A8)
+- OLAP는 보고 및 대규모 데이터 처리와 같은 분석목적으로 데이터를 집계하고 저장하는것을 목표
+- 때문에 여기는 비정규화된 super big table을 매우 자주 봄
+- OLTP는 단일 transaction에 초점이 있고 빠른 데이터 처리가 필요 
+- 좋은예는 인앱 구매, 사용자계정 관리 및 저장소 콘텐츠 업데이트. 
+- OLTP 데이터는 dimension table이 대부분 정규화된 snowflow 패턴을 사용하여 연결된 indexing 테이블에 저장
+
+### Q9) What data engineering frameworks do you know?
+### A9)
+- 우리는 모든것을 알 수없음
+- 모든 데이터 엔지니어링 도구와 framework에대해 경험이 필요한 것 은 아님
+- Python ETL, Bonoboo,Apache Airflow, Bubbles, Kestra, Luigi 
+- `모든 framework를 완벽하게 경험 할 필요는 없지만 자시간을 보여주는것은 필수`
+- 다양한 데이터 도구로 자신감을 입증하기 위해 최소한 1-2개 정도는 학습한 다은 기본 원칙(data engineering princple)을 사용해야함.
+- 이 접근 방식을 사용하면 거의 모든 DE질문에 대답가능
+`Why did you do it this way? — I got this from basic principles.`
+- exmaple) Apache Airflow
+![Apache airlfow](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*19K0sqfmIUkIgJnP9PcBGg.png)
+- 이상과 같이 Apache Airway에서 몇 가지 사항을 배우고 간단한 파이프라인 예제로 시연하면 됩니다. 예를 들어 데이터를 클라우드 스토리지(bq_export_op)로 내보낸 후 ml_engine_training_op을 실행하고 이 워크플로우를 매일 또는 매주 실행할 수 있습니다.
+- 아래는 간단한 data pipeline graph : 데이터를 cloud storage에 export 한 후 ML Engine training operator를 사용하여 ML모델을 훈련
+```
+"""DAG definition for recommendation_bespoke model training."""
+
+import airflow
+from airflow import DAG
+from airflow.contrib.operators.bigquery_operator import BigQueryOperator
+from airflow.contrib.operators.bigquery_to_gcs import BigQueryToCloudStorageOperator
+from airflow.hooks.base_hook import BaseHook
+from airflow.operators.app_engine_admin_plugin import AppEngineVersionOperator
+from airflow.operators.ml_engine_plugin import MLEngineTrainingOperator
+
+import datetime
+
+def _get_project_id():
+  """Get project ID from default GCP connection."""
+
+  extras = BaseHook.get_connection('google_cloud_default').extra_dejson
+  key = 'extra__google_cloud_platform__project'
+  if key in extras:
+    project_id = extras[key]
+  else:
+    raise ('Must configure project_id in google_cloud_default '
+           'connection from Airflow Console')
+  return project_id
+
+PROJECT_ID = _get_project_id()
+
+# Data set constants, used in BigQuery tasks.  You can change these
+# to conform to your data.
+DATASET = 'staging' #'analytics'
+TABLE_NAME = 'recommendation_bespoke'
+
+
+# GCS bucket names and region, can also be changed.
+BUCKET = 'gs://rec_wals_eu'
+REGION = 'us-central1' #'europe-west2' #'us-east1'
+JOB_DIR = BUCKET + '/jobs'
+
+default_args = {
+    'owner': 'airflow',
+    'depends_on_past': False,
+    'start_date': airflow.utils.dates.days_ago(2),
+    'email': ['mike.shakhomirov@gmail.com'],
+    'email_on_failure': True,
+    'email_on_retry': False,
+    'retries': 5,
+    'retry_delay': datetime.timedelta(minutes=5)
+}
+
+# Default schedule interval using cronjob syntax - can be customized here
+# or in the Airflow console.
+schedule_interval = '00 21 * * *'
+
+dag = DAG('recommendations_training_v6', default_args=default_args,
+          schedule_interval=schedule_interval)
+
+dag.doc_md = __doc__
+
+
+#
+#
+# Task Definition
+#
+#
+
+
+# BigQuery training data export to GCS
+
+training_file = BUCKET + '/data/recommendations_small.csv' # just a few records for staging
+
+t1 = BigQueryToCloudStorageOperator(
+    task_id='bq_export_op',
+    source_project_dataset_table='%s.recommendation_bespoke' % DATASET,
+    destination_cloud_storage_uris=[training_file],
+    export_format='CSV',
+    dag=dag
+)
+
+
+# ML Engine training job
+training_file = BUCKET + '/data/recommendations_small.csv'
+job_id = 'recserve_{0}'.format(datetime.datetime.now().strftime('%Y%m%d%H%M'))
+job_dir = BUCKET + '/jobs/' + job_id
+output_dir = BUCKET
+delimiter=','
+data_type='user_groups'
+master_image_uri='gcr.io/my-project/recommendation_bespoke_container:tf_rec_latest'
+
+training_args = ['--job-dir', job_dir,
+                 '--train-file', training_file,
+                 '--output-dir', output_dir,
+                 '--data-type', data_type]
+
+master_config = {"imageUri": master_image_uri,}
+
+t3 = MLEngineTrainingOperator(
+    task_id='ml_engine_training_op',
+    project_id=PROJECT_ID,
+    job_id=job_id,
+    training_args=training_args,
+    region=REGION,
+    scale_tier='CUSTOM',
+    master_type='complex_model_m_gpu',
+    master_config=master_config,
+    dag=dag
+)
+
+
+t3.set_upstream(t1)
+```
+
+### Q10) What would you use to orchestrate your data pipelines?
+### Q11) What is your programming language?
+### Q12) What is *args and **kwargs?
+### Q13) How good are you with CLI tools and shell scripting?
+### Q14) How do you deploy your data pipelines?
+### Q15) How good are you with Data Science?
+### Q16) What do you know about data quality and data reliability?
+### Q17) What algorithm would you use to extract or process a very large dataset?
+### Q18) When would you use Hadoop in your pipelines?
+### Q19) How would you approach a big data migration project?
+### Q20) Which ETL tools do you know and how is it different from ELT?
+### Conclusion
 
 ### 참고
 - ![medium](https://towardsdatascience.com/data-engineering-interview-questions-fdef62e46505)
