@@ -6,9 +6,11 @@ categories: datalakehouse
 tags: datalakehouse 
 comments: true  
 ---  
-## Iceberg vs Dremio
+### Introduction
+- datalake와 datalake house 모두 빅데이터와 함꼐 동작하고, Data Science/Data Analytics을 지원하고 처리하도록 함
+- 아래는 이 2가지 솔루션에 대해 이론적 배경을 제시하고 각각의 장단점을 설명
 
-
+### What is DataLake
 
 
 ### 참고
