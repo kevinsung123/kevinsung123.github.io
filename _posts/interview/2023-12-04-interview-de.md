@@ -87,7 +87,8 @@ comments: true
 
 ### Q6) On a scale from 1 to 10 how good are your SQL skills?
 ### A6)
-- 아래는 merge 구문을 사용하여 증분 테이블을 생성 
+- 아래는 merge 구문을 사용하여 증분 테이블을 생성
+
 ```
 reate temp table last_online as (
     select 1 as user_id
@@ -145,13 +146,15 @@ select * from last_online
 ;
 ```
 
+
 ### Q7) How do I get 10 out of 10 in SQL?
 ### A7)
 - 테이블을 구조 배열로 변환하여 UDF로 전달하는 것과 같은 특정 도구에 대한 전문 지식과 매우 까다롭고 명확한 관련이 있을 것입니다.
 
 - 이것은 각 행 또는 테이블에 복잡한 논리를 가진 사용자 정의 함수(UDF)를 적용해야 할 때 유용합니다.
 
-- 테이블을 항상 TYPE STRUCT 객체들의 배열로 간주하고 그 각각을 UDF에 전달할 수 있습니다. 논리에 따라 다릅니다. 예를 들어, 저는 구매 스태킹에서 만료 시간을 계산할 때 이 테이블을 사용합니다:
+- 테이블을 항상 TYPE STRUCT 객체들의 배열로 간주하고 그 각각을 UDF에 전달할 수 있습니다. 논리에 따라 다릅니다. 예를 들어, 저는 구매 스태킹에서 만료 시간을 계산할 때 이 테이블을 사용합니다
+
 ```
 select 
      target_id
@@ -177,7 +180,6 @@ select
 
 from new_batch
 ;
-
 ```
 
 ### Q8) What is the difference between OLAP and OLTP?
@@ -201,6 +203,7 @@ from new_batch
 ![Apache airlfow](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*19K0sqfmIUkIgJnP9PcBGg.png)
 - 이상과 같이 Apache Airway에서 몇 가지 사항을 배우고 간단한 파이프라인 예제로 시연하면 됩니다. 예를 들어 데이터를 클라우드 스토리지(bq_export_op)로 내보낸 후 ml_engine_training_op을 실행하고 이 워크플로우를 매일 또는 매주 실행할 수 있습니다.
 - 아래는 간단한 data pipeline graph : 데이터를 cloud storage에 export 한 후 ML Engine training operator를 사용하여 ML모델을 훈련
+
 ```
 """DAG definition for recommendation_bespoke model training."""
 
@@ -329,6 +332,7 @@ t3.set_upstream(t1)
     - *args, **kargs(keyword)은 함수에 가변 인수를 전달 하는데 사용되는 키워드 
     - *args : 가변 숫자의 위치를 전달하는 사용 이는 `tuple`로 저장 
     - **kargs : 가변 숫자의 키워드 인수를 전달하는데 사용. `dictionary`로 저장 
+
 ```
 def my_function(*args, **kwargs):
     print(args)
@@ -363,13 +367,16 @@ print(concat(a="Data", b="Engineering", c="is", d="Great", e="!"))
 - Cloud Vencodr cli은 REST APPI기반으로 하며, 강력한 cli를 통해 데이터 엔지니어가 Cloud Servcie Endpoint와 통신하여 리소스를 설명하고 수정할 수 있도록 함 
 - 데이터 엔지니어는 bash scripting과 함꼐 chaing 명령어를 사용하여 cli tool을 사용가능 
 - 아래 에시는 AWS Lambda function이 pipeline manager를 호출 
+
 ```
 aws lambda invoke \
     --function-name pipeline-manager \
     --payload '{ "key": "something" }' \
     response.json
 ```
+
 - 아래 예시는 lambda package를 위한 저장 bucket이 있는지 확인하고 lambda함수로 ETL서비스를 업로드하고 배포 
+
 ```
 # ./deploy.sh
 # Run ./deploy.sh
@@ -436,6 +443,7 @@ cloudformation deploy \
 - 데이터 품질 검사는 스크립트로 예약할 수 있으며, 특정 조건을 충족 하지 못하는 경우 이메일 알림을 보냄
 - SQL로 수행도 가능하며, 이에 국한 될 필요는 없음
 -  It will use SQL with row conditions to check if there are any records with NULL `payment_date`. It will also check for duplicates.
+
 ```
 with checks as (
     select
@@ -474,6 +482,8 @@ from
     alerts
 ;
 ```
+
+
 ### Q17) What algorithm would you use to extract or process a very large dataset?
 - 파이썬을 좋아한다면 아마도 pandas 라이브러리를 인터뷰에서 언급했을것
 - 하지만, pandas는 big dataset과 잘 어울리지 않음. 특시 데이터 변환
@@ -487,6 +497,8 @@ from
     - `return키워드는 모든 결과값을 메모리에 올려야하지만, yield는 결과값을 하나씩 메모리에 올려놓음`
     - `lazy iterator`라고도 부름
     - 특히 메모리에 한번에 올리기에는 `부담스러운 대용량 파일을 읽거나, 스트림 데이터를 처리`할때 상당히 유용
+
+
 ```
 # Create a file first: ./very_big_file.csv as:
 # transaction_id,user_id,total_cost,dt
@@ -516,6 +528,7 @@ with open('very_big_file.csv') as f:
 # In command line run
 # Python example.py
 ```
+
 ### Q18) When would you use Hadoop in your pipelines?
 - Apache재단에서 개발한 오픈소스 빅데이터 처리 프레임워크로 분산 데이터 처리의 모든 이점을 제공 
 - 대용량 데이터를 처리하는 데이터 파이프라인에서 큰 인기를 끌었떤 이유
