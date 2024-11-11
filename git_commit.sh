@@ -1,5 +1,5 @@
 ## step 1 . step into git blog folder
-cd /d/github/kevinsung123.github.io
+#cd /d/github/kevinsung123.github.io
 
 # check pwd
 pwd
