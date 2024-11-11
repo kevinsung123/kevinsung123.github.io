@@ -1,5 +1,8 @@
 
-
+---
+title: Confluent Connect REST API
+category: [Confluent, CONNECT REST API]
+---
 
 
 

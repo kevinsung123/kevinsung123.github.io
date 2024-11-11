@@ -12,7 +12,7 @@ echo "${com_msg}"
 git add *
 
 ## step 4. git commit 
-git commit -m ${com_msg}
+git commit -m "${com_msg}"
 
 ## step 5. git push
 git push
