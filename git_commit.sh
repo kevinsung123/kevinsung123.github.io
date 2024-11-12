@@ -1,3 +1,4 @@
+#!/bin/bash
 ## step 1 . step into git blog folder
 #cd /d/github/kevinsung123.github.io
 
@@ -17,4 +18,4 @@ git commit -m "${com_msg}"
 git push
 
 ## step6. git log
-git log --pretty=format:"%h -%an,  %cd (%ar) : %s" --graph
+#git log --pretty=format:"%h -%an,  %cd (%ar) : %s" --graph
