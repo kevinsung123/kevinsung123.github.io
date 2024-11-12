@@ -10,7 +10,7 @@ read  -p "Write commit message for push : " com_msg
 echo "commit message : ${com_msg}"
 
 ## step 3. git add all files
-git add ./*
+git add *
 
 ## step 4. git commit 
 git commit -m "${com_msg}"
