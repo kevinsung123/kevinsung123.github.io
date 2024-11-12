@@ -1,6 +1,6 @@
 ﻿---
-title: Date
-categoies: [linux, tool]
+title: "Date tool 사용법"
+categories: [linux, tool]
 tags: [linux,shell,date]
 ---
 
