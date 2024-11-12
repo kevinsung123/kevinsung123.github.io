@@ -30,7 +30,7 @@ refactor: true
 {% assign many = site.categories[category_name] | size %}
 {% assign total = total | plus: many %}
 {% if forloop.last %}
-<h1>Total ({{ total }})</h1>
+<h1>Total ({{ total | divided_by: 2 }})</h1>
 {% endif %}
 {% endfor %}
 
