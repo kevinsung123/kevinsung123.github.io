@@ -1,6 +1,6 @@
 ﻿---
 title:  print
-categoies: [linux, tool]
+categories: [linux, tool]
 tags: [linux,shell,print]
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: Linux-Shell find
-categoies: [linux, tool]
+title: find명령어 사용법
+categories: [linux, tool]
 tags: [linux,shell,find]
 ---
 
