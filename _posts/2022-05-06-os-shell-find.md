@@ -1,8 +1,9 @@
 ---
-title: [Linux-Shell] find
+title: Linux-Shell find
 categoies: [linux, tool]
 tags: [linux,shell,find]
 ---
+
 
 ### Find it and do what you want
 It's safe to say that the `find` command in Linux is one of the must-know operations for backend developers, unless you are using a Windows-server

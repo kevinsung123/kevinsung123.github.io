@@ -1,5 +1,5 @@
 ---
-title: [Linux] Linux 종류
+title: Linux 종류
 categoies: [linux, tool]
 tags: [linux,shell]
 ---

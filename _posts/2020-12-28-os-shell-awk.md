@@ -1,5 +1,5 @@
 ﻿---
-title: [Linux-Shell] print
+title:  print
 categoies: [linux, tool]
 tags: [linux,shell,print]
 ---

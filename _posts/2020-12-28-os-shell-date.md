@@ -1,5 +1,5 @@
 ﻿---
-title: [Linux-Shell] Date
+title: Date
 categoies: [linux, tool]
 tags: [linux,shell,date]
 ---
