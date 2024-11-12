@@ -1,8 +1,7 @@
 ---  
 title: "[DE] BigQuery Interview Questions"  
 date : 2024-11-12 21:00:00
-subtitle: "BigQuery Interview Questions"  
-categories: [gcp,bigquery]
+categories: [Gcp,Bigquery]
 tags: [gcp,bigquery,interview]
 comments: true
 pin: true
