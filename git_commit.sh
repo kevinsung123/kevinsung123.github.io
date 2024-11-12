@@ -16,3 +16,6 @@ git commit -m "${com_msg}"
 
 ## step 5. git push
 git push
+
+## step6. git log
+git log --pretty=format:"%h -%an,  %cd (%ar) : %s" --graph
