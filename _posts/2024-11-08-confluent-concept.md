@@ -7,7 +7,7 @@ tags : [confluent]
 ## Confluent 
 ---
 
-### Topic 
+### **Topic**
 
 Conflunet Platform에서 Kafka Topic 생성방법은 
 - Kafka CLI
@@ -39,7 +39,7 @@ Conflunet Platform에서 Kafka Topic 생성방법은
 
 <br/>
 
-###  Replicator Connector
+###  **Replicator Connector**
 - https://docs.confluent.io/platform/current/multi-dc-deployments/replicator/index.html
 - https://www.confluent.io/hub/confluentinc/kafka-connect-replicator
 - https://www.confluent.io/blog/15-facts-about-confluent-replicator-and-multi-cluster-kafka-deployment/?utm_source=confluent_hub&utm_term=kafka-connect-replicator&utm_content=plugin_deployment_options&_ga=2.185627497.1731761582.1731044983-1086034599.1727195938&_gl=1*5v2sa9*_gcl_aw*R0NMLjE3MzEwNDQzODIuQ2owS0NRaUE1N0c1QmhEVUFSSXNBQ2dDWW56dzZJNjhGZ2czbzFQRUlteUdIOVJGWFduelhkQklXLU01TE1LMy04ZXFnSVEzZXJlVlFBOGFBZ0NkRUFMd193Y0I.*_gcl_au*NTgxMTgyNjA5LjE3MjcxOTU5Mzg.*_ga*MTA4NjAzNDU5OS4xNzI3MTk1OTM4*_ga_D2D3EGKSGD*MTczMTA0NDM4MS40LjEuMTczMTA0ODEyOC42MC4wLjA.
@@ -54,7 +54,7 @@ replicator를 설정할떄 혼동을 방지
 <br/>
 
 
-###  ACL
+###  **ACL**
 Confluent ACL은 Kafka 및 Confluent Platform에서 엑세스제어목록(Access Control List)
 기능을 통해 사용자 및 애플리케이션 권한을 관리하는 시스템
 
@@ -63,7 +63,7 @@ Kafka 클러스터 Topic,Consumer,Cluster등에 대한 접근권한을 세부적
 
 <br/>
 
-###  Connector 
+###  **Connector**
 Confluent의 kakfa connector는 source와 sink 2가지 유형으로 나움.
 각 connector는 특정 시스템과 kafka간의 데이터 통합을 하는 역할 
 1. Source connector
