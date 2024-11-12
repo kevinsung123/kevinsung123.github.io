@@ -5,38 +5,39 @@ tags : [confluent]
 ---
 
 ## Confluent 
+---
 
 ### Topic 
 
 Conflunet Platform에서 Kafka Topic 생성방법은 
-. Kafka CLI
-https://docs.confluent.io/kafka/kafka-apis.html
------------------------------------------
-kafka-topics --create \
-  --topic <topic_name> \
-  --bootstrap-server <broker_address> \
-  --partitions <number_of_partitions> \
-  --replication-factor <replication_factor>
------------------------------------------
-. Confluent Control center
+- Kafka CLI
+  ```
+  kafka-topics --create \
+    --topic <topic_name> \
+    --bootstrap-server <broker_address> \
+    --partitions <number_of_partitions> \
+    --replication-factor <replication_factor>
+  ```
+- Confluent Control center
 -  UI를 통해서 생성 
-. Kafka Admin REST API
---------------------------
-curl -X POST http://localhost:8082/topics \
-  -H "Content-Type: application/vnd.kafka.v2+json" \
-  -d '{
-        "topic": "my-topic",
-        "partitions": 3,
-        "replication_factor": 2,
-        "configs": {
-          "retention.ms": "604800000"
-        }
-      }'
-
+- Kafka Admin REST API
+  ```
+  curl -X POST http://localhost:8082/topics \
+    -H "Content-Type: application/vnd.kafka.v2+json" \
+    -d '{
+          "topic": "my-topic",
+          "partitions": 3,
+          "replication_factor": 2,
+          "configs": {
+            "retention.ms": "604800000"
+          }
+        }'
+  ```
 --------------------------------------
 
 - 자동 topic 생성이 있음
 
+<br/>
 
 ###  Replicator Connector
 - https://docs.confluent.io/platform/current/multi-dc-deployments/replicator/index.html
@@ -50,7 +51,7 @@ replicator를 설정할떄 혼동을 방지
 또 다른 connector와 격리함으로써 자원에 대한 경쟁상황(race condition)을 배제할수 있어 
 중요데이터 복제를 위해 자원 사용을 최적화 가능 
 
-
+<br/>
 
 
 ###  ACL
@@ -59,6 +60,8 @@ Confluent ACL은 Kafka 및 Confluent Platform에서 엑세스제어목록(Access
 
 Kafka 클러스터 Topic,Consumer,Cluster등에 대한 접근권한을 세부적으로 설정하여 
 데이터 보안을 강화하고, 사용자 애플리케이션이 수행할 수 있는 작업을 제한적으로 함
+
+<br/>
 
 ###  Connector 
 Confluent의 kakfa connector는 source와 sink 2가지 유형으로 나움.
@@ -88,10 +91,8 @@ kafka 클러스터간 데이터를 복제하는데 특화된 커넥터
 5. Streaming, Event Processing Connector
 실시간 스트리밍 처리가 피룡한 경우 사용
 
+<br/>
 
-▶ Kakfa confluent connector config 정보 알아내는 스크립트
-→ connector 조회 
-
-
-▶ Kafka rest api (curl)
-https://docs.confluent.io/platform/current/kafka-rest/index.html
+### 참조
+- https://docs.confluent.io/kafka/kafka-apis.html
+- - https://docs.confluent.io/platform/current/kafka-rest/index.html
