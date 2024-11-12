@@ -1,6 +1,6 @@
 ---
-title:  df(파일시스템 명령어)
-categoies: [linux, tool]
+title:  "df(파일시스템 명령어)"
+categories: [linux, tool]
 tags: [linux,shell,df]
 ---
 

@@ -1,5 +1,5 @@
 ﻿---
-title:  print
+title:  "print 사용법"
 categories: [linux, tool]
 tags: [linux,shell,print]
 ---

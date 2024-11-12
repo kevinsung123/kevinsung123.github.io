@@ -1,6 +1,6 @@
 ---
-title: zombie process 처리방법
-categoies: [linux, tool]
+title: "zombie process 처리방법"
+categories: [linux, tool]
 tags: [linux,shell,zombie]
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: Linux 종류
-categoies: [linux, tool]
+title: "Linux 종류"
+categories: [linux, tool]
 tags: [linux,shell]
 ---
 

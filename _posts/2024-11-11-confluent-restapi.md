@@ -1,6 +1,7 @@
 ---
-title: Confluent Connect REST API
-category: [Confluent, Connect REST API]
+title: "Confluent Connect REST API"
+categories: [Confluent, Connect REST API]
+tags : [confluent]
 ---
 
 
