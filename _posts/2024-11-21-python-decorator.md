@@ -3,7 +3,6 @@ title: "Python Decorator"
 date : 2024-11-12 15:00:00 +0900
 categories: [Python, Decorator]
 tags : [python,decorator]
-author : kevinsung123
 ---
 
 
