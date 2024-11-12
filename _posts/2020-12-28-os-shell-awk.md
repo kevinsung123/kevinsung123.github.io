@@ -1,9 +1,10 @@
 ﻿---
 title: [Linux-Shell] print
-category: [linux, tool]
+categoies: [linux, tool]
+tags: [linux,shell,print]
 ---
-## Print
-<!--more-->
+
+
 #### Modifiers for `print` Formats
 ```
 printf "%s %s\n", "don't", "panic"

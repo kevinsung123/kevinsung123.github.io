@@ -1,6 +1,7 @@
 ---
 title: [Linux-Shell] 파일시스템 명령어(df)
-category: [linux, tool]
+categoies: [linux, tool]
+tags: [linux,shell,df]
 ---
 
 ### DF(Disk Free)

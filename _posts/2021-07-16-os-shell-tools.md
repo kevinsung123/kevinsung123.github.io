@@ -1,6 +1,7 @@
 ---
 title: [Linux-Shell] proces 확인하기
-category: [linux, tool]
+categoies: [linux, tool]
+tags: [linux,shell]
 ---
 
 ### Linux tools that I learned 10 years ago, which I still use every day

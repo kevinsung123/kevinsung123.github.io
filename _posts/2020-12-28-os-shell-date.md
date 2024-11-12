@@ -1,6 +1,7 @@
 ﻿---
 title: [Linux-Shell] Date
-category: [linux, tool]
+categoies: [linux, tool]
+tags: [linux,shell,date]
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: [Linux-Shell] zombie process 처리방법
-category: [linux, tool]
+categoies: [linux, tool]
+tag: [linux,shell,zombie]
 ---
 
 ### How to identify and kill zombie/defunct processes in Linux without reboot 

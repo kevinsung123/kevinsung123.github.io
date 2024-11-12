@@ -1,6 +1,7 @@
 ---
 title: [Linux-Shell] find
-category: [linux, tool]
+categoies: [linux, tool]
+tags: [linux,shell,find]
 ---
 
 ### Find it and do what you want
@@ -18,7 +19,6 @@ First of all, we need to use the `cd` command to enter the corresponding directo
 ` find . -type f -atime +365 -exec rm -rf {} 
 ;`
 
-
 #### 0. Find Files by Names or Regular Expressions
 - Let's start from the simples usage. TO search files by a specific name, the command is like the following :
 
@@ -26,7 +26,5 @@ First of all, we need to use the `cd` command to enter the corresponding directo
 find . -name test.txt
 ```
 
-
 ### 참고
 - [medium](https://medium.com/techtofreedom/7-uses-of-find-command-in-linux-c45f70d7351a)
-

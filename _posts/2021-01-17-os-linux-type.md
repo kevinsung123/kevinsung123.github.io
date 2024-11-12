@@ -1,6 +1,7 @@
 ---
 title: [Linux] Linux 종류
-category: [linux, tool]
+categoies: [linux, tool]
+tags: [linux,shell]
 ---
 
 ### Linux란?

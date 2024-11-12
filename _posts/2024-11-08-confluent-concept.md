@@ -1,6 +1,7 @@
 ---
 title: Confluent 개념
-category: [Confluent, 개념]
+categoies: [Confluent, 개념]
+tags : [confluent]
 ---
 
 ## Confluent 
