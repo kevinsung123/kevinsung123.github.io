@@ -9,10 +9,8 @@ math: true
 mermaid: true
 ---  
 
-title: "Confluent 개념"
-categories: [Confluent, keyword]
-tags : [confluent]
----
+
+
 ## BigQuery Interview Questions
 
 ### Easy
