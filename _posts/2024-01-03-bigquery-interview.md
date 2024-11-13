@@ -1,15 +1,13 @@
 ---  
-title: "[DE] BigQuery Interview Questions"  
-date : 2024-11-12 21:00:00
-categories: [Gcp,Bigquery]
+title: "BigQuery Interview Questions"  
+date : 2024-11-12 15:00:00 +0900
+categories: [GCP,Bigquery]
 tags: [gcp,bigquery,interview]
 comments: true
 pin: true
 math: true
 mermaid: true
 ---  
-
-
 
 ## BigQuery Interview Questions
 
