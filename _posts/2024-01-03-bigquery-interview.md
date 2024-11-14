@@ -33,44 +33,48 @@ mermaid: true
 BigQuery의 서버리스 아키텍처는 **storage**와 **compute**를 분리하여 각각 독립적으로 on-demand에따라 auto-scale
 이 구조는 **엄청난 유연성(immense flexibilit)**와 **비용통제(cost controls)**를 고객에게 제공하여 비싼 comptue resource를 
 유지 않아도 된다.
+
 ![images](https://storage.googleapis.com/gweb-cloudblog-publish/images/BQ_Explained_2.max-900x900.jpg)
 
 BigQuery는 low-level의 **Google Infrastructure기술(Dremel,Colossus,Jupiter and Borg)**와 같은 방대한 양의 multi-tenant 서비스를
 활용한다.
+
 ![images](https://storage.googleapis.com/gweb-cloudblog-publish/images/BQ_Explained_3.max-500x500.jpg)
 
-**Compute는 Dreml이며, SQL쿼리를 수행하는 큰 multi-tenant cluster이다**
+##### **Compute는 Dreml이며, SQL쿼리를 수행하는 큰 multi-tenant cluster이다**
 - Drmel은 SQL Query들을 **execution trees**로 변환. tree의 leaves들은 **slot**이라 불리며 스토리지와 다른 필요한 computation으로부터 읽는다. tree의 branch들을 aggregation을 수행하는 **mixers**라고 부름
 - Dremel은 동적으로 slot을 필요에 따라 할당하며, 다중 사용자들에데 공정성을 가짐. 단일 사용자는 수천개의 slot를 사용가능
 
-**Storage는 Colossus이며, Google의 global storage system**
+##### **Storage는 Colossus이며, Google의 global storage system**
 - BigQuery는 **columnar storage format**그리고 **compression algorithm**을 이용하여 데이터를 **Colossus,대규모의 정형 데이터를 읽는데 적합**에 저장
 - **replication,recovery(when disk crash) 그리고 분산관리(SPOF)**기능을 처리. **colossus**는 BigQuery user들에게 penalty를 지불하지 않고 원할하게 저장된 수십 PB데이터로 확장가능
 
-**Compute와 storage는 Jupiter N/W를 통해 서로 통신**
+##### **Compute와 storage는 Jupiter N/W를 통해 서로 통신**
 - storage와 compute 사이 **shuffle**있는데 그것은 Google Jupiter N/W를 이요해서 데이터를 빠르게 이동시킴
 
-**BigQuery는 Borg(Google의 precursor K8S)를 통해 orchestrate됨**
+##### **BigQuery는 Borg(Google의 precursor K8S)를 통해 orchestrate됨**
 = **mixers**와 **slot**은 Borg가 hw리소스를 할당함으로써 수행됨
 
 
 BigQuery 아키텍처는 대용량 데이터 처리 그리고 분석을 효율적으로 하기 위해 설계. 
 아키텍처는 분산 컴퓨팅 모델에 토대로 하며, 수평적으로 확장하고 병렬적으로 대용량 데이터 처리 하도록 설계 다음은 주요 특징 
+
 1. Dremel-inspired Execution Enginer
 - BQ 실행엔진은 Google에서 개발한 고도로 확장 가능하고, 대화형 쿼리 시스템인 Dremel논문에서 영감을  얻음. 이 엔진은 분산데이터에서 SQL과 유사한 쿼리를 병렬로 실행 가능
-1. 데이터 저장과 처리 분리 
+2. 데이터 저장과 처리 분리 
 - 빅쿼리는 데이터 저장과 처리를 분리해 각각 독립적으로 확장할 수 있게 해줍니다.데이터(테이블)는 페타바이트 규모의 분산 저장소에 저장되고, 쿼리 요구에 따라 계산 자원이 동적으로 할당됩니다. 이는 쿼리 처리에만 필요한 리소스만 사용하여 비용을 최적화할 수 있음을 의미합니다.
-1. Columnar 저장
+3. Columnar 저장
 - BQ는 데이터를 행이 아닌 열기반 형식으로 저장. 쿼리 실행  중 특정 열으 효율적으로 압축하고 검색하도록 가능. 이 방식은 열만 엑세스하기때문에 `데이터 이동 및 처리 오버헤드를 최소화`하여 쿼리 성능을 크게 향상 
-1. 분산 처리 
+4. 분산 처리 
 - 분산처리 아키텍처를 사용. 쿼리는 더 작은 작업으로 분해되어 수백/수천개의 작업노드에 이동시켜 분산
 이 병렬화를 통해 대규모 데이터셋에 대해서 효율적으로 처리 
-1. 공유없는 아키텍처
+5. 공유없는 아키텍처
 - 개별작업 노드는 데이터나 처리 상태를 공유하징낳음. 이는 병목현상(bottle-neck)을 제거하고 fault-tolerance를 높여서 고가용성(HA) 그리고 성능을 높임 (노드가 오류가  발생해도)
-1. petabyte규모 네트워크
+6. petabyte규모 네트워크
 - 저장장치와 계산 자원 간의 빠른 데이터 이동을 위해 전용 페타비트 규모 네트워크 보유. (데이터 전송 지연을 최소화하고 쿼리 실행속도 유지)
-1. 리소스 관리
+7. 리소스 관리
 - 쿼리 작업 부하에 따라 리소스 할당을 자동으로 관리. 복잡한 쿼리를 처리하기 위해 추가 노드를 spin-up하고 유휴시간에는 축소하여 리소스 활용도와 비용 효율성을 최적화
+  
 #### 추가 특징
 - 서버리스
 - 표준 SQL을 지원하여 많은 사용에게 친수하고 접근성 좋음
