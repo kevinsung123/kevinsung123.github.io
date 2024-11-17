@@ -29,6 +29,17 @@ refactor: true
   {% assign pinned_size = 0 %}
 {% endif %}
 
+<!-- Total post size -->
+{% for category in site.categories %}
+  {% assign category_name = category | first %}
+  {% assign many = site.categories[category_name] | size %}
+  {% assign total = total | plus: many %}
+  {% if forloop.last %}
+    <h1>Total ({{ total | divided_by: 2 }})</h1>
+  {% endif %}
+{% endfor %}
+
+
 <!-- Get normal posts on current page -->
 
 {% assign normal_size = paginator.posts | size | minus: pinned_size %}
