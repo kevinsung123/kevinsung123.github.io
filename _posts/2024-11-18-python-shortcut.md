@@ -1,6 +1,6 @@
 ---
 title: "Python Tips"
-date : 2024-11-14 00:00:00 +0900
+date : 2024-11-18 12:00:00 +0900
 categories: [Python, Tip]
 tags : [python,tip]
 ---
