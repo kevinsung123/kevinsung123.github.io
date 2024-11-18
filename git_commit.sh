@@ -1,18 +1,25 @@
+#!/bin/bash
 ## step 1 . step into git blog folder
-cd /d/github/kevinsung123.github.io
+#cd /d/github/kevinsung123.github.io
 
-# check pwd
-pwd
+# step1. git status
+git status 
 
-## step2. read from stdin for commit messgae
-read -p "Write commit message for push : " com_msg
-echo "${com_msg}"
 
-## step 3. git add all files
+## step 2. git add all files
 git add *
+git status 
+
+## step 3. read from stdin for commit messgae
+echo "Enter Commit Message"
+read   commit_message
+echo "commit message : ${commit_message}"
 
 ## step 4. git commit 
-git commit -m ${com_msg}
+git commit -m "${commit_message}"
 
 ## step 5. git push
 git push
+
+## step6. git log
+git log --pretty=format:"%h -%an,  %cd (%ar) : %s" --graph

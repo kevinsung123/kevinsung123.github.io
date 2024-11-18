@@ -9,23 +9,22 @@ tags : [gcp,cloudasset,pyython]
 ### **Cloud Asset를 활용한 GCE리스트 추출 스크립트**
 
 ### **배경 및 목적**
+
 GCP에서 관리하는 GCE가 매우 많을경우 계층구조(hierarchy)가 복잡할때 ex) Organizaion-Folder-Project 한번에 GCE리스트를 추출하기 위해 작성.
 기존에 Compue Enigne API로는 특정 프로젝트에 인스턴스 리스트만 조회하여 상위 레벨의 폴더까지 리스팅 하기 어려웠음.  
-
 
 ### **환경**
 
 {: .prompt-info}
 
 > python 3.10.15
-> 
+>
 > google-cloud-asset 3.27.1
-> 
+>
 > google-cloud-resource-manager 1.13.1
 
-<br/>
-
 ### **사전 준비**
+
 1. Google Cloud SDK 설치 및 인증
 2. **google-cloud-asset** 설치
 
@@ -33,7 +32,6 @@ GCP에서 관리하는 GCE가 매우 많을경우 계층구조(hierarchy)가 복
 pip install google-cloud-asset
 pip install google-resource-manager
 ```
-<br/>
 
 ### **Python코드**
 
@@ -129,10 +127,12 @@ if __name__ == "__main__":
 ```
 
 ### **성능 개선**
+
 위의 코드에서 1개의 dataframe 처리시 거의 1초가 걸린다.
 그래서 성능을 개선해보자. 원인으로는 Folder name구하는 API가 오래걸림. 그리고 Dataframe 구조를 효율화시키는 방안으로 개선
 
 **Key Optimizations:**
+
 - Parallel Folder Lookups: Using ThreadPoolExecutor, we fetch all folder names in parallel, which speeds up the folder name retrieval.
 - Efficient Dataframe Construction: Instead of modifying the DataFrame in each loop iteration, we append rows to a list and construct the DataFrame at the end.
 - Reduced API Calls: Increased the page_size to 100, reducing the number of calls mad
@@ -241,8 +241,6 @@ if __name__ == "__main__":
 
 Google Cloud API 호출에서 **429 Quota Exceede** 에러는 API호출이 서비스 한도를 초과해서 발생. 이는 **FoldersClient.get_folder()**호출이 짧은 시간 내에 너무 많이 발생하여 나타남.
 
-<br/>
-
 ### **해결 방안**
 
 1. **요청속도 제한**
@@ -250,13 +248,13 @@ Python **time.sleep**을 활용하여 속도 제어
 
 2. **병렬 요청조정**
 요청이 동시에 많이 발생하지 않도록 제한
-**ThreadPoolExecutor**에서 **max_workers**를 조정하여 동시에 처리되는 작업 수 를 제한 
+**ThreadPoolExecutor**에서 **max_workers**를 조정하여 동시에 처리되는 작업 수 를 제한
 
 3. **폴더 데이터 캐싱**
 같은 폴더에 대해 반복적으로 요청이 발생하지 않도록 캐시를 활용 **dict**에 이미 요청한 폴더의 ID 이름을 지정하고 중복요청을 방지
 
+#### **위의 해결책을 적용한 최종 스크립트**
 
-**위의 해결책을 적용한 최종 스크립트**
 ```python
 from google.cloud import asset_v1
 from google.cloud import resourcemanager_v3
@@ -379,6 +377,7 @@ if __name__ == "__main__":
 ```
 
 #### **함수 1: fetch_folder_name(folder_id)**
+
 - **역할**:
 주어진 folder_id에 대해 Google Cloud API를 호출하여 폴더의 display name을 가져옵니다. 가져온 이름은 캐시에 저장하여, 동일한 folder_id에 대해 반복적으로 API를 호출하지 않도록 합니다.
 
@@ -393,8 +392,8 @@ folder.display_name 속성을 추출하여 폴더 이름을 반환합니다.
 - **에러 처리**:
 API 호출 실패 시 예외를 출력하고 None을 반환합니다.
 
-
 #### **함수 2: get_folder_names(folder_id_list)**
+
 - **역할**:
 폴더 ID 목록을 입력받아 각 폴더의 이름을 가져오고, 결과를 딕셔너리로 반환합니다. 반환 형식은 {"folder_{idx}_name": folder_name}입니다.
 
@@ -417,45 +416,13 @@ as_completed(future_to_id)를 사용해 완료된 작업의 결과를 순차적�
 
 작업 중 예외가 발생한 경우 해당 폴더 ID와 함께 에러 메시지를 출력합니다.
 
-### **비동기**
-#### **concurrent.futuers모듈**
-Python에서 병렬작업을 쉽게 처리할 수 있도록 도와주는 고수준의 Interface를 제공. 이 모듈은 Thread Pool또는 Process Pool에 제출하여 비동기 실행을 관리
-
-#### **주요 구성요소 
-1. **Executoer** 클래스
-- **concurrent.futures.Executor**는 추상클래스이며, 병렬 실행환경을 제공
-- 두가지 주요 서브클래스틀 제공
-  - **ThreadPoolExecutor** :  스레드를 사용하여 병렬 실행을 처리
-  - **ProcessPoolExecutor** : 프로세스 사용하여 병렬 실행 처리 
-
-2. **Future객채**
-- 작업이 완료될때 결과를 나타나는 객체
-- **Future**객체를 통해 
-
-3. **비동기 작업 제출 및관리**
-- **submit()** 또는 **map()** 메서드를 사용하여 작업을 제출
-- **as_completed** 및 **wait** 함수로 작업의 완료상태를 관리
-
-#### **주요 메서드 및 함수**
-
-1. **submit()** : 작업을 비동기로 제출하여 Future객체를 반환 
-```python
-executor.submit(func, *args, **kwargs)
-```
-
-2. **map()** : 1. **submit** : 작업을 비동기로 제출하여 Future객체를 반환 
-```python
-executor.map(func, iterable, timeout=None)
-
-```
-
-
 ### **참고**
-- https://docs.python.org/ko/3.7/library/concurrent.futures.html
-- https://docs.python.org/ko/3/library/concurrent.futures.html
-- https://velog.io/@jaewan/Pythonconcurrent.futures-%EB%AA%A8%EB%93%88
-- https://python.plainenglish.io/13-python-shortcuts-every-developer-should-use-for-faster-coding-a9609daacc51
-- https://cloud.google.com/python/docs/reference/cloudasset/latest/google.cloud.asset_v1.types.SearchAllResourcesRequest
-- https://cloud.google.com/python/docs/reference/cloudasset/latest/google.cloud.asset_v1.types.SearchAllResourcesResponse
-- https://chatgpt.com/c/67382b99-39f0-8011-8513-e3dec4a58a97
-- https://chatgpt.com/c/67382b99-39f0-8011-8513-e3dec4a58a97
+
+- <https://docs.python.org/ko/3.7/library/concurrent.futures.html>
+- <https://docs.python.org/ko/3/library/concurrent.futures.html>
+- <https://velog.io/@jaewan/Pythonconcurrent.futures-%EB%AA%A8%EB%93%88>
+- <https://python.plainenglish.io/13-python-shortcuts-every-developer-should-use-for-faster-coding-a9609daacc51>
+- <https://cloud.google.com/python/docs/reference/cloudasset/latest/google.cloud.asset_v1.types.SearchAllResourcesRequest>
+- <https://cloud.google.com/python/docs/reference/cloudasset/latest/google.cloud.asset_v1.types.SearchAllResourcesResponse>
+- <https://chatgpt.com/c/67382b99-39f0-8011-8513-e3dec4a58a97>
+- <https://chatgpt.com/c/67382b99-39f0-8011-8513-e3dec4a58a97>
