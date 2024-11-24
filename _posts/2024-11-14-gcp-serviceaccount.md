@@ -56,8 +56,10 @@ if __name__ == "__main__":
     KEY_OUTPUT_FILE = "service-account-key.json"
 
     create_service_account_key(PROJECT_ID, SERVICE_ACCOUNT_EMAIL, KEY_OUTPUT_FILE)
+    
 ```
 
 ### **참고**
-- https://cloud.google.com/iam/docs/reference/credentials/rest/v1/projects.serviceAccounts/generateAccessToken
-- https://chatgpt.com/c/673a95d9-f19c-8011-bfd8-231d5dcaa7d7
+
+- <https://cloud.google.com/iam/docs/reference/credentials/rest/v1/projects.serviceAccounts/generateAccessToken>
+- <https://chatgpt.com/c/673a95d9-f19c-8011-bfd8-231d5dcaa7d7>
