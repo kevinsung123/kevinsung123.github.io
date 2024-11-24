@@ -15,19 +15,19 @@ Python에서 병렬작업을 쉽게 처리할 수 있도록 도와주는 고수�
 
 #### **주요 구성요소**
 
-1. **Executoer** 클래스
+##### 1. **Executoer** 클래스
 
 - **concurrent.futures.Executor**는 추상클래스이며, 병렬 실행환경을 제공
 - 두가지 주요 서브클래스틀 제공
   - **ThreadPoolExecutor** :  스레드를 사용하여 병렬 실행을 처리
   - **ProcessPoolExecutor** : 프로세스 사용하여 병렬 실행 처리
 
-1. **Future객채**
+##### 2. **Future객채**
 
 - 작업이 완료될때 결과를 나타나는 객체
 - **Future**객체를 통해
 
-1. **비동기 작업 제출 및관리**
+##### 3. **비동기 작업 제출 및관리**
 
 - **submit()** 또는 **map()** 메서드를 사용하여 작업을 제출
 - **as_completed** 및 **wait** 함수로 작업의 완료상태를 관리
@@ -46,13 +46,13 @@ executor.submit(func, *args, **kwargs)
 executor.map(func, iterable, timeout=None)
 ```
 
-1. **as_completed()** : 1. **submit** : 작업 완료 순서대로 Future객체를 반환
+3. **as_completed()** : 1. **submit** : 작업 완료 순서대로 Future객체를 반환
 
 ```python
 as_completed(futures, timeout=None)
 ```
 
-1. **wait()** : 1. **submit** : 작업이 완료되거나 취소될 떄까지 대기
+4. **wait()** : 1. **submit** : 작업이 완료되거나 취소될 떄까지 대기
 
 ```python
 wait(futures, return_when)

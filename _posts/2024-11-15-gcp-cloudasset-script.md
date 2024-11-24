@@ -412,7 +412,7 @@ executor.submit(fetch_folder_name, folder_id)를 사용해 각 폴더 ID에 대�
 as_completed(future_to_id)를 사용해 완료된 작업의 결과를 순차적으로 가져옵니다.
 각 future 결과에서 폴더 이름을 가져와 {"folder_{idx}_name": folder_name} 형식으로 딕셔너리에 추가합니다.
 
-= **에러 처리**:
+- **에러 처리**:
 
 작업 중 예외가 발생한 경우 해당 폴더 ID와 함께 에러 메시지를 출력합니다.
 
