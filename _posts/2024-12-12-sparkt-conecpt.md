@@ -49,7 +49,11 @@ tags : [spark,conecpt]
 - `disk I/O`비용은 최초의 데이터를 memory로 올릴떄만 필요 
 - `computation cycle`동안 storeage 기반의 `memory`를 사용 
 - `MapReduce`에 비해 일반적 100+times 빠름
-![map-reduce](D:\github\kevinsung123.github.io\assets\img\2024-12-12-spark\spark_1.png)
+
+![map-reduce](../assets/img/2024-12-12-spark/spark_1.png)
+
+
+#### **In-memory Distributed Computation**
 
 ### **참고**
 - <https://medium.com/nerd-for-tech/apache-spark-multi-part-series-what-is-apache-spark-63c3f6caa3c>
