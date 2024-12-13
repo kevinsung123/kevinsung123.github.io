@@ -1,7 +1,7 @@
 ---
 title: "(1)Apache Spark란?"
 date : 2024-12-12 09:00:00 +0900
-categories: [Spark,COnecpt]
+categories: [Spark,Conecpt]
 tags : [spark,conecpt]
 ---
 
