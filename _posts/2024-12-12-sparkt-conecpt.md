@@ -51,7 +51,7 @@ tags : [spark,conecpt]
 - `computation cycle`동안 storeage 기반의 `memory`를 사용
 - `MapReduce`에 비해 일반적 100+times 빠름
 
-![map-reduce](/../assets/img/2024-12-12-spark/spark_1.png)
+![map-reduce](../assets/img/2024-12-12-spark/spark_1.png)
 
 #### **Spark Driver and Executors**
 
@@ -61,7 +61,7 @@ tags : [spark,conecpt]
 - 개별 `Executor`는 실제 `computing`을 함
 - 개별 `Executor`는 결과를 `Driver`에게 다시 전달
   
-!(.spark_1.png)
+![executor](../assets/img/2024-12-12-spark/spark_2.png)
 
 ### **참고**
 
