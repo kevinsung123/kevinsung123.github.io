@@ -10,6 +10,7 @@ tags : [gcp,cloudsql,insight]
 ### **CloudSQL**
 
 ### **참고**
+
 - <https://cloud.google.com/blog/topics/developers-practitioners/boost-your-query-performance-troubleshooting-skills-cloud-sql-insights?hl=en>
 - <https://cloud.google.com/sql/docs/mysql/using-query-insights?hl=ko>
 - <https://cloud.google.com/sql/docs/mysql/observe-troubleshoot-with-gemini?hl=ko>

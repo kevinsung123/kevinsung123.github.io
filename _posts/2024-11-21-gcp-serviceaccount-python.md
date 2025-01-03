@@ -15,7 +15,7 @@ Python SDK를 활용하여 GCP Serivce Account에 public key를 upload시 에러
 
 {: .prompt-warning}
 
-> HttpError 400 when requesting https://iam.googleapis.com/v1/projects/aignx-test-cloud-setup/serviceAccounts/tanguy-abel-sa@aignx-test-cloud-setup.iam.gserviceaccount.com/keys:upload?alt=json returned "Invalid value at 'public_key_data' (TYPE_BYTES), Base64 decoding failed for public_key = 
+> HttpError 400 when requesting <https://iam.googleapis.com/v1/projects/aignx-test-cloud-setup/serviceAccounts/tanguy-abel-sa@aignx-test-cloud-setup.iam.gserviceaccount.com/keys:upload?alt=json> returned "Invalid value at 'public_key_data' (TYPE_BYTES), Base64 decoding failed for public_key =
 
 #### **공식문서 참고**
 
@@ -27,7 +27,8 @@ Python SDK를 활용하여 GCP Serivce Account에 public key를 upload시 에러
 | **주요 사항**     | X.509 v3 인증서로 래핑된 RSA 공개 키여야 하며, Base64로 인코딩된 상태로 제공되어야 합니다. 인증서의 헤더와 푸터를 포함해야 합니다.                    .ㅇㄷ  |
 
 #### **해결**
-`gcloud` command으로 payload 분석 시 `publickeyData`는 반드시 `base64-encoded`되어야한다. 그래서 아래와 같이 public key를 변환해야함 
+
+`gcloud` command으로 payload 분석 시 `publickeyData`는 반드시 `base64-encoded`되어야한다. 그래서 아래와 같이 public key를 변환해야함
 
 ```python
 import base64
@@ -43,19 +44,21 @@ iam_service.projects().serviceAccounts().keys().upload(
 - 공개 키 데이터를 Base64로 인코딩하고 이를 문자열로 변환하는 과정입니다. 각 부분에 대한 설명은 아래와 같음
   
 ##### **1.`public_key.encode("utf-8")`**
+
 - **목적** : `public key`변수를 UTF-8로 인코딩 형식의 바이트 배열로 변환
 - **왜?** : Base64인코딩은 바이트데이터를 텍스트로 변화하기 위한 과정으로 먼저 바이트로 변환해야함
 
 ##### **2.`base64.b64encode(public_key.encode("utf-8"))`**
+
 - **목적** : 위에서 바이트 형식으로 변환 `public key`를 Base64로 인코딩
 - **왜?** : Base64는 이진데이터를 텍스트 형식으로 변화하는 방법 각 3바이트씩 묶어서 4개의 텍스트문자로 변환 인코딩 결과는 ASCII문자로 이루어진 문자열
   
 ##### **3.`.decode("utf-8")`**
-- **목적** : `base64.b64encode는 Base64로 인코딩된 데이터를 바이트 형식으로 반환. 이 바이트 데이터를 UTF-8문자열로 변환 
-- **왜?** : GCP API는 Base64로 인코딩된 문자열을 요구하기 때문에, 바이트 형식의 결과를 문자열로 반환 
-- 
-- **왜?** : Base64인코딩은 바이트데이터를 텍스트로 변화하기 위한 과정으로 먼저 바이트로 변환해야함
 
+- **목적** : `base64.b64encode는 Base64로 인코딩된 데이터를 바이트 형식으로 반환. 이 바이트 데이터를 UTF-8문자열로 변환
+- **왜?** : GCP API는 Base64로 인코딩된 문자열을 요구하기 때문에, 바이트 형식의 결과를 문자열로 반환
+-
+- **왜?** : Base64인코딩은 바이트데이터를 텍스트로 변화하기 위한 과정으로 먼저 바이트로 변환해야함
 
 ### **참고**
 

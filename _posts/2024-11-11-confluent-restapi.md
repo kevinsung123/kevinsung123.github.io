@@ -11,23 +11,24 @@ tags : [confluent]
 ### Kafka Connect's  REST API (curl)
 
 #### connector  조회
+
 ```bash
 curl -s -X GET "http://localhost:8083/connectors/"
 ```
-#### connector  config와 status 상세 확인 
+
+#### connector  config와 status 상세 확인
 
 ```bash
 curl -i -X GET -H  "Content-Type:application/json" \
        http://localhost:8083/connectors/sink-elastic-orders-00/config
-```	   
+```    
 <br/>
-
 
 #### connector의 리스트 및 구성을 보기좋게 출력
 
 - 아래 명령어는 Kafka Connect의 커넥터들의 상태와 구성을 손쉽게 조회하고, 이를 보기 좋게 정리하여 출력하는 데 사용됩니다.
 
-```bash 
+```bash
 curl -s "http://localhost:8083/connectors?expand=info&expand=status" | \
 jq '. | to_entries[] | [ .value.info.type, .key, .value.status.connector.state,.value.status.tasks[].state, .value.info.config."connector.class"] |join(":|:")' | \
 column -s : -t| sed 's/\"//g'| sort
@@ -69,29 +70,33 @@ sort 명령어는 결과를 알파벳 순으로 정렬합니다.
 curl -s -X POST "http://localhost:8083/connectors/source-debezium-orders-00/restart"
 ```
 
+#### Pause and Resume a Connector
 
-#### Pause and Resume a Connector 
+- pause
 
-- pause 
-```bash 
+```bash
 curl -s -X PUT "http://localhost:8083/connectors/source-debezium-orders-00/pause"
 ```
-- resume 
+
+- resume
+
 ```bash
 curl -s -X PUT "http://localhost:8083/connectors/source-debezium-orders-00/resume"
 ```
 
-#### Connector에서 사용하는 Topic 가져오기 
+#### Connector에서 사용하는 Topic 가져오기
 
 ```bash
 curl -s -X GET "http://localhost:8083/connectors/source-debezium-orders-00/topics" | jq '.'
 ```
 
-#### Connector 생성 
+#### Connector 생성
+
 ```bash
 curl -X POST -H "Content-Type: application/json" -d @your_connector.json http://localhost:8083/connectors
 ```
 
 #### Reference
-- https://developer.confluent.io/courses/kafka-connect/rest-api/
-- https://docs.confluent.io/platform/current/kafka-rest/index.html
+
+- <https://developer.confluent.io/courses/kafka-connect/rest-api/>
+- <https://docs.confluent.io/platform/current/kafka-rest/index.html>

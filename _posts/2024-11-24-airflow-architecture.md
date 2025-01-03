@@ -8,6 +8,7 @@ tags : [airflow,architecture,]
 
 
 ### **Apache Airflow**
+
 Airflow는 복잡한 data workflow을 orchestrate하기 위해 설계된 open source platform이다. `DAG(Directed Acyclic Graphs)`를 사용하여 일련의 `task와 그들간의 dependencies`를 정의한다. 다양한 component로 구성되어있으면 차례대로 살펴보자
 ![airflow architecture](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*SxYErMAzuN0MXQryQfpGLQ.gif)
 
@@ -21,7 +22,7 @@ Airflow는 복잡한 data workflow을 orchestrate하기 위해 설계된 open so
   
 #### **Scheduler**
 
-- `task`의 실행(execution)을 관리 
+- `task`의 실행(execution)을 관리
 - `DAGS`과 `schedule task`를 그들의 dependencies에 기반으로 모니터링하고  
 ![scheduler](https://miro.medium.com/v2/resize:fit:828/format:webp/1*FdXjpygIU1EdBaZ7n8vpxg.gif)
 
@@ -30,7 +31,7 @@ Airflow는 복잡한 data workflow을 orchestrate하기 위해 설계된 open so
 - 주요 role은 task를 수행시키는것
 - `scheduleer`와 상화작용하여 task의 상세정보를 얻고 task 수행에 필요한 process 또는 container를 시작시킴
 - Airflow는 다양한 Executor Type을 제공. 각각은 특정 인프라 설정 및 운영요구사항에 맞게 조정
-  - ex) LocalExecutor, CeleryExecutor,KubernetesExcecutor 
+  - ex) LocalExecutor, CeleryExecutor,KubernetesExcecutor
 ![executor](https://miro.medium.com/v2/resize:fit:828/format:webp/1*vVCX0toozRV6kwlc9SWVqg.gif)
 
 #### **Worker**
@@ -56,13 +57,16 @@ Airflow는 복잡한 data workflow을 orchestrate하기 위해 설계된 open so
 실행 되도록 보장
 ![message broker](https://miro.medium.com/v2/resize:fit:828/format:webp/1*eOsKdwCTzqwGHs_YaDIn4A.gif)
 
-
 #### **Airflow 기본동작 원리**
+
 ![airflow](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FliBJY%2FbtsH7g6Uecz%2FX3RSVOHSAkxlfmFh44nLZ0%2Fimg.png)
-1. usr가 새로운 dag을 생성 -> dags folder안에 py 파일배치 
+
+1. usr가 새로운 dag을 생성 -> dags folder안에 py 파일배치
 2. web server와 scheduler가 파싱하여 읽어옴
 3. `scheduler`가 `metastore`를 통해 `DagRun` 오브젝터를 생성
-  - `DagRun`은 사용자가 작성한 Dag의 instance
+
+- `DagRun`은 사용자가 작성한 Dag의 instance
+
 4. `scheduler`는 Task Instnace Object를 스케쥴링함
 5. 트리거가 상황이 맞으면 `scheduler`가 task instance를 executor로 보냄
 6. executor는 task instaance를 실행시킴
@@ -71,8 +75,10 @@ Airflow는 복잡한 data workflow을 orchestrate하기 위해 설계된 open so
    - `scheduler`는 Dag이 실행이 완료되었는지 `metastore`를 통해 `Dag Run`상태를 완료로 바꿈
 8. `metastore`가 `webserver`에 업데이트하여 사용자도 확인
 
-!(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FoxC38%2FbtsH6iLo13m%2FBpCV2JTZp8YioeU8vas2vK%2Fimg.png)
+!(<https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FoxC38%2FbtsH6iLo13m%2FBpCV2JTZp8YioeU8vas2vK%2Fimg.png>)
+
 ### **참고**
+
 - <https://github.com/mjs1995/muse-data-engineer/blob/main/workflow/airflow/airflow_architecture.md>
 - <https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/overview.html#airflow-components>
 - <https://medium.com/apache-airflow/airflow-architecture-simplified-3d582fc3ccb0>

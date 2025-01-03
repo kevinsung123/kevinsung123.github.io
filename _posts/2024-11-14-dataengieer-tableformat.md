@@ -8,7 +8,6 @@ tags : [dataengieer,tableformat]
 
 ### **PThe History and Evolution of Open Table Formats**
 
-
-
 ### **참고**
-- https://alirezasadeghi1.medium.com/the-history-and-evolution-of-open-table-formats-0f1b9ea10e1e
+
+- <https://alirezasadeghi1.medium.com/the-history-and-evolution-of-open-table-formats-0f1b9ea10e1e>

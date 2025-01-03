@@ -65,7 +65,7 @@ tags : [spark,conecpt]
 
 #### **Spark Driver Node**
 
-- Spark cluster를 `orchestrate`하는역할 
+- Spark cluster를 `orchestrate`하는역할
 - driver는 `DAG(Directed Acycli Graph) Scheduler`,`task scheduler`, `backend scheduler`정리
 - 이 driver의 component들은 `user code`를 cluster에서 실행시킬 spark job으로 변환하는 역할을 함
 - `dirver 노드`내에 숨겨진 클러스터 관리자는 Spark 클러스터에서 리소스를 획득하고 Spark 작업에 할당하는 역할을 합니다. 이러한 리소스는 워커 노드 형태로 제공됩니다 .
@@ -90,7 +90,7 @@ tags : [spark,conecpt]
 #### **Spark Runtime architecture**
 
 - `Spark Runtime Architecture`는 말그대로 코드가 실행되는 순간에 cluster에서 일어나는일
-- `eager`와 `lazy` evaluation이 모두 존재 
+- `eager`와 `lazy` evaluation이 모두 존재
 - `Spark의 action` = `eager`
 - `Spark의 transformatioin` = `lazy`
 - `Transformation`은 말그대로 `lazy`. 우리가 데이터에 어떤 `operation`을 호출할떄 즉시 실행하지 않음
@@ -99,7 +99,7 @@ tags : [spark,conecpt]
   
 #### **Types of Transformation**
 
-- `narrow`그리고 `wide`변환 존재. Spark가 데이터를 관리하고 분산방식으로 계산하는 방식을 이해하는 중요한 유형 
+- `narrow`그리고 `wide`변환 존재. Spark가 데이터를 관리하고 분산방식으로 계산하는 방식을 이해하는 중요한 유형
 - `Transformation`은 서로RDD를 생성
 
 ![tranformation](https://miro.medium.com/v2/resize:fit:640/format:webp/1*iS8Bo_SfgOudrKCCVkWXIA.png)
@@ -115,6 +115,7 @@ tags : [spark,conecpt]
 - 가령의 위이 `join`은 2개의 RDD를 활용하여 새로운 RDD를 생성
 
 #### **Runtime**
+
 - 사용자가 선호하는 방법을 통해 drive에 코드를 제출하면 드라이버는 transformatioin(`filters,joins,groupby,unions`) 그리고 actions(`counts,writes`)을
 포함하는 코드를 해결되지 않은 논리적계획으로 암묵적으로 변환
 - `catalyst optimiser` : submission stage에서 logical plan catalog를 참조하여 모든 코드가 필요한 parameter를 준수하는지 확인하고, 이것이 완료되면 해결되지 않은 논리적 계획이 논리적 계획으로 변환
@@ -127,6 +128,7 @@ Catalyst는 Scala의 functional programming 기반으로 2가지 주요목적을
 1. Spark SQL에 새로운 최적화 기술과 기능을 쉽게 추가 
 2. 외부 개발자가 최적화 프로그램을 확장 할 수 있또록 (데이터 소스별 규칙추가, 새로운 데이터 유형 지원)
 ```
+
 - <https://www.databricks.com/glossary/catalyst-optimizer>
   
   ![catalyst](https://miro.medium.com/v2/resize:fit:828/format:webp/0*guHPBFfkuqZHzChV.png)
@@ -142,7 +144,8 @@ Catalyst는 Scala의 functional programming 기반으로 2가지 주요목적을
 
 - 이것이 완료되고 리소스가 할당되면 작업은 자유 시간이 있는 작업자 노드(실행자)에 분산되고 드라이버 프로그램은 진행 상황을 모니터링합니다.이것은 현재 사용 가능한 리소스와 클러스터 구조를 염두에 두고 가능한 가장 효율적인 방식으로 수행됩니다.위의 예에서는 간단합니다.세 개의 작업자 노드에 분산할 세 개의 작업이 있습니다.작업은 위의 방식, 즉 각 작업자 노드에 하나의 작업을 분산하거나 Spark의 병렬 특성으로 인해 하나의 노드로 전송되어 여전히 비동기적으로 실행될 수 있습니다.그러나 사용 가능한 컴퓨팅 슬롯보다 많은 작업이 있거나 클러스터의 노드와 비교하여 균일하게 나눌 수 없는 작업 수가 있는 경우 복잡성이 발생합니다.다행히도 Spark가 이를 직접 처리하고 작업 분산을 관리합니다.
 - 언급할 가치가 있는데, Spark는 작업을 효율적으로 분배할 수 있지만 항상 데이터를 해석할 수는 없습니다. 즉, 작업 기간에 큰 시간 차이를 일으킬 수 있는 데이터 왜곡`(skew)`이 발생할 수 있습니다. 그러나 이는 모두 기본 데이터 레이크가 어떻게 구조화되어 있는지에 따라 달라집니다.`Delta Engine(Photon)`을 사용하여 빌드하는 경우 쿼리 실행에 대한 라이브 개선과 더 나은 셔플 크기와 최적의 조인 유형을 장려하는 개선을 활용할 수 있습니다.
-####  **SparkContext Entry Point Object**
+
+#### **SparkContext Entry Point Object**
 
 - `SparkContext` 객체는 Spark 함수의 주요 진입점
 - 그것은 `Spark Cluster`의 connection을 나타냄
@@ -153,39 +156,45 @@ Catalyst는 Scala의 functional programming 기반으로 2가지 주요목적을
 #### **RDD(Resilient Distributed Datasets)**
 
 - RDD란 Spark에서 기본 데이터구조
-- Spark와 Core API에서 주요 추상화된 데이터 
+- Spark와 Core API에서 주요 추상화된 데이터
 - RDD는 `fault-tolerant immutable distributed collections of ojbect`
   
 #### **RDD: Most Common Use Case**
+
 - pre-prcoess  `unstructured/semi-structured data` 그리고 `structured data`로 covert
-  - `Spark SQL, Hive or Impala`로 Query가능 
+  - `Spark SQL, Hive or Impala`로 Query가능
 
 #### **RDD 만드는법**
 
-1. 파일에서 읽기 
-  - storage(local file system,.hdfs,Cloud Storage)
-  - core api는 parquet를 바로 읽지는 않음 why? parquet는 구조화된 데이터 보통 text,json,csv에서 읽음
+1. 파일에서 읽기
+
+- storage(local file system,.hdfs,Cloud Storage)
+- core api는 parquet를 바로 읽지는 않음 why? parquet는 구조화된 데이터 보통 text,json,csv에서 읽음
+
 2. SparkContext의 method `parallelize` method
   
 ```python
  my_collection = [1, 2, 3, 4 ]
  parallel_collection = sc.parallelize(my_collection)
  parallel_collection.take(2
-``` 
-3. RDD를 transformation 하여 생성 
-   
+```
+
+3. RDD를 transformation 하여 생성
+
 #### **RDD 만드는법**  
+
 - `unstructured or semi structured dataset` --> `Core API`로 읽음
 - `structured dataset` --> `Dataframe API`로 읽음
   - schema정보를 포함하는  binary file (parquet,orc)
   - table로부터 data읽음(hive,hbase,cassandra)
-- usecase에 따라서 `Core API' 또는 `Dataframe API`로 읽음
+- usecase에 따라서 `Core API' 또는`Dataframe API`로 읽음
   - json,xml,csv
 
 #### **RDD Operation**
+
 - 2가지 type의 operation을 지원
   - Transformation  (from existing one to a new dataset)
-  - Action return a value to the Drive Program 
+  - Action return a value to the Drive Program
 - Operation Example
   - `map` : transformation (각각의 datset에 function을 넘겨 새로운 RDD결과를 만듬)
   - `reduce` : aggreagate (RDD의 모든 요소를 어떤 function을 활용해서 취합)

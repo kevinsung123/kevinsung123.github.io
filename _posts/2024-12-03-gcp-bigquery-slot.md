@@ -8,6 +8,7 @@ tags : [gcp,bigquery,slot]
 
 
 ### **BigQuery Slot**
+
 slot은 BigQuery에서 쿼리 실행을 처리하는 데 사용되는 계산 리소스 단위. 분산 처리 아키텍처에서 작업을 병렬로 처리하기 위해 사용되며 데이터를 스캔하고,필터링하고, 집계하는 등의 작업을 수행
 
 - BigQuery가 사용하는 `cpu 및 memoory`리소스 단위
@@ -31,10 +32,10 @@ $$
 - 최소 청구단위 : `10MB` (쿼리가 이보다 작아도 10MB청구)
 - 데이터는 1MB단위로 올림처리
 
-
 #### **특정일 사용자별 job별 쿼리사용현황**
 
-- BigQuery `INFORMATIon_SCHEMA.JOBY_BY_PROJECT` view를 통해 사용자별 상세 현황 파악 
+- BigQuery `INFORMATIon_SCHEMA.JOBY_BY_PROJECT` view를 통해 사용자별 상세 현황 파악
+
 ```
 SELECT 
  FORMAT_TIMESTAMP('%Y-%m-%d', DATETIME(creation_time.'Asia/Seoul)) as day,
@@ -56,6 +57,6 @@ ORDER BY 1 desc
 ;
 ```
 
-
 ### **참고**
+
 - <https://airflow.apache.org/docs/apache-airflow-providers-celery/stable/celery_executor.html>
