@@ -6,7 +6,7 @@ tags : [gcp,bigquery,grpc]
 ---
 
 
-## gRPC
+## **gRPC**
 
 <!--more-->
 
@@ -16,7 +16,7 @@ gRPC란 Goole에서 개발한 **modern open source 고성능 RPC프레임워크*
 - **HTTP/2프로토콜** 위에서 동작
 - 다양한 언어 지원하고 직렬화 및 역직렬화를 위해 **Protobuf**를 사용
 
-### RPC(Remote Procedure Call)
+### **RPC(Remote Procedure Call)**
 
 - 별도의 원격 제어를 위한 코딩없이 다른 주소공간에서 함수나 프로시저를 실행할 수 있는게 하는 프로세스간 통신 기술
 원격 프로시저 호출을  이용하면 프로그래머는 함수가 실행 프로그렘에 로컬 위치에 있는 원격 위치에 있든 동일한 코드를 이용 할 수 있음
@@ -25,7 +25,7 @@ gRPC란 Goole에서 개발한 **modern open source 고성능 RPC프레임워크*
 - 분산 컴퓨팅 + client-server를 베이스를 위한 앱을 위한 강력한 기술
 - `참고` : RPC는 제어흐름이 호출자와 수신자 간에 교대로 이루어지는 client-server 상호작용에 적합. 개념적으로 클리언트와 서버는 동시에 실행하지 않음. 대신 실행 스레드가 호출자로부터 수신자에게 점프했다가 다시 돌아옴
 
-### RPC목표
+### **RPC목표**
 
 - client-server간의 커뮤니케이션에 필요한 상세정보는 최대한 감춤
 - client는 일반 메소드를 호출하는 것 처럼 원격지의 프로시저를 호출할 수 있음
@@ -41,11 +41,11 @@ gRPC란 Goole에서 개발한 **modern open source 고성능 RPC프레임워크*
 5. transport layer는 결과 메세지를 다시 client transport layer로 보내고 client transport layer는 그 결과를 또 client stub에게 전달한다.
 6. client stub은 반환 파라미터들과 실행 결과값을 다시 해체한다.
 
-### RPC 탄생배경
+### **RPC 탄생배경**
 
 `분산 네트워크 컴퓨터 환경에서 프로그래밍을 쉽게 할 수 있는 방법을 찾기위해서`
 
-### 요즘RPC가 필요한 이유는?
+### **요즘RPC가 필요한 이유는?**
 
 현재 유행하는 MSA(Micro Service Architectrue)구조로 서비스를 만든다면, 다양한 언어와 프레임워크로 개발되는 경우가 잦음.
 

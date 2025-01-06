@@ -1,7 +1,7 @@
 ---
 title: "만료기간이 있는 Service Account key생성"
 date : 2024-11-14 00:00:00 +0900
-categories: [GCP, ServieAccount]
+categories: [GCP, ServiceAccount]
 tags : [gcp,serviceaccount]
 ---
 
