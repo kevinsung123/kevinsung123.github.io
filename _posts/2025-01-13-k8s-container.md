@@ -53,6 +53,7 @@ tags : [gcp,wif]
 
 ![Container manifest](../assets/img/2025-01-15-k8s-gke-gcloud/image5.png)
 
+
 - dockerfile는 내부의 레이어를 지정. 읽기 전용이지만, 실행되면 쓰기 가능한 임시 최상위 레이어도 가지게됨
 - 쓰기가능한 레이어는 일시적이므로 다른곳에 저장되어야함 
 - 레이어마다 차이점만 해당 레이어에 저장 (전체 이미지 복사하는 대신)
