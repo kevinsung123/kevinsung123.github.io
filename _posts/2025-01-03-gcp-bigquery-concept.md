@@ -11,11 +11,10 @@ tags : [gcp,bigquery,concept]
 	- serverless service
 	- fully managed 
 
----
-<!--more-->
+
 
 ### How does BigQuery work?
-![bigquery](/assets\img\post_img\2021-03-14-bigquery.PNG)
+![bigquery](../assets/img/post_img/2021-03-14-bigquery.PNG)
 - user는 BigQuery가 어덯게 data를 disk에 저장하는지 걱정 할 필요 없음
 - large queries들에 대해 어떻게 machine들을 autoscale하는지 걱정 할 필요 없음
 

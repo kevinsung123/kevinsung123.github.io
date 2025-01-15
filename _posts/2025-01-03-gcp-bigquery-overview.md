@@ -59,7 +59,7 @@ BigQuery란 2011년 일반 안정화버전으로 출시되었으며 비지니스
 - BigQuery는 GCP분석 및 데이터 처리 제품과 긴밀하게 통합되어 고객이 엔터프라이즈용 클라우드 기반 데이터 웨어하우스를 설정 하도록 가능
 - 데이터 lifecycle의 각단계에서 gcp는 데이터 관리를 위해 여러 서비스를 제공. 고객이 자신의 워크플로우에 맞는 일련의 서비스를 선택 가능
 
-![Figure 1](/assets/img/bigquery/BQ_Explained_1.max-900x900.png)
+![Figure 1](../assets/img/bigquery/BQ_Explained_1.max-900x900.png)
 
 ### Ingestion data into BigQuery
 
@@ -74,7 +74,7 @@ BigQuery란 2011년 일반 안정화버전으로 출시되었으며 비지니스
 - BiQuery의 서버리스 아키텍처는 storage와 computing을 분리하고 필요에 따라 독립적으로 확장 가능
 - 이 구조는 값비싼 컴퓨팅 리소스를 항상 가동하고 실행할 필요가 없기 떄문에 고객에게 엄청난 유연성과 비용제어를 제공
 - 내부적으로 BigQuery `Dremel, Colossus, Jupiter 및 Borg`와 같은 low-level의 Google 인프라 기술로 구동되는 방대한 다중 테넌드 서비스 집합을 사용
-![Figure 2](/assets/img/bigquery/BQ_Explained_3.max-500x500.jpg)
+![Figure 2](../assets/img/bigquery/BQ_Explained_3.max-500x500.jpg)
 
 #### **구성요소 (요약)**
 
