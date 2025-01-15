@@ -10,7 +10,7 @@ tags : [gcp,wif]
 ####  **Hypervisor** 
 기본 하드웨어의 운영체제의 종속 항목을 타파하고 여러 가상머신에서 하드웨어를 공유할 수 있게 해주는 소프트웨어 레이어를 `하이퍼바이저`라고함 ex) KVM(커널 기반 가상머신)
 
-![hypervisor](image.png)
+![hypervisor](../assets/img/2025-01-15-k8s-gke-gcloud/image.png)
 
 - 가상화를 통해 새 서버를 상당히 빠르게 배포가능. 가상머신을 이미지호 하여 배포
 - 리소스 낭비가 줄고 이동성이 향상
