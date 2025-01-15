@@ -95,7 +95,11 @@ theme_mode: # [light | dark]
 # will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
+<<<<<<< HEAD
 cdn: 
+=======
+cdn: "https://chirpy-img.netlify.app"
+>>>>>>> c0a615db74d604470c0788d09e317f9102a93269
 
 # the avatar on sidebar, support local or CORS resources
 avatar: 
