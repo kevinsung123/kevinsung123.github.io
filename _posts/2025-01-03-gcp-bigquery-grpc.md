@@ -6,15 +6,17 @@ tags : [gcp,bigquery,grpc]
 ---
 
 
-## gRPC
+## **gRPC**
 
 <!--more-->
 
 ---
-gRPC란 modern open source 고능성능 RPC프레임워크로 어떤 환경에서도 실행가능
-Load balancing,tracking, health checking, authentication에 대한 plugin 지원을 통해 데이터 샌터 내 및 데이터 센터간 서비스를 효율적으로 연결. 또한 분산컴퓨팅에서 모바일 애플리케이션 및 백엔드 서비스에 연결하는데에도 적용 가능
+gRPC란 Goole에서 개발한 **modern open source 고성능 RPC프레임워크**로 어떤 환경에서도 실행가능
+**Load balancing,tracking, health checking, authentication**에 대한 plugin 지원을 통해 **데이터 센터 내 및 데이터 센터간 서비스를 효율적으로 연결**. 또한 **분산컴퓨팅에서 모바일 애플리케이션 및 백엔드 서비스에 연결**하는데에도 적용 가능
+- **HTTP/2프로토콜** 위에서 동작
+- 다양한 언어 지원하고 직렬화 및 역직렬화를 위해 **Protobuf**를 사용
 
-### RPC(Remote Procedure Call)
+### **RPC(Remote Procedure Call)**
 
 - 별도의 원격 제어를 위한 코딩없이 다른 주소공간에서 함수나 프로시저를 실행할 수 있는게 하는 프로세스간 통신 기술
 원격 프로시저 호출을  이용하면 프로그래머는 함수가 실행 프로그렘에 로컬 위치에 있는 원격 위치에 있든 동일한 코드를 이용 할 수 있음
@@ -23,11 +25,11 @@ Load balancing,tracking, health checking, authentication에 대한 plugin 지원
 - 분산 컴퓨팅 + client-server를 베이스를 위한 앱을 위한 강력한 기술
 - `참고` : RPC는 제어흐름이 호출자와 수신자 간에 교대로 이루어지는 client-server 상호작용에 적합. 개념적으로 클리언트와 서버는 동시에 실행하지 않음. 대신 실행 스레드가 호출자로부터 수신자에게 점프했다가 다시 돌아옴
 
-### RPC목표
+### **RPC목표**
 
 - client-server간의 커뮤니케이션에 필요한 상세정보는 최대한 감춤
 - client는 일반 메소드를 호출하는 것 처럼 원격지의 프로시저를 호출할 수 있음
-- 서버도 마차나기졸 일반 메소드를 다루는 것 처럼 원격 메소드를 다룰수 있음
+- 서버도 마찬가지로 일반 메소드를 다루는 것 처럼 원격 메소드를 다룰수 있음
 ![rpc](https://velog.velcdn.com/images%2Fjakeseo_me%2Fpost%2Fcbee941a-abc3-40a0-bab3-69c03bb25cba%2Fimage.png)
 ![rpc동작방식](https://velog.velcdn.com/images%2Fjakeseo_me%2Fpost%2F16327fcc-4da1-4a4b-8dbc-b5b84a933900%2Fimage.png)
 
@@ -39,11 +41,11 @@ Load balancing,tracking, health checking, authentication에 대한 plugin 지원
 5. transport layer는 결과 메세지를 다시 client transport layer로 보내고 client transport layer는 그 결과를 또 client stub에게 전달한다.
 6. client stub은 반환 파라미터들과 실행 결과값을 다시 해체한다.
 
-### RPC 탄생배경
+### **RPC 탄생배경**
 
 `분산 네트워크 컴퓨터 환경에서 프로그래밍을 쉽게 할 수 있는 방법을 찾기위해서`
 
-### 요즘RPC가 필요한 이유는?
+### **요즘RPC가 필요한 이유는?**
 
 현재 유행하는 MSA(Micro Service Architectrue)구조로 서비스를 만든다면, 다양한 언어와 프레임워크로 개발되는 경우가 잦음.
 
@@ -78,7 +80,10 @@ Load balancing,tracking, health checking, authentication에 대한 plugin 지원
 - 브라우저를 사용하지 않은 백엔드간 서버 통신, 자원 한정적인 환경에서도 유용
 - 최근에 시스코, 주니터 등 네트워크장비에서 gRPC지원하여 모니터링/자동화/인프라 운영에도 활용방안이 많음
 
-- [gcp-blog](https://cloud.google.com/blog/products/data-analytics/new-blog-series-bigquery-explained-overview?hl=en)
+- [GoogleBlog](https://cloud.google.com/blog/products/data-analytics/new-blog-series-bigquery-explained-overview?hl=en>
+  
 -[네이버클라우드 기술*경험 gRPC깊게파고드리#1](https://medium.com/naver-cloud-platform/nbp-%EA%B8%B0%EC%88%A0-%EA%B2%BD%ED%97%98-%EC%8B%9C%EB%8C%80%EC%9D%98-%ED%9D%90%EB%A6%84-grpc-%EA%B9%8A%EA%B2%8C-%ED%8C%8C%EA%B3%A0%EB%93%A4%EA%B8%B0-1-39e97cb3460)
+
 -[네이버클라우드 기술*경험 gRPC깊게파고드리#2](https://medium.com/naver-cloud-platform/nbp-%EA%B8%B0%EC%88%A0-%EA%B2%BD%ED%97%98-%EC%8B%9C%EB%8C%80%EC%9D%98-%ED%9D%90%EB%A6%84-grpc-%EA%B9%8A%EA%B2%8C-%ED%8C%8C%EA%B3%A0%EB%93%A4%EA%B8%B0-2-b01d390a7190)
+
 -[gRPC](ttps://developers.google.com/protocol-buffers/docs/overview)

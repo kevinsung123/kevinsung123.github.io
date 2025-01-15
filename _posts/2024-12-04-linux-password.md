@@ -1,7 +1,7 @@
 ---
 title: "Linux password 정책 및 /etc/shadow"
 date : 2024-12-05 09:00:00 +0900
-categories: [Linux,Password,Slot]
+categories: [Linux,Password]
 tags : [gcp,bigquery,slot]
 ---
 

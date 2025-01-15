@@ -1,6 +1,6 @@
 ---
 title: "zombie process 처리방법"
-categories: [linux, tool]
+categories: [Linux, tool]
 tags: [linux,shell,zombie]
 ---
 

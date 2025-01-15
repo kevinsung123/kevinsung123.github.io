@@ -1,6 +1,6 @@
 ---
 title: "find명령어 사용법"
-categories: [linux, tool]
+categories: [Linux, tool]
 tags: [linux,shell,find]
 ---
 

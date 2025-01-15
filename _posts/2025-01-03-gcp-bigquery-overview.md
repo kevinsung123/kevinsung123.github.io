@@ -1,6 +1,6 @@
 ﻿---
 title: "(1)BigQuery 개요"
-date : 2025-01-03 08:00:00 +0900
+date : 2024-1-03 08:00:00 +0900
 categories: [GCP,BigQuery,Architecture]
 tags : [gcp,bigquery,architecture]
 ---

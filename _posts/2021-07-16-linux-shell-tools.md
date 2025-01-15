@@ -1,6 +1,6 @@
 ---
 title:  "proces 확인하기"
-categories: [linux, tool]
+categories: [Linux, tool]
 tags: [linux,shell]
 ---
 

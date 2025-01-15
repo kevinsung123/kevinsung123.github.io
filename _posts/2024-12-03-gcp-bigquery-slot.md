@@ -1,6 +1,6 @@
 ---
-title: "(5)BiQuery Slot 및 사용현황 (메타데이터)"
-date : 2024-12-04 09:00:00 +0900
+title: "(4)BigQuery Slot 및 사용현황 (메타데이터)"
+date : 2025-01-04 09:00:00 +0900
 categories: [GCP,BigQuery,Slot]
 tags : [gcp,bigquery,slot]
 ---
