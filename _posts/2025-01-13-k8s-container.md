@@ -59,5 +59,67 @@ tags : [gcp,wif]
 - Google은 `Cloud Build`를 통하여 container를 제공(컨테이너 빌드관리)
 - 해당 이미지를 GKE,APP Engine,Cloud Run등에 배포
 
+#### **Kubernetes**
+- container화된 workload와 서비스를 관리하는 오픈소스 플랫폼
+- declarative configuration을 지향. 불필요한 작업을 없애줌 
+
+#### **지원하는 workload 유형**
+- **Stateless Application** : Nginx,Apache web server
+  - **무상태** : 클라이언트나 이전 요청의 데이터를 기억하지 않음
+  - **독립성** : 각 요청은 독립적이며 클라이언트가 상태 공유가 없음
+  - **확장가능** : 무상태이므로 쉽게 확장 가능
+  - Deployment를 사용, ReplicaSet을 통해 다수의 pod를 쉽게 스케일링
+  - 예시
+    - web : nginx,apache web
+    - RESTful API서비스
+    - 데이터 처리 작업
+- **Stateful Application** : 사용자/세션 데이터를 영구 저장할수있음
+  - **상태 유지** : 특정 클라이언트 또는 프로세스와 연관된 데이터를 유지
+  - **데이터 의존성** : 이전 욫어의 데이터를 기반으로 후속 요청을 처리
+  - **고유성** : 인스턴스는 고유하며 특정 데이터를 처리하거나, 특정 저장소에 연결
+  - PV(Persistent Volume)을 사용하여 스토리지와 데이터를 지속적으로 유지
+  - 예시
+    - db: mysql,postgresql
+    - messaging system : kafka,rabbitmq
+    - 파일 저장 서비스
+- autosclae containerized apps
+- 사용자는 workload의 리소스 요청 수준과 한도를 지정가능
+- 풍부한 플러그인과 부가기능 ecosystem으로 확장 가능
+
+#####  **Airflow** : Stateful와 Stateless특성을 모두 가진 하이브리드 애플리케이션
+  - **Stateful** : scheduler,database,log storage 상태 데이터(task,workflow정의)를 유지해야 하므로 `stateful`
+  - **Stateless** : webserver,worker등 데이터를 외부 db나 스토리지에 의존하므로 stateless로 구현
+
+#### **GKE(Google Kubernetes Engine)**
+- Google 인프라에서 호스팅되는 관리형 k8s서비스. 배포 및 관리 확장하는데 도움이 되도록 설계
+- GKE엔진은 노드,확장, 보안 및 기타 사전구성된 설정과 같은 클러스터 구성을 관리하도록 설계된 GKE Autopilot이라는 운영모드를 제공
+
+### **Kubernetes Architecture**
+
+#### **Kubernetes Concept**
+2가지 개념을 알아야함
+
+1. Kubernetes Object model
+   - k8s에서 관리하는 각각의 대상은 object로 표시
+   - 사용자는 object 속성과 상태를 보고 변경 가능
+2. Declarative management
+   - object를 관리하는 방법은 지시 받아야함
+   - 이는 지시한 상태를 달성하고 유지되도록 작송
+   - `watch loop`를  통해 작동
+
+- **k8s object의 2가지 주요 요소**
+  - **object spec** : object원하는 상태를 정의
+  - **object status** : object의 상태로 k8s 제어영역(control plane)에서 제공하는 object의 현재 상태 
+
+- **pod**  
+  -  k8s의 가장작은 object. k8s 시스템에서 실해중인 모든 컨테이너는 pod안에 존재
+![pod](../assets/img/2025-01-15-k8s-gke-gcloud/image-6.png)
+   - pod는 container있는 환경을 구현하며 하나 이상의 container를 포함. container들은 서로 긴밀하게 연결, 네트워킹과 스토리지등 리소스를 공유
+![pod](../assets/img/2025-01-15-k8s-gke-gcloud/image-7.png)
+    - pod는 유일한 주소를가지고, container는 ip주소와 port, network namespace등을 공유
+    - 같은 pod안의 container간에는 127.0.0.1(localhost)로 통신가능하며, 공유할 스토리지 볼륨집합도 지정 가능
+
+#### **Kubernetes Component**
+
 ### 참고
 - <https://www.cloudskillsboost.google/course_templates/2/video/517307>
