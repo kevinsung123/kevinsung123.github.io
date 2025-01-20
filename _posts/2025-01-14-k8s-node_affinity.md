@@ -70,7 +70,10 @@ spec:
 - 선호하는 pod를 설정하는 방법으로 사용법은 nodeAffinity와 동일
 - 2가지 옵션 제공 (hard,soft) nodeAffinity와 동일 
 - **Topology key**
-    - node의 label key를 설정하는 것이며 어떠한 값을 name
+    - node의 label key를 설정하는 것이며 어떠한 값을 key-name으로 넣어도 상관 없지만 주로 아래와같이 넣음
+    - **node 단위** : kubernest.io/hostname
+    - **zone 단위** : topology.kubernetes.io/zone
+    - **region 단위** : topology.kubernetes.io/region
 ### 참고
 - <https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity>
 
