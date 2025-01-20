@@ -95,6 +95,8 @@ tags : [gcp,wif]
 - Google 인프라에서 호스팅되는 관리형 k8s서비스. 배포 및 관리 확장하는데 도움이 되도록 설계
 - GKE엔진은 노드,확장, 보안 및 기타 사전구성된 설정과 같은 클러스터 구성을 관리하도록 설계된 GKE Autopilot이라는 운영모드를 제공
 
+---
+
 ### **Kubernetes Architecture**
 
 #### **Kubernetes Concept**
@@ -185,6 +187,7 @@ tags : [gcp,wif]
   - `kubelet`은 각 node의 agent
   - kube apiserver가 node에서 pod를 시작하려면 해당 node의 kubelet에 연결
   - container runtime을 사용하여 pod를 시작하고, 준비 및 활성 상태 probe를 포함한 pod의 수명주기를 모니터링 그리고 kube apiser에 보고
+
 ![kubelet](../assets/img/2025-01-13-k8s-container/image-9.png)
 
 - **container runtime**
@@ -217,6 +220,7 @@ tags : [gcp,wif]
 - pod object는 어떻게 선언할까?
 
 ![manifest](../assets/img/2025-01-13-k8s-container/image-10.png)
+
   - manifest파일에 선언 (yaml)
   - pod가 원하는 상태. 이름과 실행할 특정 컨테이너 이미지 정의
   - **apiVersion** : 객체 생성용 k8s api를 명시
@@ -235,10 +239,14 @@ tags : [gcp,wif]
   - **Deployments** : web server와 같이 수명이 긴 SW구성요소를 관리할떄. 이를 그룹으로 관리하려는 경우 탁월한 선택
   - 아래 예에서는 3개의 pod를 모니터링하고 유지보수하는 역할을 함
   - kube-scheduler의 pod예약시 kube-apiserver에 알림 -> 배포 controller는 하위 객체인 ReplicaSet을 만들어 원하는 pod를  실행 -> 이 pod 중 하나에 장애가 발생하면 ReplicaSet controller에서 현재 상태와 원하는 상태의 차이를 인식하고 새pod를 실행하여 이를 해결 
+
 ![yaml](../assets/img/2025-01-13-k8s-container/image-12.png)
+
 ![object controller](../assets/img/2025-01-13-k8s-container/image-11.png)
 
-#### **Kubernetes Operations**
+---
+
+### **Kubernetes Operations**
 
 ##### **kubectl**
 - 관리자용 k8s cluster 제어 유틸리티
@@ -247,6 +255,7 @@ tags : [gcp,wif]
 - `$HOME/.kube/config` 파일에 구성을 저장 
   - the list of clusters
   - the credentials that will be attached to each
+- 
 ![kubectl](../assets/img/2025-01-13-k8s-container/image-13.png)
 - 관리자가 kubectl 명령어 수행
 - API호출로 변환하여 클러스터의 control-plane안의 `kube-apiserver` HTTPS를통해 전송
