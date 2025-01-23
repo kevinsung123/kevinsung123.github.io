@@ -1,7 +1,7 @@
 ---
-title: "The History and Evolution of Open Table Formats"
-date : 2024-11-14 00:00:00 +0900
-categories: [DataEngineer, TableFormat]
+title: "(1) The History and Evolution of Open Table Formats"
+date : 2025-01-22 00:00:00 +0900
+categories: [Data Engineering, TableFormat]
 tags : [dataengieer,tableformat]
 ---
 
