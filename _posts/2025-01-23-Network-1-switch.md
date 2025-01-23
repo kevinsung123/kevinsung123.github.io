@@ -121,6 +121,16 @@ tags : [gcp]
   - 대규모 애플리케이션 서비스 ㅔㅈ공
   - VOIP 및 동영상 스트리밍 트래픽 처리
 
+
+### **비교요약**
+
+| **스위치 계층** | **기준**      | **주요 역할**                  | **사용 사례**             |
+| --------------- | ------------- | ------------------------------ | ------------------------- |
+| **L2 스위치**   | MAC 주소 기반 | 같은 네트워크 세그먼트 내 통신 | 소규모 네트워크, LAN 구성 |
+| **L             |
+
+
+
 ### 참고
 - [medium](https://medium.com/@mervegamzenar/data-modeling-for-data-engineering-4ba302b4654f)
 - [aws - osi model](https://aws.amazon.com/ko/what-is/osi-model/)
