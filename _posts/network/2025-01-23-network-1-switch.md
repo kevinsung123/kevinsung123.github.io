@@ -1,7 +1,7 @@
 ---
 title: "(1) Network Switch"
 date : 2025-01-23 09:00:00 +0900
-categories: [Data Engineering,Data Modeling]
+categories: [Network,Switch]
 tags : [gcp]
 ---
 ### **OSI모델**
