@@ -8,7 +8,7 @@ tags : [dataengieer,tableformat]
 
 ### **The History and Evolution of Open Table Formats**
 
-![alt text](../../assets/img/2025-01-22-dataengineering-3-tableformat/image.png)
+
 
 ### **The Origin of Table Formats**
 - 현대판 database 개념은 `![E.F. Codd's paper](https://www.seas.upenn.edu/~zives/03f/cis550/codd.pdf)가 1970년에 발표한 Relation Model` 논문에서 영감을 받아 관계형 DB가 발명되면서 등장
