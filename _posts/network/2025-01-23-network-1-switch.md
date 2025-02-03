@@ -7,7 +7,7 @@ tags : [gcp]
 
 ### **OSI모델**
 
-
+![alt text](../../assets/img/2025-01-23-network-1-switch/image.png)
 
 **오픈 시스템 상호 연결(Open Systems Interconnections)** 모델은 네트워크 통신기능을 7개의 계층으로 나누는 개념적 프레임워크.
 - 컴퓨터 네트워킹을 위한 범용언어를 제공하기때문에 다양한 기술잉 표준 프로토콜 또는 통신 규칙을 사용하여 통신

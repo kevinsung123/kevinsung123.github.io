@@ -8,6 +8,7 @@ git status
 
 ## step 2. git add all files
 git add *
+git add -A
 git status 
 
 ## step 3. read from stdin for commit messgae

@@ -1,12 +1,12 @@
 ---
-title: "(4) Data Modeling for Data Engineering"
+title: "(5)  DataLakeHouse Design Pattern"
 date : 2025-01-23 09:00:00 +0900
-categories: [Data Engineering,Data Modeling]
+categories: [Data Engineering,Design Pattern]
 tags : [gcp]
 ---
 
 
-### Data Modeling for Data Engineering
+### DataLakeHouse Design
 
 
 ### 참고
