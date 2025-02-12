@@ -199,10 +199,157 @@ Hive나 다른 데이터 관리 도구에 국한되지 않고, 일반적으로 �
 
 ### **Hive Transactional Tables**
 
-Hive ACID특징은 변경 불가능한(realm of immutable data lakes)에 구조화된 저장 보장 특히 ACID 트랜잭션(원자성(Atomic), 일관성(Consistent),격리성(Isolation),내구성(Durable)
+Hive ACID특징은 **변경 불가능한(realm of immutable data lakes)**에 구조화된 저장 보장, 특히 **ACID 트랜잭션(원자성(Atomicity), 일관성(Consistency),격리성(Isolation),내구성(Durability)** 도입하려는 **최초의 시도**
+
+Hive Version 3(2016)에서 출시된 이 기능은 `파티션 간 원자성 및 격리성과 같은 더 강력한 일관성 보장을 제공`함으로써 큰 진전을 이룸
+
+하지만 Hive에 ACId를 추가해도 근본적인 문제는 해결되지 않았는데, 그 이유는 아래와 같음
+
+> Hive ACID테이블은 디렉터리 중심 접근 방식을 기반으로하며, 기본 데이터 레이크 스토리지 계층 내에서 테이블 수준 정보를 관리하기 위해 별도의 **메타데이터 저장소**에 의존합니다.
+
+**Hortonwork와 Cloudera**같은 공급업체는 Hive ACID를 더 광범위한 데이터 생테계 통합하기 위해 여러가지 시도 하였지만, 기본 설계상의 한계로 폭넓은 채택을 받지 못함
+
+
+### **2nd Generation OTF — The Rise of Log-oriented Table Format(로그 지향 테이블 형식의 부상)**
+
+이전 세대의 테이블 포맷에서 주요한 이슈를 다시 나열 해보면
+
+1. 물리적인 파티션이과 논리적인 파티션의 긴밀한 결합
+  - 스키마 진화 및 데이터 변경 유연성 저하 (성능 최적화 및 유연성 저하)
+  - 디렉터리 구조가 파티션을 강하게 결정하므로 테이블 스캔시 전체 디렉터리를 탐색해야하는 문제
+  - 새로운 데이터 구조 필요할때 기존 데이터 이동 및 재분배 비용이 높아짐 
+  - 파일 관리 어려움 (작은 파일 다수 생성)
+  - 운영 복자성 증가(확장성과 유지보수가 어려움)
+2. query planning 단계에서 파일 및 디렉터리를 나열하기 위해 파일시스템이나 개체저장소 API에 크게 의존
+3. schema,partition 그리고 column-level statistics(통계정보)를 유지 관리하기 위해 **external metadata store**를 사용
+4. record-level의 **upsert,merge 그리고 delete**에 대한 지원이 부족
+5. **ACID와 트랜잭션 속성**이 부족
+
+
+위의 4,5 제외 1-3 문제에 대해 집중하면 파티션 및 파일 목록에대한 메타데이터를 효율적으로 저장할 수 있는 데이터 구조가 필요
+이 구조는 **빠르고, 확장가능하며 외부 시스템에대한 종속성이 없는 자체 포함형이어야함 (fast,scalable, and self-contained, with no depedencies on external systems)**
+
+
+LinkedIN의 **Jay Kreps와 엔지니어링팀**이 간단한 storage abstraction(시간순으로 정렬된 이벤트의 순차적 레코드를 포함하는[immutable log](https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying))를 기반으로 Apach Kafka를 구축한 것처럼 비슷한 프레임워크 고려할 수 있을까?
+
+
+> immutable log가 Apache Kafka와 같은 시스템에서 항상 참인 사실을 나타내는 이벤트를 저장할 수 있따면, 같은 원칙을 적용하여 테이블의 메타데이터 상태를 관리할 수 있지 않을까?
+
+
+log파일을 활용하여 모든 metadata 수정을 **순차적으로 정렬된 event**로 다룰 수 있음. 이는 [Event Sourcing](https://martinfowler.com/eaaDev/EventSourcing.html) 데이터 모델링 패러다임와 같음
+
+
+파일과 파티션은 metadata layer이 log의 모든 상태 변경을 추적하는 기록의 단위가 됨. 이 설계에서 **the metadata logs are the fisrt class citizens of metadata layer**
+
+
+
+### **Managing Metadata Updates**
+
+데이터레이크 시스템의 **immutable natrue**를 고려할떄, metadata log는 지속적으로 추가 될 수 없음
+대신에, 데이터 조작 연산으로 각각의 update 결과는 **새로운 메타데이터 파일 생성**을 필요로함
+
+순서를 유지하고 테이블 상태 재구성을 용이하게 하기 위해 이러한 메타데이터 로그를 순차적으로 명명하고 기본 메타데이터 디렉터리 내에 구성 가능
+
+query engine은 테이블의 현재 스냅샷 뷰를 다시 작성하기 위해 모든 메타데이터 상태 변경 이벤트를 재생하기 위해 이벤트 로그를 순차적으로 스캔 가능
+
+### **Log Compation**
+
+대귬 데이터세트에 대한 빈번한 데이터 업데이트는 각 변경사항에 대해 새로운 로그 항목이 필요하므로 메타데이터 로그 파일이 급증 할 수 있음
+시간이 지남에 따라 상태 재구성 중에 이러한 **파일을 나열하고 처리하는 ovehead**는 **성능 병목현상**이 될 수 있음
+이는 메타데이터 관리 분리의 이점을 없애는 현상
+
+이를 완하하기위해 
+
+-  **주기적으로 압축 프로세스(periodic compaction process)**는 개별로그의 파일을 통합된 파일로 병합
+-  time travel 그리고 rollback의 경우 이러한 오래된 이벤트는 지정된 기간 동안 보관해야함
+
+### **What did we just build?**
+데이터 파일과 함계 테이블 메타데이터를 관리하기 위해 **간단하고 변경 불가능한 로그(simple, imuutable trasactional log)**를 사용하여 초기 요구사항을 해결하는 테이블 형식을 만듬
+이 접근은 **bedrock for modern open table format(open table format의 근간)**이 된다 **Apache Hudi, Delta Lake 그리고  Apache Iceberg**
+
+
+> The modern open table formats provide a mutable table layer on top of immutable data files through a log-based metadata layer. This design offers database-like features such as ACID compliance, upserts, table versioning, and auditing.
+
+- modern open table format은 **log-based metadata layer**를 통해 **immutable data file**위에 **mutable table layer**를 제공
+
+- 이 디자인은 **ACID compliance,upsert,table versioning 그리고 audting**을 제공
+- ![open table format architecture](https://miro.medium.com/v2/resize:fit:828/format:webp/0*EbMiDQHvOlU6Pqr4.png)
+
+
+
+### **The Origin of Modern Open Table Formats implementations**
+현재 세대의 open table format은 이전 세대의 data lake의 data management접근의 한계를 해결하기 위해 탄생.
+그리고 이 tool들의 근간은 `log-structured metadata organisation`에 존재
+
+- **Apache Hudi**
+  - [Ubery in 2016](https://www.uber.com/en-AU/blog/uber-big-data-platform/)에서 시작
+  - 주로 **HDFS에서 ACID보장을 제공하는 동시에 확장 가능하고 Upsert와 data lake streaming 수집**을 가능하게 하는것을 목표 
+  - 그것의 디자인은 **mutable data streams**을 최적화하는데 초점
+- **Apache Iceberg**
+  - **Netflix 2017**에서 출시. **Hive의 schema 중심 (directory-orientied table format)의 확장성과 트랜잭션 제한에 대한 대응**으로 개발 
+- **Delta Lake**
+  - **2017년 Databricks에서 소개되고 2019년에 오픈소스화됨** 
+  - 주요 목표는 **ACID transaction기능을 cloud storage object기반 데이터레이크 위에 제장**
+
+
+### **Industry Adoption**
+- 지난 몇년동안 차세대 open table format이 다양한 데이터 도구와 플랫폼에서 널리 채택되고 통합 되는 추세
+- 주로 이러한 제품을 관리형 서비스로 제공하는 **Saas공급업체**사이에서 시장 지배력을 놓고 치열한 경쟁이 이루어짐
+- **Microsoft** : 최신 Onelake 및 MS Fabric 분석 플랫폼에 **Delta lake**적용
+- **Google** : BigLake플랫폼의 기본 테이블 형식으로 **Iceberg**를 채택 
+- **Cloudera** : Apache Iceberg를 중심으로 오픈데이터레이크 하우스 솔루션을 추구
+- **OSS** : Presto,Trino,Flink 그리고 Spark도 현재는 open table format Readmin/Writing을 지원
+- **주요 MPP 그리고 cloud data warehouse vendors(Snowflake,BigQuery그리고 RedShift)** :  외부 테이블 기능을 통해 자원을 토앟ㅂ
+- 
+
+### **3rd Generation OTF — Unified Open Table Format**
+- open table format 발전은 새로운 추세 `cross table interoperability`로 발전하는 추세
+- 이 개발의 목표는 기존의 모든 주요 포맷과 원활하게 작동하는 **통일되고 보편적인 오픈 테이블 포맷** 만드는것
+- 현재 포맷 간 변화에는 메타데이터 변환과 데이터 파일 복사가 필요. 그러나 이러한 포맷은 기반을 공유하고 종종 parquet을 기본 직렬화 포맷으로 사용하기 때문에 상호 운용성에 상당한기회가 존재하지
+- **uniform metadata layer**는 모든 주요 오픈테이블 형식에서 데이터를 읽고 쓰는데 통합된 접근방식을 약속
+- 
+
+### **The State of Art**
+- **[OpenHouse 2022년 소개](https://www.linkedin.com/blog/engineering/data-management/taking-charge-of-tables--introducing-openhouse-for-big-data-mana)
+  - Linkein에서 개발
+  - Apache Iceberg위에 구축됨. Spark와 완벽하게 통합하여 RESTful Table Service를 통해 기본 형식에 관계없이 테이블과 상호작용하기 위한 인터페이스 제공
+- **[Apache Xtable(OneTable)](https://xtable.apache.org/)
+  - Onehouse에서 2023년 도입
+  - 스키마, 파티셔닝 세부정보 및 열 통계에대한 공통모델을 사용하여 지원되는 모든 형식에대한 메타데이터 생성하기 위한 가벼운 추상화계층 제공
+- **[Delta Uniform](https://www.databricks.com/blog/delta-uniform-universal-format-lakehouse-interoperability)
+  - **Databrcks**에서 2023년 도입
+  - 자동으로 Delta Lake 및 Iceberg 테이블에대한 메타데이터를 생성. 
+  - 공유 parquet 데이터 파일의 단일사본을 유지
+  - 외부 애플리케이션과 쿼리엔진이 다른 형식을 읽을 수 있도록 하는 동시에 Delta Lake를 기본형식으로 사용하는데 중점
+
+### **Data Lakehouse**
+- **정의** : 데이터레이크 비용 효율성, 확장성, 유연성 및 개방성과 일반적으로 데이터 웨어하우스의 관련된 성능, 거래보장, 거버넌스 기능을 결합한 통합된 차세대 데이터 아키텍처
+- 정의는 open table format과 매우 유사. open table format을 사용하여 **ACID,감사,버전 관리, 인덱싱**을 저가 클라우드 스토리지에 직접 구현하여 이 두가지 데이터 관리 패러다임간의 격차를 메우는데 기반
+- 조직이 데이터 레이크 스토리지를 기존 데이터 웨어하우스처럼 처리할 수 있도록 해주고, 그 반대 경우도
+- 원래 Hadoop플랫폼에 데이터 웨어 하우징을 제공하기 위해 **SQL-on-Hadoop**도구를 통해 추구 되었지만, 데이터 환경이 발전하면서 최근에야 완전히 실현
+
+### **Non-Open vs Open Data Lakehouse**
+- 일반적으로 **data lakehouse**와 **open data lakehouse**를 구별하는것이 중요
+- **AWS와 Google**과 같은 CSP는 자사의 dataware house 중심 플랫폼을 data lake house라고 부르지만 실제로 그들이 정의하는바는 더 크다
+- 그들이 강조점은 
+  - 반구조화된 데이터를 저장
+  - Spark와 같은 외부 workload를 지원하고 
+  - ML모델 교육을 가능하게 하고
+  - open data file을 쿼리하는 데이터웨어 하우스 기능
+- 위의 강조점은 모두 데이터 레이크와 관련된 특성
+- 일반적으로 storage와 compute 아키텍처 분리가 특징
+- **open data lakehouse**
+  - low-cost data lake 스토리지위에 있는 데이터를 관리하기 위해 주로 오픈 테이블 형식을 활용
+  - 이 아키텍처는 더 높은 상호 운용성과 유연성을 제공하여 조직이 각 작업이나 워크로드에 맞게 최적의 컴퓨팅 및 처리 엔진을 선택할 수 있도록 합니다.
+  - 오픈 데이터 레이크하우스는 시스템 간에 데이터를 복제하고 이동할 필요성을 없앰으로써 모든 데이터가 원래의 개방형 형식으로 유지되도록 보장하여 단일 진실 소스 역할을 합니다 .
+  - **Databricks, Microsoft OneLake, OneHOuse,Dremio,Cloudera** 클라우드에서 관리되는 open data lakehouse 공급업체
+![open data lakehouse architecture](https://miro.medium.com/v2/resize:fit:828/format:webp/0*PGMY3mVUYZqlhMo2.png)
+
+
+
+
 
 ### **참고**
-
-- <https://alirezasadeghi1.medium.com/the-history-and-evolution-of-open-table-formats-0f1b9ea10e1e>
-- <https://practicaldataengineering.substack.com/p/the-history-and-evolution-of-open?utm_source=publication-search>
-- <https://practicaldataengineering.substack.com/p/the-history-and-evolution-of-open-14d?r=23jwn&utm_campaign=post&utm_medium=web&triedRedirect=true>
+- [medium](https://alirezasadeghi1.medium.com/the-history-and-evolution-of-open-table-formats-0f1b9ea10e1e)
+- [substack-1](https://practicaldataengineering.substack.com/p/the-history-and-evolution-of-open?utm_source=publication-search)
+- [substack-1](https://practicaldataengineering.substack.com/p/the-history-and-evolution-of-open-14d?r=23jwn&utm_campaign=post&utm_medium=web&triedRedirect=true)
